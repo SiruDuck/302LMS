@@ -1,0 +1,36 @@
+로그인 - login 회원가입 - join
+구성원 - member
+등록/수정/삭제/조회 CRUD 
+리스트 - list
+상세보기 - detail
+검색 - find
+수정 - update
+급여 - salary
+성적 - score
+반 - grade
+시험문제 - test
+시간표 - schedule
+직원 - employee
+강사 - teacher
+학생 - student
+강의 - lecture
+평균 - avg
+교재 - book
+입출고 - input, output
+게시판 - board
+공지사항 - notice
+관리 - management
+학습자료 - study material
+비품 - fixture
+응시자 - candidate
+비교 - compare
+달성률 - rate
+구성원 등록 - insert_member
+구성원 리스트 - member_list
+구성원 상세보기 - member_detail
+구성원 수정 - member_update
+직원 급여 - employee_salary
+강사 급여 - teacher_salary
+직원 급여 수정 - 
+
+
