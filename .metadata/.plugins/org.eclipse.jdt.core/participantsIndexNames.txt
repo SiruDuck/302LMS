@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-D:\302LMS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3924911892.index
-\LMS\src\main\java
