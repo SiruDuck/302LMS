@@ -5,3 +5,5 @@
 .project
 
 [pom.properties]
+
+LMS/target/
