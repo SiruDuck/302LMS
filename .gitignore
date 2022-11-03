@@ -1,5 +1,7 @@
 /.metadata/
 
+[.metadata]/
+
 LMS/target/
 
 *.metadata
