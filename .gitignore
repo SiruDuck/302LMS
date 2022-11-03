@@ -1,3 +1,5 @@
 /.metadata/
 
 LMS/target/
+
+*.metadata
