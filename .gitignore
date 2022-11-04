@@ -9,3 +9,7 @@
 LMS/target/
 
 .properties
+
+Servers/
+
+*.prefs
