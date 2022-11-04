@@ -1,0 +1,11 @@
+/.metadata/
+
+[Servers]/
+
+.project
+
+[pom.properties]
+
+LMS/target/
+
+.properties
