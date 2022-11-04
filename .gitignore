@@ -7,3 +7,5 @@
 [pom.properties]
 
 LMS/target/
+
+.properties
