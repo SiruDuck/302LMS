@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>GURU Able - Free Lite Admin Template </title>
+    <title> 영문대학교 LMS </title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,7 +76,7 @@
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
-
+			<!-- 헤더 네비 -->
             <nav class="navbar header-navbar pcoded-header">
                 <div class="navbar-wrapper">
 
@@ -188,6 +188,7 @@
                     </div>
                 </div>
             </nav>
+            <!-- 헤더 네비 -->
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">
