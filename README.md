@@ -2,6 +2,8 @@
 --302호 학사관리(LMS) 프로그램 프로젝트 입니다.
 11.01 ~ 11.25
 
+[YoungmoonLMS](https://siruduck.github.io/302LMS/LMS/src/main/webapp/WEB-INF/views/index.jsp/){:target="_blank"}
+
 
 ○ 공통사항 : 웹&앱 프로젝트와 동일
 
@@ -54,3 +56,7 @@
 ※ 기타 세부내역은 [붙임-과제결과물]참조
 
 ○ 공통사항 : 웹&앱 프로젝트와 동일
+
+
+- 사용한 부트스트랩 오픈소스
+https://themewagon.com/themes/free-bootstrap-4-html5-admin-dashboard-template-guru-able/
