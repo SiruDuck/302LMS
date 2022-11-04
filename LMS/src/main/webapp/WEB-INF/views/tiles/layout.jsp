@@ -1,10 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles"  prefix="tiles"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title> 영문대학교 LMS </title>
+    <title>GURU Able - Free Lite Admin Template </title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,18 +22,18 @@
       <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
       <meta name="author" content="CodedThemes">
       <!-- Favicon icon -->
-      <link rel="icon" href="resources/assets/images/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
       <!-- Google font-->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
       <!-- Required Fremwork -->
-      <link rel="stylesheet" type="text/css" href="resources/assets/css/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/bootstrap/css/bootstrap.min.css">
       <!-- themify-icons line icon -->
-      <link rel="stylesheet" type="text/css" href="resources/assets/icon/themify-icons/themify-icons.css">
+      <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
       <!-- ico font -->
-      <link rel="stylesheet" type="text/css" href="resources/assets/icon/icofont/css/icofont.css">
+      <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
       <!-- Style.css -->
-      <link rel="stylesheet" type="text/css" href="resources/assets/css/style.css">
-      <link rel="stylesheet" type="text/css" href="resources/assets/css/jquery.mCustomScrollbar.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
   </head>
 
   <body>
@@ -76,11 +79,10 @@
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
-			<!-- 헤더 네비 -->
+
             <nav class="navbar header-navbar pcoded-header">
-                <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+                <tiles:insertAttribute name='header'/>
             </nav>
-            <!-- 헤더 네비 -->
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">
@@ -115,9 +117,9 @@
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="chart.html">
+                                    <a href="index.html">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">대쉬보드</span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -316,7 +318,7 @@
                         </div>
                     </nav>
                     <div class="pcoded-content">
-                        <jsp:include page="/WEB-INF/views/content.jsp"></jsp:include>                        
+                    <tiles:insertAttribute name='container'/>
                     </div>
                 </div>
                 <div class="fixed-button">
@@ -372,26 +374,26 @@
 <![endif]-->
 <!-- Warning Section Ends -->
 <!-- Required Jquery -->
-<script type="text/javascript" src="resources/assets/js/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="resources/assets/js/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="resources/assets/js/popper.js/popper.min.js"></script>
-<script type="text/javascript" src="resources/assets/js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js"></script>
 <!-- jquery slimscroll js -->
-<script type="text/javascript" src="resources/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
 <!-- modernizr js -->
-<script type="text/javascript" src="resources/assets/js/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="assets/js/modernizr/modernizr.js"></script>
 <!-- am chart -->
-<script src="resources/assets/pages/widget/amchart/amcharts.min.js"></script>
-<script src="resources/assets/pages/widget/amchart/serial.min.js"></script>
+<script src="assets/pages/widget/amchart/amcharts.min.js"></script>
+<script src="assets/pages/widget/amchart/serial.min.js"></script>
 <!-- Todo js -->
-<script type="text/javascript " src="resources/assets/pages/todo/todo.js "></script>
+<script type="text/javascript " src="assets/pages/todo/todo.js "></script>
 <!-- Custom js -->
-<script type="text/javascript" src="resources/assets/pages/dashboard/custom-dashboard.js"></script>
-<script type="text/javascript" src="resources/assets/js/script.js"></script>
-<script type="text/javascript " src="resources/assets/js/SmoothScroll.js"></script>
-<script src="resources/assets/js/pcoded.min.js"></script>
-<script src="resources/assets/js/demo-12.js"></script>
-<script src="resources/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="assets/pages/dashboard/custom-dashboard.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script type="text/javascript " src="assets/js/SmoothScroll.js"></script>
+<script src="assets/js/pcoded.min.js"></script>
+<script src="assets/js/demo-12.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');
