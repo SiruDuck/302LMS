@@ -21,8 +21,19 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+		<beans:property name="order" value='1'/>
+	</beans:bean>
+	
+	<beans:bean class='org.springframework.web.servlet.view.tiles3.TilesConfigurer'>
+		<beans:property name="definitions" value='/WEB-INF/views/tiles/config.xml'/>
+	</beans:bean>
+	
+	<!-- 프로필 처리를위한 선언 -->
+	<beans:bean id='multipartResolver' 
+		class='org.springframework.web.multipart.commons.CommonsMultipartResolver'>
+		<beans:property name="defaultEncoding" value="utf-8"/>
+	</beans:bean>
 	<context:component-scan base-package="com.yongmoon.lms" />
-	
-	
 	
 </beans:beans>
