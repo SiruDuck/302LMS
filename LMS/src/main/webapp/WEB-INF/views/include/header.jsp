@@ -13,7 +13,7 @@
                             <i class="ti-search"></i>
                         </a>
                         <a href="index.html">
-                            <img class="img-fluid" src="assets/images/logo.png" alt="영문대학교 LMS" />
+                            <img class="img-fluid" src="assets/images/logo.png" alt="영문대학교 LMSㅁㅁㅁㅁㅁㅁㅁㅁ" />
                         </a>
                         <a class="mobile-options">
                             <i class="ti-more"></i>

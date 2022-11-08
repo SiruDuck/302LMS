@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-    <title>영문대학교 </title>
+    <title>영문대학교</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -81,7 +81,6 @@
         <div class="pcoded-container navbar-wrapper">
 
             <nav class="navbar header-navbar pcoded-header">
-                <tiles:insertAttribute name='header'/>
             </nav>
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
@@ -450,7 +449,6 @@
                         </div>
                     </nav>
                     <div class="pcoded-content">
-                    <tiles:insertAttribute name='container'/>
                     </div>
                 </div>
                 <div class="fixed-button">

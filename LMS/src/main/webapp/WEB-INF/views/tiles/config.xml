@@ -8,14 +8,11 @@
 		<put-attribute name="aside" value="/WEB-INF/views/include/navbar.jsp"/>
 	</definition>
 	
-<!-- 		<put-attribute name="container" value="/WEB-INF/views/customer/list.jsp"/> -->
-<!-- 		<put-attribute name="container" value="/WEB-INF/views/customer/detail.jsp"/> -->
-<!-- 		<put-attribute name="container" value="/WEB-INF/views/hr/list.jsp"/> -->
 	<definition name="*/*" extends="layout">
 		<put-attribute name="container" value='/WEB-INF/views/{1}/{2}.jsp'/>
 	</definition>
 	
-<!-- 		<put-attribute name="container" value="/WEB-INF/views/home.jsp"/> -->
+ 		
 	<definition name="*" extends="layout">
 		<put-attribute name="container" value='/WEB-INF/views/{1}.jsp'/>
 	</definition>
