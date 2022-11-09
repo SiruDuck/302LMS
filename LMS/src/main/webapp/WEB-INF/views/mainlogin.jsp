@@ -6,12 +6,12 @@
 <head>
 <meta charset="EUC-KR">
 <title>영문대학교(LMS)</title>
-<link rel="short icon" type="image/x-icon" href="resources/assets/images/mainlogin/lmslogo.png">
-<link rel="stylesheet" href="resources/assets/css/mainlogin.css" />
+<link rel="short icon" type="image/x-icon" href="resources/images/mainlogin/lmslogo.png">
+<link rel="stylesheet" href="resources/css/mainlogin.css" />
 </head>
 <body>
 <header>
-	<img src="resources/assets/images/mainlogin/logo_black.png">
+	<img src="resources/images/mainlogin/logo_black.png">
 </header>
 
 <div class='content'>
