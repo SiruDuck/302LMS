@@ -7,9 +7,11 @@
 [pom.properties]
 
 LMS/target/
+target/
 
 .properties
 
 Servers/
 
 *.prefs
+LMS/target/m2e-wtp/web-resources/META-INF/maven/com.yongmoon/lms/pom.properties
