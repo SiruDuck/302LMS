@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div class="pcoded-container navbar-wrapper">
-
-            <nav class="navbar header-navbar pcoded-header">
+<nav class="navbar header-navbar pcoded-header">
                 <div class="navbar-wrapper">
 
                     <div class="navbar-logo">
@@ -13,7 +11,7 @@
                             <i class="ti-search"></i>
                         </a>
                         <a href="index.html">
-                            <img class="img-fluid" src="assets/images/logo.png" alt="영문대학교 LMSㅁㅁㅁㅁㅁㅁㅁㅁ" />
+                            <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options">
                             <i class="ti-more"></i>
@@ -45,7 +43,7 @@
                                     </li>
                                     <li>
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -55,7 +53,7 @@
                                     </li>
                                     <li>
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -65,7 +63,7 @@
                                     </li>
                                     <li>
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center" src="assets/images/user.png" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -110,7 +108,7 @@
                                 </ul>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </nav>
-            </div>
