@@ -6,64 +6,71 @@
 <head>
 <meta charset="EUC-KR">
 <title>영문대학교(LMS)</title>
-<link rel="icon" type="image/x-icon" href="resources/assets/images/mainlogin/lmslogo.png">
-<link rel="stylesheet" href="resources/assets/css/mainlogin.css" />
+<link rel="short icon" type="image/x-icon" href="resources/images/mainlogin/lmslogo.png">
+<link rel="stylesheet" href="resources/css/mainlogin.css" />
 </head>
 <body>
-<!-- <div class='loginbox'>
-	<p>LOGIN</p>
-	<div id='id'><input type='text' name='id' placeholder='아이디'></div>
-	<div id='password'><input type='text' name='password' placeholder="비밀번호"></div>
-</div>
-<div>
-	<button>LOGIN</button>
-</div>
-<div>
-	사용자기억
-</div>
-<div>
-	아이디/비번
-</div> -->
-<div class='loginbox'>
-	<div class="col-loginbox ">
-		<div class="row">				
-			<div class="col-login col-login-person">
-			<h2 class="login-title">LOGIN</h2>
-			<div class="langmenu">			
-			<form class="mform form-login" method="post" action="https://smart.wsu.ac.kr/login/index.php">
-				<div class="textform">
-					<input type="text" id="input-username" name="username" placeholder="아이디" value="" class="required init_lang_en" />
-					<input type="password" id="input-password" name="password" placeholder="비밀번호" class="required init_lang_en"/>
+<header>
+	<img src="resources/images/mainlogin/logo_black.png">
+</header>
+
+<div class='content'>
+	<div class='col-main'>
+		<div class='col-login'>
+			<div class='loginbox'>
+			<h2 class='login-title'>LOGIN</h2>
+			<form class='mform' method='post' action=''>
+				<div class='textform'>
+					<input type='text' id='input_id' name='user_id' placeholder='사용자 아이디' class='user-id'>
+					<input type='password' id='input_pw' name='user_pw' placeholder='비밀번호' class='user-pw'>
 				</div>
-				<div class="submitform">
-					<input type="submit" name="loginbutton" class="btn btn-success" value="로그인" />
-				</div>						
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" id="remember" name="rememberusername"  />
-						사용자이름 기억								
-					</label>
+				<div class='submit-login'>
+					<input type='submit' name='btn_login' class='btn-login' value='로그인'>
 				</div>
-				<div class="loginfind">
-					<ul>							
-						<li><a href="http://info.wsu.ac.kr/" target="_blank">아이디 / 비밀번호 찾기</a></li>
-					</ul>							
+				<div class='checkbox'>
+					<label><input type="checkbox" id='remember' name='remember_user'>사용자이름 기억</label>
+				</div>
+				<div class='find'>
+					<a href='' target='_blank'>아이디 / 비밀번호 찾기</a>
 				</div>
 			</form>
-		</div>
-			<div class="col-family">
-				<ul>
-					<li class="family-1"><a href="https://www.wsu.ac.kr/main/" target="_blank">대학홈페이지</a></li>
-					<li class="family-2"><a href="https://info.wsu.ac.kr/index_new.jsp" target="_blank">대학정보시스템</a></li>
-					<li class="family-3"><a href="http://wctl.wsu.ac.kr/" target="_blank">교수학습개발센터</a></li>
-					<li class="family-4"><a href="http://wcc.wsu.ac.kr/main/index.jsp" target="_blank">우송학생상담센터</a></li>
-					<li class="family-5"><a href="https://career.wsu.ac.kr/user" target="_blank">학생경력개발센터 GPS</a></li>
-					<li class="family-6"><a href="http://itedu.wsu.ac.kr/main/index.jsp" target="_blank">우송 IT 교육센터</a></li>
-				</ul>
 			</div>
+		<div class='col-family'>
+			<ul>
+				<li class='family1'><a href ='#'>영문대학교</a></li>
+				<li class='family2'><a href ='#'>중앙도서관</a></li>
+				<li class='family3'><a href ='#'>종합정보시스템</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class='notice'>
+			<div class='col-notice'>
+				<div>
+					<h3>공지사항</h3>
+					<ul>
+						<li><a href=''>[LMS를 활용한 수업 관리 노하우] 온라인 워크숍 안내</a></li>
+						<li><a href=''>MS Teams 녹화영상 확인 방법 안내</a></li>
+						<li><a href=''>[교수용] LMS 시험(퀴즈) 기능 관련 유의사항 안내</a></li>
+						<li><a href=''>LMS - MS TEAMS 연동 교수용 매뉴얼</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-login-btn'>
+					<div class='login-btn'><a href='' class='right-arrow'>Q&A</a></div>
+					<div class='login-btn'><a href='' class='right-arrow'>공지사항</a></div>
+					<div class='login-btn'><a href='' class='right-arrow'>메뉴얼</a></div>
+					<div class='login-btn'><a href='' class='right-arrow'>FAQ</a></div>
+				</div>
 			</div>
 		</div>
-	</div>	
-</div>	
+	</div>
+</div>
+<footer>
+	<div class="footer-info">
+		<a href='' class='info'>개인정보처리방침</a>
+		<a class='addr'>광주광역시 서구 농성동 경열로 3<span class='tel'>연락처: 062-362-7897</span></a>
+	</div>
+</footer>
 </body>
 </html>

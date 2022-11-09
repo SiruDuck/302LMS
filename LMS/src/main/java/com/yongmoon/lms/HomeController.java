@@ -28,13 +28,13 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "index";
+		return "mainlogin";
 	}
 	
-	@RequestMapping("/chart")
+	@RequestMapping("/index")
 	public String chart() {
 		
-		return "chart";
+		return "index";
 	}
 	
 }
