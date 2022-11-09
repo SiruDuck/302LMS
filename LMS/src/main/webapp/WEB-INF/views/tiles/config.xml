@@ -5,7 +5,7 @@
 <tiles-definitions>
 	<definition name='layout' template="/WEB-INF/views/tiles/layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/include/header.jsp"/>
-		<put-attribute name="aside" value="/WEB-INF/views/include/aside.jsp"/>
+		<put-attribute name="aside" value="/WEB-INF/views/include/navbar.jsp"/>
 	</definition>
 	
 <!-- 		<put-attribute name="container" value="/WEB-INF/views/customer/list.jsp"/> -->
