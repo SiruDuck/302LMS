@@ -79,7 +79,7 @@ ul{
 
 .checkbox{
 	opacity: .8;
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0 0;
 }
 
 .checkbox input{
@@ -94,12 +94,28 @@ ul{
     display: flex;
 }
 
+.checkbox label:hover{
+	text-decoration: underline;
+}
+
+.find{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 35px;
+    line-height: 1.7;
+}
+
 .find a{
 	float: right;
     font-size: 11px;
     text-decoration: none;
     color: white;
     opacity: .8;
+}
+
+.find a:hover{
+	text-decoration: underline;
 }
 
 .col-family{
@@ -128,12 +144,24 @@ ul{
     background-position: 0 -3px;
 }
 
+.family1 a:hover{
+	text-decoration: underline;
+}
+
 .col-family .family2{
 	background-position: 0 -33px;
 }
 
+.family2 a:hover{
+	text-decoration: underline;
+}
+
 .col-family .family3{
 	background-position: 0 -63px;
+}
+
+.family3 a:hover{
+	text-decoration: underline;
 }
 
 .col-family ul li a{
@@ -177,6 +205,28 @@ ul{
     white-space: nowrap;
 }
 
+.row{
+	margin:1rem 0;
+}
+
+.row a{
+	padding: 13px 20px 13px 13px;
+    width: 6rem;
+    font-size: 12px;
+    border-radius: 0;
+    color: #000;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #c5c5c5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
 
 .col-login-btn{
 	display: flex;
@@ -185,6 +235,10 @@ ul{
 
 .login-btn{
 	float:left;
+}
+
+.login-btn a:hover{
+	text-decoration: underline;
 }
 
 .right-arrow{
@@ -222,110 +276,6 @@ footer{
 .tel{
 	margin-left:.7rem;
 }
-
-.row{
-	margin:1rem 0;
-}
-
-.row a{
-	padding: 13px 20px 13px 13px;
-    width: 6rem;
-    font-size: 12px;
-    border-radius: 0;
-    color: #000;
-    text-align: left;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-weight: 700;
-    text-decoration: none;
-    background-color: #c5c5c5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between
-}
-
-
-/* body{
-	width:100wh;
-	height:100vh;
-	background: url(resouces/asset/images/mainlogin/loginimg1.png) no-repeat;
-	background-size: cover;
-}
-
-.content{
-	margin:2rem;
-}
-
-.loginbox{
-	padding: 19px 20px 22px 21px;
-    background: rgba(15, 67, 131, .9);
-    width: 280px;
-    float: left;
-    height: 200px;
-}
-
-.loginbox h2{
-	float: left;
-	margin: 0px;
-    font-size: 14px;
-    color: white;
-}
-
-.textform{
-	float:left;
-	width:158px;
-}
-
-.col-family{
-	padding: 0px;
-    width: 145px;
-    margin-left: 10px;
-    float: left;
-}
-
-.col-family ul{
-    list-style: none;
-	background-color:  rgba(76, 76, 76, 0.9);
-}
-
-.loginpage .col-family ul li a {
-    color: #edeeed;
-    font-size: 11px;
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.btn{
-	width: 80px;
-    height: 73px;
-    margin: 0px;
-    border: 0px;
-    border-radius: 0px;
-    box-shadow: none;
-    background-color: #2464b2;
-    color: white;
-}
-
-.required{
-    margin-bottom: 1px;
-    border-radius: 0px;
-    border: 0px;
-    background-color: white;
-    box-shadow: none;
-    height: 36px;
-    width: 100%;
-    padding:5px;
-}
-
-.loginfind{
-    right: 0;
-    bottom: 0px;
-    position: absolute;
-} */
-
 
 
 

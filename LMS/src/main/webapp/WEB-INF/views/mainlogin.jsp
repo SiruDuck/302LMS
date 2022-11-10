@@ -31,6 +31,7 @@
 					<label><input type="checkbox" id='remember' name='remember_user'>사용자이름 기억</label>
 				</div>
 				<div class='find'>
+					<a href='' target='_blank'>회원가입</a>
 					<a href='' target='_blank'>아이디 / 비밀번호 찾기</a>
 				</div>
 			</form>
