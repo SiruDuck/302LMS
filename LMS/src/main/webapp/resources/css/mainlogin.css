@@ -79,7 +79,7 @@ ul{
 
 .checkbox{
 	opacity: .8;
-    margin: 1rem 0 0 0;
+    margin: 2rem 0 0 0;
 }
 
 .checkbox input{
@@ -103,7 +103,6 @@ ul{
     flex-direction: column;
     align-items: flex-end;
     height: 35px;
-    line-height: 1.7;
 }
 
 .find a{
