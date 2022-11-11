@@ -122,6 +122,9 @@
     <!-- Page level custom scripts -->
     <script src="resources/js/demo/chart-area-demo.js"></script>
     <script src="resources/js/demo/chart-pie-demo.js"></script>
+    <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>   
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
 
 </body>
 

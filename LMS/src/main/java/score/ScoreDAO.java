@@ -1,4 +1,4 @@
-package lecture;
+package score;
 
 import java.util.List;
 
@@ -8,13 +8,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class LectureDAO implements LectureService {
+public class ScoreDAO implements ScoreService{
 	@Autowired @Qualifier("ymu") private SqlSession sql;
 
 	@Override
-	public List<LectureVO> lecture_list() {
-		
-		return sql.selectList("lecture.list");
+	public List<ScoreVO> lookup_list() {
+		return sql.selectList("score.list");
 	}
-
+	
 }

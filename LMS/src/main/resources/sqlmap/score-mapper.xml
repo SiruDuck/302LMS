@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="score">
+
+	<select id="list" resultType="score.ScoreVO">
+		select l.lecture_title , s.*
+		from lectures l left outer join SUBJECTSCORE s on l.lecture_num =s.lecture_num
+	</select>
+
+</mapper>
