@@ -3,7 +3,7 @@
 <mapper namespace="score">
 
 	<select id="list" resultType="score.ScoreVO">
-		select l.lecture_title , s.*
+		select l.lecture_title, l.teacher_name , s.*
 		from lectures l left outer join SUBJECTSCORE s on l.lecture_num =s.lecture_num
 	</select>
 

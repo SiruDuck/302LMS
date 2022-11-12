@@ -46,12 +46,14 @@ a{cursor: pointer;}
 
 		<tr>
 			<th>강의명</th>
+			<th>교수</th>
 			<th>학과</th>
 			<th>학점</th>
 		</tr>
 		<c:forEach items='${vo}' var='vo'>
 			<tr>
 				<td>${vo.lecture_title}</td>
+				<td>${vo.teacher_name}</td>
 				<td>${vo.department_id}</td>
 				<td>${vo.semesterpoint}</td>
 			</tr>
