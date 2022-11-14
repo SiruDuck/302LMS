@@ -23,9 +23,8 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                    <img src="../resources/images/mainlogin/lmslogo.png">
-                <div class="sidebar-brand-text mx-3">영문대학교 <sup>LMS</sup></div>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
+            	<div class="sidebar-brand-text mx-3">영문대학교 <sup>LMS</sup></div>
             </a>
 
             <!-- Divider -->
@@ -35,7 +34,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>""님 안녕하세요!</span></a>
+                    <span>김영문</span></a>
             </li>
 
             <!-- Divider -->
@@ -43,7 +42,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Page
+                My Page
             </div>
 
 
@@ -52,18 +51,19 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Mypage</span>
+                    <span>My Page</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">마이페이지</h6>
                         <a class="collapse-item" href="#">학적 정보</a>
-                        <a class="collapse-item" href="#">성적조회</a>
+                        <a class="collapse-item" href="#">성적 조회</a>
                         <a class="collapse-item" href="#">수강 후기 등록</a>
                         <a class="collapse-item" href="#">출결 조회</a>
-                        <a class="collapse-item" href="#">휴강신청</a>
+                        <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="#">등록 정보</a>
+                        <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 정보</a>
                     </div>
                 </div>
             </li>
@@ -135,11 +135,7 @@
             </div>
 
             <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+            
 
         </ul>
         
