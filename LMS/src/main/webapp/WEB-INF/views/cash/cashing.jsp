@@ -10,8 +10,22 @@
 <body>
 <div class="container-fluid">
 
+					<ul class="nav nav-tabs mb-3">
+					  <li class="nav-item">
+					    <a class="nav-link active" aria-current="page" href="#">월급 현황</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#">급여 관리</a>
+					  </li>
+					 <li class="nav-item">
+					    <a class="nav-link" href="#">급여 관리</a>
+					  </li>
+					</ul>
+					
+					
+					
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">교직원 월급 현황</h1>
+                    <h1 class="h3 mb-2 text-gray-800 mt-2 mb-2" >교직원 월급 현황</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
