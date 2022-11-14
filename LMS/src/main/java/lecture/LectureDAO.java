@@ -14,7 +14,7 @@ public class LectureDAO implements LectureService {
 	@Override
 	public List<LectureVO> lecture_list() {
 		
-		return sql.selectList("lecture.test");
+		return sql.selectList("lecture.list");
 	}
 
 }
