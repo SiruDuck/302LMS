@@ -6,8 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+*{font-family: NanumGothic,"나눔고딕",NanumGothic,"돋움",dotum,sans-serif;}
+
 .container-fluid {height: 55rem;}
 
 a.btn-fill, a.btn-empty {
@@ -96,8 +97,9 @@ input[type=radio] { accent-color: #4e73df; }
 
 .full { width: calc(100% - 22px) }
 
+.joincenter { margin-left: 50px;}
 
-.btm10 { margin-bottom: 10px;}
+
 </style>	
 <link rel="stylesheet" href="resources/css/mainlogin.css" />
 </head>
@@ -151,12 +153,12 @@ input[type=radio] { accent-color: #4e73df; }
 </tr>
 <tr><th>주소</th>
 	<td><a class='btn btn-primary' id='post'>우편번호찾기</a>
-		<input type='text' name='post' class='w-px80 btm10' readonly>
-		<input type='text' name='address' class='full btm10' readonly>
-		<input type='text' name='address' class='full btm10' >
+		<input type='text' name='post' class='w-px80' readonly>
+		<input type='text' name='address' class='full' readonly>
+		<input type='text' name='address' class='full' >
 	</td>
 </tr>
-<tr><th>졸업일자</th>
+<tr><th>졸업입자</th>
 	<td><input type='text' name='graduate'></td>
 </tr>
 </table>
