@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script> 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
     <title></title>
 
     <!-- Custom fonts for this template-->
@@ -35,7 +34,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>김영문</span></a>
+                    <span>STAFF</span></a>
             </li>
 
             <!-- Divider -->
@@ -43,7 +42,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                My Page
+                관리 페이지
             </div>
 
 
@@ -57,11 +56,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">마이페이지</h6>
-                        <a class="collapse-item" href="#">학적 정보</a>
-                        <a class="collapse-item" href="#">성적 조회</a>
-                        <a class="collapse-item" href="#">수강 후기 등록</a>
-                        <a class="collapse-item" href="#">출결 조회</a>
+                        <h6 class="collapse-header">관리페이지</h6>
+                        <a class="collapse-item" href="#">ff</a>
+                        <a class="collapse-item" href="#">hfhf</a>
+                        <a class="collapse-item" href="#">fhf</a>
+                        <a class="collapse-item" href="#">fhhf</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="#">등록 정보</a>
                         <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 정보</a>

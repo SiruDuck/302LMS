@@ -14,7 +14,7 @@
     <meta name="author" content="">
 <link href='css/common.css?<%=new java.util.Date()%>' type='text/css' rel='stylesheet'> 
     <title>영문대학교 LMS</title>
-
+	<link rel="short icon" type="image/x-icon" href="resources/images/mainlogin/lmslogo.png">
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -69,7 +69,8 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <a href=''>개인정보처리방침</a>
+						<a style='margin-left:10px'>광주광역시 서구 농성동 경열로 3<span style='margin-left:10px'>연락처: 062-362-7897</span></a>
                     </div>
                 </div>
             </footer>
