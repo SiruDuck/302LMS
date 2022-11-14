@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 .container-fluid {height: 55rem;}
 
@@ -96,9 +96,8 @@ input[type=radio] { accent-color: #4e73df; }
 
 .full { width: calc(100% - 22px) }
 
-.joincenter { text-align: -webkit-center;}
 
-
+.btm10 { margin-bottom: 10px;}
 </style>	
 <link rel="stylesheet" href="resources/css/mainlogin.css" />
 </head>
@@ -142,18 +141,6 @@ input[type=radio] { accent-color: #4e73df; }
 		<label><input type='radio' name='gender' value='여'>여</label>
 	</td>
 </tr>
-<tr><th>프로필이미지</th>
-	<td>
-		<div class='align'>
-		<label>
-			<input type='file' name='file' id='attach-file' accept='image/*'>
-			<a><i class="font-b fa-sharp fa-solid fa-image"></i></a>
-		</label>
-		<span id='preview'></span>
-		<a id='delete-file'><i class="font-r fa-solid fa-trash-can"></i></a>
-		</div>
-	</td>
-</tr>
 <tr><th>생년월일</th>
 	<td><input type='text' name='birth' class='date' readonly>
 		<a id='delete'><i class="font-r fa-regular fa-calendar-xmark"></i></a>
@@ -164,12 +151,12 @@ input[type=radio] { accent-color: #4e73df; }
 </tr>
 <tr><th>주소</th>
 	<td><a class='btn btn-primary' id='post'>우편번호찾기</a>
-		<input type='text' name='post' class='w-px80' readonly>
-		<input type='text' name='address' class='full' readonly>
-		<input type='text' name='address' class='full' >
+		<input type='text' name='post' class='w-px80 btm10' readonly>
+		<input type='text' name='address' class='full btm10' readonly>
+		<input type='text' name='address' class='full btm10' >
 	</td>
 </tr>
-<tr><th>졸업입자</th>
+<tr><th>졸업일자</th>
 	<td><input type='text' name='graduate'></td>
 </tr>
 </table>
