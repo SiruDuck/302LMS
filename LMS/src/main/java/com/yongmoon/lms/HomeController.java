@@ -35,10 +35,7 @@ public class HomeController {
 	
 	@RequestMapping("/index")
 	public void chart(String id, String pw) {
-		
-		
-		
-		
+
 	}
 	
 }
