@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TimeTableController {
 	
 	@RequestMapping("/main.ti")
-	public String studenthome() {
+	public String timeTableHome() {
 		return "time/timeTable";
+	}// 시간표 보기
+	
+	@RequestMapping("/detail.ti")
+	public String timeTableDetail() {
+		return "time/timeTableDetail";
 	}
 	
 

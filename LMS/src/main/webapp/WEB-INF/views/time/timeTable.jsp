@@ -9,16 +9,16 @@
 <body>
 <body id="page-top">
 
-    <!-- Page Wrapper -->
+   <!--  <!-- Page Wrapper
     <div id="wrapper">
 
 
 
-        <!-- Content Wrapper -->
+        Content Wrapper
         <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
+            Main Content
+            <div id="content"> -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -31,6 +31,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                	
                                     <thead>
                                         <tr>
                                             <th>강의 시간</th>
@@ -54,19 +55,19 @@
                                     <tbody>
                                         <tr>
                                             <td>1교시</td>
-                                            <td>기초전자실습</td>
-                                            <td>진로탐구</td>
-                                            <td>의사소통능력</td>
-                                            <td>컴퓨터프로그래밍실습1</td>
-                                            <td>회로이론1</td>
+                                            <td>기초전자실습(B302)</td>
+                                            <td>전자기학(B305)</td>
+                                            <td>디지털공학(B301)</td>
+                                            <td>컴퓨터프로그래밍실습1(B306)</td>
+                                            <td>회로이론1(B201)</td>
                                         </tr>
                                         <tr>
                                             <td>2교시</td>
-                                            <td>창업실무</td>
-                                            <td>전자기학</td>
-                                            <td>디지털공학</td>
-                                            <td>기초전자실습</td>
-                                            <td>컴퓨터프로그래밍실습1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>3교시</td>
@@ -121,12 +122,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
+           
+            <!-- End of Main Content -->            
 
             <!-- Footer -->
             <!-- <footer class="sticky-footer bg-white">
@@ -138,10 +138,10 @@
             </footer> -->
             <!-- End of Footer -->
 
-        </div>
+        
         <!-- End of Content Wrapper -->
 
-    </div>
+    
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
