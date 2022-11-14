@@ -3,5 +3,8 @@
 
 <mapper namespace="cash">
 
+	<select id="cash_ing_list" resultType="cash.Cash_ingVO">
+		select * from cash_ing
+	</select>
 
 </mapper>
