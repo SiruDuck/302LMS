@@ -13,14 +13,9 @@
 .btn a:hover{
 	text-decoration: none;
 }
-.table td:nth-child(1) {
-	background-color:#f8f9fc;
-	width:8rem;
-	text-align: center;
-}
 </style>
 <body>
-	<div class="container-fluid" style='width:50%'>
+	<div class="container-fluid">
                 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -71,7 +66,7 @@
                                         <tr>
                                             <td>담당교수</td>
                                             <td>김영문</td>
-                                        </tr>
+                                        </tr>      
                                         <tr>
                                             <td>학점</td>
                                             <td>3</td>
@@ -80,22 +75,14 @@
                                             <td>시수</td>
                                             <td>3</td>
                                         </tr>             
-                                        <tr>
-                                            <td>col1</td>
-                                            <td>content</td>
-                                        </tr>             
-                                        <tr>
-                                            <td>col2</td>
-                                            <td>content</td>
-                                        </tr>             
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-<div class='btn btn-primary btn-icon-split'>
-	<a class='text text-white'>뒤로가기</a>
-</div>
                 </div>
+<div class='btn btn-primary btn-icon-split' style='margin:24px'>
+	<a class='text text-white '>뒤로가기</a>
+</div>
 </body>
 </html>

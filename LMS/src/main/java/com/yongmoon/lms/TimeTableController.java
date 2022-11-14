@@ -14,7 +14,7 @@ public class TimeTableController {
 	@RequestMapping("/detail.ti")
 	public String timeTableDetail() {
 		return "time/timeTableDetail";
-	}// 시간표 상세 보기
+	}
 	
 
 }
