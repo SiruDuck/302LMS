@@ -19,7 +19,7 @@ public class TimeTableController {
 	@RequestMapping("/regist.ti")
 	public String regist() {
 		return "time/regist";
-	}
+	}// 시간표 등록
 	
 
 }

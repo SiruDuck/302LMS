@@ -79,7 +79,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">수강 신청</h6>
                         <a class="collapse-item" href="#">강의 조회</a>
-                        <a class="collapse-item" href="#">수강 신청</a>
+                        <a class="collapse-item" href="http://localhost/lms/regist.ti">수강 신청</a>
                     </div>
                 </div>
             </li>
