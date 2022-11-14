@@ -2,7 +2,7 @@
 --302호 학사관리(LMS) 프로그램 프로젝트 입니다.
 11.01 ~ 11.25
 
-[YoungmoonLMS](https://siruduck.github.io/302LMS/LMS/src/main/webapp/WEB-INF/views/index.jsp/){:target="_blank"}
+[YoungmoonLMS](https://siruduck.github.io/302LMS/LMS/src/main/webapp/WEB-INF/views/mainlogin.jsp){:target="_blank"}
 
 
 ○ 공통사항 : 웹&앱 프로젝트와 동일
