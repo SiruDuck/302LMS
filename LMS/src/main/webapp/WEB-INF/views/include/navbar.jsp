@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <title></title>
 
     <!-- Custom fonts for this template-->

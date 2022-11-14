@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+<link href='css/common.css?<%=new java.util.Date()%>' type='text/css' rel='stylesheet'> 
     <title>영문대학교 LMS</title>
 
     <!-- Custom fonts for this template-->
@@ -123,6 +123,7 @@
     <script src="resources/js/demo/chart-area-demo.js"></script>
     <script src="resources/js/demo/chart-pie-demo.js"></script>
     <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>   
+    
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
 
