@@ -5,6 +5,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.table th:nth-child(1) {
+	width:6rem;
+}
+.table th:nth-child(2) {
+	width:12rem;
+}
+.table th:nth-child(3) {
+	width:12rem;
+}
+.table th:nth-child(4) {
+	width:12rem;
+}
+.table th:nth-child(5) {
+	width:12rem;
+}
+.table th:nth-child(6) {
+	width:12rem;
+}
+.table td:nth-child(1) {
+	text-align: center;
+}
+table{
+	text-align: center;
+}
+</style>
 </head>
 <body>
 <body id="page-top">
@@ -21,7 +47,7 @@
             <div id="content"> -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <!-- <div class="container-fluid"> -->
                 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -33,7 +59,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 	
                                     <thead>
-                                        <tr>
+                                        <tr class='bg-gray-100'>
                                             <th>강의 시간</th>
                                             <th>월</th>
                                             <th>화</th>
@@ -122,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
                 <!-- /.container-fluid -->
 
            

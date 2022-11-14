@@ -7,15 +7,18 @@
 <title>Insert title here</title>
 </head>
 <style>
-	.table td:nth-child(1) {
+.table td:nth-child(1) {
 	font-weight: 700;
+	width:8rem;
+	text-align: center;
+	background-color:#f8f9fc;
 }
 .btn a:hover{
 	text-decoration: none;
 }
 </style>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid" style='width:50%'>
                 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -80,9 +83,9 @@
                             </div>
                         </div>
                     </div>
+					<div class='btn btn-primary btn-icon-split'>
+						<a class='text text-white '>뒤로가기</a>
+					</div>
                 </div>
-<div class='btn btn-primary btn-icon-split' style='margin:24px'>
-	<a class='text text-white '>뒤로가기</a>
-</div>
 </body>
 </html>
