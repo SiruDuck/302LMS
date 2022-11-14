@@ -17,28 +17,4 @@ public class LectureDAO implements LectureService {
 		return sql.selectList("lecture.list");
 	}
 
-	@Override
-	public int lecture_insert(LectureVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void lecture_update(LectureVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void lecture_delete(String lecture_num) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void lecture_info(String lecture_num) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
