@@ -34,7 +34,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>김영문</span></a>
+                    <span>STAFF</span></a>
             </li>
 
             <!-- Divider -->
@@ -42,7 +42,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                My Page
+                관리 페이지
             </div>
 
 
@@ -56,14 +56,14 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">마이페이지</h6>
-                        <a class="collapse-item" href="#">학적 정보</a>
-                        <a class="collapse-item" href="#">성적 조회</a>
-                        <a class="collapse-item" href="#">수강 후기 등록</a>
-                        <a class="collapse-item" href="#">출결 조회</a>
+                        <h6 class="collapse-header">관리페이지</h6>
+                        <a class="collapse-item" href="#">ff</a>
+                        <a class="collapse-item" href="#">hfhf</a>
+                        <a class="collapse-item" href="#">fhf</a>
+                        <a class="collapse-item" href="#">fhhf</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="#">등록 정보</a>
-                        <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 보기</a>
+                        <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 정보</a>
                     </div>
                 </div>
             </li>
@@ -77,9 +77,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">수강 신청</h6>
+                        <h6 class="collapse-header">수강신청</h6>
                         <a class="collapse-item" href="#">강의 조회</a>
-                        <a class="collapse-item" href="#">수강 신청</a>
+                        <a class="collapse-item" href="#">수강신청</a>
                     </div>
                 </div>
             </li>

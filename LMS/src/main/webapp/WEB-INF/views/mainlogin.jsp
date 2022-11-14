@@ -72,5 +72,37 @@
 		<a class='addr'>광주광역시 서구 농성동 경열로 3<span class='tel'>연락처: 062-362-7897</span></a>
 	</div>
 </footer>
+<script>
+
+function login(){
+	if(emptyCheck()){
+		
+	
+	$.ajax({
+		url:'index',
+		data: {id:$('#input_id').val(), pw:$('#input_pw').val()},
+		success: function(response){
+			if(response)
+				location='<c:url value="/"/>';
+			else{
+				alert('아이디나 비밀번호가 일치하지 않습니다!');
+				$('#id').focus();
+			}	
+		},error: function(req, text){
+			alert(text + ':' + req.status);
+		}
+	});
+	
+	}
+	
+	
+	
+}
+
+
+$('#login').click(function(){
+	login();
+});
+</script>
 </body>
 </html>

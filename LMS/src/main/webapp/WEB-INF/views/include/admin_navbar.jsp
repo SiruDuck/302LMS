@@ -34,7 +34,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>김영문</span></a>
+                    <span>ADMIN</span></a>
             </li>
 
             <!-- Divider -->
@@ -42,28 +42,28 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                My Page
+                관리 페이지
             </div>
-
+            
+			 <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>내 정보</span></a>
+            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>My Page</span>
+                    <span>교직원 관리</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">마이페이지</h6>
-                        <a class="collapse-item" href="#">학적 정보</a>
-                        <a class="collapse-item" href="#">성적 조회</a>
-                        <a class="collapse-item" href="#">수강 후기 등록</a>
-                        <a class="collapse-item" href="#">출결 조회</a>
-                        <a class="collapse-item" href="#">휴강 신청</a>
-                        <a class="collapse-item" href="#">등록 정보</a>
-                        <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 보기</a>
+                        <h6 class="collapse-header">관리</h6>
+                        <a class="collapse-item" href="#">급여 관리</a>
+                        <a class="collapse-item" href="#">권한 관리</a>
                     </div>
                 </div>
             </li>
@@ -73,13 +73,12 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>수강신청</span>
+                    <span>강의 및 비품관리</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">수강 신청</h6>
-                        <a class="collapse-item" href="#">강의 조회</a>
-                        <a class="collapse-item" href="#">수강 신청</a>
+                        <a class="collapse-item" href="#">강의 관리</a>
+                        <a class="collapse-item" href="#">교재 및 비품 관리</a>
                     </div>
                 </div>
             </li>
