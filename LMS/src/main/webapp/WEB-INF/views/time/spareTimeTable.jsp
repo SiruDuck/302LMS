@@ -61,7 +61,7 @@ table{
                                 	
                                     <thead>
                                         <tr class='bg-gray-100'>
-                                            <th>강의 시간</th>
+                                            <th></th>
                                             <th>월</th>
                                             <th>화</th>
                                             <th>수</th>
@@ -172,6 +172,8 @@ table{
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
     </a>
 
     <!-- Logout Modal-->
