@@ -32,6 +32,7 @@ a{cursor: pointer;}
 	display: flex;
 }
 </style>
+<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>   
 </head>
 <body>
 	<h2>score</h2>
@@ -45,7 +46,7 @@ a{cursor: pointer;}
 				</select></li>
 			</ul>
 			<div class='btnSet api'>
-				<a >과목별 조회</a> <a >학기별 조회</a> <a>학년별 조회</a>
+				<a >과목별 조회</a> <a>학년별 조회</a>
 			</div>
 		</div>
 
@@ -54,6 +55,7 @@ a{cursor: pointer;}
 <script>
 $("#lectureList").change(function(){
 	console.log($(this).val());
+	subject_list($(this).val());
 })
 
 
@@ -65,17 +67,17 @@ $(".api a").click(function(){
 	$(".api a").removeClass();
 	$(this).addClass("btn-fill");
 	$(".api a").not($(this)).addClass("btn-empty");
+	
+	if($(this).index()==0) subject_list(-1);
+	else 					grade_list();
 })
 
-$(document).on("click", ".api a", function(){
-	subject_list();
-});
-
-function subject_list(){
+//과목별 성적조회
+function subject_list(num){
 	var test 	= 	"<table class='table'>"
-				+ "<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>학과</th><th>학점</th></tr>"
+				+ "<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>학기</th><th>학점</th></tr>"
 				+ "<c:forEach items='${sub_list}' var='vo'>"
-				+ "<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.department_id}</td><td>${vo.semesterpoint}</td></tr>"
+				+ "<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.smester}</td><td>${vo.semesterpoint}</td></tr>"
 				+ "</c:forEach>"
 		 		+ "</table>";
 	$("#data-list").empty();
@@ -83,6 +85,7 @@ function subject_list(){
 	
 	$.ajax({
 		url:"list/subject",
+		data : {lecture_num : num} ,
 		success : function(res){
 			console.log(res);
 			$("#data-list").append(test);
@@ -90,6 +93,11 @@ function subject_list(){
 			alert(text + ':' + req.status);
 		}
 	});
+}
+
+// 학년별 성적조회
+function grade_list(){
+	$("#data-list").empty();
 }
 
 </script>	

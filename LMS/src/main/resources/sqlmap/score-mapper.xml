@@ -2,8 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="score">
 
+	<!-- 특정과목 조회 -->
+	<select id="lectureOne" resultType="score.ScoreVO">
+		select l.lecture_title,
+		l.teacher_name , s.*
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
+		where l.lecture_num = #{num}
+	</select>
+
 	<!-- 과목명 조회 -->
-	<select id="lectures" resultType="score.LecturesVO"> 
+	<select id="lectures" resultType="score.LectureVO"> 
 		select Distinct l.lecture_title, l.lecture_num
 		from lectures l
 	</select>
@@ -12,7 +20,7 @@
 	<select id="list" resultType="score.ScoreVO">
 		select l.lecture_title,
 		l.teacher_name , s.*
-		from lectures l left outer join SUBJECTSCORE s on l.lecture_num =s.lecture_num
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 	</select>
 
 </mapper>

@@ -1,4 +1,4 @@
-package lecture;
+package score;
 
 import java.sql.Date;
 
