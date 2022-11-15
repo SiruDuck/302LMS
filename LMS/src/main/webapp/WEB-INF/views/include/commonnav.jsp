@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 
-<c:set var='login_mode' value='3'/>
+<c:set var='login_mode' value='1'/>
 
 <c:choose>
 	<c:when test="${login_mode eq 1}">
