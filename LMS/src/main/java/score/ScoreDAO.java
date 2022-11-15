@@ -22,9 +22,21 @@ public class ScoreDAO implements ScoreService{
 		
 	}
 
+	
+	
 	@Override
 	public List<ScoreVO> lookup_list(int num) {
 		return sql.selectList("score.lectureOne",num);
+	}
+
+	@Override
+	public List<ScoreVO> lookup_years() {
+		return sql.selectList("score.lectureYear");
+	}
+
+	@Override
+	public List<ScoreVO> lookup_years(int year) {
+		return sql.selectList("score.lectureYearOne",year);
 	}
 	
 }
