@@ -32,7 +32,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://localhost/lms/index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>ADMIN</span></a>
             </li>
@@ -62,7 +62,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">관리</h6>
-                        <a class="collapse-item" href="#">급여 관리</a>
+                        <a class="collapse-item" href="#">장학 관리</a>
+                        <a class="collapse-item" href="cash.ing">급여 관리</a>
                         <a class="collapse-item" href="#">권한 관리</a>
                     </div>
                 </div>
