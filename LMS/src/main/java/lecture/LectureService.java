@@ -9,7 +9,7 @@ public interface LectureService {
 	void lecture_update(LectureVO vo);//강의 정보 수정
 	void lecture_delete(String lecture_num);//강의 삭제
 	void lecture_info(String lecture_num);//강의 상세 정보
+
 	
-	
-	
+
 }
