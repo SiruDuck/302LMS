@@ -63,7 +63,7 @@
                         <a class="collapse-item" href="#">출결 조회</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="#">등록 정보</a>
-                        <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 보기</a>
+                        <a class="collapse-item" href="http://localhost/lms/main.tt">시간표 보기</a>
                     </div>
                 </div>
             </li>
@@ -79,7 +79,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">수강 신청</h6>
                         <a class="collapse-item" href="#">강의 조회</a>
-                        <a class="collapse-item" href="http://localhost/lms/regist.ti">수강 신청</a>
+                        <a class="collapse-item" href="http://localhost/lms/regist.tt">수강 신청</a>
+                        <a class="collapse-item" href="http://localhost/lms/spare.tt">예비 수강 신청</a>
                     </div>
                 </div>
             </li>

@@ -53,7 +53,7 @@ table{
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 시간표</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 예비 수강신청</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -61,7 +61,7 @@ table{
                                 	
                                     <thead>
                                         <tr class='bg-gray-100'>
-                                            <th></th>
+                                            <th>강의 시간</th>
                                             <th>월</th>
                                             <th>화</th>
                                             <th>수</th>
@@ -172,8 +172,6 @@ table{
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
     </a>
 
     <!-- Logout Modal-->
