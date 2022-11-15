@@ -2,19 +2,16 @@ package lecture;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
-public class LectureDAO implements LectureService {
-	@Autowired @Qualifier("ymu") private SqlSession sql;
-
+@Service
+public class LectureServiceImpl implements LectureService {
+	@Autowired private LectureDAO dao;
+	
 	@Override
 	public List<LectureVO> lecture_list() {
-		
-		return sql.selectList("lecture.list");
+		return dao.lecture_list();
 	}
 
 	@Override
