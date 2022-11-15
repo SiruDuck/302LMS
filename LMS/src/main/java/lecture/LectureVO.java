@@ -93,6 +93,18 @@ public class LectureVO {
 	public void setLecture_num(int lecture_num) {
 		this.lecture_num = lecture_num;
 	}
+	public Date getLecture_startdate() {
+		return lecture_startdate;
+	}
+	public void setLecture_startdate(Date lecture_startdate) {
+		this.lecture_startdate = lecture_startdate;
+	}
+	public Date getLecture_enddate() {
+		return lecture_enddate;
+	}
+	public void setLecture_enddate(Date lecture_enddate) {
+		this.lecture_enddate = lecture_enddate;
+	}
 	public Date getMidex() {
 		return midex;
 	}
@@ -105,21 +117,7 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
-	public Date getMidex() {
-		return midex;
-	}
-	public void setMidex(Date midex) {
-		this.midex = midex;
-	}
-	public Date getFinalex() {
-		return finalex;
-	}
-	public void setFinalex(Date finalex) {
-		this.finalex = finalex;
-	}
-		
-	
-	
+
 	
 	
 	
