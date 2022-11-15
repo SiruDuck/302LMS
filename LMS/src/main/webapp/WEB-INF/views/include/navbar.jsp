@@ -25,19 +25,20 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
+            <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
             	<div class="sidebar-brand-text mx-3">영문대학교 <sup>LMS</sup></div>
-            </a>
+            </a> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <!-- <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>김영문</span></a>
-            </li>
+                    <span>김영문</span>
+                   </a>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
