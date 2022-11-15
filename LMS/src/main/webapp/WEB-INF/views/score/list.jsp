@@ -13,6 +13,7 @@
 }
 a:hover{text-decoration: none;}
 a .btn-empty {
+
     background-color: #fff;
     color: #3367d6;
 }
@@ -32,72 +33,113 @@ a{cursor: pointer;}
 	display: flex;
 }
 </style>
-<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>   
+<!-- <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>    -->
 </head>
 <body>
 	<h2>score</h2>
 		<div class="top-menu">
-			<ul class="list-lectures">
-				<li><select id="lectureList" class="w-px100">
-				<option value="-1">전체</option>
-					<c:forEach items="${lectures}" var ="vo">
-						<option value="${vo.lecture_num}">${vo.lecture_title}</option>
-					</c:forEach>
-				</select></li>
-			</ul>
+			<div>
+				<form action="list.sc" method="post">
+					<ul class="list-lectures">
+						<li><select name="lecture_num" id="lectureList" class="w-px200" onchange="$('form').submit()">
+						<option value="-1">전체</option>
+							<c:forEach items="${lectures}" var ="vo">
+								<option ${lecture_num eq vo.lecture_num ? 'selected' : '' }
+								 value="${vo.lecture_num}">${vo.lecture_title}</option>
+							</c:forEach>
+						</select></li>
+					</ul>
+				</form>
+			</div>
 			<div class='btnSet api'>
-				<a >과목별 조회</a> <a>학년별 조회</a>
+				<a >전체 조회</a> <a>학년별 조회</a>
 			</div>
 		</div>
 
-	<div id="data-list">data</div>
-	
-<script>
-$("#lectureList").change(function(){
-	console.log($(this).val());
-	subject_list($(this).val());
-})
+<!-- <table class='table'> -->
+<!-- 		<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>학기</th><th>학점</th></tr> -->
+<%-- 		<c:forEach items='${list}' var='vo'> --%>
+<%-- 		<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.semester}</td><td>${vo.semesterpoint}</td></tr> --%>
+<%-- 		</c:forEach> --%>
+<!--  		</table> -->
 
+
+	<div id="data-list">data</div>
+<script>
+
+//$("#lectureList").change(function(){
+//	console.log($(this).val());
+//	subject_list($(this).val());
+//})
 
 $(function(){
 	$(".api a").eq(0).trigger("click");
+// 	$("#lectureList").trigger("change");
+	
 });
 
-$(".api a").click(function(){
+
+$(".api a").on('click',function(){
 	$(".api a").removeClass();
 	$(this).addClass("btn-fill");
 	$(".api a").not($(this)).addClass("btn-empty");
 	
-	if($(this).index()==0) subject_list(-1);
+	if($(this).index()==0) subject_list();
 	else 					grade_list();
 })
 
-//과목별 성적조회
-function subject_list(num){
-	var test 	= 	"<table class='table'>"
-				+ "<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>학기</th><th>학점</th></tr>"
-				+ "<c:forEach items='${sub_list}' var='vo'>"
-				+ "<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.smester}</td><td>${vo.semesterpoint}</td></tr>"
-				+ "</c:forEach>"
-		 		+ "</table>";
+//전체 성적조회
+function subject_list(){
+	$("#lectureList").css({"display":"block"});
 	$("#data-list").empty();
+	$('#yearList').closest('li').remove();
+	var tag 	= 	"<table class='table'>"
+		+ "<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>학기</th><th>학점</th></tr>"
+		+ "<c:forEach items='${list}' var='vo'>"
+		+ "<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.semester}</td><td>${vo.semesterpoint}</td></tr>"
+		+ "</c:forEach>"
+ 		+ "</table>";
+			$("#data-list").append(tag);
 // 	$("#data-list").append(test);
-	
-	$.ajax({
-		url:"list/subject",
-		data : {lecture_num : num} ,
-		success : function(res){
-			console.log(res);
-			$("#data-list").append(test);
-		},error : function(req, text){
-			alert(text + ':' + req.status);
-		}
-	});
+// 	$.ajax({
+// 		url:"list/subject",
+// 		data : {lecture_num : num} ,
+// 		success : function(response){
+// 			console.log(response);
+// 			$("#data-list").empty();
+// 			$("#data-list").append(test);
+// 		},error : function(req, text){
+// 			alert(text + ':' + req.status);
+// 		}
+// 	});
 }
+
+
 
 // 학년별 성적조회
 function grade_list(){
-	$("#data-list").empty();
+	if($(".api a").index == 1){
+		return;
+	}else{
+		$("#lectureList").css({'display': 'none'});
+		$("#data-list").empty();
+			
+		$.ajax({
+			url:"list/grade",
+			async: false,
+	// 		data : {lecture_num : num} ,
+			success : function(response){
+				$("#data-list").append(  response );
+				$(".list-lectures").append( $("#data-list").find('li') );
+				$("#data-list").find('li').remove();
+			},error : function(req, text){
+				alert(text + ':' + req.status);
+			}
+		});
+	}
+	
+	
+	
 }
 
 </script>	
