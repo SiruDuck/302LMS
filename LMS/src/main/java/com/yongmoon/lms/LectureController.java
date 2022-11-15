@@ -19,6 +19,7 @@ import lecture.LectureVO;
 
 @Controller
 public class LectureController {
+
 	@Autowired private LectureDAO dao;
 	@Autowired private LectureServiceImpl service;
 	
@@ -29,6 +30,8 @@ public class LectureController {
 		session.setAttribute("category", "lec");
 		List<LectureVO> list = service.lecture_list();
 		model.addAttribute("vo", list);
+		
+		
 		
 		
 		return "lecture/list";

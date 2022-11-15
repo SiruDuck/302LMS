@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class LectureDAO implements LectureService {
 	@Autowired @Qualifier("ymu") private SqlSession sql;
-
+	
 	@Override
 	public List<LectureVO> lecture_list() {
 		
@@ -47,5 +47,7 @@ public class LectureDAO implements LectureService {
 		
 		
 	}
+	
+	
 
 
