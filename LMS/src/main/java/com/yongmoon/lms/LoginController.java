@@ -25,7 +25,7 @@ public class LoginController{
 	@Autowired private LoginServiceImpl service;
 	
 	
-	@RequestMapping("/")
+	@RequestMapping("/dd")
 	public String Login(String id, String pw, HttpSession session) throws Exception{
 		
 		LoginVO vo = service.login_login(id, pw);
