@@ -1,4 +1,4 @@
-package lecture;
+package score;
 
 import java.sql.Date;
 
@@ -93,17 +93,17 @@ public class LectureVO {
 	public void setLecture_num(int lecture_num) {
 		this.lecture_num = lecture_num;
 	}
-	public Date getMidex() {
-		return midex;
+	public Date getLecture_startdate() {
+		return lecture_startdate;
 	}
-	public void setMidex(Date midex) {
-		this.midex = midex;
+	public void setLecture_startdate(Date lecture_startdate) {
+		this.lecture_startdate = lecture_startdate;
 	}
-	public Date getFinalex() {
-		return finalex;
+	public Date getLecture_enddate() {
+		return lecture_enddate;
 	}
-	public void setFinalex(Date finalex) {
-		this.finalex = finalex;
+	public void setLecture_enddate(Date lecture_enddate) {
+		this.lecture_enddate = lecture_enddate;
 	}
 	public Date getMidex() {
 		return midex;
@@ -118,10 +118,6 @@ public class LectureVO {
 		this.finalex = finalex;
 	}
 		
-	
-	
-	
-	
 	
 	
 	

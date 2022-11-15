@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
     <head>
 
     <meta charset="utf-8">
@@ -7,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <title></title>
 
     <!-- Custom fonts for this template-->
@@ -58,7 +60,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">마이페이지</h6>
                         <a class="collapse-item" href="#">학적 정보</a>
-                        <a class="collapse-item" href="#">성적 조회</a>
+                        <a class="collapse-item" href='list.sc'>성적 조회</a>
                         <a class="collapse-item" href="#">수강 후기 등록</a>
                         <a class="collapse-item" href="#">출결 조회</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
