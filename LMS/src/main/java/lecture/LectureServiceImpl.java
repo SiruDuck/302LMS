@@ -24,19 +24,25 @@ public class LectureServiceImpl implements LectureService {
 	@Override
 	public void lecture_update(LectureVO vo) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void lecture_delete(String lecture_num) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void lecture_info(String lecture_num) {
-		// TODO Auto-generated method stub
-
+	public LectureVO lecture_info(String lecture_title) {
+		
+		return dao.lecture_info(lecture_title);
 	}
+
+	
+
+	
+
+	
 
 }
