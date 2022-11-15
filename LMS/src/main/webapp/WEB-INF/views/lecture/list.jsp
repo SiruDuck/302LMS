@@ -51,7 +51,7 @@
 	<td>${vo.lecture_num}</td>
 	<td>${vo.lecture_year}</td>
 	<td>${vo.semester}</td>
-	<td>${vo.lecture_title}</td>
+	<td><a href="detail.lec?lecture_title=${vo.lecture_title}">${vo.lecture_title}</a></td>
 	<td>${vo.teacher_name}</td>
 	<td>${vo.lecture_room}</td>
 	<td>${vo.lecture_time}</td>

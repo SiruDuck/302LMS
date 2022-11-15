@@ -36,11 +36,18 @@ public class LectureDAO implements LectureService {
 	}
 
 	@Override
-	public void lecture_info(String lecture_num) {
-		// TODO Auto-generated method stub
+	public LectureVO lecture_info(String lecture_title) {
+		return sql.selectOne("lecture.info", lecture_title);
+	}
+
+	
+	
+	
+	
+		
 		
 	}
 	
 	
 
-}
+
