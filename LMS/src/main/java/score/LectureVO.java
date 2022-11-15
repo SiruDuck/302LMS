@@ -1,4 +1,4 @@
-package lecture;
+package score;
 
 import java.sql.Date;
 
@@ -117,9 +117,7 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
-
-	
-	
+		
 	
 	
 	

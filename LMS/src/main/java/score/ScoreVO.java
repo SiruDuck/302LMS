@@ -1,12 +1,31 @@
 package score;
 
 public class ScoreVO {
-	private String  id, department_id, semester, lecture_title;
+	private String  id, department_id, semester, lecture_title,teacher_name,subjectcredit;
 	private int lecture_num;
 	private double  semesterpoint;
 	
 	
 	
+	public String getSemester() {
+		return semester;
+	}
+	public void setSemester(String semester) {
+		this.semester = semester;
+	}
+	public String getSubjectcredit() {
+		return subjectcredit;
+	}
+	public void setSubjectcredit(String subjectcredit) {
+		this.subjectcredit = subjectcredit;
+	}
+	
+	public String getTeacher_name() {
+		return teacher_name;
+	}
+	public void setTeacher_name(String teacher_name) {
+		this.teacher_name = teacher_name;
+	}
 	public String getLecture_title() {
 		return lecture_title;
 	}
@@ -25,12 +44,7 @@ public class ScoreVO {
 	public void setDepartment_id(String department_id) {
 		this.department_id = department_id;
 	}
-	public String getSemester() {
-		return semester;
-	}
-	public void setSemester(String semester) {
-		this.semester = semester;
-	}
+	
 	public int getLecture_num() {
 		return lecture_num;
 	}

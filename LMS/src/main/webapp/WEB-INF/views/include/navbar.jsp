@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
     <head>
 
     <meta charset="utf-8">
@@ -7,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <title></title>
 
     <!-- Custom fonts for this template-->
@@ -23,19 +25,20 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
+            <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
             	<div class="sidebar-brand-text mx-3">영문대학교 <sup>LMS</sup></div>
-            </a>
+            </a> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <!-- <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>김영문</span></a>
-            </li>
+                    <span>김영문</span>
+                   </a>
+            </li> -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -58,12 +61,12 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">마이페이지</h6>
                         <a class="collapse-item" href="#">학적 정보</a>
-                        <a class="collapse-item" href="#">성적 조회</a>
+                        <a class="collapse-item" href='list.sc'>성적 조회</a>
                         <a class="collapse-item" href="#">수강 후기 등록</a>
                         <a class="collapse-item" href="#">출결 조회</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="#">등록 정보</a>
-                        <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 정보</a>
+                        <a class="collapse-item" href="http://localhost/lms/main.tt">시간표 보기</a>
                     </div>
                 </div>
             </li>
@@ -77,9 +80,10 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">수강신청</h6>
+                        <h6 class="collapse-header">수강 신청</h6>
                         <a class="collapse-item" href="#">강의 조회</a>
-                        <a class="collapse-item" href="#">수강신청</a>
+                        <a class="collapse-item" href="http://localhost/lms/regist.tt">수강 신청</a>
+                        <a class="collapse-item" href="http://localhost/lms/spare.tt">예비 수강 신청</a>
                     </div>
                 </div>
             </li>

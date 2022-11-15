@@ -1,0 +1,103 @@
+@charset "UTF-8";
+body {
+	margin: 0 auto;
+	text-align: center;
+	min-width: 1280px;
+}
+
+ul {
+	padding: 0;
+	list-style-type: none;
+	align-items: center;
+}
+a { cursor: pointer; }
+a:link, a:visited { text-decoration: none;  color:inherit; }
+
+
+select {
+	cursor: pointer;
+	height: 32px;
+	padding-left: 10px;
+	font-size: 16px;
+	border: 1px solid #b0b0b0;
+}
+
+#list-top {
+	display: flex;
+	margin: 0 auto;
+	justify-content:space-between;
+}
+
+ul { display: flex; }
+ul li:not(:first-child) { margin-left: 5px }
+
+.center {
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+div.valid { color: #008000; font-size: 14px; font-weight: bold; }
+div.invalid { color: #ff0000; font-size: 14px; font-weight: bold; }
+
+.text-left { text-align: left }
+.text-right { text-align: right }
+
+.full { width: calc(100% - 22px) }
+input[name=address] { margin-top: 3px }
+
+.font { font-size: 20px; }
+.font-r { font-size: 20px;  color:#ff0000; }
+.font-b { font-size: 20px;  color:#3367d6; }
+.font-g { font-size: 20px;  color:#008000; }
+.font-profile { font-size: 50px;  color:#444; }
+
+#delete, #attach-file, #delete-file, .attach-file, .delete-file, .loading { display: none }
+.date + #delete { position: relative;  right: 30px; top: 2px; } /* 달력날짜 */
+#preview img, .preview img { max-height: 28px; }
+#preview   { margin-right: 5px }
+.align { align-items: center; display: flex;}
+.align * { margin-right: 5px }
+.align:not(:first-child) { margin-top: 5px } 
+
+textarea { 
+	height: 250px;
+	padding: 10px;
+	border: 1px solid #b0b0b0;
+	font-size: 16px;
+	resize: none;
+}
+
+
+
+
+.w-px40 { width: 40px }
+.w-px60 { width: 60px }
+.w-px80 { width: 80px }
+.w-px100 { width: 100px }
+.w-px120 { width: 120px }
+.w-px140 { width: 140px }
+.w-px160 { width: 160px }
+.w-px180 { width: 180px }
+.w-px200 { width: 200px }
+.w-px220 { width: 220px }
+.w-px250 { width: 250px }
+.w-px300 { width: 300px }
+.w-px350 { width: 350px }
+.w-px400 { width: 400px }
+.w-px500 { width: 500px }
+.w-px600 { width: 600px }
+.w-px800 { width: 800px }
+.w-px1000 { width: 1000px }
+.w-px1200 { width: 1200px }
+
+
+
+
+
+
+
+
+
+
+

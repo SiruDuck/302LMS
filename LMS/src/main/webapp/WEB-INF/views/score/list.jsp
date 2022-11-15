@@ -6,13 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href='css/common.css?<%=new java.util.Date()%>' type='text/css' rel='stylesheet'> 
 <style type="text/css">
 .btnSet {
 	margin: 20px auto;
-	text-align: right;
 }
 a:hover{text-decoration: none;}
-a.btn-empty {
+a .btn-empty {
+
     background-color: #fff;
     color: #3367d6;
 }
@@ -28,49 +29,118 @@ a.btn-fill, a.btn-empty {
     border-radius: 3px;
 }
 a{cursor: pointer;}
+.top-menu{
+	display: flex;
+}
 </style>
+<!-- <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>    -->
 </head>
 <body>
 	<h2>score</h2>
-	<div class='btnSet api'>
-		<a class="btn-fill">과목별 조회</a> <a class="btn-empty">학기별 조회</a> <a class="btn-empty" >학년별 조회</a>
-	</div>
-	<table class='table'>
+		<div class="top-menu">
+			<div>
+				<form action="list.sc" method="post">
+					<ul class="list-lectures">
+						<li><select name="lecture_num" id="lectureList" class="w-px200" onchange="$('form').submit()">
+						<option value="-1">전체</option>
+							<c:forEach items="${lectures}" var ="vo">
+								<option ${lecture_num eq vo.lecture_num ? 'selected' : '' }
+								 value="${vo.lecture_num}">${vo.lecture_title}</option>
+							</c:forEach>
+						</select></li>
+					</ul>
+				</form>
+			</div>
+			<div class='btnSet api'>
+				<a >전체 조회</a> <a>학년별 조회</a>
+			</div>
+		</div>
 
-		<%-- <colgroup>
-	<col width='100px'>
-	<col>
-	<col width='140px'>
-	<col width='140px'>
-</colgroup> --%>
+<!-- <table class='table'> -->
+<!-- 		<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>학기</th><th>학점</th></tr> -->
+<%-- 		<c:forEach items='${list}' var='vo'> --%>
+<%-- 		<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.semester}</td><td>${vo.semesterpoint}</td></tr> --%>
+<%-- 		</c:forEach> --%>
+<!--  		</table> -->
 
-		<tr>
-			<th>강의명</th>
-			<th>학과</th>
-			<th>학점</th>
-		</tr>
-		<c:forEach items='${vo}' var='vo'>
-			<tr>
-				<td>${vo.lecture_title}</td>
-				<td>${vo.department_id}</td>
-				<td>${vo.semesterpoint}</td>
-			</tr>
-		</c:forEach>
-	</table>
-	<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script> 
-	
+
+	<div id="data-list">data</div>
 <script>
+
+//$("#lectureList").change(function(){
+//	console.log($(this).val());
+//	subject_list($(this).val());
+//})
+
 $(function(){
-	$('.api a').eq(1).trigger( 'click' ); //클릭이벤트 강제발생
+	$(".api a").eq(0).trigger("click");
+// 	$("#lectureList").trigger("change");
+	
 });
 
-$(".api a").click(function(){
+
+$(".api a").on('click',function(){
 	$(".api a").removeClass();
 	$(this).addClass("btn-fill");
 	$(".api a").not($(this)).addClass("btn-empty");
 	
-	
+	if($(this).index()==0) subject_list();
+	else 					grade_list();
 })
+
+//전체 성적조회
+function subject_list(){
+	$("#lectureList").css({"display":"block"});
+	$("#data-list").empty();
+	$('#yearList').closest('li').remove();
+	var tag 	= 	"<table class='table'>"
+		+ "<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>학기</th><th>학점</th></tr>"
+		+ "<c:forEach items='${list}' var='vo'>"
+		+ "<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.semester}</td><td>${vo.semesterpoint}</td></tr>"
+		+ "</c:forEach>"
+ 		+ "</table>";
+			$("#data-list").append(tag);
+// 	$("#data-list").append(test);
+// 	$.ajax({
+// 		url:"list/subject",
+// 		data : {lecture_num : num} ,
+// 		success : function(response){
+// 			console.log(response);
+// 			$("#data-list").empty();
+// 			$("#data-list").append(test);
+// 		},error : function(req, text){
+// 			alert(text + ':' + req.status);
+// 		}
+// 	});
+}
+
+
+
+// 학년별 성적조회
+function grade_list(){
+	if($(".api a").index == 1){
+		return;
+	}else{
+		$("#lectureList").css({'display': 'none'});
+		$("#data-list").empty();
+			
+		$.ajax({
+			url:"list/grade",
+			async: false,
+	// 		data : {lecture_num : num} ,
+			success : function(response){
+				$("#data-list").append(  response );
+				$(".list-lectures").append( $("#data-list").find('li') );
+				$("#data-list").find('li').remove();
+			},error : function(req, text){
+				alert(text + ':' + req.status);
+			}
+		});
+	}
+	
+	
+	
+}
 
 </script>	
 
