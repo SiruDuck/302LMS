@@ -34,7 +34,7 @@ public class LoginController{
 		if(vo == null)
 			return "mainlogin";
 		else
-			return "redirect:/index";
+			return "index";
 	}	
 	
 	//로그아웃 처리
