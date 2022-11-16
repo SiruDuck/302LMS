@@ -23,6 +23,15 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+                <div class="sidebar-brand-icon ">
+                    <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
+                </div>
+                <div class="sidebar-brand-text mx-3 ">
+                	<!-- <img src="resources/images/mainlogin/logo_white_kr.png" style='width:5rem'> -->
+                	영문대학교
+                </div>
+            </a>
             <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
             	<div class="sidebar-brand-text mx-3">영문대학교 <sup>LMS</sup></div>
             </a> -->
@@ -81,7 +90,7 @@
                         <h6 class="collapse-header">수강 신청</h6>
                         <a class="collapse-item" href="#">강의 조회</a>
                         <a class="collapse-item" href="http://localhost/lms/regist.tt">수강 신청</a>
-                        <a class="collapse-item" href="http://localhost/lms/spare.tt">예비 수강 신청</a>
+                        <a class="collapse-item" href="http://localhost/lms/spare.tt">장바구니</a>
                     </div>
                 </div>
             </li>
