@@ -2,10 +2,11 @@ package member;
 
 import java.sql.Date;
 
-public class memberVO {
-	private String id, pw, name, gender,  phone, email, post, addr, grade, state, department_id;
-	private Date birth , start_date, end_date;
+public class MemberVO {
+	private String id, pw, name, gender,phone,email,post, addr, grade, state, department_id;
+	private Date birth,	start_date, end_date;
 	private int info;
+	
 	public String getId() {
 		return id;
 	}
@@ -96,7 +97,10 @@ public class memberVO {
 	public void setInfo(int info) {
 		this.info = info;
 	}
+
 	
 	
+	
+
 	
 }

@@ -1,14 +1,11 @@
-package login;
+package member;
 
 import java.sql.Date;
 
-public class LoginVO {
-	private String id,	pw,	name,	gender, phone,	email,	post,	addr,	grade,state,	department_id,	department_name, 	info_name;
-	private Date birth,start_date,	end_date;
-	private int info_cd;
-	
-	
-	
+public class MemberVO {
+	private String id, pw, name, gender,phone,email,post, addr, grade, state, department_id;
+	private Date birth,	start_date, end_date;
+	private int info;
 	
 	public String getId() {
 		return id;
@@ -76,18 +73,6 @@ public class LoginVO {
 	public void setDepartment_id(String department_id) {
 		this.department_id = department_id;
 	}
-	public String getDepartment_name() {
-		return department_name;
-	}
-	public void setDepartment_name(String department_name) {
-		this.department_name = department_name;
-	}
-	public String getInfo_name() {
-		return info_name;
-	}
-	public void setInfo_name(String info_name) {
-		this.info_name = info_name;
-	}
 	public Date getBirth() {
 		return birth;
 	}
@@ -106,16 +91,12 @@ public class LoginVO {
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
 	}
-	public int getInfo_cd() {
-		return info_cd;
+	public int getInfo() {
+		return info;
 	}
-	public void setInfo_cd(int info_cd) {
-		this.info_cd = info_cd;
-	}	
-
-	
-	
-	
+	public void setInfo(int info) {
+		this.info = info;
+	}
 
 	
 	
