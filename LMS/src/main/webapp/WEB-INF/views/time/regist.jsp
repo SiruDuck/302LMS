@@ -82,10 +82,10 @@ span.btn{
         	<div class="dataTables_length" id="dataTable_length">
         		
         			<select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-        				<option value="10">10</option>
-        				<option value="20">20</option>
-        				<option value="30">30</option>
-        				<option value="40">40</option>
+        				<option value="10">10개씩 보기</option>
+        				<option value="20">20개씩 보기</option>
+        				<option value="30">30개씩 보기</option>
+        				<option value="40">40개씩 보기</option>
        				</select>
    				 
 			 </div>
