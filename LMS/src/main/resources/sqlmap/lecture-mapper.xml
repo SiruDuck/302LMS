@@ -10,4 +10,8 @@
 	select * from lectures where lecture_title = #{lecture_title}
 </select>
 
+<select id="insert">
+	insert into lectures 
+</select>
+
 </mapper>

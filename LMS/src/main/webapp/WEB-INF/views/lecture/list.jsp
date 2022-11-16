@@ -23,8 +23,6 @@
 	<col width='140px'>
 	<col width='160px'>
 	<col width='160px'>
-	<col width='200px'>
-	<col width='200px'>
 	<col width='160px'>
 	<col width='120px'>
 	<col width='220px'>
@@ -40,10 +38,8 @@
 	<th>수강신청</th>
 	<th>접수상태</th>
 	<th>수강인원</th>
-	<th>중간고사</th>
-	<th>기말고사</th>
 	<th>과목학점</th>
-	<th>온라인/오프라인</th>
+	<th>온/오프라인</th>
 	<th>교재명</th>
 </tr>
 <c:forEach items='${vo}' var='vo'>
@@ -59,8 +55,6 @@
 	<td>${vo.enrolment}</td>
 	<td>${vo.reception_status}</td>
 	<td>${vo.capacity}</td>
-	<td>${vo.midex}</td>
-	<td>${vo.finalex}</td>
 	<td>${vo.subjectcredit}</td>
 	<td>${vo.state}</td>
 	<td>${vo.book}</td>

@@ -21,9 +21,6 @@
 		<tr><th>강의실</th>
 			<td>${vo.lecture_room}</td>
 		</tr>
-		<tr><th>강의계획서</th>
-			<td>${vo.syllabus}</td>
-		</tr>
 		<tr><th>년도</th>
 			<td>${vo.lecture_year}</td>
 		</tr>

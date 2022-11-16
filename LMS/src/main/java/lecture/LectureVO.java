@@ -4,22 +4,18 @@ import java.sql.Date;
 
 public class LectureVO {
 
-	private String lecture_title, syllabus, teacher_name, semester, sortation, lecture_room, lecture_time
+	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
 	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year;
 	private int lecture_num;
 	private Date midex, finalex;
+	
 	public String getLecture_title() {
 		return lecture_title;
 	}
 	public void setLecture_title(String lecture_title) {
 		this.lecture_title = lecture_title;
 	}
-	public String getSyllabus() {
-		return syllabus;
-	}
-	public void setSyllabus(String syllabus) {
-		this.syllabus = syllabus;
-	}
+	
 	public String getTeacher_name() {
 		return teacher_name;
 	}

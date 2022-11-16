@@ -19,8 +19,8 @@ public class LectureDAO implements LectureService {
 
 	@Override
 	public int lecture_insert(LectureVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return sql.insert("lecture.insert", vo);
 	}
 
 	@Override

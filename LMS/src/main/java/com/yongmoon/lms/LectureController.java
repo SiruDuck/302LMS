@@ -31,12 +31,10 @@ public class LectureController {
 		List<LectureVO> list = service.lecture_list();
 		model.addAttribute("vo", list);
 		
-		
-		
-		
 		return "lecture/list";
 	}
 	
+	//안드 강의목록 조회
 	@ResponseBody @RequestMapping(value = "andlist.lec", produces = "text/html;charset=utf-8")
 	public String AndLecture_list() {
 		List<LectureVO> list = service.lecture_list();
@@ -49,9 +47,37 @@ public class LectureController {
 		LectureVO vo = dao.lecture_info(lecture_title);
 		model.addAttribute("vo", vo);
 		
-		
 		return "lecture/detail" ;
 	}
+	
+	//안드 강의 상세보기
+	@ResponseBody @RequestMapping(value = "anddetail.lec", produces = "text/html;charset=utf-8")
+	public String AndLecture_info(String lecture_title) {
+		LectureVO vo = service.lecture_info(lecture_title);
+		return new Gson().toJson(vo);
+	}
+	
+	//강의 개설 화면 요청
+	@RequestMapping(value = "/insert.lec", produces = "text/html;charset=utf-8")
+	public String lecture_new() {
+		
+		return "lecture/new";
+	}
+	
+	//강의 개설 정보 저장 처리
+	public String lecture_insert(LectureVO vo) {
+		service.lecture_insert(vo);
+		return "redirect:list.lec";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
