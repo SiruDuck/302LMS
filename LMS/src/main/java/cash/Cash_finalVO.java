@@ -3,9 +3,11 @@ package cash;
 import java.sql.Date;
 
 public class Cash_finalVO {
-	int cash_code, price;
-	String id, cash_name,  description, payment_status;
-	Date dateofreceipt, semester, payment_day;
+	private int cash_code, price;
+	private String id, cash_name,  description, payment_status, semester ;
+	private Date dateofreceipt;
+	
+	
 	public int getCash_code() {
 		return cash_code;
 	}
@@ -42,25 +44,18 @@ public class Cash_finalVO {
 	public void setPayment_status(String payment_status) {
 		this.payment_status = payment_status;
 	}
+	public String getSemester() {
+		return semester;
+	}
+	public void setSemester(String semester) {
+		this.semester = semester;
+	}
 	public Date getDateofreceipt() {
 		return dateofreceipt;
 	}
 	public void setDateofreceipt(Date dateofreceipt) {
 		this.dateofreceipt = dateofreceipt;
 	}
-	public Date getSemester() {
-		return semester;
-	}
-	public void setSemester(Date semester) {
-		this.semester = semester;
-	}
-	public Date getPayment_day() {
-		return payment_day;
-	}
-	public void setPayment_day(Date payment_day) {
-		this.payment_day = payment_day;
-	}
-	
 	
 	
 	

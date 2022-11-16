@@ -2,19 +2,17 @@ package lecture;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
-public class LectureDAO implements LectureService {
-	@Autowired @Qualifier("ymu") private SqlSession sql;
+@Service
+public class LectureServiceImpl implements LectureService {
+	@Autowired private LectureDAO dao;
 	
 	@Override
 	public List<LectureVO> lecture_list() {
-		
-		return sql.selectList("lecture.list");
+
+		return dao.lecture_list();
 	}
 
 	@Override
@@ -32,22 +30,19 @@ public class LectureDAO implements LectureService {
 	@Override
 	public void lecture_delete(String lecture_num) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public LectureVO lecture_info(String lecture_title) {
-		return sql.selectOne("lecture.info", lecture_title);
+		
+		return dao.lecture_info(lecture_title);
 	}
 
 	
-	
-	
-	
-		
-		
-	}
-	
+
 	
 
+	
 
+}

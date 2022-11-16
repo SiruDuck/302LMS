@@ -15,5 +15,16 @@ public class ScoreDAO implements ScoreService{
 	public List<ScoreVO> lookup_list() {
 		return sql.selectList("score.list");
 	}
+
+	@Override
+	public List<ScoreVO> lookup_lectures() {
+		return sql.selectList("score.lectures");
+		
+	}
+
+	@Override
+	public List<ScoreVO> lookup_list(int num) {
+		return sql.selectList("score.lectureOne",num);
+	}
 	
 }
