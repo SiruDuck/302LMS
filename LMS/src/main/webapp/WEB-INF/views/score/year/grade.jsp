@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<li><select name="grade_num" id="yearList" class="w-px200" >
-	<option value="-1">년도별</option>
+	<option value="-1">전체 년도</option>
 		<c:forEach items="${years}" var ="y">
-			<option value="${y.lecture_year}"> ${y.lecture_year}</option>
+			<option value="${y.lecture_year}"> ${y.lecture_year}년</option>
 		</c:forEach>
 	</select></li>
 <table class='table'>
 	<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>년도</th><th>학기</th><th>학점</th><th>성적</th></tr>
 	<c:forEach items='${list}' var='vo'>
-	<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.lecture_year}</td><td>${vo.semester}</td><td>${vo.subjectcredit}</td><td>${vo.semesterpoint}</td></tr>
+	<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.lecture_year}년</td><td>${vo.semester}</td><td>${vo.subjectcredit}</td><td>${vo.semesterpoint}</td></tr>
 	</c:forEach>
 </table>
 <script>
@@ -32,7 +32,7 @@ $("#yearList").change(function(){
 				for(var i = 0 ; i < aJsonArray.length ; i++){
 					var obj = aJsonArray[i];
 					tag +=  "<tr><td>" +obj["lecture_title"]+"</td><td>"+ obj["lecture_num"] + "</td><td>"
-						+obj["teacher_name"]+"</td><td>"+obj["lecture_year"]+"</td><td>"+obj["semester"]+"</td><td>"
+						+obj["teacher_name"]+"</td><td>"+obj["lecture_year"]+"년</td><td>"+obj["semester"]+"</td><td>"
 						+ obj["subjectcredit"]+"</td><td>"+obj["semesterpoint"]+"</td></tr>"
 					
 				}
