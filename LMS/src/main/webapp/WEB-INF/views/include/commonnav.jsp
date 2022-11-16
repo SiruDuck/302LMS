@@ -15,6 +15,9 @@
 	<c:when test="${login_mode eq 3}">
 		<c:import url="/WEB-INF/views/include/admin_navbar.jsp"/>
 	</c:when>
+	<c:when test="${login_mode eq 4}">
+		<c:import url="/WEB-INF/views/include/teacher_navbar.jsp"/>
+	</c:when>
 </c:choose>
 </html>
 
