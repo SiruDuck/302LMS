@@ -2,13 +2,19 @@ package score;
 
 public class ScoreVO {
 	private String  id, department_id, semester, lecture_title,teacher_name,subjectcredit, year, lecture_year;
-	private int lecture_num;
+	private int lecture_num, info_cd;
 	private double  semesterpoint;
 	
 	
 	
 	
 	
+	public int getInfo_cd() {
+		return info_cd;
+	}
+	public void setInfo_cd(int info_cd) {
+		this.info_cd = info_cd;
+	}
 	public String getLecture_year() {
 		return lecture_year;
 	}

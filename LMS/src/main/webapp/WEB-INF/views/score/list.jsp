@@ -8,9 +8,6 @@
 <title>Insert title here</title>
 <link href='css/common.css?<%=new java.util.Date()%>' type='text/css' rel='stylesheet'> 
 <style type="text/css">
-.btnSet {
-	margin: 20px auto;
-}
 a:hover{text-decoration: none;}
 a .btn-empty {
 
@@ -30,7 +27,10 @@ a.btn-fill, a.btn-empty {
 }
 a{cursor: pointer;}
 .top-menu{
+	width: calc(100%-10px);
+	margin: 0 auto;
 	display: flex;
+	justify-content: space-between;
 }
 </style>
 </head>
@@ -52,7 +52,7 @@ a{cursor: pointer;}
 					</ul>
 				</form>
 			</div>
-			<div class='btnSet api'>
+			<div class='api'>
 				<a >전체 조회</a> <a>학년별 조회</a>
 			</div>
 		</div>
@@ -76,17 +76,20 @@ a{cursor: pointer;}
 $(function(){
 	$(".api a").eq(0).trigger("click");
 // 	$("#lectureList").trigger("change");
-	
+	console.log("test");
 });
 
 
 $(".api a").on('click',function(){
-	$(".api a").removeClass();
-	$(this).addClass("btn-fill");
-	$(".api a").not($(this)).addClass("btn-empty");
-	
-	if($(this).index()==0) subject_list();
-	else 					grade_list();
+	if($(this).hasClass("btn-fill")) 	return;
+	else{
+		$(".api a").removeClass();
+		$(this).addClass("btn-fill");
+		$(".api a").not($(this)).addClass("btn-empty");
+		
+		if($(this).index()==0) subject_list();
+		else 					grade_list();
+	}
 })
 
 //전체 성적조회
@@ -98,7 +101,7 @@ function subject_list(){
 		+ "<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>년도</th><th>학기</th><th>학점</th><th>성적</th></tr>"
 		+ "<c:forEach items='${list}' var='vo'>"
 		+ "<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td>"
-		+"<td>${vo.teacher_name}</td><td>${vo.lecture_year}</td><td>${vo.semester}</td>"
+		+"<td>${vo.teacher_name}</td><td>${vo.lecture_year}년</td><td>${vo.semester}</td>"
 		+ "<td>${vo.subjectcredit}</td><td>${vo.semesterpoint}</td></tr>"
 		+ "</c:forEach>"
  		+ "</table>";

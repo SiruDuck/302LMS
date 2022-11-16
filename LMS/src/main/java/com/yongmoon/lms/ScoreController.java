@@ -67,7 +67,7 @@ public class ScoreController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/list/gradedata")
+	@RequestMapping(value ="/list/gradedata", produces = "text/html;charset=utf-8")
 	public String gradedata(Model model, @RequestParam(defaultValue = "-1") int lecture_num,
 			@RequestParam(defaultValue = "-1") int grade_num){
 		System.out.println(lecture_num + "과목");//
