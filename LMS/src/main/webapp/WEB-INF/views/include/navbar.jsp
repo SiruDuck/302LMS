@@ -25,7 +25,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href=''>
                 <div class="sidebar-brand-icon ">
                     <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
                 </div>
@@ -75,7 +75,7 @@
                         <a class="collapse-item" href="#">출결 조회</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="#">등록 정보</a>
-                        <a class="collapse-item" href="http://localhost/lms/main.tt">시간표 보기</a>
+                        <a class="collapse-item" href="main.tt">시간표 보기</a>
                     </div>
                 </div>
             </li>
@@ -91,8 +91,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">수강 신청</h6>
                         <a class="collapse-item" href="#">강의 조회</a>
-                        <a class="collapse-item" href="http://localhost/lms/regist.tt">수강 신청</a>
-                        <a class="collapse-item" href="http://localhost/lms/spare.tt">장바구니</a>
+                        <a class="collapse-item" href="regist.tt">수강 신청</a>
+                        <a class="collapse-item" href="spare.tt">장바구니</a>
                     </div>
                 </div>
             </li>

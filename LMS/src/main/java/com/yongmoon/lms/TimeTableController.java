@@ -19,24 +19,24 @@ public class TimeTableController {
 	@RequestMapping("/spare.tt")
 	public String spareTimeTable() {
 		return "time/spareTimeTable";
-	}
+	}// ì‹œê°„í‘œ ì¥ë°”êµ¬ë‹ˆ ë³´ê¸°
 	
 	@RequestMapping("/main.tt")
 	public String timeTableHome() {
 		return "time/timeTable";
-	}// ½Ã°£Ç¥ º¸±â
+	}// ì‹œê°„í‘œ ë³´ê¸°
 	
 	@RequestMapping("/detail.tt")
 	public String timeTableDetail() {
 		return "time/timeTableDetail";
-	}// ½Ã°£Ç¥ »ó¼¼ º¸±â
+	}// ì‹œê°„í‘œ ìƒì„¸ ë³´ê¸°
 	
 	@RequestMapping("/regist.tt")
 	public String regist(Model model, HttpSession session) {
 		List<TimeTableVO> vo = service.timeTableRegist();
 		model.addAttribute("vo", vo);
 		return "time/regist";
-	}// ½Ã°£Ç¥ µî·Ï
+	}// ì‹œê°„í‘œ ë“±ë¡
 	
 
 }
