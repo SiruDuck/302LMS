@@ -27,9 +27,9 @@
                     </button>
 
                     <!-- Topbar Search -->
-                   	<div>
+                   	<!-- <div>
                    		<a href='http://localhost/lms/index'><img src='resources/images/mainlogin/logo_black.png' style='height: 3rem; padding:.5rem;'></a>
-                   	</div>
+                   	</div> -->
                     <!-- <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">

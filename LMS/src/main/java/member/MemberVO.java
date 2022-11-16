@@ -1,8 +1,8 @@
-package login;
+package member;
 
 import java.sql.Date;
 
-public class LoginVO {
+public class MemberVO {
 	private String id, pw, name, gender,phone,email,post, addr, grade, state, department_id;
 	private Date birth,	start_date, end_date;
 	private int info;

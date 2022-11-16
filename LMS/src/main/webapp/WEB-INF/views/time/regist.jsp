@@ -44,13 +44,30 @@ span.btn{
 				<option value='info'>정보보안학과</option>
 			</select>
 		</div>
-		<div class='dataTables_filter'>
+		<div class='dataTables_filter search-box'>
 			<select class='custom-select custom-select-sm form-control form-control-sm'>
 				<option value='all'>구분 전체보기</option>
 				<option value='major'>전공 필수</option>
 				<option value='optional'>전공 선택</option>
 				<option value='required'>교양 필수</option>
 				<option value='elective'>교양 선택</option>
+			</select>
+		</div>
+		<div class='dataTables_filter search-box'>
+			<select class='custom-select custom-select-sm form-control form-control-sm'>
+				<option value='all'>요일 전체보기</option>
+				<option value='mon'>월</option>
+				<option value='tue'>화</option>
+				<option value='wed'>수</option>
+				<option value='thu'>목</option>
+				<option value='fri'>금</option>
+			</select>
+		</div>
+		<div class='dataTables_filter'>
+			<select class='custom-select custom-select-sm form-control form-control-sm'>
+				<option value='all'>시간 전체보기</option>
+				<option value='1'>1교시 (09:00~09:50)</option>
+				<option value='2'>2교시 (10:00~10:50)</option>
 			</select>
 		</div>
 	</div>
@@ -84,7 +101,7 @@ span.btn{
                     	<th>이수</th>
                     	<th>학점</th>
                     	<th>강의유형</th>
-                    	<th>강의계획</th>
+                    	<th>상세보기</th>
                     	<th>강의신청</th>
                    	</tr>
 

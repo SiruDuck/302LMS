@@ -53,7 +53,7 @@ table{
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 예비 수강신청</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 시간표 장바구니</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
