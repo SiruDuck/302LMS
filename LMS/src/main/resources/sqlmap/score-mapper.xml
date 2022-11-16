@@ -2,9 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="score">
 
+	<!-- 특정 년도별 조회 -->
+	<select id="lectureYearOne" resultType="score.ScoreVO">
+		select l.lecture_title,l.lecture_year,
+		l.teacher_name , s.*
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
+		where l.lecture_year = #{year}
+	</select>
+	
+	
+	<!-- 년도별 조회 -->
+	<select id="lectureYear" resultType="score.ScoreVO">
+		select Distinct l.lecture_year
+        from subjectscore s left outer join lectures l on l.lecture_num = s.lecture_num
+        order by 1
+	</select>
+
 	<!-- 특정과목 조회 -->
 	<select id="lectureOne" resultType="score.ScoreVO">
-		select l.lecture_title,
+		select l.lecture_title, l.lecture_year, l.subjectcredit,
 		l.teacher_name , s.*
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 		where l.lecture_num = #{num}
@@ -12,14 +28,14 @@
 
 	<!-- 과목명 조회 -->
 	<select id="lectures" resultType="score.LectureVO"> 
-		select Distinct l.lecture_title, l.lecture_num
-		from lectures l
+		select Distinct l.lecture_title, l.lecture_num, s.id
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 	</select>
 
 	<!-- 리스트조회 -->
 	<select id="list" resultType="score.ScoreVO">
-		select l.lecture_title,
-		l.teacher_name , s.*
+		select l.lecture_title, l.lecture_year,
+		l.teacher_name, l.subjectcredit , s.*
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 	</select>
 
