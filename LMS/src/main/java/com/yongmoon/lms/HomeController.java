@@ -33,9 +33,6 @@ public class HomeController {
 		return "mainlogin";
 	}
 	
-	@RequestMapping("/index")
-	public void chart(String id, String pw) {
-
-	}
+	
 	
 }

@@ -19,13 +19,13 @@
 		<div class='col-login'>
 			<div class='loginbox'>
 			<h2 class='login-title'>LOGIN</h2>
-			<form class='mform' method='post' action=''>
+			<form class='mform' method='post' action='login'>
 				<div class='textform'>
 					<input type='text' id='id' name='id' placeholder='사용자 아이디' class='user-id'>
 					<input type='password' id='pw' name='pw' placeholder='비밀번호' class='user-pw'>
 				</div>
 				<div class='submit-login'>
-					<input type='submit' name='btn_login' class='btn-login' value='로그인' onclick='login()'>
+					<input type='submit' id='login' name='btn_login' class='btn-login' value='로그인' onclick="location='/login'">
 				</div>
 				<div class='checkbox'>
 					<label><input type="checkbox" id='remember' name='remember_user'>사용자이름 기억</label>
@@ -74,9 +74,10 @@
 </footer>
 <script>
 
-$('#login').click(function(){
-	login();
+$('.login').click(function(){
+	url:'/login'
 });
+
 </script>
 </body>
 </html>

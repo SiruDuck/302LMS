@@ -9,7 +9,6 @@
 </head>
 <body>
 <div class="container-fluid">
-
 					<ul class="nav nav-tabs mb-3">
 					  <li class="nav-item">
 					    <a class="nav-link active" aria-current="page" href="#">월급 현황</a>
@@ -22,9 +21,8 @@
 					  </li>
 					</ul>
 					
-					
-					
-                    <!-- Page Heading -->
+					<div class="dd">
+					<!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800 mt-2 mb-2" >교직원 월급 현황</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -33,6 +31,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                            <div id='dataTable_wrapper' class='dataTables_wrapper dt-bootstrap4'>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -54,22 +53,33 @@
                                         </tr>
                                     </tfoot> -->
                                     <tbody>
-                                    <c:forEach items="${list }" var="vo">
+                                     <%-- <c:forEach begin="1" end="30" step="1"> --%>
+                                    <c:forEach items="${list }" var="vo" >
                                         <tr>
-                                            <td>${vo.cash_code }</td>
+                                      		<td>${vo.cash_code }</td>
                                             <td>${vo.id }</td>
                                             <td>${vo.price }</td>
                                             <td>${vo.cash_name }</td>
-                                            <td>${vo.payment_day }</td>
+                                            <td>${vo.payment_day }</td> 
                                         </tr>
                                      </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
+                </div><!-- container-fluid -->
+					
+					
+					
+					</div>
+					
                     
+<script>
+
+
+
+</script>      
 </body>
 </html>
