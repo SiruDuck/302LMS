@@ -1,6 +1,7 @@
 package member;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class MemberDAO implements MemberService{
 		map.put("id", id);
 		map.put("pw", pw);
 		return sql.selectOne("login.firlogin", map);
+	}
+
+	@Override
+	public List<MemberVO> member_list() {
+		return sql.selectList("member.member_list");
 	}
 
 

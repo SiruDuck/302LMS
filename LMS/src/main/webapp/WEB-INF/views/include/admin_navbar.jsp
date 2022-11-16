@@ -65,7 +65,7 @@
                         <a class="collapse-item" href="#">장학 관리</a>
                         <a class="collapse-item" href="cash.ing">급여 관리</a>
                         <a class="collapse-item" href="#">권한 관리</a>
-                        <a class="collapse-item" href="#">인원 관리</a>
+                        <a class="collapse-item" href="member.list">인원 관리</a>
                     </div>
                 </div>
             </li>

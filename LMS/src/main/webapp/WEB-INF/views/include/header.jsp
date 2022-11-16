@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix='c'%> 
 <head>
 
     <meta charset="utf-8">
@@ -191,11 +192,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-700 font-weight-bold">김영문</span>
+                                <!-- 이름 출력부분 -->
+                                <span class="mr-2 d-none d-lg-inline text-gray-700 font-weight-bold">
+                                ${loginInfo.name }님
+                                </span>
                                 <!-- <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg"> -->
                             </a>
-                            <!-- Dropdown - User Information -->
+                            <!-- Dropdown - User Information 이름누르고 드롭다운으로 처리 -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
