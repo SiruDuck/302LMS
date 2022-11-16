@@ -15,32 +15,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import login.LoginDAO;
-import login.LoginService;
-import login.LoginServiceImpl;
-import login.LoginVO;
+import member.MemberDAO;
+import member.MemberService;
+import member.MemberServiceImpl;
+import member.MemberVO;
 
 @Controller
 public class LoginController{
-	@Autowired private LoginServiceImpl service;
+	@Autowired private MemberServiceImpl service;
 	
-	
+	//로그인 처리
 	@RequestMapping(value="/login")
 	public String Login(String id, String pw, HttpSession session) throws Exception{
 		
-		LoginVO vo = service.login_login(id, pw);
+		MemberVO vo = service.login_login(id, pw);
 		
 		session.setAttribute("loginInfo", vo);
 		if(vo == null)
 			return "mainlogin";
 		else
 			return "redirect:/index";
-	}
+	}	
 	
-	@RequestMapping("/index")
-	public String chart(String id, String pw) {
+	//로그아웃 처리
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
 		
-		return "index";
+		MemberVO login = (MemberVO)session.getAttribute("loginInfo");
+		if( login == null ) return "mainlogin";
+		session.removeAttribute("loginInfo");
+		
+		return "mainlogin";
 	}
 	
 
