@@ -9,16 +9,12 @@ public class LectureVO {
 	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year;
 	private int lecture_num;
 	private Date midex, finalex;
-	
-
-
 	public String getLecture_title() {
 		return lecture_title;
 	}
 	public void setLecture_title(String lecture_title) {
 		this.lecture_title = lecture_title;
 	}
-	
 	public String getTeacher_name() {
 		return teacher_name;
 	}
@@ -37,11 +33,11 @@ public class LectureVO {
 	public void setSortation(String sortation) {
 		this.sortation = sortation;
 	}
-	public String getLectur_room() {
-		return lectur_room;
+	public String getLecture_room() {
+		return lecture_room;
 	}
-	public void setLectur_room(String lectur_room) {
-		this.lectur_room = lectur_room;
+	public void setLecture_room(String lecture_room) {
+		this.lecture_room = lecture_room;
 	}
 	public String getLecture_time() {
 		return lecture_time;
@@ -85,13 +81,18 @@ public class LectureVO {
 	public void setBook(String book) {
 		this.book = book;
 	}
+	public String getLecture_year() {
+		return lecture_year;
+	}
+	public void setLecture_year(String lecture_year) {
+		this.lecture_year = lecture_year;
+	}
 	public int getLecture_num() {
 		return lecture_num;
 	}
 	public void setLecture_num(int lecture_num) {
 		this.lecture_num = lecture_num;
 	}
-
 	public Date getMidex() {
 		return midex;
 	}
@@ -104,8 +105,9 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
-
 	
+
+
 	
 	
 	
