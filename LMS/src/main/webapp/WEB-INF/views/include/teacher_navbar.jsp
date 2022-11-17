@@ -66,6 +66,7 @@
                         <a class="collapse-item" href="#">비품 조회</a>
                         <a class="collapse-item" href="#">과제 관리</a>
                         <a class="collapse-item" href="#">학생 정보/성적관리</a>
+
                         <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 정보</a>
                     </div>
                 </div>

@@ -57,7 +57,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">관리페이지</h6>
-                        <a class="collapse-item" href="#">ff</a>
+                        <a class="collapse-item" href="list.sc">성적 조회</a>
                         <a class="collapse-item" href="#">hfhf</a>
                         <a class="collapse-item" href="#">fhf</a>
                         <a class="collapse-item" href="#">fhhf</a>
