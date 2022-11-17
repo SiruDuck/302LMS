@@ -51,11 +51,22 @@ values ( #{id}, #{pw}, #{name}, #{gender}, #{birth}, #{phone}, #{email}, #{post}
 select count(id) from member where id = #{id}
 </select>
  
+ <!-- 비품 리스트 -->
+ <select id='equipment_list' resultType='equipment.EquipmentVO'>
+	select * 
+	from equipment
+</select>
  
+  <!-- 비품 이름으로 검색 -->
+ <select id='equipment_search_name_list' resultType='equipment.EquipmentVO'>
+	select * 
+	from equipment
+	where equipment like '%'||#{name}||'%'
+</select>
  
- 
- 
- 
+<insert id='equipment_insert'>
+	insert into equipment values(#{equipment},#{equipment_num})
+</insert>
  
 
 </mapper>

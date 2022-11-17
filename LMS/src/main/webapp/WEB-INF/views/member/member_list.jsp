@@ -34,7 +34,7 @@ span.btn{
    <i class="fas fa-arrow-right"></i>
    </span>
    <span class="text">인원 등록</span>
-                                    </a>
+ </a>
 					<div class='card mb-4'>
 						<div class='card-header py-3'>
 							<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
