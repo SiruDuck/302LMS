@@ -47,5 +47,10 @@ public class ScoreDAO implements ScoreService{
 		
 		return sql.selectList("score.lectureYearOne",map);
 	}
+
+	@Override
+	public List<ScoreVO> lookup_list_for_teacher(String name) {
+		return sql.selectList("score.list_teacher", name);
+	}
 	
 }

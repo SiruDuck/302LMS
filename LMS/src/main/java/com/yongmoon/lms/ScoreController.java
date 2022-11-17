@@ -21,6 +21,13 @@ import score.ScoreVO;
 public class ScoreController {
 	@Autowired private ScoreDAO dao;
 	
+	
+	//성적입력 
+	@RequestMapping("/insert.sc")
+	public String insert_score() {
+		
+		return "score/insert";
+	}
 
 	
 	//년도별 성적조회
