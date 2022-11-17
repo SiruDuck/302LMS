@@ -69,9 +69,9 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">마이페이지</h6>
+                        <a class="collapse-item" href="#">내 정보</a>
                         <a class="collapse-item" href="#">학적 정보</a>
                         <a class="collapse-item" href='list.sc'>성적 조회</a>
-                        <a class="collapse-item" href="#">수강 후기 등록</a>
                         <a class="collapse-item" href="#">출결 조회</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="#">등록 정보</a>
@@ -79,24 +79,31 @@
                     </div>
                 </div>
             </li>
+            
 
 			<!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>수강신청</span>
+                    <span>학습 관리</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">수강 신청</h6>
                         <a class="collapse-item" href="#">강의 조회</a>
-                        <a class="collapse-item" href="regist.tt">수강 신청</a>
+                        <a class="collapse-item" href="#">수강 후기 등록</a>
                         <a class="collapse-item" href="spare.tt">장바구니</a>
                     </div>
                 </div>
             </li>
-
+            
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="regist.tt">
+                    <i class="fas fa-check fa-fw"></i>
+                    <span>수강신청</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -148,7 +155,7 @@
             </div>
 
 
-            <!-- Sidebar Message -->
+            
             
 
         </ul>
