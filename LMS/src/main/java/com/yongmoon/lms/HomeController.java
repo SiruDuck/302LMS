@@ -13,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import member.MemberVO;
+
 
 @Controller
 public class HomeController {
@@ -33,6 +35,12 @@ public class HomeController {
 		return "mainlogin";
 	}
 	
+	@RequestMapping(value = "/index")
+	public String Login() throws Exception {
+
 	
+			return "index";
+	}
+
 	
 }

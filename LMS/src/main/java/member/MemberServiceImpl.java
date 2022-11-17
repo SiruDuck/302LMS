@@ -12,6 +12,17 @@ public class MemberServiceImpl implements MemberService{
 		return dao.login_login(id, pw);
 	}
 
+	@Override
+	public int member_join(MemberVO vo) {
+		return dao.member_join(vo);
+	}
+
+	@Override
+	public int member_id_check(String id) {
+		return dao.member_id_check(id);
+	}
+
+
 	
 	
 	
