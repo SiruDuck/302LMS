@@ -43,7 +43,17 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	
-	
+
+	public int member_join(MemberVO vo) {
+		return dao.member_join(vo);
+	}
+
+	@Override
+	public int member_id_check(String id) {
+		return dao.member_id_check(id);
+	}
+
+
 	
 	
 	

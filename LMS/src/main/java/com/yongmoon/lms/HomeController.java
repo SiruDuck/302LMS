@@ -31,6 +31,12 @@ public class HomeController {
 			return "index";
 	}
 	
+	@RequestMapping(value = "/index")
+	public String Login() throws Exception {
+
 	
+			return "index";
+	}
+
 	
 }

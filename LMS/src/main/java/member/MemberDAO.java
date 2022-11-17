@@ -19,10 +19,11 @@ public class MemberDAO implements MemberService{
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pw", pw);
-		return sql.selectOne("login.firlogin", map);
+		return sql.selectOne("member.login", map);
 	}
 
 	@Override
+
 	public List<MemberVO> member_list() {
 		return sql.selectList("member.member_list");
 	}
@@ -51,6 +52,16 @@ public class MemberDAO implements MemberService{
 		map.put("id", id);
 		return sql.selectList("member.search_id_list",map);
 	}
+
+	public int member_join(MemberVO vo) {
+		return sql.insert("member.join", vo);
+	}
+
+	@Override
+	public int member_id_check(String id) {
+		return sql.selectOne("member.id_check", id);
+	}
+
 
 
 	
