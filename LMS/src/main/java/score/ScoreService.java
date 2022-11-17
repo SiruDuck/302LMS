@@ -7,4 +7,6 @@ public interface ScoreService {
 	public List<ScoreVO> lookup_list();					//리스트 조회
 	public List<ScoreVO> lookup_list(int num);			//특정 과목리스트 조회
 	public List<ScoreVO> lookup_lectures();				//과목 조회
+	public List<ScoreVO> lookup_years();					//년도 조회
+	public List<ScoreVO> lookup_years(int year);			//특정 년도별 조회
 }

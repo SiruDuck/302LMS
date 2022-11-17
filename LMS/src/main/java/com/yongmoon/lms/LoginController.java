@@ -24,7 +24,7 @@ import member.MemberVO;
 public class LoginController{
 	@Autowired private MemberServiceImpl service;
 	
-	
+	//로그인 처리
 	@RequestMapping(value="/login")
 	public String Login(String id, String pw, HttpSession session) throws Exception{
 		
@@ -34,13 +34,18 @@ public class LoginController{
 		if(vo == null)
 			return "mainlogin";
 		else
-			return "redirect:/index";
-	}
+			return "redirect:/";
+	}	
 	
-	@RequestMapping("/index")
-	public String chart(String id, String pw) {
+	//로그아웃 처리
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
 		
-		return "index";
+		MemberVO login = (MemberVO)session.getAttribute("loginInfo");
+		if( login == null ) return "mainlogin";
+		session.removeAttribute("loginInfo");
+		
+		return "mainlogin";
 	}
 	
 
