@@ -29,54 +29,45 @@ span.btn{
 
 <div class="container-fluid">
 <h1 class="h3 mb-2 text-gray-800 mt-2 mb-2" >전체 인원 관리</h1>
-<div class='card mb-4'>
-	<div class='card-header py-3'>
-		<h6 class='m-0 font-weight-bold text-primary'>강의 검색</h6>
-	</div>
-	<div class='card-body d-flex'>
-		<div class='dataTables_filter search-box'>
-			<input type="search" class='form-control form-control-sm' placeholder='과목명'>
-		</div>
-		<div class='dataTables_filter search-box'>
-			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>학과 전체보기</option>
-				<option value='game'>게임개발학과</option>
-				<option value='ai'>인공지능학과</option>
-				<option value='web'>웹학과</option>
-				<option value='db'>DB학과</option>
-				<option value='iot'>Iot학과</option>
-				<option value='app'>앱개발학과</option>
-				<option value='info'>정보보안학과</option>
-			</select>
-		</div>
-		<div class='dataTables_filter search-box'>
-			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>구분 전체보기</option>
-				<option value='major'>전공 필수</option>
-				<option value='optional'>전공 선택</option>
-				<option value='required'>교양 필수</option>
-				<option value='elective'>교양 선택</option>
-			</select>
-		</div>
-		<div class='dataTables_filter search-box'>
-			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>요일 전체보기</option>
-				<option value='mon'>월</option>
-				<option value='tue'>화</option>
-				<option value='wed'>수</option>
-				<option value='thu'>목</option>
-				<option value='fri'>금</option>
-			</select>
-		</div>
-		<div class='dataTables_filter'>
-			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>시간 전체보기</option>
-				<option value='1'>1교시 (09:00~09:50)</option>
-				<option value='2'>2교시 (10:00~10:50)</option>
-			</select>
-		</div>
-	</div>
-</div>					
+
+					<div class='card mb-4'>
+						<div class='card-header py-3'>
+							<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
+						</div>
+						<div class='card-body d-flex'>
+							<div class='dataTables_filter search-box'>
+								<input type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'>
+							</div>
+							
+							<div class='dataTables_filter search-box'>
+								<input type="search" class='ids form-control form-control-sm' placeholder='아이디로 검색'>
+							</div>
+							
+							<div class='dataTables_filter search-box'>
+								<select class='custom-select custom-select-sm form-control form-control-sm'>
+									<option value='department_all'> (학과) 전체</option>
+									<c:forEach items="${department_list }" var="department_list">
+									<option value='${department_list }'> ${ department_list.department_name}</option>
+									</c:forEach>
+								</select>
+							</div>
+							
+							<div class='dataTables_filter search-box'>
+								<select class='custom-select custom-select-sm form-control form-control-sm'>
+									<option value='info_all'> (구분) 전체</option>
+									<c:forEach items="${info_list }" var="info">
+									<option value='${info.info_name }'> ${info.info_name }</option>
+									</c:forEach>
+								</select>
+							</div>
+						</div>
+					</div>	
+					
+					
+					
+					
+					
+									
 					<div class="dd">
 					<!-- Page Heading -->
                     
@@ -127,6 +118,31 @@ span.btn{
 
 
 
+<script>
+$('.names').keyup(function(){
+	$.ajax({
+		data:{name: $(this).val()},
+		url:"search_name",
+		success:function(data){
+			$('#dataTable_wrapper').html(data);
+		}
+		
+	})
+});
 
+$('.ids').keyup(function(){
+	$.ajax({
+		data:{id: $(this).val()},
+		url:"search_id",
+		success:function(data){
+			$('#dataTable_wrapper').html(data);
+		}
+		
+	})
+});
+
+
+
+</script>
 </body>
 </html>
