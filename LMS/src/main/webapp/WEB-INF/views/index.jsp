@@ -16,18 +16,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style='margin:2rem 0 3rem 0'>
+<!-- carousel -->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style='margin:2rem 0 2rem 0'>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner1.png" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner1.jpg" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
     </div>
     <div class="carousel-item">
-      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner2.png" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
     </div>
     <div class="carousel-item">
-     <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner3.png" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+     <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+    </div>
+    <div class="carousel-item">
+     <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner4.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
     </div>
   </div>
@@ -46,11 +51,11 @@
         <!-- Default Card Example -->
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-primary">
+                <h6 class="m-0 font-weight-bold text-light text-lg">공지사항</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	<i class="fa-solid fa-plus text-gray-600"></i>
+                    	<i class="fas fa-plus text-light"></i>
                         <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
                     </a>                    
                 </div>
@@ -68,36 +73,50 @@
                 </div>
             </div>
         </div>
-
-        <!-- Basic Card Example
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
-            </div>
-            <div class="card-body">
-                The styling for this basic card example is created by using default Bootstrap
-                utility classes. By using utility classes, the style of the card component can be
-                easily modified with no need for any custom CSS!
-            </div>
-        </div> -->
-
-    </div>
-
-    <div class="col-lg-6">
-
+        
         <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-info">취업정보</h6>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-info">
+                <h6 class="m-0 font-weight-bold text-light text-lg">커뮤니티</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	<i class="fa-solid fa-plus text-gray-600"></i>
+                    	<i class="fas fa-plus text-light"></i>
                         <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
                     </a>                    
                 </div>
             </div>
             <!-- Card Body -->
             <div class="card-body notice border-bottom-info">
+                <div class='mb-3 ml-3'>
+                	<a href='' class='text-gray-800'>커뮤</a>
+                </div>
+                <div class='mb-3 ml-3'>
+                	<a href='' class='text-gray-800'>커뮤</a>
+                </div>
+                <div class='ml-3'>
+                	<a href='' class='text-gray-800'>커뮤</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <div class="col-lg-6">
+		<div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-danger">
+                <h6 class="m-0 font-weight-bold text-light text-lg">취업정보</h6>
+                <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    	<i class="fas fa-plus text-light"></i>
+                        <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
+                    </a>                    
+                </div>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body notice border-bottom-danger">
                 <div class='mb-3 ml-3'>
                 	<a href='' class='text-gray-800'>정보</a>
                 </div>
@@ -109,6 +128,32 @@
                 </div>
             </div>
         </div>
+        
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-success">
+                <h6 class="m-0 font-weight-bold text-light text-lg">취업정보</h6>
+                <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    	<i class="fas fa-plus text-light"></i>
+                        <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
+                    </a>                    
+                </div>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body notice border-bottom-success">
+                <div class='mb-3 ml-3'>
+                	<a href='' class='text-gray-800'>정보</a>
+                </div>
+                <div class='mb-3 ml-3'>
+                	<a href='' class='text-gray-800'>정보</a>
+                </div>
+                <div class='ml-3'>
+                	<a href='' class='text-gray-800'>정보</a>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 

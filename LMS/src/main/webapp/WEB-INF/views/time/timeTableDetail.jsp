@@ -51,40 +51,40 @@
 	                 </tfoot> -->
 	                 <tbody>
 	                     <tr>
-	                         <td>과목코드</td>
-	                         <td>12345</td>
+	                         <td>강의코드</td>
+	                         <td>${vo.lecture_num }</td>
 	                     </tr>
 	                     <tr>
-	                         <td>과목명</td>
-	                         <td>컴퓨터프로그래밍실습1</td>
+	                         <td>강의명</td>
+	                         <td>${vo.lecture_title }</td>
 	                     </tr>
 	                     <tr>
 	                         <td>구분</td>
-	                         <td>전공필수</td>
+	                         <td>${vo.sortation }</td>
 	                     </tr>
 	                     <tr>
 	                         <td>강의실</td>
-	                         <td>B302</td>
+	                         <td>${vo.lecture_room }</td>
 	                     </tr>
 	                     <tr>
 	                         <td>담당교수</td>
-	                         <td>김영문</td>
+	                         <td>${vo.teacher_name }</td>
 	                     </tr>      
 	                     <tr>
-	                         <td>학점</td>
-	                         <td>3</td>
+	                         <td>강의시간</td>
+	                         <td>${vo.lecture_time }</td>
 	                     </tr>                
 	                     <tr>
-	                         <td>시수</td>
-	                         <td>3</td>
+	                         <td>학점</td>
+	                         <td>${vo.subjectcredit }</td>
 	                     </tr>             
 	                     <tr>
-	                         <td>교재명</td>
-	                         <td>앗! 코딩책 타이어보다 싸다!</td>
+	                         <td>강의유형</td>
+	                         <td>${vo.state }</td>
 	                     </tr>
 	                     <tr>
-	                     	<td>수강인원</td>
-	                     	<td>15</td>
+	                     	<td>교재명</td>
+	                     	<td>${vo.book }</td>
 	                     </tr>             
 	                 </tbody>
 	             </table>
@@ -92,7 +92,7 @@
 	     </div>
 	 </div>
 	<div class='btn btn-primary btn-icon-split'>
-		<a class='text text-white '>뒤로가기</a>
+		<a class='text text-white' onclick='history.go(-1)'>뒤로가기</a>
 	</div>
 </div>
 </body>

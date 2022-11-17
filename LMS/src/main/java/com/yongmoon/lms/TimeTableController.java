@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import timetable.TimeTableService;
 import timetable.TimeTableVO;
@@ -19,24 +20,29 @@ public class TimeTableController {
 	@RequestMapping("/spare.tt")
 	public String spareTimeTable() {
 		return "time/spareTimeTable";
-	}
+	}// ì‹œê°„í‘œ ì¥ë°”êµ¬ë‹ˆ ë³´ê¸°
 	
 	@RequestMapping("/main.tt")
 	public String timeTableHome() {
 		return "time/timeTable";
-	}// ½Ã°£Ç¥ º¸±â
+	}// ì‹œê°„í‘œ ë³´ê¸°
 	
 	@RequestMapping("/detail.tt")
-	public String timeTableDetail() {
+	public String timeTableDetail(Model model, int lecture_num) {
+		TimeTableVO vo = service.timeTableDetail(lecture_num);
+		model.addAttribute("vo", vo);
 		return "time/timeTableDetail";
-	}// ½Ã°£Ç¥ »ó¼¼ º¸±â
+	}// ì‹œê°„í‘œ ìƒì„¸ ë³´ê¸°
 	
 	@RequestMapping("/regist.tt")
 	public String regist(Model model, HttpSession session) {
 		List<TimeTableVO> vo = service.timeTableRegist();
+		
 		model.addAttribute("vo", vo);
+		
 		return "time/regist";
-	}// ½Ã°£Ç¥ µî·Ï
+	}// ê°•ì˜ ì‹ ì²­ ëª©ë¡
+	
 	
 
 }
