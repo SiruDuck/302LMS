@@ -5,6 +5,12 @@
 <meta charset="UTF-8">
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+
+	<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>   
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
+
 <title>Insert title here</title>
 <style>
 
@@ -45,15 +51,15 @@
 		<label><input type='radio' name='gender' value='여'>여</label>
 	</td>
 </tr>
-<tr><th>생년월일</th>
+<tr><th>* 생년월일</th>
 	<td><input type='text' name='birth' id='datepicker0' class='date form-control col-sm-6 mb-3 mb-sm-0' readonly>
 		<a id='delete'><i class="font-r fa-regular fa-calendar-xmark"></i></a>
 	</td>
 </tr>
-<tr><th>전화번호</th>
+<tr><th>* 전화번호</th>
 	<td><input type='text' name='phone' class='date form-control col-sm-6 mb-3 mb-sm-0'></td>
 </tr>
-<tr><th>주소</th>
+<tr><th>* 주소</th>
 	<td><a class='btn-fill' id='post'>우편번호찾기</a>
 		<input type='text' name='post' class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' readonly>
 		<input type='text' name='addr' class='full form-control col-sm-6 mb-3 mb-sm-0' readonly>
@@ -68,7 +74,7 @@
 		<label><input type='radio' name='grade' value='4학년'>4학년</label>
 	</td>
 </tr>
-<tr><th>입학일</th>
+<tr><th>* 입학일</th>
 	<td><input type="text" name='start_date' id='datepicker1' class='date form-control col-sm-6 mb-3 mb-sm-0' readonly>
 		<a id='delete'><i class="font-r fa-regular fa-calendar-xmark"></i></a>
 	</td>
@@ -78,7 +84,7 @@
 		<a id='delete'><i class="font-r fa-regular fa-calendar-xmark"></i></a>
 	</td>
 </tr>
-<tr><th>상태</th>
+<tr><th>* 상태</th>
 	<td><input type='text' name='state' class='date form-control col-sm-6 mb-3 mb-sm-0' ></td>
 </tr>
 <tr><th>학과코드</th>
@@ -108,14 +114,6 @@
 <script src='js/member.js?<%=new java.util.Date()%>'></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-
-
-
-
-
-
-
-
 
 $('#join').click(function(){
 	if( $('[name=name]').val()=='' ){
@@ -234,13 +232,14 @@ var today = new Date();
 var range = '1940:' + today.getFullYear();
 var range2 = '1991:' + today.getFullYear();
 var endDay = new Date( today.getFullYear(), today.getMonth(), today.getDate()-1 );
+var endDay2 = new Date( today.getFullYear()-19, today.getMonth(), today.getDate()-1 );
 
 
 
 $(function(){
 	$('[name=birth]').datepicker({
 		yearRange: range,
-		maxDate: endDay
+		maxDate: endDay2
 	});
 });
 
@@ -270,22 +269,24 @@ $('#delete').click(function(){
 	$(this).css('display', 'none');
 });
 
-
-$(function(){
++$(function(){
 	var today = new Date();
-	var range = '1950:' + today.getFullYear();
+	
 	
 	$.datepicker.setDefaults({
-		dateFormat: 'yy-mm-dd',
+		dateFormat: 'yy/mm/dd',
 		changeYear: true,
 		changeMonth: true,
 		showMonthAfterYear: true,
 		monthNamesShort: [ '1월', '2월', '3월', '4월', '5월', '6월'
 							, '7월', '8월', '9월', '10월', '11월', '12월' ],
 		dayNamesMin: [ '일', '월', '화', '수', '목', '금', '토' ],
-		maxDate: new Date(), 
-		yearRange: range		
+		maxDate: new Date(),	
 	});
+	
+	
+
+	
 	
 	
 	//선택한 파일을 미리보기되도록 이미지로 보이게 처리
@@ -324,7 +325,6 @@ $(function(){
 	
 
 });
-
 
 
 
