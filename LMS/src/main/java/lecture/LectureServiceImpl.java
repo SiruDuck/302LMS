@@ -23,7 +23,7 @@ public class LectureServiceImpl implements LectureService {
 
 	@Override
 	public void lecture_update(LectureVO vo) {
-		// TODO Auto-generated method stub
+		dao.lecture_update(vo);
 		
 	}
 

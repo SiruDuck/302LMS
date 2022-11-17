@@ -11,7 +11,7 @@
 <form method='post' action='insert.lec'>
 <table class='w-px600'>
 <tr><th class='w-px160'>강의 번호</th>
-	<td><input type='text' name='lecture_num'></td>
+	<td><input type='text' name='lecture_num' class='chk'></td>
 </tr>
 <tr><th>강의명</th>
 	<td><input type='text' name='lecture_title'></td>
@@ -26,7 +26,7 @@
 	</td>
 </tr>
 <tr><th>학점</th>
-	<td><input type='text' name='subjectcredit' ></td>
+	<td><input type='number' name='subjectcredit'  min ='1' max='3'>학점</td>
 </tr>
 <tr><th>강의실</th>
 	<td><input type='text' name='lecture_room' ></td>
@@ -42,35 +42,36 @@
 </tr>
 <tr><th>수강시간</th>
 	<td>
-		<label><input type='checkbox' name='lecture_time1' value='1교시' >1교시</label>
-		<label><input type='checkbox' name='lecture_time2' value='2교시' >2교시</label>
-		<label><input type='checkbox' name='lecture_time3' value='3교시' >3교시</label>
-		<label><input type='checkbox' name='lecture_time4' value='4교시' >4교시</label>
-		<label><input type='checkbox' name='lecture_time5' value='5교시' >5교시</label>
-		<label><input type='checkbox' name='lecture_time6' value='6교시' >6교시</label>
-		<label><input type='checkbox' name='lecture_time7' value='7교시' >7교시</label>
-		<label><input type='checkbox' name='lecture_time8' value='8교시' >8교시</label>
+		<label><input type='checkbox' name='lecture_time' value='1교시' >1교시</label>
+		<label><input type='checkbox' name='lecture_time' value='2교시' >2교시</label>
+		<label><input type='checkbox' name='lecture_time' value='3교시' >3교시</label>
+		<label><input type='checkbox' name='lecture_time' value='4교시' >4교시</label>
+		<label><input type='checkbox' name='lecture_time' value='5교시' >5교시</label>
+		<label><input type='checkbox' name='lecture_time' value='6교시' >6교시</label>
+		<label><input type='checkbox' name='lecture_time' value='7교시' >7교시</label>
+		<label><input type='checkbox' name='lecture_time' value='8교시' >8교시</label>
 	</td>
 </tr>
 <tr><th>수강인원</th>
 	<td><input type='text' name='capacity' ></td>
 </tr>
 <tr><th>중간고사</th>
-	<td><input type='text' name='midex' ></td>
+	<td><input type='date' name='midex' ></td>
 </tr>
 <tr><th>기말고사</th>
-	<td><input type='text' name='finalex' ></td>
+	<td><input type='date' name='finalex' ></td>
 </tr>
 <tr><th>온/오프라인</th>
 	<td>
-		<input type='text' name='state' >
+		<label><input type='radio' name='state' >온라인</label>
+		<label><input type='radio' name='state' >오프라인</label>
 	</td>
 </tr>
 <tr><th>교재명</th>
 	<td><input type='text' name='book' ></td>
 </tr>
 <tr><th>년도</th>
-	<td><input type='text' name='lecture_year' ></td>
+	<td><input type='week' name='lecture_year' >년</td>
 </tr>
 <tr><th>학기</th>
 	<td>
@@ -85,5 +86,11 @@
 <!-- 	<a class='btn-fill' onclick="$('form').submit()">저장</a> -->
 	<a class='btn-empty' href='list.lec'>취소</a>
 </div>
+<script>
+$(function){
+	$('.chk').emptyCheck();
+	
+});
+</script>
 </body>
 </html>

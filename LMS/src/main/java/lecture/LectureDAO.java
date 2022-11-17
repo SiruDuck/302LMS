@@ -25,7 +25,7 @@ public class LectureDAO implements LectureService {
 
 	@Override
 	public void lecture_update(LectureVO vo) {
-		// TODO Auto-generated method stub
+		sql.update("lecture.update", vo);
 		
 	}
 

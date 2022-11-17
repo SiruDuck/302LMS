@@ -58,19 +58,37 @@ public class LectureController {
 	}
 	
 	//강의 개설 화면 요청
-	@RequestMapping(value = "/insert.lec", produces = "text/html;charset=utf-8")
+	@RequestMapping(value = "/new.lec", produces = "text/html;charset=utf-8")
 	public String lecture_new() {
 		
 		return "lecture/new";
 	}
 	
 	//강의 개설 정보 저장 처리
+	@RequestMapping(value=  "/insert.lec" , produces = "text/html;charset=utf-8")
 	public String lecture_insert(LectureVO vo) {
 		service.lecture_insert(vo);
 		return "redirect:list.lec";
 	}
 	
+	//강의 정보 수정 화면
+	@RequestMapping(value= "/modify.lec" , produces = "text/html;charset=utf-8")
+	public String lecture_modify(String lecture_title, Model model) {
+		
+		LectureVO vo = service.lecture_info(lecture_title);
+		model.addAttribute("vo", vo);
+		
+		return "lecture/modify";
+	}
 	
+	//강의 정보 수정 저장처리
+	@RequestMapping(value= "/update.lec" , produces = "text/html;charset=utf-8")
+	public String lecture_update(LectureVO vo) {
+		System.out.println("dd");
+		/* service.lecture_update(vo); */
+		
+		return "redirect:detail.lec?lecture_title="+ vo.getLecture_title();
+	}
 	
 	
 	
