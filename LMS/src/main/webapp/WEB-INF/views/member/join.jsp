@@ -3,13 +3,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <title>Insert title here</title>
 <style>
 
 </style>
-<script type="text/javascript" src="js/common.js">
-
-</script>
 </head>
 <body>
 <h3>회원가입</h3>
@@ -274,22 +273,19 @@ $('#delete').click(function(){
 
 $(function(){
 	var today = new Date();
-	
+	var range = '1950:' + today.getFullYear();
 	
 	$.datepicker.setDefaults({
-		dateFormat: 'yy/mm/dd',
+		dateFormat: 'yy-mm-dd',
 		changeYear: true,
 		changeMonth: true,
 		showMonthAfterYear: true,
 		monthNamesShort: [ '1월', '2월', '3월', '4월', '5월', '6월'
 							, '7월', '8월', '9월', '10월', '11월', '12월' ],
 		dayNamesMin: [ '일', '월', '화', '수', '목', '금', '토' ],
-		maxDate: new Date(),	
+		maxDate: new Date(), 
+		yearRange: range		
 	});
-	
-	
-
-	
 	
 	
 	//선택한 파일을 미리보기되도록 이미지로 보이게 처리
@@ -328,7 +324,6 @@ $(function(){
 	
 
 });
-
 
 
 
