@@ -1,24 +1,24 @@
-package lecture;
-
-import java.sql.Date;
-
-public class LectureVO {
+package timetable;
 
 
-	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
-	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year;
+public class TimeTableVO {
+
+	private String lecture_title, syllabus, teacher_name, semester, sortation, lecture_room, lecture_year, lecture_time, enrolment, reception_status, capacity, midex, finalex,
+					subjectcredit, state, book;
 	private int lecture_num;
-	private Date midex, finalex;
 	
-
-
 	public String getLecture_title() {
 		return lecture_title;
 	}
 	public void setLecture_title(String lecture_title) {
 		this.lecture_title = lecture_title;
 	}
-	
+	public String getSyllabus() {
+		return syllabus;
+	}
+	public void setSyllabus(String syllabus) {
+		this.syllabus = syllabus;
+	}
 	public String getTeacher_name() {
 		return teacher_name;
 	}
@@ -37,11 +37,17 @@ public class LectureVO {
 	public void setSortation(String sortation) {
 		this.sortation = sortation;
 	}
-	public String getLectur_room() {
-		return lectur_room;
+	public String getLecture_room() {
+		return lecture_room;
 	}
-	public void setLectur_room(String lectur_room) {
-		this.lectur_room = lectur_room;
+	public void setLecture_room(String lecture_room) {
+		this.lecture_room = lecture_room;
+	}
+	public String getLecture_year() {
+		return lecture_year;
+	}
+	public void setLecture_year(String lecture_year) {
+		this.lecture_year = lecture_year;
 	}
 	public String getLecture_time() {
 		return lecture_time;
@@ -67,6 +73,18 @@ public class LectureVO {
 	public void setCapacity(String capacity) {
 		this.capacity = capacity;
 	}
+	public String getMidex() {
+		return midex;
+	}
+	public void setMidex(String midex) {
+		this.midex = midex;
+	}
+	public String getFinalex() {
+		return finalex;
+	}
+	public void setFinalex(String finalex) {
+		this.finalex = finalex;
+	}
 	public String getSubjectcredit() {
 		return subjectcredit;
 	}
@@ -91,24 +109,6 @@ public class LectureVO {
 	public void setLecture_num(int lecture_num) {
 		this.lecture_num = lecture_num;
 	}
-
-	public Date getMidex() {
-		return midex;
-	}
-	public void setMidex(Date midex) {
-		this.midex = midex;
-	}
-	public Date getFinalex() {
-		return finalex;
-	}
-	public void setFinalex(Date finalex) {
-		this.finalex = finalex;
-	}
-
-	
-	
-	
-	
 	
 	
 	

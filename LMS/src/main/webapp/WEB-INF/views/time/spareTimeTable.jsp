@@ -53,7 +53,7 @@ table{
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 시간표</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 시간표 장바구니</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -61,7 +61,7 @@ table{
                                 	
                                     <thead>
                                         <tr class='bg-gray-100'>
-                                            <th>강의시간</th>
+                                            <th></th>
                                             <th>월</th>
                                             <th>화</th>
                                             <th>수</th>
@@ -81,7 +81,7 @@ table{
                                     </tfoot> -->
                                     <tbody>
                                         <tr>
-                                            <td>1교시 (09:00~09:50)</td>
+                                            <td>1교시</td>
                                             <td>기초전자실습(B302)</td>
                                             <td>전자기학(B305)</td>
                                             <td>디지털공학(B301)</td>
@@ -89,7 +89,7 @@ table{
                                             <td>회로이론1(B201)</td>
                                         </tr>
                                         <tr>
-                                            <td>2교시 (10:00~10:50)</td>
+                                            <td>2교시</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -97,7 +97,7 @@ table{
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <td>3교시 (11:00~11:50)</td>
+                                            <td>3교시</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -105,7 +105,7 @@ table{
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <td>4교시 (12:00~12:50)</td>
+                                            <td>4교시</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -113,7 +113,7 @@ table{
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <td>5교시 (14:00~14:50)</td>
+                                            <td>5교시</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -121,7 +121,7 @@ table{
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <td>6교시 (15:00~15:50)</td>
+                                            <td>6교시</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -129,7 +129,7 @@ table{
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <td>7교시 (16:00~16:50)</td>
+                                            <td>7교시</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -137,7 +137,7 @@ table{
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <td>8교시 (17:00~17:50)</td>
+                                            <td>8교시</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>

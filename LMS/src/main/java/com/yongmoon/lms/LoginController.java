@@ -15,20 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import login.LoginDAO;
-import login.LoginService;
-import login.LoginServiceImpl;
-import login.LoginVO;
+import member.MemberDAO;
+import member.MemberService;
+import member.MemberServiceImpl;
+import member.MemberVO;
 
 @Controller
 public class LoginController{
-	@Autowired private LoginServiceImpl service;
+	@Autowired private MemberServiceImpl service;
 	
 	
-	@RequestMapping("/dd")
+	@RequestMapping(value="/login")
 	public String Login(String id, String pw, HttpSession session) throws Exception{
 		
-		LoginVO vo = service.login_login(id, pw);
+		MemberVO vo = service.login_login(id, pw);
 		
 		session.setAttribute("loginInfo", vo);
 		if(vo == null)

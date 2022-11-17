@@ -3,7 +3,7 @@
 <mapper namespace="login">
 
 <!-- 로그인처리 -->
-<select id='firlogin' resultType='login.LoginVO'>
+<select id='firlogin' resultType='member.MemberVO'>
 select * from member where id = #{id} and pw = #{pw}
 </select>
 

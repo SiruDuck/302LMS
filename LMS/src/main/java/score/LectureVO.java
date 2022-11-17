@@ -1,24 +1,26 @@
-package lecture;
+package score;
 
 import java.sql.Date;
 
 public class LectureVO {
 
-
-	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
-	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year;
+	private String  lecture_title, syllabus, teacher_name, semester, sortation, lectur_room, 
+	 lecture_time, 
+	enrolment, reception_status, capacity,  subjectcredit, state, book;
 	private int lecture_num;
-	private Date midex, finalex;
-	
-
-
+	private Date lecture_startdate, lecture_enddate,midex, finalex;
 	public String getLecture_title() {
 		return lecture_title;
 	}
 	public void setLecture_title(String lecture_title) {
 		this.lecture_title = lecture_title;
 	}
-	
+	public String getSyllabus() {
+		return syllabus;
+	}
+	public void setSyllabus(String syllabus) {
+		this.syllabus = syllabus;
+	}
 	public String getTeacher_name() {
 		return teacher_name;
 	}
@@ -91,7 +93,18 @@ public class LectureVO {
 	public void setLecture_num(int lecture_num) {
 		this.lecture_num = lecture_num;
 	}
-
+	public Date getLecture_startdate() {
+		return lecture_startdate;
+	}
+	public void setLecture_startdate(Date lecture_startdate) {
+		this.lecture_startdate = lecture_startdate;
+	}
+	public Date getLecture_enddate() {
+		return lecture_enddate;
+	}
+	public void setLecture_enddate(Date lecture_enddate) {
+		this.lecture_enddate = lecture_enddate;
+	}
 	public Date getMidex() {
 		return midex;
 	}
@@ -104,9 +117,7 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
-
-	
-	
+		
 	
 	
 	
