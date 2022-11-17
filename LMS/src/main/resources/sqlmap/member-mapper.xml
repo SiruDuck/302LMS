@@ -29,7 +29,6 @@ from member
 where id like '%'||#{id}||'%'
 
 </select>
-</mapper>
 
 <!-- 로그인처리 -->
 <select id='login' resultType='member.MemberVO'>

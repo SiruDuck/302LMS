@@ -49,6 +49,7 @@ public class MemberController {
 		List<MemberVO> list = service.search_id_list(id);
 		model.addAttribute("list",list);
 		return "member/search/search_list";
+	}
 
 	//로그인 처리
 	@RequestMapping(value="/login")
