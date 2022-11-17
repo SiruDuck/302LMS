@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import lecture.LectureVO;
 import member.MemberVO;
 import score.ScoreDAO;
 import score.ScoreVO;
@@ -20,6 +21,35 @@ import score.ScoreVO;
 @Controller
 public class ScoreController {
 	@Autowired private ScoreDAO dao;
+	
+	//교수창에서 학생 이름 조회
+	@ResponseBody
+	@RequestMapping("/search_student_name")
+	public List<ScoreVO> search_name(String student, HttpSession session, Model model, @RequestParam(defaultValue = "-1") int lecture_num ) {
+		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
+		String name = vo.getName();
+		String id = vo.getId();	
+		List<ScoreVO>  list;
+		
+		
+		System.out.println(lecture_num);
+		if(lecture_num == -1) {
+			list = dao.search_name(student, name);
+		}else {
+			list = dao.search_name(student, name);
+		}
+		
+		//콘솔 출력
+		System.out.println("이름 : "+name);
+		System.out.println("학생명 : "+student);
+		System.out.println("리스트 사이즈 : " + list.size());
+		
+		
+		//model전송
+		model.addAttribute("list", list);
+		
+		return list;
+	}
 	
 	
 	//성적입력 
@@ -134,12 +164,13 @@ public class ScoreController {
 	//과목별 성적조회
 	@RequestMapping("/list.sc")
 	public String lookup_score(Model model, @RequestParam(defaultValue = "-1") int lecture_num 
-			,@RequestParam(defaultValue = "1") int category, HttpSession session){
+			,@RequestParam(defaultValue = "1") int category, HttpSession session, String student){
 		List<ScoreVO>  list;
 		//로그인 vo
 		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
 		String id = vo.getId();	
-		
+		int info_cd = vo.getInfo_cd();
+		String name = vo.getName();
 		List<ScoreVO> lectures = dao.lookup_lectures(id);
 
 
@@ -150,11 +181,24 @@ public class ScoreController {
 		}else {
 			list = dao.lookup_list(id,lecture_num);
 		}
+		
+		
+		if(info_cd == 3) {
+			list = dao.lookup_list_for_teacher(name);
+			List<ScoreVO> lecture_title = dao.teacher_lecture_title(name);
+			model.addAttribute("lecture_title", lecture_title);
+			
+		}
+		
 		System.out.println("리스트 사이즈 : "+list.size());
 		model.addAttribute("lecture_num", lecture_num);
 		model.addAttribute("list", list);
 		model.addAttribute("lectures", lectures);
 		model.addAttribute("category", category);
-		return "score/list";
+		if(info_cd ==1) {
+			return "score/list";
+		}else {
+			return "score/list_for_th";
+		}
 	}
 }
