@@ -29,11 +29,11 @@ span.btn{
 
 <div class="container-fluid">
 <h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">전체 인원 관리</h1>
-<a href="#" class="btn btn-primary btn-icon-split mb-2">
+<a href="member" class="btn btn-primary btn-icon-split mb-2">
    <span class="icon text-gray-600">
    <i class="fas fa-arrow-right"></i>
    </span>
-   <span class="text" onclick="location='/lms/member'">인원 등록</span>
+   <span class="text">인원 등록</span>
                                     </a>
 					<div class='card mb-4'>
 						<div class='card-header py-3'>
