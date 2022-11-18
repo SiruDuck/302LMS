@@ -16,4 +16,16 @@ public class TimeTableDAO implements TimeTableService {
 		return sql.selectList("time.regist");
 	}
 
+	@Override
+	public TimeTableVO timeTableDetail(int lecture_num) {
+		return sql.selectOne("time.detail", lecture_num);
+	}
+
+	@Override
+	public List<TimeTableVO> lecture_title_list() {
+		return sql.selectList("time.titleList");
+	}
+
+	
+
 }
