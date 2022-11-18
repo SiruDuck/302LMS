@@ -3,11 +3,27 @@
 <mapper namespace="lecture">
 
 <select id="list" resultType="lecture.LectureVO">
-	select * from lectures
+	select * from lectures 
+	order by lecture_num
 </select>
 
 <select id="info" resultType="lecture.LectureVO">
 	select * from lectures where lecture_title = #{lecture_title}
 </select>
+
+<!-- <select id="insert">
+	insert into lectures
+</select>
+ -->
+<update id="update">
+	update lectures
+	set LECTURE_NUM = #{LECTURE_NUM}, LECTURE_TITLE = #{LECTURE_TITLE}, TEACHER_NAME = #{TEACHER_NAME},
+		SEMESTER = #{SEMESTER}, SORTATION = #{SORTATION}, LECTURE_ROOM = #{LECTURE_ROOM}, LECTURE_TIME = #{LECTURE_TIME},
+		ENROLMENT = #{ENROLMENT, jdbcType = VARCHAR}, RECEPTION_STATUS = #{RECEPTION_STATUS, jdbcType = VARCHAR}, CAPACITY = #{CAPACITY, jdbcType = VARCHAR}, 
+		MIDEX = #{MIDEX, jdbcType = VARCHAR},
+		FINALEX = #{FINALEX, jdbcType = VARCHAR}, SUBJECTCREDIT = #{SUBJECTCREDIT}, STATE = #{STATE}, BOOK = #{BOOK},
+		LECTURE_YEAR = #{LECTURE_YEAR}, LECTURE_DAY = #{LECTURE_DAY}
+	where lecture_title = #{lecture_title}
+</update>
 
 </mapper>

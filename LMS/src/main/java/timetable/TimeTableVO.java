@@ -4,7 +4,7 @@ package timetable;
 public class TimeTableVO {
 
 	private String lecture_title, syllabus, teacher_name, semester, sortation, lecture_room, lecture_year, lecture_time, enrolment, reception_status, capacity, midex, finalex,
-					subjectcredit, state, book;
+					subjectcredit, state, book, lecture_day;
 	private int lecture_num;
 	
 	public String getLecture_title() {
@@ -108,6 +108,12 @@ public class TimeTableVO {
 	}
 	public void setLecture_num(int lecture_num) {
 		this.lecture_num = lecture_num;
+	}
+	public String getLecture_day() {
+		return lecture_day;
+	}
+	public void setLecture_day(String lecture_day) {
+		this.lecture_day = lecture_day;
 	}
 	
 	

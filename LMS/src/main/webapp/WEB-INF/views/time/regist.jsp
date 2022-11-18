@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <style>
@@ -22,114 +22,126 @@ span.btn{
     margin-bottom: 1rem;
     max-width: 10%;
 }
+.btn a{
+	text-decoration: none;
+}
+.datepicker-days .datepicker-months{
+	display: none;
+}
 </style>
 <body>
+<form method='post' action='regist.tt'>
 <div class='card mb-4'>
 	<div class='card-header py-3'>
-		<h6 class='m-0 font-weight-bold text-primary'>°­ÀÇ °Ë»ö</h6>
+		<h6 class='m-0 font-weight-bold text-primary'>ê°•ì˜ ê²€ìƒ‰</h6>
 	</div>
 	<div class='card-body d-flex'>
+	<div class="dataTables_length search-box" id="dataTable_length">   		
+       			<select name="dataTable_length" class="custom-select custom-select-sm form-control form-control-sm">
+       				<option value="10">10ê°œì”© ë³´ê¸°</option>
+       				<option value="20">20ê°œì”© ë³´ê¸°</option>
+       				<option value="30">30ê°œì”© ë³´ê¸°</option>
+       				<option value="40">40ê°œì”© ë³´ê¸°</option>
+  				</select>   				 
+			 </div>
 		<div class='dataTables_filter search-box'>
-			<input type="search" class='form-control form-control-sm' placeholder='°ú¸ñ¸í'>
+			<input type="search" class='form-control form-control-sm' placeholder='ê³¼ëª©ëª…' onchange="$('form').submit()" aria-controls="dataTable">
 		</div>
 		<div class='dataTables_filter search-box'>
-			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>ÇĞ°ú ÀüÃ¼º¸±â</option>
-				<option value='game'>°ÔÀÓ°³¹ßÇĞ°ú</option>
-				<option value='ai'>ÀÎ°øÁö´ÉÇĞ°ú</option>
-				<option value='web'>À¥ÇĞ°ú</option>
-				<option value='db'>DBÇĞ°ú</option>
-				<option value='iot'>IotÇĞ°ú</option>
-				<option value='app'>¾Û°³¹ßÇĞ°ú</option>
-				<option value='info'>Á¤º¸º¸¾ÈÇĞ°ú</option>
+			<select class='custom-select custom-select-sm form-control form-control-sm' name='lecture_num' onchange="$('form).submit()">
+				<option value='-1'>ì „ì²´ í•™ê³¼ë³´ê¸°</option>
+				<c:forEach items="${lectures }" var="l">
+					<option value="${l.lecture_num }" ${lecture_num eq l.lecture_num ? 'selected' : '' }>${l.lecture_title}</option>
+				</c:forEach>
 			</select>
 		</div>
 		<div class='dataTables_filter search-box'>
 			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>±¸ºĞ ÀüÃ¼º¸±â</option>
-				<option value='major'>Àü°ø ÇÊ¼ö</option>
-				<option value='optional'>Àü°ø ¼±ÅÃ</option>
-				<option value='required'>±³¾ç ÇÊ¼ö</option>
-				<option value='elective'>±³¾ç ¼±ÅÃ</option>
+				<option value='all'>êµ¬ë¶„ ì „ì²´ë³´ê¸°</option>
+				<option value='major'>ì „ê³µ í•„ìˆ˜</option>
+				<option value='optional'>ì „ê³µ ì„ íƒ</option>
+				<option value='required'>êµì–‘ í•„ìˆ˜</option>
+				<option value='elective'>êµì–‘ ì„ íƒ</option>
 			</select>
 		</div>
 		<div class='dataTables_filter search-box'>
 			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>¿äÀÏ ÀüÃ¼º¸±â</option>
-				<option value='mon'>¿ù</option>
-				<option value='tue'>È­</option>
-				<option value='wed'>¼ö</option>
-				<option value='thu'>¸ñ</option>
-				<option value='fri'>±İ</option>
+				<option value='all'>ìš”ì¼ ì „ì²´ë³´ê¸°</option>
+				<option value='mon'>ì›”</option>
+				<option value='tue'>í™”</option>
+				<option value='wed'>ìˆ˜</option>
+				<option value='thu'>ëª©</option>
+				<option value='fri'>ê¸ˆ</option>
 			</select>
 		</div>
 		<div class='dataTables_filter'>
 			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>½Ã°£ ÀüÃ¼º¸±â</option>
-				<option value='1'>1±³½Ã (09:00~09:50)</option>
-				<option value='2'>2±³½Ã (10:00~10:50)</option>
+				<option value='all'>ì‹œê°„ ì „ì²´ë³´ê¸°</option>
+				<option value='1'>1êµì‹œ (09:00~09:50)</option>
+				<option value='2'>2êµì‹œ (10:00~10:50)</option>
 			</select>
 		</div>
+		
 	</div>
 </div>
+</form>
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-	    <h6 class="m-0 font-weight-bold text-primary">¼ö°­ ½ÅÃ»</h6>
+	    <h6 class="m-0 font-weight-bold text-primary">ìˆ˜ê°• ì‹ ì²­</h6>
 	</div>
     <div class="card-body">
         <div class="table-responsive">
-        <div class="col-sm-12 col-md-6 count-box">
-        	<div class="dataTables_length" id="dataTable_length">
-        		
-        			<select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm">
-        				<option value="10">10°³¾¿ º¸±â</option>
-        				<option value="20">20°³¾¿ º¸±â</option>
-        				<option value="30">30°³¾¿ º¸±â</option>
-        				<option value="40">40°³¾¿ º¸±â</option>
-       				</select>
-   				 
-			 </div>
-		 </div>
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <!-- <div class="col-sm-12 col-md-6 count-box">      	
+			 <a href="spare.tt" class="btn btn-warning btn-icon-split">
+                 <span class="icon text-white-50">
+                     <i class="fas fa-calendar-alt"></i>
+                 </span>
+                 <span class="text">ì¥ë°”êµ¬ë‹ˆ</span>
+             </a>
+		 </div> -->
 
-                    <tr role="row" class='bg-gray-100'>
-                    	<th>°ú¸ñÄÚµå</th>
-                    	<th>°ú¸ñ¸í</th>
-                    	<th>±¸ºĞ</th>
-                    	<th>´ã´ç±³¼ö</th>
-                    	<th>°­ÀÇ½Ç</th>
-                    	<th>ÀÌ¼ö</th>
-                    	<th>ÇĞÁ¡</th>
-                    	<th>°­ÀÇÀ¯Çü</th>
-                    	<th>»ó¼¼º¸±â</th>
-                    	<th>°­ÀÇ½ÅÃ»</th>
-                   	</tr>
+		 <!-- ìˆ˜ê°•ì‹ ì²­ë¦¬ìŠ¤íŠ¸ -->
+         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <tr role="row" class='bg-gray-100'>
+             	<th>ê³¼ëª©ì½”ë“œ</th>
+             	<th>ê³¼ëª©ëª…</th>
+             	<th>êµ¬ë¶„</th>
+             	<th>ë‹´ë‹¹êµìˆ˜</th>
+             	<th>ê°•ì˜ì‹¤</th>
+             	<th>ê°•ì˜ì‹œê°„</th>
+             	<th>í•™ì </th>
+             	<th>ê°•ì˜ìœ í˜•</th>
+             	<th>ìƒì„¸ë³´ê¸°</th>
+             	<th>ê°•ì˜ì‹ ì²­</th>
+           	</tr>
 
-                <c:forEach items="${vo }" var="vo">
-                    <tr>
-                    	<td>${vo.lecture_num }</td>
-                        <td>${vo.lecture_title }</td>
-                        <td>${vo.sortation }</td>
-                        <td>${vo.teacher_name }</td>
-                        <td>${vo.lecture_room }</td>
-                        <td>${vo.lecture_time }</td>
-                        <td>${vo.subjectcredit }</td>
-                        <td>${vo.state }</td>
-                        <td>
-                        	<span  class=' btn btn-primary btn-icon-split'>
-                        		<a class='text-white'>»ó¼¼º¸±â</a>
-                        	</span>
-                        </td>
-                        <td>
-                        	<span  class=' btn btn-info btn-icon-split'>
-                        		<a class='text-white'>½ÅÃ»ÇÏ±â</a>
-                        	</span>
-                        </td>
-                    </tr>
-                </c:forEach>
+            <c:forEach items="${vo }" var="vo">
+                <tr>
+                	<td>${vo.lecture_num }</td>
+                    <td>${vo.lecture_title }</td>
+                    <td>${vo.sortation }</td>
+                    <td>${vo.teacher_name }</td>
+                    <td>${vo.lecture_room }</td>
+                    <td>${vo.lecture_time }</td>
+                    <td>${vo.subjectcredit }</td>
+                    <td>${vo.state }</td>
+                    <td>
+                    	<span  class=' btn btn-primary btn-icon-split'>
+                    		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>ìƒì„¸ë³´ê¸°</a>
+                    	</span>
+                    </td>
+                    <td>
+	                   	<span  class=' btn btn-info btn-icon-split'>
+	                   		<a class='text-white'>ì‹ ì²­í•˜ê¸°</a>
+	                   	</span>
+                    </td>
+                </tr>
+            </c:forEach>
 
-            </table>
-		<div class="row">
+         </table>
+        
+        <!-- í˜ì´ì§€ ì „í™˜ -->
+		<!-- <div class="row">
        		<div class="col-sm-12 col-md-7">
        			<div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
        				<ul class="pagination">
@@ -160,7 +172,7 @@ span.btn{
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div> -->
         </div>
     </div>
 </div>

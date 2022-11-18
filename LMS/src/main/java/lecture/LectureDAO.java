@@ -19,13 +19,13 @@ public class LectureDAO implements LectureService {
 
 	@Override
 	public int lecture_insert(LectureVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return sql.insert("lecture.insert", vo);
 	}
 
 	@Override
 	public void lecture_update(LectureVO vo) {
-		// TODO Auto-generated method stub
+		sql.update("lecture.update", vo);
 		
 	}
 

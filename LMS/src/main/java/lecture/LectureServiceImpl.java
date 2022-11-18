@@ -17,13 +17,13 @@ public class LectureServiceImpl implements LectureService {
 
 	@Override
 	public int lecture_insert(LectureVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return dao.lecture_insert(vo);
 	}
 
 	@Override
 	public void lecture_update(LectureVO vo) {
-		// TODO Auto-generated method stub
+		dao.lecture_update(vo);
 		
 	}
 
