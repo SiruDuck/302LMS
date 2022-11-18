@@ -4,8 +4,9 @@ import java.sql.Date;
 
 public class MemberVO {
 	private String id,	pw,	name,	gender, phone,	email,	post,	addr,	grade,state,	department_id,	department_name, 	info_name;
-	private String birth,start_date,	end_date;
+	private String birth, start_date, end_date;
 	private int info_cd;
+	
 	public String getId() {
 		return id;
 	}
