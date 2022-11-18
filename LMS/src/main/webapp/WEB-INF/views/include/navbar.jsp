@@ -53,8 +53,8 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                My Page
+            <div class="sidebar-heading mt-3 mb-2">
+                My Page 
             </div>
 
 

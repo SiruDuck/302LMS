@@ -64,7 +64,6 @@
                         <h6 class="collapse-header">관리</h6>
                         <a class="collapse-item" href="#">장학 관리</a>
                         <a class="collapse-item" href="cash.ing">급여 관리</a>
-                        <a class="collapse-item" href="#">권한 관리</a>
                         <a class="collapse-item" href="member.list">인원 관리</a>
                     </div>
                 </div>
@@ -80,7 +79,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="#">강의 관리</a>
-                        <a class="collapse-item" href="#">교재 및 비품 관리</a>
+                        <a class="collapse-item" href="eqlist">교재 및 비품 관리</a>
                     </div>
                 </div>
             </li>

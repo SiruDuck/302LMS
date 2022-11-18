@@ -27,10 +27,17 @@ a.btn-fill, a.btn-empty {
 }
 a{cursor: pointer;}
 .top-menu{
-	width: calc(100%-10px);
-	margin: 0 auto;
+	width: 100%;
+	margin: 1.5rem auto;
 	display: flex;
 	justify-content: space-between;
+}
+#data-list{
+	height: 100%;
+	overflow: auto;
+}
+#insert{
+float: right;
 }
 </style>
 </head>
@@ -43,7 +50,7 @@ a{cursor: pointer;}
 					<ul class="list-lectures">
 						<li>
 						<select name="lecture_num" id="lectureList" class="w-px200" onchange="$('form').submit()">
-						<option value="-1">전체</option>
+						<option value="-1">전체 과목</option>
 							<c:forEach items="${lectures}" var ="vo">
 								<option ${lecture_num eq vo.lecture_num ? 'selected' : '' }
 								 value="${vo.lecture_num}">${vo.lecture_title}</option>
@@ -52,6 +59,19 @@ a{cursor: pointer;}
 					</ul>
 				</form>
 			</div>
+			<c:choose>
+				<c:when test="${loginInfo.info_cd eq 3}">
+					<a class = "btn-fill" id="insert" href="insert.sc"> 성적입력</a>
+				</c:when>
+			</c:choose>
+			<c:choose>
+				<c:when test="${loginInfo.info_cd eq 1}">
+					${vo.teacher_name}
+				</c:when>
+				<c:when test="${loginInfo.info_cd eq 3}">
+					${vo.name}
+				</c:when>
+			</c:choose>
 			<div class='api'>
 				<a >전체 조회</a> <a>학년별 조회</a>
 			</div>
@@ -98,11 +118,13 @@ function subject_list(){
 	$("#data-list").empty();
 	$('#yearList').closest('li').remove();
 	var tag 	= 	"<table class='table'>"
-		+ "<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>년도</th><th>학기</th><th>학점</th><th>성적</th></tr>"
+		+ "<tr><th>강의명</th><th>강의번호</th>"
+		+"<th>교수명</th>"
+		+"<th>년도</th><th>학기</th><th>학점</th><th>성적</th><th>성적</th></tr>"
 		+ "<c:forEach items='${list}' var='vo'>"
 		+ "<tr><td>${vo.lecture_title}</td><td>${vo.lecture_num}</td>"
 		+"<td>${vo.teacher_name}</td><td>${vo.lecture_year}년</td><td>${vo.semester}</td>"
-		+ "<td>${vo.subjectcredit}</td><td>${vo.semesterpoint}</td></tr>"
+		+ "<td>${vo.subjectcredit}</td><td>${vo.semesterpoint}</td><td>${vo.score_name}</td></tr>"
 		+ "</c:forEach>"
  		+ "</table>";
 			$("#data-list").append(tag);

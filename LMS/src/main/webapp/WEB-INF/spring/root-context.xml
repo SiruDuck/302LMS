@@ -9,6 +9,6 @@
 
 	<import resource="classpath:dbconn/common.xml" />
 	<context:component-scan
-		base-package="student, lecture, cash, score, time, member, timetable" />
+		base-package="student, lecture, cash, score, time, member, timetable, department, equipment" />
 
 </beans>
