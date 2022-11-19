@@ -6,7 +6,7 @@ public class LectureVO {
 
 
 	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
-	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year;
+	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day;
 	private int lecture_num;
 	private Date midex, finalex;
 	public String getLecture_title() {
@@ -87,6 +87,12 @@ public class LectureVO {
 	public void setLecture_year(String lecture_year) {
 		this.lecture_year = lecture_year;
 	}
+	public String getLecture_day() {
+		return lecture_day;
+	}
+	public void setLecture_day(String lecture_day) {
+		this.lecture_day = lecture_day;
+	}
 	public int getLecture_num() {
 		return lecture_num;
 	}
@@ -105,9 +111,6 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
-	
-
-
 	
 	
 	

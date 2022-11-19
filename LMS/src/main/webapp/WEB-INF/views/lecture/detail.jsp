@@ -25,12 +25,19 @@ span.btn {
 	margin-bottom: 1rem;
 	max-width: 10%;
 }
+.lec-table{
+	justify-content: center;
+	display: flex;
+	width: 1000px;
+}
+
+
 </style>
 
 <body>
 
 
-	<div class="container-fluid">
+	<div class="container-fluid" >
 		<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">강의 상세 정보</h1>
 		<div class='card mb-4'>
 			<!-- <div class='card-header py-3'>
@@ -86,11 +93,11 @@ span.btn {
 			
 		</div>
 	</div>
-	<div class="dd">
+	<div class="lec-table" >
 		<!-- Page Heading -->
 
 		<!-- DataTales Example -->
-		<div class="card shadow mb-4">
+		<div class="card shadow mb-4 lec-table">
 			<div class="card-header py-3">
 				<h6 class="m-0 font-weight-bold text-primary">강의 상세 정보</h6>
 			</div>
@@ -138,7 +145,7 @@ span.btn {
 									<td>${vo.book}</td>
 								</tr>
 								<tr>
-									<th>강의시간</th>
+									<th>교시</th>
 									<td>${vo.lecture_time}</td>
 								</tr>
 								<tr>
@@ -174,11 +181,11 @@ span.btn {
 		</div>
 	</div>
 	<!-- container-fluid -->
-	<div class="">
+			<div class="">
 				<a href="list.lec" class="btn btn-primary">강의 목록</a> 
 				<a href="modify.lec?lecture_title=${vo.lecture_title}" class="btn btn-primary">정보수정</a>
 				<a class="btn btn-primary"
-					onclick="if(confirm('정말 삭제?')) location='delete.lec?lecture_title=${vo.lecture_title}'">삭제</a>
+					onclick="if(confirm('정말 삭제하시겠습니까?')) location='delete.lec?lecture_title=${vo.lecture_title}'">삭제</a>
 			</div>
 	
 

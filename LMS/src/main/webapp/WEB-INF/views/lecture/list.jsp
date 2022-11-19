@@ -25,6 +25,11 @@ span.btn {
 	margin-bottom: 1rem;
 	max-width: 10%;
 }
+
+.lec-font {
+	font-size: 14px;
+	text-align: center;
+}
 </style>
 
 <body>
@@ -93,7 +98,7 @@ span.btn {
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">전체 강의 목록</h6>
 				</div>
-				<div class="card-body">
+				<div class="card-body lec-font">
 					<div class="table-responsive">
 						<div id='dataTable_wrapper'
 							class='dataTables_wrapper dt-bootstrap4'>
@@ -101,41 +106,38 @@ span.btn {
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th>강의번호</th>
 										<th>년도</th>
+										<th>강의번호</th>
 										<th>학기</th>
 										<th>강의명</th>
 										<th>교수명</th>
 										<th>강의실</th>
-										<th>시간</th>
+										<th>교시</th>
 										<th>이수구분</th>
 										<th>수강신청</th>
-										<th>접수상태</th>
 										<th>수강인원</th>
 										<th>과목학점</th>
-										<th>온/오프라인</th>
-										<th>교재명</th>
+										<th>수업유형</th>
+										<th>비고</th>
 									</tr>
 								</thead>
 								<tbody>
 
-									<c:forEach items="${vo }" var="vo">
+									<c:forEach items="${vo}" var="vo">
 										<tr>
-											<td>${vo.lecture_num}</td>
 											<td>${vo.lecture_year}</td>
+											<td>${vo.lecture_num}</td>
 											<td>${vo.semester}</td>
-											<td><a
-												href="detail.lec?lecture_title=${vo.lecture_title}">${vo.lecture_title}</a></td>
+											<td>${vo.lecture_title}</td>
 											<td>${vo.teacher_name}</td>
 											<td>${vo.lecture_room}</td>
 											<td>${vo.lecture_time}</td>
 											<td>${vo.sortation}</td>
-											<td>${vo.enrolment}</td>
 											<td>${vo.reception_status}</td>
 											<td>${vo.capacity}</td>
-											<td>${vo.subjectcredit}학점</td>
+											<td>${vo.subjectcredit}</td>
 											<td>${vo.state}</td>
-											<td>${vo.book}</td>
+											<td><a href="detail.lec?lecture_title=${vo.lecture_title}"><button id="lec_detail" class="btn-primary">상세보기</button></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

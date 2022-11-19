@@ -21,7 +21,8 @@
 </tr>
 <tr><th>이수 구분</th>
 	<td>
-		<label><input type='radio' name='sortation' >전공</label>
+		<label><input type='radio' name='sortation' >전공필수</label>
+		<label><input type='radio' name='sortation' >전공선택</label>
 		<label><input type='radio' name='sortation' >교양</label>
 	</td>
 </tr>
