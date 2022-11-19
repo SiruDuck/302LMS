@@ -53,6 +53,25 @@ public class MemberServiceImpl implements MemberService{
 		return dao.member_id_check(id);
 	}
 
+	//특정과 학생목록 조회
+	@Override
+	public List<MemberVO> member_list(int department_id) {
+		
+		return dao.member_list(department_id);
+	}
+
+	
+	
+	
+	//////////////////////////////////안드로이드////////////////////////////
+	
+	
+	@Override
+	public MemberVO and_login(String id, String pw) throws Exception {
+		
+		return dao.and_login(id, pw);
+	}
+
 
 	
 	

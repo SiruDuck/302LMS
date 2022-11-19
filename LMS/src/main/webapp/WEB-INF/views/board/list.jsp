@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title></title>
 <style>
 
 .search-box{
@@ -19,7 +18,7 @@
 </head>
 <body>
 
-	<form method='post' action='list.no'>
+		<form method='post' action='list.no'>
 		<div class='card mb-4'>
 			<div class='card-header py-3'>
 				<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
@@ -49,7 +48,7 @@
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
+			<h6 class="m-0 font-weight-bold text-primary">자유 게시판</h6>
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
@@ -60,19 +59,20 @@
 							<th>번호</th>
 							<th>제목</th>
 							<th>작성자</th>
-							<th>작성일자</th>
+							<th>작성일</th>
+							<th>첨부파일</th>
+							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody>
-					
-					<c:forEach items='${list}' var='vo'>
 						<tr>
-							<td>${vo.num }</td>
-							<td>${vo.title }</td>
-							<td>${vo.id }</td>
-							<td>${vo.writedate }</td>
+							<td>Tiger Nixon</td>
+							<td>System Architect</td>
+							<td>Edinburgh</td>
+							<td>61</td>
+							<td>2011/04/25</td>
+							<td>$320,800</td>
 						</tr>
-					</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -119,6 +119,7 @@
 
 
 
+	
 
 
 </body>

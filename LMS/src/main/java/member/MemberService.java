@@ -10,6 +10,7 @@ public interface MemberService {
 	
 
 	List<MemberVO> member_list();	//전체 멤버리스트
+	List<MemberVO> member_list(int info_cd); //구분 멤버 리스트
 	
 	List<DepartmentVO> department_list();	//과 리스트
 	
@@ -22,6 +23,8 @@ public interface MemberService {
 	int member_join(MemberVO vo);
 	int member_id_check(String id);
 	
+	
+	MemberVO and_login(String id, String pw) throws Exception;
 	
 
 	

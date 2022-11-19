@@ -3,9 +3,10 @@ package member;
 import java.sql.Date;
 
 public class MemberVO {
-	private String id,	pw,	name,	gender, phone,	email,	post,	addr,	grade,state,	department_id,	department_name, 	info_name;
+	private String id,	pw,	name,	gender, phone,	email,	post,	addr,	grade,state,	department_name, 	info_name;
 	private String birth, start_date, end_date;
-	private int info_cd;
+	
+	private int department_id, info_cd;
 	
 	public String getId() {
 		return id;
@@ -67,10 +68,10 @@ public class MemberVO {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public String getDepartment_id() {
+	public int getDepartment_id() {
 		return department_id;
 	}
-	public void setDepartment_id(String department_id) {
+	public void setDepartment_id(int department_id) {
 		this.department_id = department_id;
 	}
 	public String getDepartment_name() {
