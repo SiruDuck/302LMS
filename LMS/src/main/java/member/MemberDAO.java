@@ -78,11 +78,10 @@ public class MemberDAO implements MemberService{
 	
 	
 	@Override
-	public MemberVO and_login(String id, String pw) throws Exception {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("id", id);
-		map.put("pw", pw);
-		return sql.selectOne("member.login", map);
+	public MemberVO and_login(String id){
+		
+		
+		return sql.selectOne("member.andlogin", id);
 	}
 
 	

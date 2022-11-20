@@ -11,6 +11,7 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public List<NoticeVO> notice_list() {
+	
 		return dao.notice_list();
 	}
 

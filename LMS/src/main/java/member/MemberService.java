@@ -24,7 +24,9 @@ public interface MemberService {
 	int member_id_check(String id);
 	
 	
-	MemberVO and_login(String id, String pw) throws Exception;
+
+
+	MemberVO and_login(String id) throws Exception;
 	
 
 	

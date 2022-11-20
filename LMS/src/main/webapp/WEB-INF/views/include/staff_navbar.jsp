@@ -103,8 +103,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">커뮤니티</h6>
-                        <a class="collapse-item" href="list.fr">자유 게시판</a>
-                        <a class="collapse-item" href="review.co">수강후기</a>
+                        <a class="collapse-item" href="list.br">자유 게시판</a>
+                        <a class="collapse-item" href="list.co">수강후기</a>
                         <div class="collapse-divider"></div>
 
                     </div>

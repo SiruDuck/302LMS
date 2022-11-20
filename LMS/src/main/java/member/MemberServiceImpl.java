@@ -67,9 +67,9 @@ public class MemberServiceImpl implements MemberService{
 	
 	
 	@Override
-	public MemberVO and_login(String id, String pw) throws Exception {
+	public MemberVO and_login(String id) {
 		
-		return dao.and_login(id, pw);
+		return dao.and_login(id);
 	}
 
 

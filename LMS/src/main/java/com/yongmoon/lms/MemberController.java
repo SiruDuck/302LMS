@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -155,15 +156,15 @@ public class MemberController {
 	}
 
 	//////////////////////////// 안드로이드///////////////////////////////////////
-	
-	/*
-	 * @RequestMapping("/andLogin") public String login(String id, String pw) {
-	 * MemberVO vo = null; System.out.println(sql.selectOne("member.andlogin")+"");
-	 * if(id!=null && pw!=null && id.equals("id") && pw.equals("pw") ) { vo = new
-	 * MemberVO(); } return new Gson().toJson(vo);
-	 * 
-	 * 
-	 * }
-	 */
+
+	@ResponseBody @RequestMapping("/andLogin")
+	public String login(String id, String pw){
+		MemberVO vo = service.and_login(id);
+		if (vo.getPw().equals(pw)) {
+			return new Gson().toJson(vo);
+		} else {
+			return "다시 입력";
+		}
+	}
 
 }
