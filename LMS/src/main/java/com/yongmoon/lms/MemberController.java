@@ -36,7 +36,7 @@ public class MemberController {
 
 	// 학생, 교사, 교직원, 어드민 리스트 출력
 	@RequestMapping("/member.list")
-	public String memberlist(Model model, @RequestParam(defaultValue = "-1") int info_cd, int department_id) {
+	public String memberlist(Model model, @RequestParam(defaultValue = "-1") int info_cd) {
 		List<MemberVO> list = service.member_list(); // 총 멤버 리스트
 		List<DepartmentVO> department_list = service.department_list();
 
