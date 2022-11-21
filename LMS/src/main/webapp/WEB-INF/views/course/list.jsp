@@ -4,19 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-.search-box {
-	margin: 0 1rem 0 0;
-}
-
-.table-responsive {
-	overflow: hidden;
-}
-</style>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 </head>
 <body>
+
 
 	<form method='post' action='list.no'>
 		<div class='card mb-4'>
@@ -47,7 +41,7 @@
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
+			<h6 class="m-0 font-weight-bold text-primary">수강후기</h6>
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
@@ -66,16 +60,15 @@
 							<tr>
 								<td>${vo.num }</td>
 								<td>${vo.title }</td>
-								<td>${vo.id }</td>
 								<td>${vo.writedate }</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</div>
-			<div class='info' style="text-align: right; margin-right: 30px;">
-				<c:if test='${loginInfo.info_cd eq 4 }'>
-					<a href='new.no' class='btn btn-primary'>글쓰기</a>
+			<div class='info' class='info' style="text-align: right; margin-right: 30px;">
+				<c:if test='${loginInfo.info_cd eq 1 }'>
+					<a href='new.co' class='btn btn-primary' id='join'>글쓰기</a>
 				</c:if>
 			</div>
 			<div class="row">
@@ -118,6 +111,7 @@
 			</div>
 		</div>
 	</div>
+
 
 
 
