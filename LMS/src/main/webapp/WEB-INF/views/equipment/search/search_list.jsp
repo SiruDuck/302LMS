@@ -35,3 +35,55 @@
                                     </tbody>
                                 </table>
                           
+<script>
+
+$('.eqname').keyup(function(){
+	$.ajax({
+		data:{name: $(this).val()},
+		url:"eqnamelist",
+		success:function(data){
+			$('#dataTable_wrapper').html(data);
+		}
+		
+	})
+});
+
+function equiment_add (){
+	document.getElementById('eqmodify').style.display='none';
+	document.getElementById('eqadd').style.display='block';
+	
+	
+}
+
+$('.btn-secondary').click(function(){
+	document.getElementById('eqmodify').style.display='block';
+	document.getElementById('eqadd').style.display='none';
+	var $tr = $(this).closest('tr');
+	$('[name=mequipment]').val(  $tr.children('td').eq(0).text() );
+	$('[name=mequipment_num]').val(  $tr.children('td').eq(1).text() );
+	$('[name=mbuy_day]').val(  $tr.children('td').eq(2).text() );
+	$('[name=mprice]').val(  $tr.children('td').eq(3).text() );
+	$('[name=msituation]').val( $tr.children('td').eq(4).text());
+// 	= $tr.children('td').eq(0);
+	$('[name=mequipment_num]').focus();
+});
+
+/* $('#modi').  click(function(){
+	alert("dd");
+	$('#fo').focus();
+	
+}); */
+
+
+$('.names').keyup(function(){
+	$.ajax({
+		data:{name: $(this).val()},
+		url:"eqnamelist",
+		success:function(data){
+			$('#dataTable_wrapper').html(data);
+		}
+		
+	})
+});
+
+</script>                          
