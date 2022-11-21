@@ -4,22 +4,16 @@ import java.sql.Date;
 
 public class LectureVO {
 
-	private String  lecture_title, syllabus, teacher_name, semester, sortation, lectur_room, 
-	 lecture_time, 
-	enrolment, reception_status, capacity,  subjectcredit, state, book;
+
+	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
+	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day;
 	private int lecture_num;
-	private Date lecture_startdate, lecture_enddate,midex, finalex;
+	private Date midex, finalex;
 	public String getLecture_title() {
 		return lecture_title;
 	}
 	public void setLecture_title(String lecture_title) {
 		this.lecture_title = lecture_title;
-	}
-	public String getSyllabus() {
-		return syllabus;
-	}
-	public void setSyllabus(String syllabus) {
-		this.syllabus = syllabus;
 	}
 	public String getTeacher_name() {
 		return teacher_name;
@@ -39,11 +33,11 @@ public class LectureVO {
 	public void setSortation(String sortation) {
 		this.sortation = sortation;
 	}
-	public String getLectur_room() {
-		return lectur_room;
+	public String getLecture_room() {
+		return lecture_room;
 	}
-	public void setLectur_room(String lectur_room) {
-		this.lectur_room = lectur_room;
+	public void setLecture_room(String lecture_room) {
+		this.lecture_room = lecture_room;
 	}
 	public String getLecture_time() {
 		return lecture_time;
@@ -87,23 +81,23 @@ public class LectureVO {
 	public void setBook(String book) {
 		this.book = book;
 	}
+	public String getLecture_year() {
+		return lecture_year;
+	}
+	public void setLecture_year(String lecture_year) {
+		this.lecture_year = lecture_year;
+	}
+	public String getLecture_day() {
+		return lecture_day;
+	}
+	public void setLecture_day(String lecture_day) {
+		this.lecture_day = lecture_day;
+	}
 	public int getLecture_num() {
 		return lecture_num;
 	}
 	public void setLecture_num(int lecture_num) {
 		this.lecture_num = lecture_num;
-	}
-	public Date getLecture_startdate() {
-		return lecture_startdate;
-	}
-	public void setLecture_startdate(Date lecture_startdate) {
-		this.lecture_startdate = lecture_startdate;
-	}
-	public Date getLecture_enddate() {
-		return lecture_enddate;
-	}
-	public void setLecture_enddate(Date lecture_enddate) {
-		this.lecture_enddate = lecture_enddate;
 	}
 	public Date getMidex() {
 		return midex;
@@ -117,8 +111,6 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
-
-	
 	
 	
 	

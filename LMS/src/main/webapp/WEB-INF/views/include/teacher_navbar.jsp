@@ -62,8 +62,6 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">관리페이지</h6>
-
-                        <a class="collapse-item" href="list.sc">성적 조회</a>
                         <a class="collapse-item" href="#">강의 관리</a>
                         <a class="collapse-item" href="#">비품 조회</a>
                         <a class="collapse-item" href="#">과제 관리</a>

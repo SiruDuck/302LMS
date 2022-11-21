@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import department.DepartmentVO;
+import equipment.EquipmentDAO;
+import equipment.EquipmentVO;
+
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +24,7 @@ import member.MemberVO;
 @Controller
 public class MemberController {
 	@Autowired private MemberServiceImpl service;
-
+	@Autowired private EquipmentDAO vo;
 	//학생, 교사, 교직원, 어드민 리스트 출력
 	@RequestMapping("/member.list")
 	public String memberlist(Model model) {
@@ -111,7 +114,32 @@ public class MemberController {
 		}
 		
 		
+		//비품 리스트
+		@RequestMapping("/eqlist")
+		public String equipment_list(Model model) {
+			List<EquipmentVO> list = vo.list();
+			model.addAttribute("list",list);
+			return "equipment/equipment_list";
+		}
 		
+		//비품 이름으로 검색 리스트
+		@RequestMapping("/eqnamelist")
+		public String equipment_search_name_list(Model model,String name) {
+			List<EquipmentVO> list = vo.search_name_list(name);
+			model.addAttribute("list",list);
+			return "equipment/search/search_list";
+		}		
 		
-
+		//비품 추가 화면 요청
+		@RequestMapping("/eqadd")
+		public String equipment_add() {
+			return "equipment/equiment_add";
+		}
+		
+		//비품 추가 
+		@RequestMapping("/eqinsert")
+		public String eqinsert(EquipmentVO eqvo,HttpServletRequest req) {
+			vo.eqinsert(eqvo);
+			return "redirect:eqlist";
+		}
 }
