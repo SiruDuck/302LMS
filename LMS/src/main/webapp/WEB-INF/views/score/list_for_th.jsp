@@ -6,40 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href='css/common.css?<%=new java.util.Date()%>' type='text/css' rel='stylesheet'> 
-<style type="text/css">
-a:hover{text-decoration: none;}
-a .btn-empty {
+<link href='css/score.css?<%=new java.util.Date()%>' type='text/css' rel='stylesheet'> 
 
-    background-color: #fff;
-    color: #3367d6;
-}
-a.btn-fill {
-    background-color: #3367d6;
-    color: #fff;
-}
-a.btn-fill, a.btn-empty {
-    display: inline-block;
-    height: 40px;
-    padding: 3px 15px;
-    border: 1px solid #3367d6;
-    border-radius: 3px;
-}
-a{cursor: pointer;}
-.top-menu{
-	width: 100%;
-	margin: 1.5rem auto;
-	display: flex;
-	justify-content: space-between;
-}
-#data-list{
-	height: 100%;
-	overflow: auto;
-}
-#insert{
-float: right;
-}
-</style>
 </head>
 <body>
 	<h2>score</h2>
@@ -57,7 +25,7 @@ float: right;
 						</select></li>
 				</ul>
 			</div>
-					<a class = "btn-fill" id="insert" href="insert.sc"> 성적입력</a>
+					<a class = "btn-fill" id="new" href="new.sc"> 성적입력</a>
 		</div>
 
 <!-- <table class='table'> -->

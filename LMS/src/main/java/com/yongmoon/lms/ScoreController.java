@@ -22,6 +22,21 @@ import score.ScoreVO;
 public class ScoreController {
 	@Autowired private ScoreDAO dao;
 	
+	//성적입력 처리
+	@RequestMapping("/insert.sc")
+	public String insert_score() {
+		
+		return "redirect:list.sc";
+	}
+	
+	//성적입력시 데이터 중복 확인
+	@ResponseBody
+	@RequestMapping("/insert_data_check")
+	public boolean insert_data_check(int num, String id) {
+		//사용가능 0 (true), 사용불가 1(false)
+		return dao.data_check(id, num) == 1 ? false : true;
+	}
+	
 	//교수창에서 학생 이름 && 년도 조회
 	@RequestMapping("/search_student_name")
 	public String search_name(@RequestParam(defaultValue = "-1")String student, HttpSession session, Model model, 
@@ -36,16 +51,16 @@ public class ScoreController {
 		
 		if(year == -1 && student.equals("-1")) {
 			//둘다 조회 x
-			list = dao.lookup_list_for_teacher(name);
+			list = dao.lookup_list_for_teacher(id);
 		}else if(year == -1 && !student.equals("-1")) {
 			//이름만 조회
-			list = dao.search_name(student, name);
+			list = dao.search_name(student, id);
 		}else if (year != -1 && student.equals("-1")) {
 			//년도만 조회
-			list = dao.search_name(name, year);
+			list = dao.search_name(id, year);
 		}else {
 			//이름 년도 둘다 조회
-			list = dao.search_name(student,name,year);
+			list = dao.search_name(student,id,year);
 		}
 		
 		//콘솔 출력
@@ -62,9 +77,17 @@ public class ScoreController {
 	
 	
 	//성적입력 
-	@RequestMapping("/insert.sc")
-	public String insert_score() {
+	@RequestMapping("/new.sc")
+	public String insert_score(Model model, HttpSession session ) {
+		//로그인 vo
+		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
+		String id  = vo.getId();
 		
+		List<ScoreVO> student = dao.search_student(id);
+		List<ScoreVO> lectureList = dao.lookup_teacher_lectures(id);
+		
+		model.addAttribute("student", student);
+		model.addAttribute("lectureList", lectureList);
 		return "score/insert";
 	}
 
@@ -179,7 +202,6 @@ public class ScoreController {
 		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
 		String id = vo.getId();	
 		int info_cd = vo.getInfo_cd();
-		String name = vo.getName();
 		List<ScoreVO> lectures = dao.lookup_lectures(id);
 
 
@@ -193,8 +215,8 @@ public class ScoreController {
 		
 		
 		if(info_cd == 3) {
-			list = dao.lookup_list_for_teacher(name);
-			List<ScoreVO> teacher_years = dao.lookup_teacher_years(name);
+			list = dao.lookup_list_for_teacher(id);
+			List<ScoreVO> teacher_years = dao.lookup_teacher_years(id);
 			model.addAttribute("teacher_years", teacher_years);
 			
 		}

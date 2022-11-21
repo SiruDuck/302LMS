@@ -12,8 +12,14 @@ public interface ScoreService {
 	public List<ScoreVO> lookup_years(String id, int year);			//특정 년도별 조회
 	
 	//교수화면
-	public List<ScoreVO> search_name(String student, String name);	//교수 화면에서 학생이름 조회
-	public List<ScoreVO> search_name(String name, int year);		//교수 화면에서 년도별 학생 조회
-	public List<ScoreVO> search_name(String student, String name, int year);	//교수 화면에서 학생이름 및 년도 조회
+	public List<ScoreVO> search_student(String id);					//교수 화면에서 수강중인 학생 조회
+	public List<ScoreVO> lookup_teacher_lectures(String id);		//교수 화면에서 과목 조회
+	public List<ScoreVO> search_name(String student, String id);	//교수 화면에서 학생이름 조회
+	public List<ScoreVO> search_name(String id, int year);		//교수 화면에서 년도별 학생 조회
+	public List<ScoreVO> search_name(String student, String id, int year);	//교수 화면에서 학생이름 및 년도 조회
 	public List<ScoreVO> lookup_teacher_years(String id);			//교수 페이지 년도 조회
+	
+	//성적입력
+	public int data_check(String id, int num);						//성적 입력시 데이터 중복확인
+	public int employee_insert(ScoreVO vo);							//성적 입력처리
 }

@@ -5,14 +5,19 @@ body {
 	min-width: 1280px;
 }
 
-ul {
+ul, li {
 	padding: 0;
 	list-style-type: none;
 	align-items: center;
 }
-a { cursor: pointer; }
+a { cursor: pointer;
+	list-style-type: none;
+ }
 a:link, a:visited { text-decoration: none;  color:inherit; }
 
+h3{
+	text-align: center;
+}
 
 select {
 	cursor: pointer;
@@ -68,8 +73,49 @@ textarea {
 	resize: none;
 }
 
+a:hover{text-decoration: none;}
+a .btn-empty {
 
+    background-color: #fff;
+    color: #3367d6;
+}
+a.btn-fill {
+    background-color: #3367d6;
+    color: #fff;
+}
+a.btn-fill, a.btn-empty {
+    display: inline-block;
+    height: 40px;
+    padding: 3px 15px;
+    border: 1px solid #3367d6;
+    border-radius: 3px;
+}
+a{cursor: pointer;}
+.top-menu{
+	width: 100%;
+	margin: 1.5rem auto;
+	display: flex;
+	justify-content: space-between;
+}
+#data-list{
+	height: 100%;
+	overflow: auto;
+}
+#insert_btn{
+float: right;
+}
 
+.textform{ 
+	border : 1px solid black;
+	width: 600px;
+	margin: 3rem auto;
+}
+.textform tr td{
+	padding :1.5rem !important;
+}
+.insert_form{
+	padding: 2rem;
+}
 
 .w-px40 { width: 40px }
 .w-px60 { width: 60px }
