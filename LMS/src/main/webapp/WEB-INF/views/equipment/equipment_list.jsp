@@ -28,13 +28,8 @@ span.btn{
 
 
 <div class="container-fluid">
-<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2"><a href='member'>전체 인원 관리</a></h1>
-<a href="#" class="btn btn-primary btn-icon-split mb-2">
-   <span class="icon text-gray-600">
-   <i class="fas fa-arrow-right"></i>
-   </span>
-   <span class="text">인원 등록</span>
-                                    </a>
+<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2" >교재 및 비품관리</h1>
+
 					<div class='card mb-4'>
 						<div class='card-header py-3'>
 							<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
@@ -42,29 +37,7 @@ span.btn{
 						<div class='card-body d-flex'>
 							<div class='dataTables_filter search-box'>
 								<input type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'>
-							</div>
-							
-							<div class='dataTables_filter search-box'>
-								<input type="search" class='ids form-control form-control-sm' placeholder='아이디로 검색'>
-							</div>
-							
-							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm'>
-									<option value='department_all'> (학과) 전체</option>
-									<c:forEach items="${department_list }" var="department_list">
-									<option value='${department_list }'> ${ department_list.department_name}</option>
-									</c:forEach>
-								</select>
-							</div>
-							
-							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm'>
-									<option value='info_all'> (구분) 전체</option>
-									<c:forEach items="${info_list }" var="info">
-									<option value='${info.info_name }'> ${info.info_name }</option>
-									</c:forEach>
-								</select>
-							</div>
+						</div>
 						</div>
 					</div>	
 					
@@ -79,7 +52,7 @@ span.btn{
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">전체 인원 현황</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">비품 관리</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -87,13 +60,8 @@ span.btn{
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>아이디</th>
-                                            <th>이름</th>
-                                            <th>전화번호</th>
-                                            <th>입학일/입사일</th>
-                                            <th>학과 코드</th>
-                                            <th>학과 명</th>
-                                            <th>구분</th>
+                                            <th>비품 이름</th>
+                                            <th>수량</th>
                                         </tr>
                                     </thead>                                   
                                     <tbody>
@@ -102,11 +70,6 @@ span.btn{
                                         <tr>
                                       		<td>${vo.id }</td>
                                             <td>${vo.name }</td>
-                                            <td>${vo.phone }</td>
-                                            <td>${vo.start_date }</td>
-                                            <td>${vo.department_id }</td> 
-                                            <td>${vo.department_name }</td> 
-                                            <td>${vo.info_name }</td> 
                                         </tr>
                                      </c:forEach>
                                     </tbody>
