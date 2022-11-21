@@ -27,7 +27,7 @@ span.btn{
 <body>
 
 <div class="container-fluid">
-<h1 id ="fo" class="h3 mb-2 text-gray-800 mt-2 mb-2" >교재 및 비품관리</h1>
+<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2" >교재 및 비품관리</h1>
 <a onclick='equiment_add()' id="btnopen" class="btn btn-primary btn-icon-split mb-2">
    <span class="icon text-gray-600">
    <i class="fas fa-arrow-right"></i>
@@ -128,6 +128,7 @@ function equiment_add (){
 	document.getElementById('eqmodify').style.display='none';
 	document.getElementById('eqadd').style.display='block';
 	
+	
 }
 
 $('.btn-secondary').click(function(){
@@ -140,13 +141,14 @@ $('.btn-secondary').click(function(){
 	$('[name=mprice]').val(  $tr.children('td').eq(3).text() );
 	$('[name=msituation]').val( $tr.children('td').eq(4).text());
 // 	= $tr.children('td').eq(0);
+	$('[name=mequipment_num]').focus();
 });
 
-$('#modi').  click(function(){
+/* $('#modi').  click(function(){
 	alert("dd");
 	$('#fo').focus();
 	
-});
+}); */
 
 
 $('.names').keyup(function(){
