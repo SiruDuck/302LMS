@@ -3,12 +3,12 @@ package lecture;
 import java.sql.Date;
 
 public class LectureVO {
-
-
 	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
-	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day;
+	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day, host;
 	private int lecture_num;
 	private Date midex, finalex;
+	
+	
 	public String getLecture_title() {
 		return lecture_title;
 	}
@@ -93,6 +93,12 @@ public class LectureVO {
 	public void setLecture_day(String lecture_day) {
 		this.lecture_day = lecture_day;
 	}
+	public String getHost() {
+		return host;
+	}
+	public void setHost(String host) {
+		this.host = host;
+	}
 	public int getLecture_num() {
 		return lecture_num;
 	}
@@ -111,6 +117,7 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
+	
 	
 	
 	

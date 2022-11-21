@@ -149,6 +149,10 @@ span.btn {
 									<td>${vo.lecture_time}</td>
 								</tr>
 								<tr>
+									<th>요일</th>
+									<td>${vo.lecture_day}</td>
+								</tr>
+								<tr>
 									<th>수강신청</th>
 									<td>${vo.enrolment}</td>
 								</tr>
@@ -183,9 +187,9 @@ span.btn {
 	<!-- container-fluid -->
 			<div class="">
 				<a href="list.lec" class="btn btn-primary">강의 목록</a> 
-				<a href="modify.lec?lecture_title=${vo.lecture_title}" class="btn btn-primary">정보수정</a>
+				<a href="modify.lec?lecture_num=${vo.lecture_num}" class="btn btn-primary">정보수정</a>
 				<a class="btn btn-primary"
-					onclick="if(confirm('정말 삭제하시겠습니까?')) location='delete.lec?lecture_title=${vo.lecture_title}'">삭제</a>
+					onclick="if(confirm('정말 삭제하시겠습니까?')) location='delete.lec?lecture_num=${vo.lecture_num}'">삭제</a>
 			</div>
 	
 

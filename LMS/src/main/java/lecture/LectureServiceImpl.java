@@ -28,15 +28,15 @@ public class LectureServiceImpl implements LectureService {
 	}
 
 	@Override
-	public void lecture_delete(String lecture_num) {
-		// TODO Auto-generated method stub
+	public void lecture_delete(int lecture_num) {
+		dao.lecture_delete(lecture_num);
 
 	}
 
 	@Override
-	public LectureVO lecture_info(String lecture_title) {
+	public LectureVO lecture_info(int lecture_num) {
 		
-		return dao.lecture_info(lecture_title);
+		return dao.lecture_info(lecture_num);
 	}
 
 	
