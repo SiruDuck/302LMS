@@ -37,6 +37,12 @@ public class HomeController {
 	
 			return "index";
 	}
+	
+	@RequestMapping("/welcom")
+	public String welcome() {
+		
+		return "introduction/introduction";
+	}
 
 	
 }
