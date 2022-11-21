@@ -53,8 +53,11 @@ public class ScoreDAO implements ScoreService{
 		return sql.selectList("score.list_teacher", name);
 	}
 
+	
+	/*------------------------------------ 교수 ---------------------------------------*/
 	@Override
 	public List<ScoreVO> search_name(String student, String name) {
+		//교수 화면에서 학생이름 조회
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("name", name);
 		map.put("student", student);
@@ -62,19 +65,32 @@ public class ScoreDAO implements ScoreService{
 		return sql.selectList("score.search_name", map);
 	}
 
-	@Override
-	public List<ScoreVO> teacher_lecture_title(String name) {
-		return sql.selectList("score.lecture_title", name);
-	}
 
 	@Override
-	public List<ScoreVO> search_name(String student, String name, int lecture_num) {
+	public List<ScoreVO> search_name(String student, String name, int year) {
+		//교수 화면에서 학생이름 및 년도 조회
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("name", name);
 		map.put("student", student);
-		map.put("num", lecture_num);
-		return sql.selectList("score.lecture_title_lecture", map);
+		map.put("year", year);
+		return sql.selectList("score.search_name_year", map);
 	}
+	@Override
+	public List<ScoreVO> search_name(String name, int year) {
+		//교수 화면에서 년도별 학생 조회
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("name", name);
+		map.put("year", year);
+		return sql.selectList("score.teacher_year_student",map);
+	}
+
+	@Override
+	public List<ScoreVO> lookup_teacher_years(String name) {
+		//교수 페이지 년도 조회
+		return sql.selectList("score.teacher_lectureYear",name);
+	}
+
+	
 
 	
 }

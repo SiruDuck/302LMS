@@ -46,18 +46,16 @@ float: right;
 		<div class="top-menu">
 			<div>
 			<!-- if 학년조회하고 다시 페이지를 왔을때는 ==> gradeList 바로 실행  -->
-			<form action="list.sc" method="post">
 				<ul class="search">
 					<li>학생명 : <input type="text" id="student_name" /></li>
-					<li><select name="lecture_num" id="lectureList" class="w-px200" onchange="$('form').submit()">
-						<option value="-1">전체 과목</option>
-							<c:forEach items="${lecture_title}" var ="vo">
-								<option ${lecture_title eq vo.lecture_title ? 'selected' : '' }
-								 value="${vo.lecture_num}">${vo.lecture_title}</option>
+					<li><select name="years" id="years" class="w-px200" >
+						<option value="-1">전체 년도</option>
+							<c:forEach items="${teacher_years}" var ="vo">
+								<option 
+								 value="${vo.year}">${vo.year}</option>
 							</c:forEach>
 						</select></li>
 				</ul>
-			</form>
 			</div>
 					<a class = "btn-fill" id="insert" href="insert.sc"> 성적입력</a>
 		</div>
@@ -79,14 +77,14 @@ float: right;
 				<th>년도</th>
 				<th>학기</th>
 				<th>학점</th>
-				<th>성적</th>
+				<th>점수</th>
 				<th>성적</th>
 			</tr>
 		<c:forEach items='${list}' var='vo'>
 			<tr>
 				<td>${vo.lecture_title}</td>
 				<td>${vo.lecture_num}</td>
-				<td>${vo.name}</td>
+				<td>${vo.name} (${vo.id})</td>
 				<td>${vo.lecture_year}년</td>
 				<td>${vo.semester}</td>
 				<td>${vo.subjectcredit}</td>
@@ -96,23 +94,39 @@ float: right;
 			</tr>
 		</c:forEach>
 		
-		</table>;
+		</table>
 	
 	</div>
 <script>
-/* $("#student_name").keyup(function(){
-			console.log($(this).val());
+$("#student_name").keyup(function(){
 	$.ajax({
 		url: "search_student_name",
-		aysnc : false,
-		data: {student : $(this).val()},
+// 		aysnc : false,
+		data: {student : $("#student_name").val(), year : $("#years").val()},
 		success : function (res){
-			$("#data-list").reload();
+			$("#data-list").empty();
+			$("#data-list").append(res);
 		},error: function(req, text){
 			alert(text+':'+req.status);
 		}
 	});
-}); */
+}); 
+
+$("#years").change(function(){
+			console.log($(this).val());
+	$.ajax({
+		url: "search_student_name",
+// 		aysnc : false,
+		data: {student : $("#student_name").val(), year : $("#years").val()},
+		success : function (res){
+			$("#data-list").empty();
+			$("#data-list").append(res);
+		},error: function(req, text){
+			alert(text+':'+req.status);
+		}
+	});
+}); 
+
 
 
 </script>	

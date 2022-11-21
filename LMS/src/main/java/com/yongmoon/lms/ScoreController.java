@@ -22,21 +22,30 @@ import score.ScoreVO;
 public class ScoreController {
 	@Autowired private ScoreDAO dao;
 	
-	//교수창에서 학생 이름 조회
-	@ResponseBody
+	//교수창에서 학생 이름 && 년도 조회
 	@RequestMapping("/search_student_name")
-	public List<ScoreVO> search_name(String student, HttpSession session, Model model, @RequestParam(defaultValue = "-1") int lecture_num ) {
+	public String search_name(@RequestParam(defaultValue = "-1")String student, HttpSession session, Model model, 
+			@RequestParam(defaultValue = "-1")	int year) {
 		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
 		String name = vo.getName();
 		String id = vo.getId();	
 		List<ScoreVO>  list;
+		System.out.println("학생 이름 : " + student);
+		System.out.println("년도 : " + year);
 		
 		
-		System.out.println(lecture_num);
-		if(lecture_num == -1) {
+		if(year == -1 && student.equals("-1")) {
+			//둘다 조회 x
+			list = dao.lookup_list_for_teacher(name);
+		}else if(year == -1 && !student.equals("-1")) {
+			//이름만 조회
 			list = dao.search_name(student, name);
+		}else if (year != -1 && student.equals("-1")) {
+			//년도만 조회
+			list = dao.search_name(name, year);
 		}else {
-			list = dao.search_name(student, name);
+			//이름 년도 둘다 조회
+			list = dao.search_name(student,name,year);
 		}
 		
 		//콘솔 출력
@@ -48,7 +57,7 @@ public class ScoreController {
 		//model전송
 		model.addAttribute("list", list);
 		
-		return list;
+		return "score/student/student_list";
 	}
 	
 	
@@ -185,8 +194,8 @@ public class ScoreController {
 		
 		if(info_cd == 3) {
 			list = dao.lookup_list_for_teacher(name);
-			List<ScoreVO> lecture_title = dao.teacher_lecture_title(name);
-			model.addAttribute("lecture_title", lecture_title);
+			List<ScoreVO> teacher_years = dao.lookup_teacher_years(name);
+			model.addAttribute("teacher_years", teacher_years);
 			
 		}
 		

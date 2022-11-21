@@ -20,7 +20,14 @@
 	</select>
 	
 	
-	<!-- 년도 조회 -->
+	<!-- 교수화면에서 년도 조회 -->
+	<select id="teacher_lectureYear" resultType="score.ScoreVO">
+		select DISTINCT s.year
+		from lectures l inner join subjectscore s on l.lecture_num =s.lecture_num
+        left outer join member m on m.id = s.id
+		where l.teacher_name = #{name}
+	</select>
+	<!--학생화면 년도 조회 -->
 	<select id="lectureYear" resultType="score.ScoreVO">
 		select Distinct l.lecture_year
         from subjectscore s left outer join lectures l on l.lecture_num = s.lecture_num
@@ -45,6 +52,18 @@
 		where s.id = #{id}
 	</select>
 
+	<!-- 리스트 조회 교수 화면(이름& 년도)-->
+	<select id="search_name_year" resultType="score.ScoreVO">
+		select l.lecture_title, l.lecture_year,
+		l.teacher_name, l.subjectcredit , s.*, m.name
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
+        left outer join member m on m.id = s.id
+		where l.teacher_name = #{name}
+		and m.name like  '%'||#{student}||'%' 
+		and l.lecture_year = #{year}
+		order by l.lecture_year,s.semester, m.id
+	</select>
+	
 	<!-- 리스트 조회 교수 화면(이름)-->
 	<select id="search_name" resultType="score.ScoreVO">
 		select l.lecture_title, l.lecture_year,
@@ -56,7 +75,18 @@
 		order by l.lecture_year,s.semester, m.id
 	</select>
 	
-	<!-- 리스트 조회 교수 화면(이름 && 과목)-->
+	<!-- 리스트 조회 교수 화면(년도)-->
+	<select id="teacher_year_student" resultType="score.ScoreVO">
+		select l.lecture_title, l.lecture_year,
+		l.teacher_name, l.subjectcredit , s.*, m.name
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
+        left outer join member m on m.id = s.id
+		where l.teacher_name = #{name}
+		and l.lecture_year = #{year}
+		order by l.lecture_year,s.semester, m.id
+	</select>
+	
+	<!-- 리스트 조회 교수 화면(이름 && 년도)-->
 	<select id="lecture_title_lecture" resultType="score.ScoreVO">
 		select l.lecture_title, l.lecture_year,
 		l.teacher_name, l.subjectcredit , s.*, m.name
@@ -64,7 +94,7 @@
         left outer join member m on m.id = s.id
 		where l.teacher_name = #{name}
 		and m.name like  '%'||#{student}||'%' 
-		and l.lecture_num ='%'||#{num}||'%' 
+		and s.year = #{year}
 		order by l.lecture_year,s.semester, m.id
 	</select>
 	
