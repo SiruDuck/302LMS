@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/functions' prefix='fn'%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,31 +28,31 @@
 						<thead>
 							<tr>
 								<th style="vertical-align: inherit; width: 11rem">제목</th>
-								<td colspan="5"><div class='form-control form-control-user'></div></td>
+								<td colspan="5"><div class='form-control form-control-user'>${vo.title }</div></td>
 							</tr>
 							<tr>
 								<th>작성자</th>
-								<td><div class='form-control form-control-user'></div></td>
+								<td><div class='form-control form-control-user'>${vo.name }</div></td>
 								<th style="vertical-align: inherit; width: 11rem">작성일자</th>
-								<td><div class='form-control form-control-user'></div></td>
+								<td><div class='form-control form-control-user'>${vo.writedate }</div></td>
 								<th style="vertical-align: inherit; width: 11rem">조회수</th>
-								<td><div class='form-control form-control-user'></div></td>
+								<td><div class='form-control form-control-user'>${vo.readcount }</div></td>
 							</tr>
 							<tr>
 								<th style="vertical-align: baseline;">내용</th>
 								<td colspan='5'><div class='form-control form-control-user'
-										style='height: 27rem'></div></td>
+										style='height: 27rem'>${vo.content}</div></td>
 							</tr>
 							<tr>
 								<th>첨부파일</th>
 								<td colspan='5'>
-									<div class='form-control form-control-user'>
+									<%-- <div class='form-control form-control-user'>
 										<span id='file-name'>${vo.filename}</span>
 										<c:if test='${not empty vo.filename }'>
 											<a id='download'><i
 												class="font-b fa-solid fa-file-arrow-down"></i></a>
 										</c:if>
-									</div>
+									</div> --%>
 								</td>
 							</tr>
 						</thead>
@@ -63,7 +64,7 @@
 	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
 		<a class='btn btn-secondary btn-icon-split'
 			href='list.br'>목록으로</a>
-		<c:if test='${loginInfo.id eq vo.writer }'>
+		<c:if test='${loginInfo.info_cd eq 2 }'>
 			<a class='btn btn-primary btn-icon-split'
 				href='modify.no?id=${vo.id}&${hrefParam}'>정보수정</a>
 			<a class='btn btn-danger btn-icon-split' id='remove'>정보삭제</a>

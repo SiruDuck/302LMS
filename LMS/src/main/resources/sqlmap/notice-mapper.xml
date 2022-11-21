@@ -3,13 +3,26 @@
 <mapper namespace="notice">
 
 	<select id="list" resultType="notice.NoticeVO">
-select *
-from notice
-order by  num desc
-</select>
+		select *
+		from notice
+		order by writedate desc
+	</select>
 
-<select id="test" resultType="Integer">
-	select 1 from dual
-</select>
+	<select id="info" resultType="notice.NoticeVO">
+		select n.*, name
+		from notice n inner join member m on n.id = m.id
+		where n.id = #{id, jdbcType=VARCHAR}
+	</select>
+	
+	<select id="insert">
+		insert into notice(title, content)
+		values (#{title, jdbcType=VARCHAR}, #{content, jdbcType=VARCHAR})	
+	</select>
+	
+	
+	
+	
+
+
 
 </mapper>

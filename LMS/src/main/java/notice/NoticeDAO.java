@@ -18,6 +18,16 @@ public class NoticeDAO implements NoticeService{
 		return list;
 	}
 
+	@Override
+	public NoticeVO notice_info(String id) {
+		return sql.selectOne("notice.info", id);
+	}
+
+	@Override
+	public int notice_insert(NoticeVO vo) {
+		return sql.insert("notice.insert", vo);
+	}
+
 	
 
 	

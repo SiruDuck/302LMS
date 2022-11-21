@@ -42,9 +42,9 @@ public class MemberController {
 
 		List<MemberVO> info_list;
 		if (info_cd == -1)
-			info_list = service.member_list();
+			info_list = service.info_list();
 		else
-			info_list = service.member_list(info_cd);
+			info_list = service.info_list();
 
 		model.addAttribute("list", list);
 		model.addAttribute("department_list", department_list);
@@ -160,9 +160,13 @@ public class MemberController {
 	@ResponseBody @RequestMapping("/andLogin")
 	public String login(String id, String pw){
 		MemberVO vo = service.and_login(id);
-		if (vo.getPw().equals(pw)) {
-			return new Gson().toJson(vo);
-		} else {
+		if( vo!= null ) {
+			if (vo.getPw().equals(pw)) {
+				return new Gson().toJson(vo);
+			} else {
+				return "다시 입력";
+			}
+		}else {
 			return "다시 입력";
 		}
 	}

@@ -55,8 +55,8 @@
 					cellspacing="0">
 					<thead>
 						<tr>
-							<th>번호</th>
 							<th>제목</th>
+							<th>작성자</th>
 							<th>작성일자</th>
 						</tr>
 					</thead>
@@ -64,8 +64,7 @@
 
 						<c:forEach items='${list}' var='vo'>
 							<tr>
-								<td>${vo.num }</td>
-								<td>${vo.title }</td>
+								<td><a href="info.no?id=${vo.id }">${vo.title }</a></td>
 								<td>${vo.id }</td>
 								<td>${vo.writedate }</td>
 							</tr>
@@ -74,7 +73,7 @@
 				</table>
 			</div>
 			<div class='info' style="text-align: right; margin-right: 30px;">
-				<c:if test='${loginInfo.info_cd eq 4 }'>
+				<c:if test='${loginInfo.info_cd eq 2 }'>
 					<a href='new.no' class='btn btn-primary'>글쓰기</a>
 				</c:if>
 			</div>
