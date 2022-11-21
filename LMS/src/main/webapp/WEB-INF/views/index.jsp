@@ -11,28 +11,28 @@
 }
 </style>
  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <!-- carousel -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style='margin:2rem 0 2rem 0'>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner1.jpg" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="250" src="resources/images/mainlogin/index_banner1.jpg" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
     </div>
     <div class="carousel-item">
-      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+      <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="250" src="resources/images/mainlogin/index_banner2.jpg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
     </div>
     <div class="carousel-item">
-     <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+     <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="250" src="resources/images/mainlogin/index_banner3.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
     </div>
     <div class="carousel-item">
-     <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="300" src="resources/images/mainlogin/index_banner4.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+     <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="250" src="resources/images/mainlogin/index_banner4.jpg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
     </div>
   </div>
@@ -46,55 +46,82 @@
   </button>
 </div>
 
+<!-- lecture or event -->
+<div class="card  mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between"style='background-color: #fff; border-left: 1rem solid #5F9DF7;'>
+        <h6 class="m-0 font-weight-bold text-lg text-dark">이번 달 특강 & 이벤트</h6>
+        <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-plus text-dark"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body"  style='border-left: 1rem solid #5F9DF7;'>
+        <div class="text-center">
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event1.png"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event2.png"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event3.png"></a>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-lg-6">
         <!-- Default Card Example -->
-        <div class="card shadow mb-4">
+        <div class="card mb-4">
             <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-primary">
-                <h6 class="m-0 font-weight-bold text-light text-lg">공지사항</h6>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between " style='background-color:#fff; border-left: 1rem solid #dc3545;'>
+                <h6 class="m-0 font-weight-bold text-dark text-lg">공지사항</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	<i class="fas fa-plus text-light"></i>
+                    	<i class="fas fa-plus text-dark"></i>
                         <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
                     </a>                    
                 </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body notice border-bottom-primary">
+            <div class="card-body notice" style='border-left: 1rem solid #dc3545;'>
                 <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>공지사항</a>
+                	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
+                	<a href='' class='text-gray-900'>도서관 리모델링 공사</a>
                 </div>
                 <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>공지사항</a>
+                	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
+                	<a href='' class='text-gray-900'>기숙사 리모델링 공사</a>
                 </div>
                 <div class='ml-3'>
-                	<a href='' class='text-gray-800'>공지사항</a>
+                	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
+                	<a href='' class='text-gray-900'>학생식당 리모델링 공사</a>
                 </div>
             </div>
         </div>
         
-        <div class="card shadow mb-4">
+        <div class="card mb-4">
             <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-info">
-                <h6 class="m-0 font-weight-bold text-light text-lg">커뮤니티</h6>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #fd7e14;'>
+                <h6 class="m-0 font-weight-bold text-lg text-dark">질문 게시판</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	<i class="fas fa-plus text-light"></i>
+                    	<i class="fas fa-plus text-dark"></i>
                         <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
                     </a>                    
                 </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body notice border-bottom-info">
-                <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>커뮤</a>
+            <div class="card-body notice " style='border-left: 1rem solid #fd7e14'>
+                <div class='mb-3 ml-3'>   
+                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
+                	<a href='' class='text-gray-900'>질문있어요</a>
                 </div>
                 <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>커뮤</a>
+                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
+                	<a href='' class='text-gray-900'>질문있어요</a>
                 </div>
                 <div class='ml-3'>
-                	<a href='' class='text-gray-800'>커뮤</a>
+                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
+                	<a href='' class='text-gray-900'>질문있어요</a>
                 </div>
             </div>
         </div>
@@ -104,52 +131,58 @@
     </div>
 
     <div class="col-lg-6">
-		<div class="card shadow mb-4">
+		<div class="card mb-4">
             <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-danger">
-                <h6 class="m-0 font-weight-bold text-light text-lg">취업정보</h6>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #f6c23e;'>
+                <h6 class="m-0 font-weight-bold text-dark text-lg">커뮤니티</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	<i class="fas fa-plus text-light"></i>
+                    	<i class="fas fa-plus text-dark"></i>
                         <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
                     </a>                    
                 </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body notice border-bottom-danger">
+            <div class="card-body notice" style='border-left: 1rem solid #f6c23e;'>
                 <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>정보</a>
+                	<i class='fas fa-comment-dots text-warning mr-2'></i>
+                	<a href='' class='text-gray-900 font-weight-bold'>개교기념일 왜 일요일임??</a>
                 </div>
                 <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>정보</a>
+                	<i class='fas fa-comment-dots text-warning mr-2'></i>
+                	<a href='' class='text-gray-900 font-weight-bold'>학교근처 맛집 추천받는다</a>
                 </div>
                 <div class='ml-3'>
-                	<a href='' class='text-gray-800'>정보</a>
+                	<i class='fas fa-comment-dots text-warning mr-2'></i>
+                	<a href='' class='text-gray-900 font-weight-bold'>학식 맛집이네</a>
                 </div>
             </div>
         </div>
         
-        <div class="card shadow mb-4">
+        <div class="card mb-4">
             <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-success">
-                <h6 class="m-0 font-weight-bold text-light text-lg">취업정보</h6>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #30632f;'>
+                <h6 class="m-0 font-weight-bold text-dark text-lg">취업정보</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	<i class="fas fa-plus text-light"></i>
+                    	<i class="fas fa-plus text-dark"></i>
                         <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
                     </a>                    
                 </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body notice border-bottom-success">
+            <div class="card-body notice" style='border-left: 1rem solid #30632f;'>
                 <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>정보</a>
+                	<i class='fas fa-info-circle mr-2' style='color:#30632f;'></i>
+                	<a href='' class='text-gray-900'>기업 설명회 희망 참가자 모집</a>
                 </div>
                 <div class='mb-3 ml-3'>
-                	<a href='' class='text-gray-800'>정보</a>
+                	<i class='fas fa-info-circle mr-2' style='color:#30632f;'></i>
+                	<a href='' class='text-gray-900'>자기소개서 양식 자료</a>
                 </div>
                 <div class='ml-3'>
-                	<a href='' class='text-gray-800'>정보</a>
+                	<i class='fas fa-info-circle mr-2' style='color:#30632f;'></i>
+                	<a href='' class='text-gray-900'>면접의상 대여실 리스트</a>
                 </div>
             </div>
         </div>
