@@ -15,6 +15,7 @@
 </style>
 <body>
 
+	
 	<form method='post' action='insert.no' enctype='multipart/form-data'>
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
@@ -55,7 +56,7 @@
 			</div>
 		</div>
 		<input type='hidden' name='writer' value='${loginInfo.id }'>
-	</form>
+		</form>
 	<div class='btn_blue' style='padding: 2rem;'>
 		<a class='btn btn-primary' id='save'>저장</a> <a
 			class='btn btn-secondary' href='list.no'>취소</a>

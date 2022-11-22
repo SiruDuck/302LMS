@@ -16,9 +16,9 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public NoticeVO notice_info(String id) {
+	public NoticeVO notice_info(String title) {
 		// TODO Auto-generated method stub
-		return dao.notice_info(id);
+		return dao.notice_info(title);
 	}
 
 	@Override

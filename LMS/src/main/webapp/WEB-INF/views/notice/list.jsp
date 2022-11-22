@@ -55,18 +55,22 @@
 					cellspacing="0">
 					<thead>
 						<tr>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일자</th>
+							<th style="text-align: center;">제목</th>
+							<th style="text-align: center;">작성자</th>
+							<th style="text-align: center;">작성일자</th>
+							<!-- <th style="text-align: center;">첨부</th> -->
+							<th style="text-align: center;">비고</th>
 						</tr>
 					</thead>
 					<tbody>
 
 						<c:forEach items='${list}' var='vo'>
 							<tr>
-								<td><a href="info.no?id=${vo.id }">${vo.title }</a></td>
+								<td>${vo.title }</td>
 								<td>${vo.id }</td>
 								<td>${vo.writedate }</td>
+								<%-- <td>${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td> --%>
+								<td style="text-align: center "><a href="info.no?title=${vo.title}"><button id="notice_info" class="btn btn-primary btn-icon-split" style="padding: 6px; ">상세보기</button></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

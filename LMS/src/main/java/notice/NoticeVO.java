@@ -2,7 +2,7 @@ package notice;
 
 public class NoticeVO {
 	private int num, readcount;
-	private String id, title, content,writedate;
+	private String id, title, content,writedate, writer;
 	public int getNum() {
 		return num;
 	}
@@ -38,6 +38,12 @@ public class NoticeVO {
 	}
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 	
 	

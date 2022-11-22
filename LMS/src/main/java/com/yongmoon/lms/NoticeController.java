@@ -27,12 +27,11 @@ public class NoticeController {
 	
 	//공지글상세화면 요청
 	@RequestMapping("/info.no")
-	public String info(Model model, String id) {
+	public String info(Model model, String title, HttpSession session) {
 		
-		NoticeVO vo = service.notice_info(id);
+		NoticeVO vo = service.notice_info(title);
 		
 		model.addAttribute("vo", vo);
-		model.addAttribute("crlf", "\r\n");
 		
 		
 		

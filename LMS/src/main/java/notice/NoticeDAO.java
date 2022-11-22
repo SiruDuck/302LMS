@@ -19,8 +19,8 @@ public class NoticeDAO implements NoticeService{
 	}
 
 	@Override
-	public NoticeVO notice_info(String id) {
-		return sql.selectOne("notice.info", id);
+	public NoticeVO notice_info(String title) {
+		return sql.selectOne("notice.info", title);
 	}
 
 	@Override
