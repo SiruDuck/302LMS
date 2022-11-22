@@ -52,6 +52,18 @@
 		<label><input type='radio' name='gender' value='여'>여</label>
 	</td>
 </tr>
+<tr><th>프로필이미지</th>
+	<td>
+		<div class='align'>
+		<label>
+			<input type='file' name='file' id='attach-file' accept='image/*'>
+			<a><i class="font-b fa-regular fa-address-card"></i></a>
+		</label>
+		<span id='preview'></span>
+		<a id='delete-file'><i class="font-r fa-solid fa-trash-can"></i></a>
+		</div>
+	</td>
+</tr>
 <tr><th>* 생년월일</th>
 	<td><input type='text' name='birth' id='datepicker0' class='date form-control col-sm-6 mb-3 mb-sm-0' readonly>
 		<a id='delete'><i class="font-r fa-regular fa-calendar-xmark"></i></a>

@@ -21,17 +21,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 
+import common.CommonUtility;
 import member.MemberServiceImpl;
 import member.MemberVO;
 
 @Controller
 public class MemberController {
-	@Autowired
-	private MemberServiceImpl service;
-	@Autowired
-	private EquipmentDAO vo;
-	@Autowired
-	SqlSession sql;
+	@Autowired private MemberServiceImpl service;
+	@Autowired private EquipmentDAO vo;
+	@Autowired SqlSession sql;
+	@Autowired private CommonUtility common;
 
 	// 학생, 교사, 교직원, 어드민 리스트 출력
 	@RequestMapping("/member.list")
@@ -41,9 +40,9 @@ public class MemberController {
 
 		List<MemberVO> info_list;
 		if (info_cd == -1)
-			info_list = service.member_list();
+			info_list = service.info_list();
 		else
-			info_list = service.member_list(info_cd);
+			info_list = service.info_list();
 
 		model.addAttribute("list", list);
 		model.addAttribute("department_list", department_list);
@@ -95,6 +94,11 @@ public class MemberController {
 	@ResponseBody
 	@RequestMapping(value = "/join", produces = "text/html; charset=utf-8")
 	public String join(MemberVO vo, MultipartFile file, HttpServletRequest request) {
+		if( ! file.isEmpty() ) {
+			//서버에 첨부파일을 저장한다: 파일업로드
+			vo.setProfile( common.fileUpload("profile", file, request) );
+		}
+
 		StringBuffer msg = new StringBuffer("<script>");
 		if (service.member_join(vo) == 1) {
 			msg.append("alert('회원가입을 축하합니다^^'); location='").append(request.getContextPath()).append("'");
@@ -183,9 +187,13 @@ public class MemberController {
 	@ResponseBody @RequestMapping("/andLogin")
 	public String login(String id, String pw){
 		MemberVO vo = service.and_login(id);
-		if (vo.getPw().equals(pw)) {
-			return new Gson().toJson(vo);
-		} else {
+		if( vo!= null ) {
+			if (vo.getPw().equals(pw)) {
+				return new Gson().toJson(vo);
+			} else {
+				return "다시 입력";
+			}
+		}else {
 			return "다시 입력";
 		}
 	}

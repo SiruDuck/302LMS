@@ -2,6 +2,7 @@ package com.yongmoon.lms;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,28 @@ public class NoticeController {
 	
 	//공지글상세화면 요청
 	@RequestMapping("/info.no")
-	public String info() {
+	public String info(Model model, String title, HttpSession session) {
+		
+		NoticeVO vo = service.notice_info(title);
+		
+		model.addAttribute("vo", vo);
+		
+		
 		
 		return "notice/info";
 	}
 	
 	
+	
+	@RequestMapping("/insert.no")
+	public String insert(NoticeVO vo, HttpServletRequest request) {
+		
+		service.notice_insert(vo);
+		
+		
+		
+		return "redirect:list.no";
+	}
 	
 	
 	
@@ -53,10 +70,7 @@ public class NoticeController {
 		
 		session.setAttribute("category", "no");
 		
-		System.out.println(service.notice_list());
-		
 		List<NoticeVO> list = service.notice_list();
-		System.out.println(list);
 		
 		model.addAttribute("list", list);
 		

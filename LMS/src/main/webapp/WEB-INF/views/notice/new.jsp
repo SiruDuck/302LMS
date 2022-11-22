@@ -15,6 +15,7 @@
 </style>
 <body>
 
+	
 	<form method='post' action='insert.no' enctype='multipart/form-data'>
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
@@ -55,11 +56,37 @@
 			</div>
 		</div>
 		<input type='hidden' name='writer' value='${loginInfo.id }'>
-	</form>
+		</form>
 	<div class='btn_blue' style='padding: 2rem;'>
-		<a class='btn btn-primary' id='insert'>저장</a> <a
-			class='btn btn-secondary' onclick='history.go(-1)'>취소</a>
+		<a class='btn btn-primary' id='save'>저장</a> <a
+			class='btn btn-secondary' href='list.no'>취소</a>
 	</div>
+<script>
+
+$('#save').click(function(){
+	if(emptyCheck()) $('form').submit();
+});
+
+
+function emptyCheck(){
+	var ok = true;
+	$('.chk').each(function(){
+		if( $(this).val()=='' ){
+			var item = $(this).attr('placeholder')
+						? $(this).attr('placeholder') : $(this).attr('title');
+			alert(item + ' 입력하세요!');
+			$(this).focus();
+			ok = false;
+			return ok;			
+		}
+	});
+	return ok;
+}
+
+
+</script>	
+
+
 </body>
 
 
