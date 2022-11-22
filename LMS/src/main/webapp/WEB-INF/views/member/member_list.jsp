@@ -58,10 +58,11 @@ span.btn{
 							</div>
 							
 							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm'>
-									<option value='info_all'> (구분) 전체</option>
+								<select class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
+									<option value='info_all' value='-1'> (구분) 전체</option>
 									<c:forEach items="${info_list }" var="info">
-									<option value='${info.info_name }'> ${info.info_name }</option>
+									<option ${info_cd eq info.info_cd ? 'selected' : ''} 
+									value='${info.info_cd }'> ${info.info_name }</option>
 									</c:forEach>
 								</select>
 							</div>

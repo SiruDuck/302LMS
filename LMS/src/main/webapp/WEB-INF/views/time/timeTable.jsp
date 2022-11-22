@@ -31,6 +31,12 @@
 table{
 	text-align: center;
 }
+thead th, tbody td{
+	color:#5a5c69;
+}
+table th{
+	font-weight: 700;
+}
 </style>
 </head>
 <body>
@@ -53,7 +59,7 @@ table{
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 시간표</h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-lg">My Schedule</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -82,11 +88,11 @@ table{
                                     <tbody>
                                         <tr>
                                             <td>1교시 (09:00~09:50)</td>
-                                            <td>기초전자실습(B302)</td>
-                                            <td>전자기학(B305)</td>
-                                            <td>디지털공학(B301)</td>
-                                            <td>컴퓨터프로그래밍실습1(B306)</td>
-                                            <td>회로이론1(B201)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>2교시 (10:00~10:50)</td>

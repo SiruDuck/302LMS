@@ -62,8 +62,34 @@ public class MemberDAO implements MemberService{
 		return sql.selectOne("member.id_check", id);
 	}
 
+	//특정과 학생목록 조회
+	@Override
+	public List<MemberVO> member_list(int info_cd) {
+		return sql.selectList("member.department_list",info_cd);
+	}
 
+	
+	
+	
+	
+	//////////////////////////////안드로이드///////////////////////////////////
+	
+	
+	
+	
+	@Override
+	public MemberVO and_login(String id){
+		
+		
+		return sql.selectOne("member.andlogin", id);
+	}
 
+	
+	
+	
+	
+	
+	
 	
 
 	

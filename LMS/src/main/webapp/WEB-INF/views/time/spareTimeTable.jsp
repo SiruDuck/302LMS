@@ -27,13 +27,20 @@
 }
 .table td:nth-child(1) {
 	text-align: center;
+	color: #000;
 }
 table{
 	text-align: center;
 }
+thead th{
+	font-weight: 700;
+	color:#000;
+}
+table td{
+	color:#000;
+}
 </style>
 </head>
-<body>
 <body id="page-top">
 
    <!--  <!-- Page Wrapper
@@ -53,7 +60,7 @@ table{
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">2022년 2학기 시간표 장바구니</h6>
+                            <h6 class="m-0 font-weight-bold text-primary text-lg">My Schedule Basket</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -194,7 +201,7 @@ table{
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -213,6 +220,6 @@ table{
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 
-</body>
+
 </body>
 </html>

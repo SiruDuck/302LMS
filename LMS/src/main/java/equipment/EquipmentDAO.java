@@ -16,8 +16,8 @@ public class EquipmentDAO {
 		return sql.selectList("member.equipment_list");
 	}
 	
-	public List<EquipmentVO> search_name_list(String name){
-		return sql.selectList("member.equipment_search_name_list",name);
+	public List<EquipmentVO> search_name_list(String equipment){
+		return sql.selectList("member.equipment_search_name_list",equipment);
 	}
 	
 	public void eqinsert(EquipmentVO vo) {
@@ -25,4 +25,14 @@ public class EquipmentDAO {
 		sql.insert("member.equipment_insert",vo);
 		return;
 	}
+	public void eqmodify(EquipmentVO vo) {
+		sql.update("member.equipment_modify",vo);
+		return ;
+	}
+	public void eqdelete(String equipment) {
+		sql.delete("member.equipment_delete",equipment);
+		return;
+	}
+	
+	
 }

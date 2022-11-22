@@ -20,11 +20,14 @@
     <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>    
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style='background-color: #183691'>
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
-            	<div class="sidebar-brand-text mx-3">영문대학교 <sup>LMS</sup></div>
+            	<div class="sidebar-brand-icon ">
+                    <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
+                </div>
+            	<div class="sidebar-brand-text mx-3">영문대학교</div>
             </a>
 
             <!-- Divider -->
@@ -103,9 +106,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">커뮤니티</h6>
-                        <a class="collapse-item" href="#">학생 소통마당</a>
-                        <a class="collapse-item" href="#">질문 게시판</a>
-                        <a class="collapse-item" href="#">문의 게시판</a>
+                        <a class="collapse-item" href="list.br">자유 게시판</a>
+                        <a class="collapse-item" href="list.co">수강후기</a>
                         <div class="collapse-divider"></div>
 
                     </div>
@@ -114,7 +116,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="list.no">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>공지사항</span></a>
             </li>

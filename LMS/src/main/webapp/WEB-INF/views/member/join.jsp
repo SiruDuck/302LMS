@@ -13,6 +13,7 @@
 
 <title>Insert title here</title>
 <style>
+	
 
 </style>
 </head>
@@ -62,8 +63,8 @@
 <tr><th>* 주소</th>
 	<td><a class='btn-fill' id='post'>우편번호찾기</a>
 		<input type='text' name='post' class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' readonly>
-		<input type='text' name='addr' class='full form-control col-sm-6 mb-3 mb-sm-0' readonly>
-		<input type='text' name='addr' class='full form-control col-sm-6 mb-3 mb-sm-0' >
+		<input type='text' name='addr' class='form-control col-sm-6 mb-3 mb-sm-0' readonly>
+		<input type='text' name='addr' class='form-control col-sm-6 mb-3 mb-sm-0' >
 	</td>
 </tr>
 <tr><th>학년</th>
@@ -106,9 +107,9 @@
 
 </table>
 </form>
-<div class='btnSet'>
-	<a class='btn-fill' id='join'>회원가입</a>
-	<a class='btn-empty' onclick='history.go(-1)'>취소</a>
+<div class=''>
+	<a class='btn btn-primary' id='join'>회원가입</a>
+	<a class='btn btn-secondary' onclick='history.go(-1)'>취소</a>
 </div>
 
 <script src='js/member.js?<%=new java.util.Date()%>'></script>
@@ -145,9 +146,6 @@ $('#join').click(function(){
 	
 	if( tagIsInValid( $('[name=pw]') ) )	return;
 	if( tagIsInValid( $('[name=pw_ck]') ) )	return;
-	if( tagIsInValid( $('[name=email]') ) )	return;
-	
-	
 	
 	
 	
