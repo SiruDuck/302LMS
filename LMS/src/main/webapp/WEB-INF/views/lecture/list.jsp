@@ -60,7 +60,7 @@ span.btn {
 					</select>
 				</div>
 				<div class='dataTables_filter search-box'>
-					<select
+					<select name="sortation"
 						class='custom-select custom-select-sm form-control form-control-sm'>
 						<option value='all'>구분 전체보기</option>
 						<option value='major'>전공 필수</option>
@@ -70,14 +70,14 @@ span.btn {
 					</select>
 				</div>
 				<div class='dataTables_filter search-box'>
-					<select
+					<select name='lecture_day' onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
 						<option value='all'>요일 전체보기</option>
-						<option value='mon'>월</option>
-						<option value='tue'>화</option>
-						<option value='wed'>수</option>
-						<option value='thu'>목</option>
-						<option value='fri'>금</option>
+						<option value='월'>월</option>
+						<option value='화'>화</option>
+						<option value='수'>수</option>
+						<option value='목'>목</option>
+						<option value='금'>금</option>
 					</select>
 				</div>
 				<div class='dataTables_filter'>
@@ -86,8 +86,15 @@ span.btn {
 						<option value='all'>시간 전체보기</option>
 						<option value='1'>1교시 (09:00~09:50)</option>
 						<option value='2'>2교시 (10:00~10:50)</option>
+						<option value='3'>3교시 (11:00~11:50)</option>
+						<option value='4'>4교시 (12:00~12:50)</option>
+						<option value='5'>5교시 (14:00~14:50)</option>
+						<option value='6'>6교시 (15:00~15:50)</option>
+						<option value='7'>7교시 (16:00~16:50)</option>
+						<option value='8'>8교시 (17:00~17:50)</option>
 					</select>
 				</div>
+				
 			</div>
 		</div>
 		<div class="dd">
@@ -114,7 +121,6 @@ span.btn {
 										<th>강의실</th>
 										<th>교시</th>
 										<th>이수구분</th>
-										<th>수강신청</th>
 										<th>수강인원</th>
 										<th>과목학점</th>
 										<th>수업유형</th>
@@ -133,7 +139,6 @@ span.btn {
 											<td>${vo.lecture_room}</td>
 											<td>${vo.lecture_time}</td>
 											<td>${vo.sortation}</td>
-											<td>${vo.reception_status}</td>
 											<td>${vo.capacity}</td>
 											<td>${vo.subjectcredit}</td>
 											<td>${vo.state}</td>
@@ -150,9 +155,7 @@ span.btn {
 		<!-- container-fluid -->
 
 
-
 	</div>
-
 
 
 
