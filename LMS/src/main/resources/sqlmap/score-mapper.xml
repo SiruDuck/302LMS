@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="score">
+
+	
 	
 	<!-- 성적 삭제처리 -->
 	<delete id="delete">
@@ -87,6 +89,14 @@
 	</select>
 
 	<!-- 학생화면에서 과목명 조회 -->
+	<select id="teacher_lectures" resultType="score.LectureVO"> 
+		select Distinct l.lecture_title
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
+		where s.host = #{id}
+	</select>
+	
+
+	<!-- 학생화면에서 과목명 조회 -->
 	<select id="lectures" resultType="score.LectureVO"> 
 		select Distinct l.lecture_title, l.lecture_num, s.id
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
@@ -170,6 +180,17 @@
         left outer join member m on m.id = s.id
 		where l.host = #{id}
 		order by l.lecture_year,s.semester, m.id
+	</select>
+	
+	<!-- 교수화면에서 성적 평균 조회 -->
+	<select id="avg_teacher_subject" resultType="score.ScoreVO">
+		select l.lecture_num, l.lecture_title, AVG(semesterpoint) avg_subject
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
+        left outer join member m on m.id = s.id
+		where l.host = #{id}
+		and l.lecture_num = #{num}
+		group by l.lecture_num , l.lecture_title
+		
 	</select>
 	
 	<!-- 리스트조회 -->

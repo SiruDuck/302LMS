@@ -257,7 +257,10 @@ public class ScoreController {
 		if(info_cd == 3) {
 			list = dao.lookup_list_for_teacher(id);
 			List<ScoreVO> teacher_years = dao.lookup_teacher_years(id);
+			ScoreVO avg_teacher_subject = dao.avg_teacher_subject(id, lecture_num);
+			
 			model.addAttribute("teacher_years", teacher_years);
+			model.addAttribute("avg_teacher_subject", avg_teacher_subject);
 			
 		}
 		

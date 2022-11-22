@@ -16,7 +16,7 @@ public class ScoreDAO implements ScoreService{
 	public List<ScoreVO> lookup_list(String id) {
 		return sql.selectList("score.list", id);
 	}
-
+	//학생 페이지 과목 조회
 	@Override
 	public List<ScoreVO> lookup_lectures(String id) {
 		return sql.selectList("score.lectures", id);
@@ -142,6 +142,19 @@ public class ScoreDAO implements ScoreService{
 		map.put("id", id);
 		map.put("num", lecture_num);
 		return sql.delete("score.delete",map);
+	}
+
+	//교수 페이지 과목 조회
+	@Override
+	public List<ScoreVO> lookup_teacher_subject(String id) {
+		return sql.selectList("score.teacher_lectures", id);
+	}
+	@Override
+	public ScoreVO avg_teacher_subject(String id, int num) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("num", num);
+		return sql.selectOne("score.avg_teacher_subject",map);
 	}
 
 	

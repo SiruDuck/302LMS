@@ -3,11 +3,17 @@ package score;
 public class ScoreVO {
 	private String  id, department_id, semester, lecture_title,teacher_name,subjectcredit, year, lecture_year, score_name, name;
 	private int lecture_num, info_cd;
-	private double  semesterpoint;
+	private double  semesterpoint, avg_subject;
 	
 	
 	
 	
+	public double getAvg_subject() {
+		return avg_subject;
+	}
+	public void setAvg_subject(double avg_subject) {
+		this.avg_subject = avg_subject;
+	}
 	public String getName() {
 		return name;
 	}

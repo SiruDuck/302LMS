@@ -10,7 +10,7 @@
 
 </head>
 <body>
-	<h2>score</h2>
+	<h2>학생 성적 관리</h2>
 		<div class="top-menu">
 			<div>
 			<!-- if 학년조회하고 다시 페이지를 왔을때는 ==> gradeList 바로 실행  -->
@@ -35,7 +35,15 @@
 <%-- 		</c:forEach> --%>
 <!--  		</table> -->
 
-
+	<div class="avg">
+		<div class="avg_text">현재페이지 평균 : </div>
+		
+			<c:forEach items="${avg_teacher_subject}" var = "vo">
+				<div class="avg_text">${vo.lecture_title}(${vo.lecture_num})의 평균 : ${vo.avg_subject}</div>
+			</c:forEach>
+		
+	</div>
+	
 	<div id="data-list">
 		<table class='table'>
 			<tr>

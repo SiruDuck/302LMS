@@ -10,7 +10,7 @@
 
 </head>
 <body>
-	<h2>score</h2>
+	<h2>성적 조회</h2>
 		<div class="top-menu">
 			<div>
 			<!-- if 학년조회하고 다시 페이지를 왔을때는 ==> gradeList 바로 실행  -->
