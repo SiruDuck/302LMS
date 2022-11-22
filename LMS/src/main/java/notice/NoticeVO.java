@@ -1,8 +1,8 @@
 package notice;
 
 public class NoticeVO {
-	private int  readcnt;
-	private String id, title, content, writer,filename,	filepath;
+	private int  readcnt, id;
+	private String title, content, writer,filename,	filepath;
 	private String writedate;
 	public int getReadcnt() {
 		return readcnt;
@@ -10,10 +10,10 @@ public class NoticeVO {
 	public void setReadcnt(int readcnt) {
 		this.readcnt = readcnt;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getTitle() {
@@ -52,6 +52,8 @@ public class NoticeVO {
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
 	}
+	
+	
 	
 	
 	

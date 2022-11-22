@@ -28,6 +28,11 @@ public class NoticeDAO implements NoticeService{
 		return sql.insert("notice.insert", vo);
 	}
 
+	@Override
+	public int notice_delete(int id) {
+		return sql.delete("notice.delete", id);
+	}
+
 	
 
 	
