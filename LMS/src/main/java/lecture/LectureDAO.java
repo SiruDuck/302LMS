@@ -30,14 +30,14 @@ public class LectureDAO implements LectureService {
 	}
 
 	@Override
-	public void lecture_delete(String lecture_num) {
-		// TODO Auto-generated method stub
+	public void lecture_delete(int lecture_num) {
+		sql.delete("lecture.delete", lecture_num);
 		
 	}
 
 	@Override
-	public LectureVO lecture_info(String lecture_title) {
-		return sql.selectOne("lecture.info", lecture_title);
+	public LectureVO lecture_info(int lecture_num) {
+		return sql.selectOne("lecture.info", lecture_num);
 	}
 
 	

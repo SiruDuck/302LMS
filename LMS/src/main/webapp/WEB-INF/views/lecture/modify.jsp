@@ -52,18 +52,18 @@ span.btn {
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
-				<form method='post' action='insert.lec'>
 					<div id='dataTable_wrapper'
 						class='dataTables_wrapper dt-bootstrap4'>
 						
 						<table class="table table-bordered" id="dataTable" width="100%"
 							cellspacing="0">
 							
+							<form method='post' action='update.lec'>
 								<thead>
-									<table class='w-px600'>
+									<table class='table table-bordered dataTable'>
 										<tr>
 											<th class='w-px160'>강의 번호</th>
-											<td><input type='text' name='lecture_num' class='chk' value="${vo.lecture_num }"></td>
+											<td><input type='hidden' name='lecture_num' value="${vo.lecture_num }" readonly="readonly"></td>
 										</tr>
 										<tr>
 											<th>강의명</th>
@@ -100,7 +100,7 @@ span.btn {
 											</td>
 										</tr>
 										<tr>
-											<th>수강시간</th>
+											<th>교시</th>
 											<td>
 												<label><input type='checkbox' name='lecture_time' value="1교시"${vo.lecture_time eq '1교시' ? 'checked' : '' }>1교시</label>
 												<label><input type='checkbox' name='lecture_time' value="2교시"${vo.lecture_time eq '2교시' ? 'checked' : '' }>2교시</label>
@@ -126,8 +126,8 @@ span.btn {
 										</tr>
 										<tr>
 											<th>온/오프라인</th>
-											<td><label><input type='radio' name='state' value="${vo.state eq '온라인' ? 'checked' : '' }"/>온라인</label>
-												<label><input type='radio' name='state' value="오프라인"<c:if test='${vo.state eq "오프라인" }'>checked</c:if> />오프라인</label>
+											<td><label><input type='radio' name='state' value="온라인"${vo.state eq '온라인' ? 'checked' : '' }/>온라인</label>
+												<label><input type='radio' name='state' value="오프라인"${vo.state eq '오프라인' ? 'checked' : '' }/>오프라인</label>
 											</td>
 										</tr>
 										<tr>
@@ -136,27 +136,35 @@ span.btn {
 										</tr>
 										<tr>
 											<th>년도</th>
-											<td><input type='date' name='lecture_year' value='${vo.lecture_year }'></td>
+											<td>
+											<input type='text' class='date' name='lecture_year' value='${vo.lecture_year }'>
+											</td>
 										</tr>
 										<tr>
 											<th>학기</th>
-											<td><label><input type='radio' name='semester' value="${vo.semester eq '1학기' ? 'checked' : '' }"/>1학기</label>
-												<label><input type='radio' name='semester' value="2학기"<c:if test ='${vo.semester eq "2학기"}'>checked</c:if>/>2학기</label>
+											<td><label><input type='radio' name='semester' value="1학기"${vo.semester eq '1학기' ? 'checked' : '' }/>1학기</label>
+												<label><input type='radio' name='semester' value="2학기"${vo.semester eq '2학기' ? 'checked' : '' }/>2학기</label>
 											</td>
 										</tr>
 									</table>
 								</thead>
+								</form>
 							</table>
 						</div>
-						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	
-	<div>
-		<a class="btn-primary" href="javascript:$('form').submit()">저장</a>
-		<a href="detail.lec?lecture_title=${vo.lecture_title}" class="btn">취소</a>
-	</div>	
+	<div style='text-align: center'>
+		<a class="btn btn-primary" onclick="$('form').submit()">저장</a>
+		<a class="btn btn-primary" href="detail.lec?lecture_num=${vo.lecture_num}">취소</a>
+	</div>
+	<script>
+$(function(){
+	$('.date').datepicker();
+	
+});
+</script>	
 </body>
 </html>

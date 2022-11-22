@@ -22,6 +22,7 @@ where nvl(department_id, 0 ) = #{department_id}
 order by member
 </select>
 
+
 <!-- info name, info code 조회 -->
 <select id='info' resultType='member.MemberVO'>
 select DISTINCT info_name, info_cd

@@ -137,7 +137,7 @@ span.btn {
 											<td>${vo.capacity}</td>
 											<td>${vo.subjectcredit}</td>
 											<td>${vo.state}</td>
-											<td><a href="detail.lec?lecture_title=${vo.lecture_title}"><button id="lec_detail" class="btn-primary">상세보기</button></a></td>
+											<td><a href="detail.lec?lecture_num=${vo.lecture_num}"><button id="lec_detail" class="btn-primary">상세보기</button></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

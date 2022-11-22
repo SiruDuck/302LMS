@@ -43,17 +43,17 @@ public class LectureController {
 	
 	//강의 상세보기
 	@RequestMapping(value = "/detail.lec", produces = "text/html;charset=utf-8")
-	public String lecture_info(String lecture_title, Model model, HttpSession session) {
-		LectureVO vo = dao.lecture_info(lecture_title);
+	public String lecture_info(int lecture_num, Model model, HttpSession session) {
+		LectureVO vo = dao.lecture_info(lecture_num);
 		model.addAttribute("vo", vo);
 		
-		return "lecture/detail" ;
+		return "lecture/detail";
 	}
 	
 	//안드 강의 상세보기
 	@ResponseBody @RequestMapping(value = "anddetail.lec", produces = "text/html;charset=utf-8")
-	public String AndLecture_info(String lecture_title) {
-		LectureVO vo = service.lecture_info(lecture_title);
+	public String AndLecture_info(int lecture_num) {
+		LectureVO vo = service.lecture_info(lecture_num);
 		return new Gson().toJson(vo);
 	}
 	
@@ -73,9 +73,9 @@ public class LectureController {
 	
 	//강의 정보 수정 화면
 	@RequestMapping(value= "/modify.lec" , produces = "text/html;charset=utf-8")
-	public String lecture_modify(String lecture_title, Model model) {
+	public String lecture_modify(int lecture_num, Model model) {
 		
-		LectureVO vo = service.lecture_info(lecture_title);
+		LectureVO vo = service.lecture_info(lecture_num);
 		model.addAttribute("vo", vo);
 		
 		return "lecture/modify";
@@ -84,14 +84,17 @@ public class LectureController {
 	//강의 정보 수정 저장처리
 	@RequestMapping(value= "/update.lec" , produces = "text/html;charset=utf-8")
 	public String lecture_update(LectureVO vo) {
-		System.out.println("dd");
-		/* service.lecture_update(vo); */
+		service.lecture_update(vo);
 		
-		return "redirect:detail.lec?lecture_title="+ vo.getLecture_title();
+		return "redirect:detail.lec?lecture_num="+ vo.getLecture_num();
 	}
 	
-	
-	
+	//강의 정보 삭제
+	@RequestMapping(value= "/delete.lec" , produces = "text/html;charset=utf-8")
+	public String delete(int lecture_num) {
+		service.lecture_delete(lecture_num);
+		return "redirect:list.lec";
+	}
 	
 	
 	

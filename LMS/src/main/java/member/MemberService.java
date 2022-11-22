@@ -23,7 +23,7 @@ public interface MemberService {
 	int member_join(MemberVO vo);
 	int member_id_check(String id);
 	
-	
+		
 
 
 	MemberVO and_login(String id) throws Exception;
