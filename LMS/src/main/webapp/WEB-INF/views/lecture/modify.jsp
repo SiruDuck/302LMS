@@ -60,7 +60,7 @@ span.btn {
 							
 							<form method='post' action='update.lec'>
 								<thead>
-									<table class='w-px600'>
+									<table class='table table-bordered dataTable'>
 										<tr>
 											<th class='w-px160'>강의 번호</th>
 											<td><input type='hidden' name='lecture_num' value="${vo.lecture_num }" readonly="readonly"></td>
@@ -156,9 +156,9 @@ span.btn {
 			</div>
 		</div>
 	
-	<div>
-		<a class="btn-primary" onclick="$('form').submit()">저장</a>
-		<a class="btn-primary" href="detail.lec?lecture_num=${vo.lecture_num}">취소</a>
+	<div style='text-align: center'>
+		<a class="btn btn-primary" onclick="$('form').submit()">저장</a>
+		<a class="btn btn-primary" href="detail.lec?lecture_num=${vo.lecture_num}">취소</a>
 	</div>
 	<script>
 $(function(){
