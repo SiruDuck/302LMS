@@ -9,6 +9,43 @@
 .notice a{
 	text-decoration: none;
 }
+.card{
+	box-shadow: 2px 1px 10px 1px rgba(0,0,0,0.2);
+}
+@font-face {
+    font-family: 'SEBANG_Gothic_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h6{
+	font-family: 'SEBANG_Gothic_Bold';
+}
+.main_img{
+	width:100%;
+	height:700px;
+	background: url("resources/introimg/indeximg.png") no-repeat ;
+}
+.slog{
+	font-size: 100px;
+	position: absolute;
+	font-family: 'SEBANG_Gothic_Bold';
+	color: white;
+	left: 60rem;
+	text-shadow:  2px 2px 2px rgba(0,0,0,0.2);
+}
+.r2{
+	top: 15rem;
+}
+
+.r3{
+	margin-left: 450px;
+	top: 30rem;
+}
+
+.pointer {transition:all 0.5s ease-out}
+
+
 </style>
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +53,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<div id ="wrap" class="main_img pointer" >
+	<div class="slog r1"> 가치를 창출하는 대학,</div>
+	<div class="slog r2"> 함께 성장해가는 대학,</div>
+	<div class="slog r3"> 영문대학교 </div>	
+</div>
+
 <!-- carousel -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style='margin:2rem 0 2rem 0'>
+
+	
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="250" src="resources/images/mainlogin/index_banner1.jpg" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
@@ -191,6 +236,17 @@
 </div>
 
 
+<script>
+var pointSize = $(".pointer").width()/2;
+$("#wrap").mousemove(function(e){    
+    $('.pointer').css("top", e.pageY-pointSize);
+    $('.pointer').css("left", e.pageX-pointSize);
+    $('.pointer').fadeIn();
+});
+$("#wrap").on("mouseleave", function(){
+  $('.pointer').fadeOut();
+});
+</script>
 
 </body>
 </html>
