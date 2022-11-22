@@ -30,7 +30,7 @@
 				<td>${vo.subjectcredit}</td>
 				<td>${vo.semesterpoint}</td>
 				<td>${vo.score_name}</td>
-				<td><a href="" class="btn-fill"> 점수 수정</a></td>
+				<td><a href="modify.sc?id=${vo.id}&lecture_num=${vo.lecture_num}&name=${vo.name}" class="btn-fill"> 점수 수정</a></td>
 			</tr>
 		</c:forEach>
 		

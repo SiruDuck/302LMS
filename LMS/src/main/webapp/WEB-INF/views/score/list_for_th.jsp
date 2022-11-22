@@ -16,11 +16,11 @@
 			<!-- if 학년조회하고 다시 페이지를 왔을때는 ==> gradeList 바로 실행  -->
 				<ul class="search">
 					<li>학생명 : <input type="text" id="student_name" /></li>
-					<li><select name="years" id="years" class="w-px200" >
+					<li><select name="lecture_year" id="lecture_year" class="w-px200" >
 						<option value="-1">전체 년도</option>
 							<c:forEach items="${teacher_years}" var ="vo">
 								<option 
-								 value="${vo.year}">${vo.year}</option>
+								 value="${vo.lecture_year}">${vo.lecture_year}</option>
 							</c:forEach>
 						</select></li>
 				</ul>
@@ -58,7 +58,7 @@
 				<td>${vo.subjectcredit}</td>
 				<td>${vo.semesterpoint}</td>
 				<td>${vo.score_name}</td>
-				<td><a href="" class="btn-fill"> 점수 수정</a></td>
+				<td><a href="modify.sc?id=${vo.id}&lecture_num=${vo.lecture_num}&name=${vo.name}" class="btn-fill"> 점수 수정</a></td>
 			</tr>
 		</c:forEach>
 		
@@ -70,7 +70,7 @@ $("#student_name").keyup(function(){
 	$.ajax({
 		url: "search_student_name",
 // 		aysnc : false,
-		data: {student : $("#student_name").val(), year : $("#years").val()},
+		data: {student : $("#student_name").val(), year : $("#lecture_year").val()},
 		success : function (res){
 			$("#data-list").empty();
 			$("#data-list").append(res);
@@ -80,12 +80,12 @@ $("#student_name").keyup(function(){
 	});
 }); 
 
-$("#years").change(function(){
+$("#lecture_year").change(function(){
 			console.log($(this).val());
 	$.ajax({
 		url: "search_student_name",
 // 		aysnc : false,
-		data: {student : $("#student_name").val(), year : $("#years").val()},
+		data: {student : $("#student_name").val(), year : $("#lecture_year").val()},
 		success : function (res){
 			$("#data-list").empty();
 			$("#data-list").append(res);

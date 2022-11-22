@@ -22,12 +22,52 @@ import score.ScoreVO;
 public class ScoreController {
 	@Autowired private ScoreDAO dao;
 	
-	//성적입력 처리
-	@RequestMapping("/insert.sc")
-	public String insert_score() {
-		
+	//성적삭제 처리
+	@RequestMapping("/delete.sc")
+	public String delete(String id, int lecture_num) {
+		dao.score_delete(id, lecture_num);
 		return "redirect:list.sc";
 	}
+	
+	//업데이트 처리
+	@RequestMapping("/update.sc")
+	public String update(ScoreVO vo) {
+		dao.score_update(vo);
+		return "redirect:list.sc";
+	}
+	
+	//수정페이지 연결 
+	@RequestMapping("/modify.sc")
+	public String modify(String id, int lecture_num, Model model, HttpSession session) {
+		
+		MemberVO lecture_vo =(MemberVO) session.getAttribute("loginInfo");
+		String lecuter_id  = lecture_vo.getId();
+		ScoreVO vo = dao.selectOne(id, lecture_num);
+		List<ScoreVO> lectureList = dao.lookup_teacher_lectures(lecuter_id);
+
+		model.addAttribute("vo", vo);
+		model.addAttribute("lectureList", lectureList);
+		return "score/modify";
+	}
+	
+	//성적입력 처리
+	@RequestMapping("/insert.sc")
+	public String insert_score(ScoreVO vo) {
+		System.out.println(vo.getId());
+		dao.score_insert(vo);
+		return "redirect:list.sc";
+	}
+	
+	//성적입력시 아이디 존재여부
+	@ResponseBody
+	@RequestMapping("/insert_id_check")
+	public boolean id_check(String id) {
+		//사용가능 0 (true), 사용불가 1(false)
+		System.out.println("아이디 존재 여부 <" + dao.id_check(id));
+		return dao.id_check(id) == 1 ? true : false;
+//		return true;
+	}
+	
 	
 	//성적입력시 데이터 중복 확인
 	@ResponseBody

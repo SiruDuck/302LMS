@@ -68,19 +68,19 @@ public class ScoreDAO implements ScoreService{
 
 
 	@Override
-	public List<ScoreVO> search_name(String student, String name, int year) {
+	public List<ScoreVO> search_name(String student, String id, int year) {
 		//교수 화면에서 학생이름 및 년도 조회
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("name", name);
+		map.put("id", id);
 		map.put("student", student);
 		map.put("year", year);
 		return sql.selectList("score.search_name_year", map);
 	}
 	@Override
-	public List<ScoreVO> search_name(String name, int year) {
+	public List<ScoreVO> search_name(String id, int year) {
 		//교수 화면에서 년도별 학생 조회
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("name", name);
+		map.put("id", id);
 		map.put("year", year);
 		return sql.selectList("score.teacher_year_student",map);
 	}
@@ -107,12 +107,41 @@ public class ScoreDAO implements ScoreService{
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("id", id);
 		map.put("num", num);
-		return sql.selectOne("score.data_chcek", map);
+		return sql.selectOne("score.data_check", map);
+	}
+
+	//성적입력처리
+	@Override
+	public int score_insert(ScoreVO vo) {
+		return sql.insert("score.insert",vo);
+	}
+
+	//성적 입력시 데이터 중복확인
+	@Override
+	public int id_check(String id) {
+		return sql.selectOne("score.id_check",id);
+	}
+
+	//교수 페이지 한 학생 조회
+	@Override
+	public ScoreVO selectOne(String id, int num) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("num", num);
+		return sql.selectOne("score.selectOne", map);
 	}
 
 	@Override
-	public int employee_insert(ScoreVO vo) {
-		return 0;
+	public int score_update(ScoreVO vo) {
+		return sql.update("score.update",vo);
+	}
+
+	@Override
+	public int score_delete(String id, int lecture_num) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("num", lecture_num);
+		return sql.delete("score.delete",map);
 	}
 
 	

@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="score">
+	
+	<!-- 성적 삭제처리 -->
+	<delete id="delete">
+		delete from subjectscore 
+		where id= #{id}
+		and lecture_num = #{num}
+	</delete>
 
+	<!-- 성적 수정처리 -->
+	<update id="update">
+		update subjectscore 
+		set semester = #{semester}, semesterpoint = #{semesterpoint} 
+		where lecture_num = #{lecture_num}
+		and id = #{id}
+	</update>
 
-	<!-- 아이디 중복체크 -->
-	<select id="data_chcek" resultType="integer">
+	<!-- 학생한명조회 -->
+	<select id="selectOne" resultType="score.ScoreVO">
+		 select l.lecture_title, l.lecture_year, l.lecture_num,
+		l.teacher_name, l.subjectcredit , s.*, m.name
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num 
+        inner join member m on m.id = s.id
+		where s.id = #{id}
+        and l.lecture_num = #{num}
+	</select>
+
+	<!-- 성적 입력처리 -->
+	<insert id="insert">
+		insert into subjectscore (lecture_num, id, semester, semesterpoint, year) 
+        values (#{lecture_num}, #{id}, #{semester}, #{semesterpoint}, '2022')
+	</insert>
+
+	<!--성적입력시 아이디 중복체크 -->
+	<select id="id_check" resultType="integer">
+		select count(id)
+		from member
+        where id = #{id}
+        and info_cd = 1
+	</select>
+	
+	<!-- 성적입력시 데이터 중복체크 -->
+	<select id="data_check" resultType="integer">
 		select count(s.id)
 		from lectures l left outer join subjectscore s on l.lecture_num = s.lecture_num
 		where s.id = #{id}

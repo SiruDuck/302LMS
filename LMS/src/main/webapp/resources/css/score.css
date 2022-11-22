@@ -57,7 +57,6 @@ input[name=address] { margin-top: 3px }
 .font-g { font-size: 20px;  color:#008000; }
 .font-profile { font-size: 50px;  color:#444; }
 
-#delete, #attach-file, #delete-file, .attach-file, .delete-file, .loading { display: none }
 .date + #delete { position: relative;  right: 30px; top: 2px; } /* 달력날짜 */
 #preview img, .preview img { max-height: 28px; }
 #preview   { margin-right: 5px }
