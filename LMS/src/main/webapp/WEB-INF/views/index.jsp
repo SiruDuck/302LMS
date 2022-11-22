@@ -23,15 +23,16 @@ h6{
 }
 .main_img{
 	width:100%;
-	height:700px;
+	height:470px;
 	background: url("resources/introimg/indeximg.png") no-repeat ;
+	margin-bottom: 2rem;
 }
 .slog{
-	font-size: 100px;
+	font-size: 80px;
 	position: absolute;
 	font-family: 'SEBANG_Gothic_Bold';
 	color: white;
-	left: 60rem;
+	left: 70rem;
 	text-shadow:  2px 2px 2px rgba(0,0,0,0.2);
 }
 .r2{
@@ -39,7 +40,7 @@ h6{
 }
 
 .r3{
-	margin-left: 450px;
+	margin-left: 350px !important;
 	top: 30rem;
 }
 
@@ -246,6 +247,7 @@ $("#wrap").mousemove(function(e){
     $('.pointer').css("top", e.pageY-pointSize);
     $('.pointer').css("left", e.pageX-pointSize);
     $('.pointer').fadeIn();
+    
 });
 $("#wrap").on("mouseleave", function(){
   $('.pointer').fadeOut();

@@ -3,11 +3,40 @@ package cash;
 import java.sql.Date;
 
 public class Cash_finalVO {
-	private int cash_code, price;
-	private String id, cash_name,  description, payment_status, semester ;
-	private Date dateofreceipt;
+	private int final_code, cash_code,  price, payment_status, nowprice;
+	private String id, cash_name, description, tax, tax_a, tax_b, tax_c, tax_d, department_name, info_name, name;
+	private Date payment_start_date, payment_end_date, payment_day;
 	
-	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getNowprice() {
+		return nowprice;
+	}
+	public void setNowprice(int nowprice) {
+		this.nowprice = nowprice;
+	}
+	public String getDepartment_name() {
+		return department_name;
+	}
+	public void setDepartment_name(String department_name) {
+		this.department_name = department_name;
+	}
+	public String getInfo_name() {
+		return info_name;
+	}
+	public void setInfo_name(String info_name) {
+		this.info_name = info_name;
+	}
+	public int getFinal_code() {
+		return final_code;
+	}
+	public void setFinal_code(int final_code) {
+		this.final_code = final_code;
+	}
 	public int getCash_code() {
 		return cash_code;
 	}
@@ -19,6 +48,12 @@ public class Cash_finalVO {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	public int getPayment_status() {
+		return payment_status;
+	}
+	public void setPayment_status(int payment_status) {
+		this.payment_status = payment_status;
 	}
 	public String getId() {
 		return id;
@@ -38,23 +73,53 @@ public class Cash_finalVO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getPayment_status() {
-		return payment_status;
+	public String getTax() {
+		return tax;
 	}
-	public void setPayment_status(String payment_status) {
-		this.payment_status = payment_status;
+	public void setTax(String tax) {
+		this.tax = tax;
 	}
-	public String getSemester() {
-		return semester;
+	public String getTax_a() {
+		return tax_a;
 	}
-	public void setSemester(String semester) {
-		this.semester = semester;
+	public void setTax_a(String tax_a) {
+		this.tax_a = tax_a;
 	}
-	public Date getDateofreceipt() {
-		return dateofreceipt;
+	public String getTax_b() {
+		return tax_b;
 	}
-	public void setDateofreceipt(Date dateofreceipt) {
-		this.dateofreceipt = dateofreceipt;
+	public void setTax_b(String tax_b) {
+		this.tax_b = tax_b;
+	}
+	public String getTax_c() {
+		return tax_c;
+	}
+	public void setTax_c(String tax_c) {
+		this.tax_c = tax_c;
+	}
+	public String getTax_d() {
+		return tax_d;
+	}
+	public void setTax_d(String tax_d) {
+		this.tax_d = tax_d;
+	}
+	public Date getPayment_start_date() {
+		return payment_start_date;
+	}
+	public void setPayment_start_date(Date payment_start_date) {
+		this.payment_start_date = payment_start_date;
+	}
+	public Date getPayment_end_date() {
+		return payment_end_date;
+	}
+	public void setPayment_end_date(Date payment_end_date) {
+		this.payment_end_date = payment_end_date;
+	}
+	public Date getPayment_day() {
+		return payment_day;
+	}
+	public void setPayment_day(Date payment_day) {
+		this.payment_day = payment_day;
 	}
 	
 	

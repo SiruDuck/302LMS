@@ -1,7 +1,7 @@
 package cash;
 
 public class Cash_infoVO {
-	int cash_code, price;
+	int cash_code;
 	String cash_name, description;
 	
 	
@@ -12,12 +12,6 @@ public class Cash_infoVO {
 	}
 	public void setCash_code(int cash_code) {
 		this.cash_code = cash_code;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
 	}
 	public String getCash_name() {
 		return cash_name;
