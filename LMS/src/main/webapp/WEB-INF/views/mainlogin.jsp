@@ -40,6 +40,7 @@
 				<li class='family1'><a href ='#'>영문대학교</a></li>
 				<li class='family2'><a href ='#'>중앙도서관</a></li>
 				<li class='family3'><a href ='#'>종합정보시스템</a></li>
+				<li class='family4'><a href ='welcom'>학교소개</a></li>
 			</ul>
 		</div>
 		</div>

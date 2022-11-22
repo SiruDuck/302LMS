@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <style>
@@ -17,13 +17,16 @@
 .btn a:hover{
 	text-decoration: none;
 }
+table td{
+	color:#000;
+}
 </style>
 <body>
 <div class="container-fluid" style='width:50%'>      
 	 <!-- DataTales Example -->
 	 <div class="card shadow mb-4">
 	     <!-- <div class="card-header py-3">
-	         <h6 class="m-0 font-weight-bold text-primary">¼±ÅÃÇÑ °ú¸ñ¸í</h6>
+	         <h6 class="m-0 font-weight-bold text-primary">ì„ íƒí•œ ê³¼ëª©ëª…</h6>
 	     </div> -->
 	     <div class="card-body">
 	         <div class="table-responsive">
@@ -31,12 +34,12 @@
 	             	
 	                 <!-- <thead>
 	                     <tr>
-	                         <th>°­ÀÇ ½Ã°£</th>
-	                         <th>¿ù</th>
-	                         <th>È­</th>
-	                         <th>¼ö</th>
-	                         <th>¸ñ</th>
-	                         <th>±İ</th>
+	                         <th>ê°•ì˜ ì‹œê°„</th>
+	                         <th>ì›”</th>
+	                         <th>í™”</th>
+	                         <th>ìˆ˜</th>
+	                         <th>ëª©</th>
+	                         <th>ê¸ˆ</th>
 	                     </tr>
 	                 </thead> -->
 	                 <!-- <tfoot>
@@ -51,40 +54,44 @@
 	                 </tfoot> -->
 	                 <tbody>
 	                     <tr>
-	                         <td>°­ÀÇÄÚµå</td>
+	                         <td>ê°•ì˜ì½”ë“œ</td>
 	                         <td>${vo.lecture_num }</td>
 	                     </tr>
 	                     <tr>
-	                         <td>°­ÀÇ¸í</td>
+	                         <td>ê°•ì˜ëª…</td>
 	                         <td>${vo.lecture_title }</td>
 	                     </tr>
 	                     <tr>
-	                         <td>±¸ºĞ</td>
+	                         <td>êµ¬ë¶„</td>
 	                         <td>${vo.sortation }</td>
 	                     </tr>
 	                     <tr>
-	                         <td>°­ÀÇ½Ç</td>
+	                         <td>ê°•ì˜ì‹¤</td>
 	                         <td>${vo.lecture_room }</td>
 	                     </tr>
 	                     <tr>
-	                         <td>´ã´ç±³¼ö</td>
+	                         <td>ë‹´ë‹¹êµìˆ˜</td>
 	                         <td>${vo.teacher_name }</td>
 	                     </tr>      
 	                     <tr>
-	                         <td>°­ÀÇ½Ã°£</td>
-	                         <td>${vo.lecture_time }</td>
+	                         <td>ê°•ì˜ì‹œê°„</td>
+	                         <td>${vo.lecture_time }êµì‹œ</td>
 	                     </tr>                
 	                     <tr>
-	                         <td>ÇĞÁ¡</td>
-	                         <td>${vo.subjectcredit }</td>
+	                         <td>í•™ì </td>
+	                         <td>${vo.subjectcredit }í•™ì </td>
 	                     </tr>             
 	                     <tr>
-	                         <td>°­ÀÇÀ¯Çü</td>
+	                         <td>ê°•ì˜ìœ í˜•</td>
 	                         <td>${vo.state }</td>
 	                     </tr>
 	                     <tr>
-	                     	<td>±³Àç¸í</td>
+	                     	<td>êµì¬ëª…</td>
 	                     	<td>${vo.book }</td>
+	                     </tr>             
+	                     <tr>
+	                     	<td>ìˆ˜ê°•ìµœëŒ€ì¸ì›</td>
+	                     	<td>${vo.capacity }</td>
 	                     </tr>             
 	                 </tbody>
 	             </table>
@@ -92,7 +99,7 @@
 	     </div>
 	 </div>
 	<div class='btn btn-primary btn-icon-split'>
-		<a class='text text-white' onclick='history.go(-1)'>µÚ·Î°¡±â</a>
+		<a class='text text-white' onclick='history.go(-1)'>ë’¤ë¡œê°€ê¸°</a>
 	</div>
 </div>
 </body>
