@@ -52,11 +52,11 @@ select * from member where id = #{id} and pw = #{pw}
 <!-- 회원가입처리 -->
 <insert id='join'>
 insert into member(	id, pw, name, gender, birth, phone, email, post, addr, grade, start_date,
-					end_date, state, department_id, department_name, info_cd, info_name )
+					end_date, state, department_id, department_name, info_cd, info_name, profile )
 values ( #{id}, #{pw}, #{name}, #{gender}, #{birth}, #{phone}, #{email}, #{post}, #{addr}
 		, #{grade, jdbcType=VARCHAR}, #{start_date}, #{end_date, jdbcType=VARCHAR}, #{state}
 		, #{department_id, jdbcType=VARCHAR}, #{department_name, jdbcType=VARCHAR}
-		, #{info_cd, jdbcType=VARCHAR}, #{info_name, jdbcType=VARCHAR} )
+		, #{info_cd, jdbcType=VARCHAR}, #{info_name, jdbcType=VARCHAR}, #{profile, jdbcType=VARCHAR})
 </insert>
 
 
