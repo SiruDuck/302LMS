@@ -18,41 +18,6 @@
 <body>
 
 
-<div><h1>어쩌구</h1></div>
 
-<div><h1>저쩌구</h1></div>
-
-<div><h1>...</h1></div>
-
-<div><h1>LMS에용</h1></div>
-
-<script>
-
-
-
-let observer = new IntersectionObserver((e)=>{
-	e.forEach((박스)=>{
-		if(박스.isIntersecting){
-			박스.target.style.opacity = 1;
-			박스.target.style.transform = 'rotate(0deg)';
-		}else{
-			박스.target.style.opacity = 0;
-		}
-		박스.intersectionRatio
-	})
-	
-});	
-	
-	
-	
-	
-});
-
-let div = document.querySelectorAll('div')
-observer.observe(div[0])
-observer.observe(div[1])
-observer.observe(div[2])
-observer.observe(div[3])
-</script>
 </body>
 </html>
