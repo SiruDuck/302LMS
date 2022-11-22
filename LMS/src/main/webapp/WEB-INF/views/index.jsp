@@ -43,9 +43,9 @@ h6{
 	top: 30rem;
 }
 
-.pointer {transition:all 0.5s ease-out}
+.pointer {position:absolute; width:50px; height:50px; border-radius:50px; background:white; transition:all 0.6s ease-out}
 
-
+.ss{ transition: cubic-bezier(.75,.32,.8,.44)}
 </style>
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,10 +53,14 @@ h6{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div id ="wrap" class="main_img pointer" >
-	<div class="slog r1"> 가치를 창출하는 대학,</div>
-	<div class="slog r2"> 함께 성장해가는 대학,</div>
-	<div class="slog r3"> 영문대학교 </div>	
+<div id ="wrap" class="main_img " >
+		<div class= "ss">
+			<div class="slog r1"> 가치를 창출하는 대학,</div>
+			<div class="slog r2"> 함께 성장해가는 대학,</div>
+			<div class="slog r3"> 영문대학교 </div>	
+		</div>
+	<span class='pointer'>	
+	</span>
 </div>
 
 <!-- carousel -->
@@ -245,6 +249,17 @@ $("#wrap").mousemove(function(e){
 });
 $("#wrap").on("mouseleave", function(){
   $('.pointer').fadeOut();
+});
+
+
+var point= $(".ss").width()/2;
+$("#wrap").mousemove(function(e){
+	 $('.ss').css("top", e.pageY-pointSize);
+	 $('.ss').css("left", e.pageX-pointSize);
+	 $('.ss').fadeIn();
+})
+$("#wrap").on("mouseleave", function(){
+  $('.ss').fadeOut();
 });
 </script>
 
