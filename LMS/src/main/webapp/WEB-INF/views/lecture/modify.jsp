@@ -102,14 +102,14 @@ span.btn {
 										<tr>
 											<th>교시</th>
 											<td>
-												<label><input type='checkbox' name='lecture_time' value="1교시"${vo.lecture_time eq '1교시' ? 'checked' : '' }>1교시</label>
-												<label><input type='checkbox' name='lecture_time' value="2교시"${vo.lecture_time eq '2교시' ? 'checked' : '' }>2교시</label>
-												<label><input type='checkbox' name='lecture_time' value="3교시"${vo.lecture_time eq '3교시' ? 'checked' : '' }>3교시</label>
-												<label><input type='checkbox' name='lecture_time' value="4교시"${vo.lecture_time eq '4교시' ? 'checked' : '' }>4교시</label>
-												<label><input type='checkbox' name='lecture_time' value="5교시"${vo.lecture_time eq '5교시' ? 'checked' : '' }>5교시</label>
-												<label><input type='checkbox' name='lecture_time' value="6교시"${vo.lecture_time eq '6교시' ? 'checked' : '' }>6교시</label>
-												<label><input type='checkbox' name='lecture_time' value="7교시"${vo.lecture_time eq '7교시' ? 'checked' : '' }>7교시</label>
-												<label><input type='checkbox' name='lecture_time' value="8교시"${vo.lecture_time eq '8교시' ? 'checked' : '' }>8교시</label>
+												<label><input type='checkbox' name='lecture_time' value="1"${vo.lecture_time eq '1' ? 'checked' : '' }>1</label>
+												<label><input type='checkbox' name='lecture_time' value="2"${vo.lecture_time eq '2' ? 'checked' : '' }>2</label>
+												<label><input type='checkbox' name='lecture_time' value="3"${vo.lecture_time eq '3' ? 'checked' : '' }>3</label>
+												<label><input type='checkbox' name='lecture_time' value="4"${vo.lecture_time eq '4' ? 'checked' : '' }>4</label>
+												<label><input type='checkbox' name='lecture_time' value="5"${vo.lecture_time eq '5' ? 'checked' : '' }>5</label>
+												<label><input type='checkbox' name='lecture_time' value="6"${vo.lecture_time eq '6' ? 'checked' : '' }>6</label>
+												<label><input type='checkbox' name='lecture_time' value="7"${vo.lecture_time eq '7' ? 'checked' : '' }>7</label>
+												<label><input type='checkbox' name='lecture_time' value="8"${vo.lecture_time eq '8' ? 'checked' : '' }>8</label>
 											</td>
 										</tr>
 										<tr>
@@ -142,8 +142,8 @@ span.btn {
 										</tr>
 										<tr>
 											<th>학기</th>
-											<td><label><input type='radio' name='semester' value="1학기"${vo.semester eq '1학기' ? 'checked' : '' }/>1학기</label>
-												<label><input type='radio' name='semester' value="2학기"${vo.semester eq '2학기' ? 'checked' : '' }/>2학기</label>
+											<td><label><input type='radio' name='semester' value="1"${vo.semester eq '1' ? 'checked' : '' }/>1</label>
+												<label><input type='radio' name='semester' value="2"${vo.semester eq '2' ? 'checked' : '' }/>2</label>
 											</td>
 										</tr>
 									</table>
