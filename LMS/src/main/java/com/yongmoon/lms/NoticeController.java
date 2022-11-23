@@ -30,9 +30,9 @@ public class NoticeController {
 	
 	//공지글상세화면 요청
 	@RequestMapping("/info.no")
-	public String info(Model model, String title,  HttpSession session) {
+	public String info(Model model, int id,  HttpSession session) {
 		
-		NoticeVO vo = service.notice_info(title);
+		NoticeVO vo = service.notice_info(id);
 		
 		model.addAttribute("vo", vo);
 		
@@ -83,13 +83,47 @@ public class NoticeController {
 	}
 	
 	@RequestMapping("/delete.no")
-	public String delete(String title, HttpServletRequest request) throws Exception{
-		NoticeVO vo = service.notice_info(title);
+	public String delete(int id, HttpServletRequest request) throws Exception{
 		
+		service.notice_delete(id);
+			
+	
 		return "redirect:list.no";
 	}
 	
+	@RequestMapping("/modify.no")
+	public String modify(int id, Model model) {
+		NoticeVO vo = service.notice_info(id);
+		
+		model.addAttribute("vo", vo);
+		
+		
+		return "notice/modify";
+	}
 	
+	@RequestMapping("/update.no")
+	public String update(NoticeVO vo, String filename, MultipartFile file,
+						HttpServletRequest request) throws Exception{
+		NoticeVO notice = service.notice_info(vo.getId());
+		
+		if(file.isEmpty()) {
+			if(filename.isEmpty()) {
+			common.attachedFile_delete(notice.getFilepath(), request);
+			}else {
+			vo.setFilename(notice.getFilename());
+			vo.setFilepath(notice.getFilepath());
+			}
+		}else {
+			vo.setFilename(file.getOriginalFilename());
+			vo.setFilepath(common.fileUpload("notice", file, request));
+			
+			common.attachedFile_delete(notice.getFilepath(), request);
+		}
+		
+		service.notice_update(vo);
+		
+		return "redirect:list.no";
+	}
 	
 	
 }

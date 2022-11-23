@@ -17,7 +17,7 @@
 }
 </style>
 <body>
-
+	<h3>공지글쓰기</h3>
 	
 	<form method='post' action='insert.no' enctype='multipart/form-data'>
 		<!-- DataTales Example -->

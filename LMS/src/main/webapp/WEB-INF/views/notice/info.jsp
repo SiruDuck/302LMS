@@ -15,7 +15,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 </head>
 <body>
-
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
@@ -67,7 +66,7 @@
 		<c:if test='${loginInfo.info_cd eq 2 }'>
 			<a class='btn btn-primary btn-icon-split'
 				href='modify.no?id=${vo.id}&${hrefParam}'>정보수정</a>
-			<a class='btn btn-danger btn-icon-split' id='remove'>정보삭제</a>
+			<a class='btn btn-danger btn-icon-split' id='remove' onclick="if(confirm('삭제 할까요?')) location='delete.no?id=${vo.id}'">정보삭제</a>
 		</c:if>
 	</div>
 	
@@ -80,12 +79,8 @@
 	if( isImage( "${vo.filename}" ) ){
 		$('#file-name').after( '<span id="preview"><img src="${vo.filepath}"></span>' );
 	}
-	$('#remove').click(function(){
-		if( confirm('삭제 할까요?') ) {
-			location = 'delete.no?id=${vo.id}&${hrefParam}';
-		}
-	});
-	
+
+	 
 	</script>
 		
 </body>

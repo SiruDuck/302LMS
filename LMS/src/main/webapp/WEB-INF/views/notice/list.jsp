@@ -69,7 +69,7 @@
 
 						<c:forEach items='${list}' var='vo'>
 							<tr >
-								<td><a href="info.no?title=${vo.title}">${vo.title }</a></td>
+								<td><a href="info.no?id=${vo.id}">${vo.title }</a></td>
 								<td style="text-align: center;">${vo.writer}</td>
 								<td style="text-align: center;">${vo.writedate }</td>
 								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
