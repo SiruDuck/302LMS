@@ -75,17 +75,7 @@ table th{
                                             <th>금</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot> -->
-                                    <tbody>
+                                    <tbody>                                    	
                                         <tr>
                                             <td>1교시 (09:00~09:50)</td>
                                             <td></td>
@@ -138,7 +128,7 @@ table th{
                                             <td>7교시 (16:00~16:50)</td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
+                                            <td><c:if test='${table_vo.lecture_time eq "7" and table_vo.lecture_day eq "수" and table_vo.lecture_num eq enrol_vo.lecture_num ? table_vo.lecture_title : ""}'></c:if></td>
                                             <td></td>
                                             <td></td>
                                         </tr>
