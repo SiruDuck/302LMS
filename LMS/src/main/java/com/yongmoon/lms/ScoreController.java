@@ -24,7 +24,12 @@ public class ScoreController {
 	
 	//성적삭제 처리
 	@RequestMapping("/delete.sc")
-	public String delete(String id, int lecture_num) {
+	public String delete(String id, int lecture_num, HttpSession session) {
+		MemberVO login =(MemberVO) session.getAttribute("loginInfo");
+		int info_cd = login.getInfo_cd();
+		if(info_cd == 1) {
+			return "list.sc";
+		}
 		dao.score_delete(id, lecture_num);
 		return "redirect:list.sc";
 	}
@@ -39,6 +44,11 @@ public class ScoreController {
 	//수정페이지 연결 
 	@RequestMapping("/modify.sc")
 	public String modify(String id, int lecture_num, Model model, HttpSession session) {
+		MemberVO login =(MemberVO) session.getAttribute("loginInfo");
+		int info_cd = login.getInfo_cd();
+		if(info_cd == 1) {
+			return "list.sc";
+		}
 		
 		MemberVO lecture_vo =(MemberVO) session.getAttribute("loginInfo");
 		String lecuter_id  = lecture_vo.getId();
@@ -52,8 +62,13 @@ public class ScoreController {
 	
 	//성적입력 처리
 	@RequestMapping("/insert.sc")
-	public String insert_score(ScoreVO vo) {
-		System.out.println(vo.getId());
+	public String insert_score(ScoreVO vo, HttpSession session) {
+		MemberVO login =(MemberVO) session.getAttribute("loginInfo");
+		int info_cd = login.getInfo_cd();
+		if(info_cd == 1) {
+			return "list.sc";
+		}
+		
 		dao.score_insert(vo);
 		return "redirect:list.sc";
 	}
@@ -104,10 +119,10 @@ public class ScoreController {
 		}
 		
 		//콘솔 출력
-		System.out.println("이름 : "+name);
-		System.out.println("학생명 : "+student);
-		System.out.println("리스트 사이즈 : " + list.size());
-		
+//		System.out.println("이름 : "+name);
+//		System.out.println("학생명 : "+student);
+//		System.out.println("리스트 사이즈 : " + list.size());
+//		
 		
 		//model전송
 		model.addAttribute("list", list);
@@ -122,6 +137,10 @@ public class ScoreController {
 		//로그인 vo
 		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
 		String id  = vo.getId();
+		int info_cd = vo.getInfo_cd();
+		if(info_cd == 1) {
+			return "list.sc";
+		}
 		
 		List<ScoreVO> student = dao.search_student(id);
 		List<ScoreVO> lectureList = dao.lookup_teacher_lectures(id);
@@ -131,6 +150,14 @@ public class ScoreController {
 		return "score/insert";
 	}
 
+	@RequestMapping("/list/select")
+	public String select_score_grade(Model model, HttpSession session){
+		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
+		String id = vo.getId();	
+		List<ScoreVO> list = dao.lookup_list(id);
+		model.addAttribute("list", list);
+		return "score/select/select";
+	}
 	
 	//년도별 성적조회
 	@RequestMapping("/list/grade")
@@ -155,9 +182,9 @@ public class ScoreController {
 			year_list =  dao.lookup_years(id,grade_num);
 		}
 
-		System.out.println("years : " + years.size());
+//		System.out.println("years : " + years.size());
 		model.addAttribute("years", years);
-		System.out.println("grade_num : " + grade_num);
+//		System.out.println("grade_num : " + grade_num);
 		List<ScoreVO> lectures = dao.lookup_lectures(id);
 		
 
@@ -254,10 +281,15 @@ public class ScoreController {
 		}
 		
 		
+		if(info_cd == 1) {
+			ScoreVO avg =dao.calc_avg(id);
+			model.addAttribute("avg", avg);
+		}
 		if(info_cd == 3) {
 			list = dao.lookup_list_for_teacher(id);
 			List<ScoreVO> teacher_years = dao.lookup_teacher_years(id);
-			ScoreVO avg_teacher_subject = dao.avg_teacher_subject(id, lecture_num);
+			List<ScoreVO> avg_teacher_subject = dao.avg_teacher_subject(id);
+			
 			
 			model.addAttribute("teacher_years", teacher_years);
 			model.addAttribute("avg_teacher_subject", avg_teacher_subject);

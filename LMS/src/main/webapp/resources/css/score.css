@@ -18,7 +18,13 @@ a:link, a:visited { text-decoration: none;  color:inherit; }
 h3{
 	text-align: center;
 }
-
+#list_check{
+	display: none;
+}
+.checked {
+	background : #3367d6;
+	color : white;
+}
 select {
 	cursor: pointer;
 	height: 32px;
@@ -42,14 +48,8 @@ ul li:not(:first-child) { margin-left: 5px }
 	transform: translate(-50%, -50%);
 }
 
-div.valid { color: #008000; font-size: 14px; font-weight: bold; }
-div.invalid { color: #ff0000; font-size: 14px; font-weight: bold; }
-
-.text-left { text-align: left }
-.text-right { text-align: right }
 
 .full { width: calc(100% - 22px) }
-input[name=address] { margin-top: 3px }
 
 .font { font-size: 20px; }
 .font-r { font-size: 20px;  color:#ff0000; }
@@ -57,12 +57,6 @@ input[name=address] { margin-top: 3px }
 .font-g { font-size: 20px;  color:#008000; }
 .font-profile { font-size: 50px;  color:#444; }
 
-.date + #delete { position: relative;  right: 30px; top: 2px; } /* 달력날짜 */
-#preview img, .preview img { max-height: 28px; }
-#preview   { margin-right: 5px }
-.align { align-items: center; display: flex;}
-.align * { margin-right: 5px }
-.align:not(:first-child) { margin-top: 5px } 
 
 textarea { 
 	height: 250px;
@@ -90,9 +84,20 @@ a.btn-fill, a.btn-empty {
     border-radius: 3px;
 }
 a{cursor: pointer;}
+
+.avg{
+	width: 250px;
+	margin: 0 auto;
+	border: 1px solid #333;
+	margin-bottom: 1rem;
+}
+.avg_text{
+	padding: .3rem;
+}
+
 .top-menu{
 	width: 100%;
-	margin: 1.5rem auto;
+	margin: 1.5rem auto 0;
 	display: flex;
 	justify-content: space-between;
 }

@@ -2,6 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="score">
 
+	<!-- 학생페이지 전체 평균 조회 -->
+	<select id="calc_avg" resultType="score.ScoreVO">
+		select sum(subjectcredit) sum_credit,  sum(subjectcredit*semesterpoint) sum_point
+        , round(sum(subjectcredit*semesterpoint) /sum(subjectcredit), 2)  avgerage
+		from
+		(select l.lecture_title, l.lecture_year,
+		l.teacher_name, l.subjectcredit , s.*
+		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
+		where s.id = #{id}
+		order by l.lecture_year,s.semester) l
+	</select>
+
 	
 	
 	<!-- 성적 삭제처리 -->
@@ -182,13 +194,14 @@
 		order by l.lecture_year,s.semester, m.id
 	</select>
 	
+	
+	
 	<!-- 교수화면에서 성적 평균 조회 -->
 	<select id="avg_teacher_subject" resultType="score.ScoreVO">
-		select l.lecture_num, l.lecture_title, AVG(semesterpoint) avg_subject
+		select l.lecture_num, l.lecture_title, round(AVG(semesterpoint),1) avg_subject
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
         left outer join member m on m.id = s.id
 		where l.host = #{id}
-		and l.lecture_num = #{num}
 		group by l.lecture_num , l.lecture_title
 		
 	</select>
