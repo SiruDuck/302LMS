@@ -52,12 +52,6 @@ span.btn{
 
 <h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">재무 관리</h1>
 
-					
-					
-					
-					
-					
-					
 									
 					<div class="dd">
 					<!-- Page Heading -->
@@ -66,7 +60,7 @@ span.btn{
 					    <a class="nav-link active" aria-current="page" href="#">전체 관리</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="#">급여 관리</a>
+					    <a class="nav-link" onclick="" href="#">급여 관리</a>
 					  </li>
 					 <li class="nav-item">
 					    <a class="nav-link" href="#">등록금 현황</a>
@@ -190,6 +184,12 @@ span.btn{
 
                     
 <script>
+function weblist(){
+	
+}
+
+
+
 
 
 </script>      
