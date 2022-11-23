@@ -17,15 +17,15 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
 </head>
 <body>
-	<h3>공지사항 수정</h3>
+	<h3>자유 게시판 수정</h3>
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">공지글 수정</h6>
+				<h6 class="m-0 font-weight-bold text-primary">자유 게시판 수정</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
-					<form method='post' action='update.no' enctype='multipart/form-data'>
+					<form method='post' action='update.br' enctype='multipart/form-data'>
 					<table class="table table-bordered" id="dataTable" width="100%"
 						cellspacing="0">
 						<thead>
@@ -63,7 +63,7 @@
 		
 	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
 		<a class='btn btn-primary btn-icon-split' id='save'>저장</a>
-		<a class='btn btn-danger btn-icon-split' href="list.no">취소</a>
+		<a class='btn btn-danger btn-icon-split' href="list.br">취소</a>
 	</div>
 	
 	<script>

@@ -81,7 +81,7 @@
 			</div>
 			<div class='info' style="text-align: right; margin-right: 30px;">
 				<!-- 직원인 경우만 글쓰기 가능 -->
-				<c:if test='${loginInfo.info_cd eq 4 }'>
+				<c:if test='${loginInfo.info_cd eq 2 }'>
 					<a href='new.no' class='btn btn-primary'>글쓰기</a>
 				</c:if>
 			</div>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+	<select id="list" resultType="board.BoardVO">
+		select *
+		from board
+		order by id desc
+	</select>
+
+
+	<select id="info" resultType="board.BoardVO">
+		select *
+		from board
+		where id = #{id}
+	</select>
+
+	<select id="insert">
+		insert into board(title, content, writer, filename, filepath, name)
+		values (#{title, jdbcType=VARCHAR}, #{content, jdbcType=VARCHAR},
+		#{writer, jdbcType=VARCHAR}, #{filename, jdbcType=VARCHAR},
+		#{filepath, jdbcType=VARCHAR}, #{name, jdbcType=VARCHAR} )
+	</select>
+
+
+	<select id="delete">
+		delete from board where id = #{id}
+	</select>
+
+
+	<select id="update">
+		update board set title = #{title, jdbcType=VARCHAR},content = #{content, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR}, filepath = #{filepath, jdbcType=VARCHAR}
+		where id = #{id}
+	</select>
+
+
+
+
+
+
+</mapper>
+
+
