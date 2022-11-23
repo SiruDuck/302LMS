@@ -17,7 +17,7 @@
 	
 	<bean id='factory-ymu' class='org.mybatis.spring.SqlSessionFactoryBean'>
 		<property name="dataSource"  ref='dbcp-ymu'/>
-		<property name="mapperLocations" value='classpath:sqlmap/*-mapper.xml'/>
+		<property name="mapperLocations" value='classpath*:sqlmap/*-mapper.xml'/>
 	</bean>
 	
 	<!-- 쿼리문실행 기능을 가진 클래스 -->

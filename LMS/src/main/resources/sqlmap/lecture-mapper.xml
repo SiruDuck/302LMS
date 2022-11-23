@@ -2,8 +2,66 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="lecture">
 
-<select id="test" resultType="lecture.LectureVO">
-	select * from lectures
+<select id="list" resultType="lecture.LectureVO">
+	select * from lectures 
+	order by lecture_num
 </select>
+
+<select id="info" resultType="lecture.LectureVO">
+	select * from lectures where lecture_num = #{lecture_num}
+</select>
+
+<select id="insert">
+	insert into lectures(lecture_num, lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time, enrolment, reception_status, capacity, midex, finalex, subjectcredit, state, book, lecture_year, lecture_day, host)
+				values(lec_seq.nextval, #{lecture_title, jdbcType=VARCHAR}, #{teacher_name, jdbcType=VARCHAR}, #{semester, jdbcType=VARCHAR}, #{sortation, jdbcType=VARCHAR}, #{lecture_room, jdbcType=VARCHAR}
+		, #{lecture_time, jdbcType=VARCHAR}, #{enrolment, jdbcType=VARCHAR}, #{reception_status, jdbcType=VARCHAR}, #{capacity, jdbcType=VARCHAR}
+		, #{midex, jdbcType=VARCHAR}, #{finalex, jdbcType=VARCHAR}, #{subjectcredit, jdbcType=VARCHAR}, #{state, jdbcType=VARCHAR}
+		,#{book, jdbcType=VARCHAR},#{lecture_year, jdbcType=VARCHAR},#{lecture_day, jdbcType=VARCHAR},#{host, jdbcType=VARCHAR})
+</select>
+
+<update id="update">
+	update LECTURES
+	set lecture_num = #{lecture_num},
+	
+	    lecture_title = #{lecture_title, jdbcType=VARCHAR}, 
+	    
+	    teacher_name = #{teacher_name, jdbcType=VARCHAR}, 
+	    
+		semester = #{semester, jdbcType=VARCHAR}, 
+		
+		sortation = #{sortation, jdbcType=VARCHAR}, 
+		
+		lecture_room = #{lecture_room, jdbcType=VARCHAR}, 
+		
+		lecture_time = #{lecture_time, jdbcType=VARCHAR},
+		
+		enrolment = #{enrolment, jdbcType=VARCHAR}, 
+		
+		reception_status = #{reception_status, jdbcType=VARCHAR}, 
+		
+		capacity = #{capacity, jdbcType=VARCHAR},
+		 
+		midex = #{midex, jdbcType=VARCHAR}, 
+		
+		finalex = #{finalex, jdbcType=VARCHAR}, 
+		
+		subjectcredit = #{subjectcredit, jdbcType=VARCHAR}, 
+		
+		state = #{state, jdbcType=VARCHAR}, 
+		
+		book = #{book, jdbcType=VARCHAR}, 
+		
+		lecture_year = #{lecture_year, jdbcType=VARCHAR}, 
+		
+		lecture_day = #{lecture_day, jdbcType=VARCHAR}, 
+		
+		host = #{host, jdbcType=VARCHAR}
+		
+	where lecture_num = #{lecture_num}
+</update>
+
+<delete id="delete">
+	delete from lectures where lecture_num = #{lecture_num}
+</delete>
 
 </mapper>
