@@ -67,7 +67,6 @@ public class TimeTableController {
 		
 		
 		
-		
 		model.addAttribute("vo", vo);
 		model.addAttribute("list", list);
 		return"time/regist";
@@ -82,7 +81,19 @@ public class TimeTableController {
 		return "time/search/list";
 	}// 과목명 검색
 	
+	@RequestMapping(value = "/insert.tt", produces = "text/html; charset=utf-8")
+	public String insert(EnrolmentVO vo, HttpSession session) {
+		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
+		vo.setId(member.getId());
+		
+		service.timeTable_insert(vo);
+		return "redirect:regist.tt";
+	}
 	
-	
+	@RequestMapping(value = "/list.tt", produces = "text/html; charset=utf-8")
+	public void myList(String id) {
+		System.out.println(id + "의 수강신청 목록");
+		
+	}
 
 }

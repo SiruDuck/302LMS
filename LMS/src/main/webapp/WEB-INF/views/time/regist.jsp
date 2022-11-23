@@ -40,7 +40,7 @@ table th{
 <h1 class='h3 mb-2 text-gray-800 font-weight-bold'>수강신청</h1>
 <p class='mb-4 font-weight-bold'>수강신청 기간 : 2023.02.14 ~ 2023.02.28</p>
 <form method='post' action="regist.tt">
-<div class='card mb-4'>
+<div class='card mb-4 shadow'>
 	<div class='card-header py-3'>
 		<h6 class='m-0 font-weight-bold text-primary text-lg'>강의 검색</h6>
 	</div>
@@ -64,22 +64,12 @@ table th{
 		</div>
 	</div>
 </div>
-</form>
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
 	    <h6 class="m-0 font-weight-bold text-primary text-lg">수강 신청</h6>
 	</div>
     <div class="card-body">
         <div class="table-responsive">
-        <!-- <div class="col-sm-12 col-md-6 count-box">      	
-			 <a href="spare.tt" class="btn btn-warning btn-icon-split">
-                 <span class="icon text-white-50">
-                     <i class="fas fa-calendar-alt"></i>
-                 </span>
-                 <span class="text">장바구니</span>
-             </a>
-		 </div> -->
-
 		 <!-- 수강신청리스트 -->
          <div id="dataTable-wrapper">
          	<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -111,9 +101,10 @@ table th{
 	       	           		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>상세보기</a>
 	       	           	</span>
 	       	           </td>
+
 	       	           <td>
-	                   	<span  class=' btn btn-info btn-icon-split'>
-	                   		<a class='text-white'>신청하기</a>
+	                   	<span class=' btn btn-info btn-icon-split'>
+	                   		<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">신청하기</a>
 	                   	</span>
 	       	           </td>
          	       </tr>
@@ -158,7 +149,7 @@ table th{
         </div>
     </div>
 </div>
-
+</form>
 <script>
 
 $('.search_title').keyup(function(){
@@ -172,7 +163,9 @@ $('.search_title').keyup(function(){
 	})
 });
 
-
+function popup(){
+	
+}
 
 
 

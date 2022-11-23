@@ -43,7 +43,7 @@
 	insert into enrolment values (#{id}, #{lecture_num}, '')
 </insert>
 
-<!-- 시간표 삭제(접수상태 수정) -->
+<!-- 수강신청한 강의 삭제 -->
 <delete id="delete">
 	delete from enrolment where id=#{id} and lecture_num = #{lucture_num} 
 </delete>
