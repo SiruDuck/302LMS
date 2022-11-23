@@ -4,7 +4,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <% Date nowTime = new Date();
-	SimpleDateFormat day = new SimpleDateFormat("MM월"); %>
+	SimpleDateFormat day = new SimpleDateFormat("YYYY년"); %>
 <!DOCTYPE html>
 <html>
 <head>

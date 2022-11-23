@@ -40,14 +40,14 @@ span.btn{
 							<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
 						</div>
 						<div class='card-body d-flex'>
-							<div class='dataTables_filter search-box'>
-								<input type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'>
-							</div>
+							
 							
 							<div class='dataTables_filter search-box'>
 								<input type="search" class='ids form-control form-control-sm' placeholder='아이디로 검색'>
 							</div>
-							
+							<div class='dataTables_filter search-box'>
+								<input type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'>
+							</div>
 							<div class='dataTables_filter search-box'>
 								<select class='custom-select custom-select-sm form-control form-control-sm'>
 									<option value='department_all'> (학과) 전체</option>

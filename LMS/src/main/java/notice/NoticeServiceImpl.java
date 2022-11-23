@@ -15,6 +15,18 @@ public class NoticeServiceImpl implements NoticeService {
 		return dao.notice_list();
 	}
 
+	@Override
+	public NoticeVO notice_info(String title) {
+		// TODO Auto-generated method stub
+		return dao.notice_info(title);
+	}
+
+	@Override
+	public int notice_insert(NoticeVO vo) {
+		
+		return dao.notice_insert(vo);
+	}
+
 	
 	
 	

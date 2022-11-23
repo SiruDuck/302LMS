@@ -1,19 +1,14 @@
 package notice;
 
 public class NoticeVO {
-	private int num, readcount;
-	private String id, title, content,writedate;
-	public int getNum() {
-		return num;
+	private int  readcnt;
+	private String id, title, content, writer,filename,	filepath;
+	private String writedate;
+	public int getReadcnt() {
+		return readcnt;
 	}
-	public void setNum(int num) {
-		this.num = num;
-	}
-	public int getReadcount() {
-		return readcount;
-	}
-	public void setReadcount(int readcount) {
-		this.readcount = readcount;
+	public void setReadcnt(int readcnt) {
+		this.readcnt = readcnt;
 	}
 	public String getId() {
 		return id;
@@ -33,12 +28,32 @@ public class NoticeVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getFilepath() {
+		return filepath;
+	}
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
+	}
 	public String getWritedate() {
 		return writedate;
 	}
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
 	}
+	
+	
 	
 	
 	
