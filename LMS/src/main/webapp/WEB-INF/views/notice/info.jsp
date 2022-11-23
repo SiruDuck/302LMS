@@ -15,7 +15,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 </head>
 <body>
-
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
@@ -32,11 +31,11 @@
 							</tr>
 							<tr>
 								<th>작성자</th>
-								<td><div class='form-control form-control-user'>${vo.name }</div></td>
+								<td><div class='form-control form-control-user'>${vo.writer }</div></td>
 								<th style="vertical-align: inherit; width: 11rem">작성일자</th>
 								<td><div class='form-control form-control-user'>${vo.writedate }</div></td>
 								<th style="vertical-align: inherit; width: 11rem">조회수</th>
-								<td><div class='form-control form-control-user'>${vo.readcount }</div></td>
+								<td><div class='form-control form-control-user'>${vo.readcnt }</div></td>
 							</tr>
 							<tr>
 								<th style="vertical-align: baseline;">내용</th>
@@ -46,13 +45,13 @@
 							<tr>
 								<th>첨부파일</th>
 								<td colspan='5'>
-									<%-- <div class='form-control form-control-user'>
+									 <div class='form-control form-control-user'>
 										<span id='file-name'>${vo.filename}</span>
 										<c:if test='${not empty vo.filename }'>
 											<a id='download'><i
 												class="font-b fa-solid fa-file-arrow-down"></i></a>
 										</c:if>
-									</div> --%>
+									</div>
 								</td>
 							</tr>
 						</thead>
@@ -63,12 +62,26 @@
 		
 	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
 		<a class='btn btn-secondary btn-icon-split'
-			href='list.br'>목록으로</a>
+			href='list.no'>목록으로</a>
 		<c:if test='${loginInfo.info_cd eq 2 }'>
 			<a class='btn btn-primary btn-icon-split'
 				href='modify.no?id=${vo.id}&${hrefParam}'>정보수정</a>
-			<a class='btn btn-danger btn-icon-split' id='remove'>정보삭제</a>
+			<a class='btn btn-danger btn-icon-split' id='remove' onclick="if(confirm('삭제 할까요?')) location='delete.no?id=${vo.id}'">정보삭제</a>
 		</c:if>
 	</div>
+	
+	<script>
+
+	$('#download').click(function(){
+		$(this).attr('href'
+				, 'download.no?id=${vo.id}&url=' + $(location).attr('href'));
+	});
+	if( isImage( "${vo.filename}" ) ){
+		$('#file-name').after( '<span id="preview"><img src="${vo.filepath}"></span>' );
+	}
+
+	 
+	</script>
+		
 </body>
 </html>
