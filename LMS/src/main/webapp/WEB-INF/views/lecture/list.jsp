@@ -30,6 +30,12 @@ span.btn {
 	font-size: 14px;
 	text-align: center;
 }
+
+th{
+	text-align:center;
+	background: rgb(248,249,252);
+}
+
 </style>
 
 <body>
@@ -99,7 +105,13 @@ span.btn {
 						<option value='8'>8교시 (17:00~17:50)</option>
 					</select>
 				</div>
-				
+				<div style='margin-left: 650px;'>
+					<c:choose>
+						<c:when test="${loginInfo.info_cd eq 4}">
+							<a href="new.lec" class="btn btn-primary">강의 등록</a> 
+						</c:when>
+					</c:choose>
+				</div>
 			</div>
 		
 		</div>
@@ -115,7 +127,7 @@ span.btn {
 					<div class="table-responsive">
 						<div id='dataTable_wrapper'
 							class='dataTables_wrapper dt-bootstrap4'>
-							<table class="table table-bordered" id="dataTable" width="100%"
+							<table class="table table-bordered text-gray-800" id="dataTable" width="100%"
 								cellspacing="0">
 								<thead>
 									<tr>
