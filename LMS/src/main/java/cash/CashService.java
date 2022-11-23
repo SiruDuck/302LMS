@@ -21,7 +21,11 @@ public interface CashService {
 	//월급 지급
 	int cash_ing_insert (String id);
 	
+	//final salary list admi
+	List<Cash_finalVO> cash_salary_final_list();
 	
+	//final 등록금 리스트
+	List<Cash_finalVO> cash_tuition_final_list();
 	//교수 화면에 목록 출력 
 	//직원 화면에 목록 출력 
 	

@@ -32,6 +32,17 @@ public class CashServiceImpl implements CashService {
 		return  dao.cash_final_list(filter);
 	}
 
+	@Override
+	public List<Cash_finalVO> cash_salary_final_list() {
+		// TODO Auto-generated method stub
+		return dao.cash_salary_final_list();
+	}
+
+	@Override
+	public List<Cash_finalVO> cash_tuition_final_list() {
+		return dao.cash_tuition_final_list();
+	}
+
 	
 	
 }
