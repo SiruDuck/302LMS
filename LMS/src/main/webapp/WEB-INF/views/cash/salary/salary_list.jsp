@@ -15,8 +15,8 @@
                                             <th>이름</th>
                                             <th>학과</th>
                                             <th>직책</th>
-                                            <th>수당명</th>
-                                            <th>수당사항</th>
+                                            <th>입사일</th>
+                                            <th>월급 세부사항</th>
                                             <th>세전금액</th>
                                             <th>국민연금</th>
                                             <th>건강보험</th>
@@ -27,14 +27,14 @@
                                     </thead>                                   
                                     <tbody>
                                      
-                                    <c:forEach items="${list }" var="vo" >
+                                    <c:forEach items="${salary_list }" var="vo" >
                                         <tr>
                                       		<td>${vo.payment_day }</td>
                                             <td >${vo.id }</td>
                                             <td>${vo.name }</td>
                                             <td>${vo.department_name }</td>
                                             <td>${vo.info_name }</td> 
-                                            <td>${vo.cash_name }</td> 
+                                            <td>${vo.start_date }</td> 
                                             <td>${vo.description }</td> 
                                             <td><fmt:formatNumber value="${vo.price}" pattern="#,###.##"/></td> 
                                             <td><fmt:formatNumber value="${vo.tax_a }" pattern="#,###.##"/></td> 

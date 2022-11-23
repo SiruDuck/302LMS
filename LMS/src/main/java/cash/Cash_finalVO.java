@@ -4,9 +4,33 @@ import java.sql.Date;
 
 public class Cash_finalVO {
 	private int final_code, cash_code,  price, payment_status, nowprice;
-	private String id, cash_name, description, tax, tax_a, tax_b, tax_c, tax_d, department_name, info_name, name;
-	private Date payment_start_date, payment_end_date, payment_day;
+	private String id, cash_name, description, tax, tax_a, tax_b, tax_c, tax_d, department_name, info_name, name, grade, state;
+	private Date payment_start_date, payment_end_date, payment_day, start_date, end_date;
 	
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public Date getEnd_date() {
+		return end_date;
+	}
+	public void setEnd_date(Date end_date) {
+		this.end_date = end_date;
+	}
+	public Date getStart_date() {
+		return start_date;
+	}
+	public void setStart_date(Date start_date) {
+		this.start_date = start_date;
+	}
 	public String getName() {
 		return name;
 	}

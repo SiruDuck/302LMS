@@ -56,17 +56,20 @@ span.btn{
 					<div class="dd">
 					<!-- Page Heading -->
                     <ul class="nav nav-tabs mb-3">
+                    	                   
+
+                    
 					  <li class="nav-item">
-					    <a class="nav-link active" aria-current="page" href="#">전체 관리</a>
+					    <a class="nav-link co1 ${category eq 'all' ? 'active' : ''}" onclick="choice(c1)" aria-current="page" href="cash.ing?category=all">전체 관리</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" onclick="" href="#">급여 관리</a>
+					    <a class="nav-link co2 ${category eq 'salary' ? 'active' : ''}"  onclick="choice(c2)" href="cash.ing?category=salary">급여 관리</a>
 					  </li>
 					 <li class="nav-item">
-					    <a class="nav-link" href="#">등록금 현황</a>
+					    <a class="nav-link co3 ${category eq 'tuition' ? 'active' : ''}"   onclick="choice(c3)"href="cash.ing?category=tuition">등록금 현황</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="#">장학금 현황</a>
+					    <a class="nav-link co4 ${category eq 'scholarship' ? 'active' : ''}"   onclick="choice(c4)"href="cash.ing?category=scholarship">장학금 현황</a>
 					  </li>
 					</ul>
 					
@@ -166,7 +169,23 @@ span.btn{
                             <div class="table-responsive">
                             <div id='dataTable_wrapper' class='dataTables_wrapper dt-bootstrap4'>
                             <!-- 테이블 자리 -->
-                                <c:import url="/WEB-INF/views/cash/common/cm_list.jsp"/>
+                            
+                            ${category }
+                   
+<c:choose>  
+	<c:when test="${category eq 'salary'}"> 
+	      <c:import url="/WEB-INF/views/cash/salary/salary_list.jsp"/>
+	</c:when> 
+	<c:when test="${category eq 'tuition'}"> 
+	      <c:import url="/WEB-INF/views/cash/tuition/tuition_list.jsp"/>
+	</c:when> 
+	<c:when test="${category eq 'scholarship'}"> 
+	      <c:import url="/WEB-INF/views/cash/scholarship/sc_list.jsp"/>
+	</c:when> 
+	<c:otherwise> 
+       <c:import url="/WEB-INF/views/cash/common/cm_list.jsp"/>
+	</c:otherwise> 
+</c:choose>   
                                 
                             </div>
                             </div>
@@ -184,8 +203,30 @@ span.btn{
 
                     
 <script>
-function weblist(){
-	
+
+
+function choice(e){
+	if(e == 'c1'){
+		$('.co1').classList.add('active');
+		$('.co2').classList.remove('active');
+		$('.co3').classList.remove('active');
+		$('.co4').classList.remove('active');
+	}else if (e == 'c2'){
+		$('.co1').classList.remove('active');
+		$('.co2').classList.add('active');
+		$('.co3').classList.remove('active');
+		$('.co4').classList.remove('active');
+	}else if (e == 'c3'){
+		$('.co1').classList.remove('active');
+		$('.co2').classList.remove('active');
+		$('.co3').classList.add('active');
+		$('.co4').classList.remove('active');
+	}else if (e == 'c4'){
+		$('.co1').classList.remove('active');
+		$('.co2').classList.remove('active');
+		$('.co3').classList.remove('active');
+		$('.co4').classList.add('active');
+	}
 }
 
 

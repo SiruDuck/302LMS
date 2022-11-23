@@ -10,38 +10,32 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        	<th>지급일</th>
-                                            <th>사번</th>
+                                        	<th>입금일</th>
+                                            <th>학번</th>
                                             <th>이름</th>
                                             <th>학과</th>
-                                            <th>직책</th>
-                                            <th>수당명</th>
-                                            <th>수당사항</th>
-                                            <th>세전금액</th>
-                                            <th>국민연금</th>
-                                            <th>건강보험</th>
-                                            <th>장기요양</th>
-                                            <th>고용보험</th>
-                                            <th style="background-color: #dde1eb">실수령액</th>
+                                            <th>학년</th>
+                                            <th>상태</th>
+                                            <th>입학일</th>
+                                            <th>졸업일</th>
+                                            <th>등록금 내역</th>
+                                            <th style="background-color: #dde1eb">등록금</th>
                                         </tr>
                                     </thead>                                   
                                     <tbody>
                                      
-                                    <c:forEach items="${list }" var="vo" >
+                                    <c:forEach items="${tuition_list }" var="tuition_list" >
                                         <tr>
-                                      		<td>${vo.payment_day }</td>
-                                            <td >${vo.id }</td>
-                                            <td>${vo.name }</td>
-                                            <td>${vo.department_name }</td>
-                                            <td>${vo.info_name }</td> 
-                                            <td>${vo.cash_name }</td> 
-                                            <td>${vo.description }</td> 
-                                            <td><fmt:formatNumber value="${vo.price}" pattern="#,###.##"/></td> 
-                                            <td><fmt:formatNumber value="${vo.tax_a }" pattern="#,###.##"/></td> 
-                                            <td><fmt:formatNumber value="${vo.tax_b }" pattern="#,###.##"/></td>
-                                            <td><fmt:formatNumber value="${vo.tax_c }" pattern="#,###.##"/></td>
-                                            <td><fmt:formatNumber value="${vo.tax_d }" pattern="#,###.##"/></td>
-                                            <td style="background-color: rgb(248,249,252)"><fmt:formatNumber value="${vo.nowprice }" pattern="#,###.##"/></td>
+                                      		<td>${tuition_list.payment_day }</td>
+                                            <td >${tuition_list.id }</td>
+                                            <td>${tuition_list.name }</td>
+                                            <td>${tuition_list.department_name }</td>
+                                            <td>${tuition_list.grade }</td> 
+                                            <td>${tuition_list.state }</td> 
+                                            <td>${tuition_list.start_date }</td> 
+                                            <td>${tuition_list.end_date }</td> 
+                                            <td>${tuition_list.description }</td> 
+                                            <td style="background-color: rgb(248,249,252)"><fmt:formatNumber value="${vo.price}" pattern="#,###.##"/></td> 
                                         </tr>
                                      </c:forEach>
                                     </tbody>

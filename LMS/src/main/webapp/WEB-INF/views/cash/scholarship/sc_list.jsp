@@ -10,7 +10,7 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        	<th>지급일</th>
+                                        	<th>장학금테이블</th>
                                             <th>사번</th>
                                             <th>이름</th>
                                             <th>학과</th>
