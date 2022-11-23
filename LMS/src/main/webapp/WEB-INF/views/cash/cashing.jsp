@@ -71,6 +71,9 @@ span.btn{
 					 <li class="nav-item">
 					    <a class="nav-link" href="#">등록금 현황</a>
 					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#">장학금 현황</a>
+					  </li>
 					</ul>
 					
 					<!-- 필터 -->
