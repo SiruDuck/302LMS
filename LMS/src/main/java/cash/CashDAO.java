@@ -42,6 +42,11 @@ public class CashDAO implements CashService{
 		return sql.selectList("cash.admin_tuition_list");
 	}
 
+	@Override
+	public List<Cash_finalVO> cash_scholarship_final_list() {
+		return sql.selectList("cash.admin_scholarship_list");
+	}
+
 	
 	
 

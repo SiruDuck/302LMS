@@ -23,6 +23,7 @@ public class CashController {
 		List<Cash_finalVO> list = null;
 		List<Cash_finalVO> final_salarylist = service.cash_salary_final_list();
 		List<Cash_finalVO> final_tuitionlist = service.cash_tuition_final_list();
+		List<Cash_finalVO> final_scholarshiplist = service.cash_scholarship_final_list();
 		//if(category.equals("all")) {	//카테고리가 all이면,
 		
 			if( filter.getCash_year()==-1 && filter.getCash_month()==-1 ) {
@@ -37,6 +38,7 @@ public class CashController {
 			model.addAttribute("category",category);
 			model.addAttribute("tuition_list",final_tuitionlist);
 			model.addAttribute("salary_list",final_salarylist);
+			model.addAttribute("scholarship_list",final_scholarshiplist);
 		//}else if (category.equals("salary")) {
 		//}
 		return "cash/cashing";

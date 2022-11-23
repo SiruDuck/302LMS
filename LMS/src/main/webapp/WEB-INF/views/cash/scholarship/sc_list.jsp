@@ -10,38 +10,34 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        	<th>장학금테이블</th>
-                                            <th>사번</th>
+                                        	<th>아이디</th>
                                             <th>이름</th>
                                             <th>학과</th>
-                                            <th>직책</th>
-                                            <th>수당명</th>
-                                            <th>수당사항</th>
-                                            <th>세전금액</th>
-                                            <th>국민연금</th>
-                                            <th>건강보험</th>
-                                            <th>장기요양</th>
-                                            <th>고용보험</th>
-                                            <th style="background-color: #dde1eb">실수령액</th>
+                                            <th>학년</th>
+                                            <th>상태</th>
+                                            <th>입학일</th>
+                                            <th>졸업일</th>
+                                            <th>장학</th>
+                                            <th>장학정보</th>
+                                            <th>입금일</th>
+                                            <th style="background-color: #dde1eb">장학금</th>
                                         </tr>
                                     </thead>                                   
                                     <tbody>
                                      
-                                    <c:forEach items="${list }" var="vo" >
+                                    <c:forEach items="${scholarship_list }" var="vo" >
                                         <tr>
-                                      		<td>${vo.payment_day }</td>
-                                            <td >${vo.id }</td>
-                                            <td>${vo.name }</td>
+                                      		<td>${vo.id }</td>
+                                            <td >${vo.name }</td>
                                             <td>${vo.department_name }</td>
-                                            <td>${vo.info_name }</td> 
+                                            <td>${vo.grade }</td>
+                                            <td>${vo.state }</td> 
+                                            <td>${vo.start_date }</td> 
+                                            <td>${vo.end_date }</td> 
                                             <td>${vo.cash_name }</td> 
                                             <td>${vo.description }</td> 
-                                            <td><fmt:formatNumber value="${vo.price}" pattern="#,###.##"/></td> 
-                                            <td><fmt:formatNumber value="${vo.tax_a }" pattern="#,###.##"/></td> 
-                                            <td><fmt:formatNumber value="${vo.tax_b }" pattern="#,###.##"/></td>
-                                            <td><fmt:formatNumber value="${vo.tax_c }" pattern="#,###.##"/></td>
-                                            <td><fmt:formatNumber value="${vo.tax_d }" pattern="#,###.##"/></td>
-                                            <td style="background-color: rgb(248,249,252)"><fmt:formatNumber value="${vo.nowprice }" pattern="#,###.##"/></td>
+                                            <td>${vo.payment_day }</td> 
+                                            <td style="background-color: rgb(248,249,252)"><fmt:formatNumber value="${vo.price }" pattern="#,###.##"/></td>
                                         </tr>
                                      </c:forEach>
                                     </tbody>

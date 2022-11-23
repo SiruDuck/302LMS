@@ -43,6 +43,11 @@ public class CashServiceImpl implements CashService {
 		return dao.cash_tuition_final_list();
 	}
 
+	@Override
+	public List<Cash_finalVO> cash_scholarship_final_list() {
+		return dao.cash_scholarship_final_list();
+	}
+
 	
 	
 }
