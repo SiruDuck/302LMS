@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
 import lecture.LectureDAO;
+import lecture.LecturePageVO;
 import lecture.LectureServiceImpl;
 import lecture.LectureVO;
 
@@ -25,11 +27,12 @@ public class LectureController {
 	
 	//강의 목록 조회
 	@RequestMapping(value = "/list.lec", produces = "text/html;charset=utf-8")
-	public String lecture_list(Model model, HttpSession session) {
-		Gson gson = new Gson();
+	public String lecture_list(Model model, LecturePageVO page,  HttpSession session) {
+		
 		session.setAttribute("category", "lec");
-		List<LectureVO> list = service.lecture_list();
+		List<LectureVO> list = dao.lecture_list();
 		model.addAttribute("vo", list);
+		model.addAttribute("page", service.lecture_list(page));
 		
 		return "lecture/list";
 	}

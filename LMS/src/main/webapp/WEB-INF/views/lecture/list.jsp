@@ -37,6 +37,7 @@ span.btn {
 
 	<div class="container-fluid">
 		<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">강의 목록</h1>
+		
 		<div class='card mb-4'>
 			<div class='card-header py-3'>
 				<h6 class='m-0 font-weight-bold text-primary'>강의 검색</h6>
@@ -59,16 +60,20 @@ span.btn {
 						<option value='info'>정보보안학과</option>
 					</select>
 				</div>
+				<form action="list.lec" method="get">
 				<div class='dataTables_filter search-box'>
-					<select name="sortation"
+					<select name=keyword onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
-						<option value='all'>구분 전체보기</option>
-						<option value='major'>전공 필수</option>
-						<option value='optional'>전공 선택</option>
+						<option value='s1'${page.search eq 's1' ? 'selected' : '' }>전체보기</option>
+						<option value='s2'${page.search eq 's2' ? 'selected' : '' }>전공필수</option>
+						<option value='s3'${page.search eq 's3' ? 'selected' : '' }>전공선택</option>
+						<option value='s4'${page.search eq 's4' ? 'selected' : '' }>교양</option>
+						<!-- <option value='optional'>전공 선택</option>
 						<option value='required'>교양 필수</option>
-						<option value='elective'>교양 선택</option>
+						<option value='elective'>교양 선택</option> -->
 					</select>
 				</div>
+			</form>
 				<div class='dataTables_filter search-box'>
 					<select name='lecture_day' onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
@@ -96,6 +101,7 @@ span.btn {
 				</div>
 				
 			</div>
+		
 		</div>
 		<div class="dd">
 			<!-- Page Heading -->

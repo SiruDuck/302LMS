@@ -72,6 +72,8 @@ public class MemberServiceImpl implements MemberService{
 		return dao.and_login(id);
 	}
 
+	
+	
 
 	
 	
