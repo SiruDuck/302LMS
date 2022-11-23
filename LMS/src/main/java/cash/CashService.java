@@ -16,6 +16,7 @@ public interface CashService {
 	
 	//final 전체 list --  //ID 6 자리 학생 | Id 2로 시작 5자리 직원 | ID 1로 시작 5자리 교수 | //
 	List<Cash_finalVO> cash_final_list();
+	List<Cash_finalVO> cash_final_list(Cash_FilterVO filter);
 	
 	//월급 지급
 	int cash_ing_insert (String id);

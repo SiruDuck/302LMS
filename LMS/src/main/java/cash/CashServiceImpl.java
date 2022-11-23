@@ -27,6 +27,11 @@ public class CashServiceImpl implements CashService {
 		return 0;
 	}
 
+	@Override
+	public List<Cash_finalVO> cash_final_list(Cash_FilterVO filter) {
+		return  dao.cash_final_list(filter);
+	}
+
 	
 	
 }
