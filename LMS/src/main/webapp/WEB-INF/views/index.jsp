@@ -17,7 +17,7 @@
 </head>
 <body>
 <!-- carousel -->
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style='margin:2rem 0 2rem 0'>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" style='margin:2rem 0 5rem 0'>
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="250" src="resources/images/mainlogin/index_banner1.jpg" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
@@ -47,7 +47,7 @@
 </div>
 
 <!-- lecture or event -->
-<div class="card  mb-4">
+<div class="card " style='margin-bottom:5rem;'>
     <!-- Card Header - Dropdown -->
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between"style='background-color: #fff; border-left: 1rem solid #5F9DF7;'>
         <h6 class="m-0 font-weight-bold text-lg text-dark">이번 달 특강 & 이벤트</h6>
@@ -70,7 +70,7 @@
 <div class="row">
     <div class="col-lg-6">
         <!-- Default Card Example -->
-        <div class="card mb-4">
+        <div class="card" style='margin-bottom:5rem;'>
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between " style='background-color:#fff; border-left: 1rem solid #dc3545;'>
                 <h6 class="m-0 font-weight-bold text-dark text-lg">공지사항</h6>
@@ -131,7 +131,7 @@
     </div>
 
     <div class="col-lg-6">
-		<div class="card mb-4">
+		<div class="card " style='margin-bottom:5rem;'>
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #f6c23e;'>
                 <h6 class="m-0 font-weight-bold text-dark text-lg">커뮤니티</h6>

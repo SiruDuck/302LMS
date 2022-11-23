@@ -30,28 +30,7 @@ table td{
 	     </div> -->
 	     <div class="card-body">
 	         <div class="table-responsive">
-	             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-	             	
-	                 <!-- <thead>
-	                     <tr>
-	                         <th>강의 시간</th>
-	                         <th>월</th>
-	                         <th>화</th>
-	                         <th>수</th>
-	                         <th>목</th>
-	                         <th>금</th>
-	                     </tr>
-	                 </thead> -->
-	                 <!-- <tfoot>
-	                     <tr>
-	                         <th>Name</th>
-	                         <th>Position</th>
-	                         <th>Office</th>
-	                         <th>Age</th>
-	                         <th>Start date</th>
-	                         <th>Salary</th>
-	                     </tr>
-	                 </tfoot> -->
+	             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">	             		                
 	                 <tbody>
 	                     <tr>
 	                         <td>강의코드</td>
@@ -98,7 +77,7 @@ table td{
 	         </div>
 	     </div>
 	 </div>
-	<div class='btn btn-primary btn-icon-split'>
+	<div class='btn btn-primary btn-icon-split' style='float:right;'>
 		<a class='text text-white' onclick='history.go(-1)'>뒤로가기</a>
 	</div>
 </div>
