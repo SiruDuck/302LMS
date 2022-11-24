@@ -55,8 +55,9 @@ public class LectureController {
 	
 	//안드 강의 상세보기
 	@ResponseBody @RequestMapping(value = "anddetail.lec", produces = "text/html;charset=utf-8")
-	public String AndLecture_info(int lecture_num) {
+	public String AndLecture_info(int lecture_num, Model model) {
 		LectureVO vo = service.lecture_info(lecture_num);
+		model.addAttribute("vo",vo);
 		return new Gson().toJson(vo);
 	}
 	
