@@ -10,7 +10,7 @@ public interface LectureService {
 	void lecture_update(LectureVO vo);//강의 정보 수정
 	void lecture_delete(int lecture_num);//강의 삭제
 	LectureVO lecture_info(int lecture_num);//강의 상세 정보
-	
+	List<LectureVO> teacher_lec_list();//교수 개인 강의 목록
 	
 
 

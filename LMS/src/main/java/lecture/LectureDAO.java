@@ -47,6 +47,12 @@ public class LectureDAO implements LectureService {
 		return page;
 	}
 
+	@Override
+	public List<LectureVO> teacher_lec_list() {
+		
+		return sql.selectList("lecture.teacher_lec");
+	}
+
 	
 	
 	

@@ -46,6 +46,14 @@ public class LectureServiceImpl implements LectureService {
 		
 		return dao.lecture_list(page);
 	}
+
+
+
+	@Override
+	public List<LectureVO> teacher_lec_list() {
+	
+		return dao.teacher_lec_list();
+	}
 	
 
 	
