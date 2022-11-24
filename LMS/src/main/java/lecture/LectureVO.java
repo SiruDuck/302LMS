@@ -4,12 +4,18 @@ import java.sql.Date;
 import java.util.List;
 
 public class LectureVO {
-	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
+	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time, id
 	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day, host;
 	private int lecture_num;
 	private Date midex, finalex;
 	
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getLecture_title() {
 		return lecture_title;
 	}

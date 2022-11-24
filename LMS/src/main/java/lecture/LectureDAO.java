@@ -48,9 +48,17 @@ public class LectureDAO implements LectureService {
 	}
 
 	@Override
-	public List<LectureVO> teacher_lec_list() {
+	public List<LectureVO> teacher_lec_list(String teacher_name) {
 		
-		return sql.selectList("lecture.teacher_lec");
+		return sql.selectList("lecture.teacher_lec", teacher_name);
+	}
+
+	
+
+	@Override
+	public List<LectureVO> student_lec_list(String id) {
+		
+		return sql.selectList("lecture.student_lec", id);
 	}
 
 	
