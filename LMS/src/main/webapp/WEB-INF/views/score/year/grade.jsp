@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<li><select name="grade_num" id="yearList" class="w-px200" >
-	<option value="-1">전체 년도</option>
-		<c:forEach items="${years}" var ="y">
-			<option value="${y.lecture_year}"> ${y.lecture_year}년</option>
-		</c:forEach>
-	</select></li>
+	<div class="card">
+		<li class='dataTables_filter search-box'>
+		<select class='custom-select custom-select-sm form-control form-control-sm w-px200' 
+		name="grade_num" id="yearList">
+		<option value="-1">전체 년도</option>
+			<c:forEach items="${years}" var ="y">
+				<option value="${y.lecture_year}"> ${y.lecture_year}년</option>
+			</c:forEach>
+		</select></li>
+	</div>
 	
 <table class='table'>
 	<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>년도</th><th>학기</th><th>학점</th><th>성적</th><th>성적</th></tr>

@@ -261,6 +261,20 @@ public class ScoreController {
 	
 	
 	//과목별 성적조회
+	@ResponseBody @RequestMapping("/list/subject")
+	public Object lookup_score(Model model, @RequestParam(defaultValue = "-1") int lecture_num, HttpSession session ){
+		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
+		String id = vo.getId();	
+		List<ScoreVO>  list;
+		if(lecture_num == -1) {
+			list = dao.lookup_list(id);
+		}else {
+			list = dao.lookup_list(id,lecture_num);
+		}
+		return list;
+	}
+	
+	//과목별 성적조회
 	@RequestMapping("/list.sc")
 	public String lookup_score(Model model, @RequestParam(defaultValue = "-1") int lecture_num 
 			,@RequestParam(defaultValue = "1") int category, HttpSession session, String student){

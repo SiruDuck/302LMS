@@ -78,7 +78,7 @@ a.btn-fill {
 }
 a.btn-fill, a.btn-empty {
     display: inline-block;
-    height: 40px;
+    height: 30px;
     padding: 3px 15px;
     border: 1px solid #3367d6;
     border-radius: 3px;
@@ -121,6 +121,12 @@ float: right;
 	padding: 2rem;
 }
 
+.search_list{
+	position: absolute;
+    bottom: 53px;
+    left: 80px;
+}
+
 .w-px40 { width: 40px }
 .w-px60 { width: 60px }
 .w-px80 { width: 80px }
@@ -145,7 +151,9 @@ float: right;
 
 
 
-
+.mb2{
+	margin-bottom: 2rem;
+}
 
 
 
