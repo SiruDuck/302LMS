@@ -47,7 +47,7 @@ public class TimeTableController {
 		String id = vo.getId();
 		System.out.println(id + "의 시간표");
 		List<TimeTableVO> table_vo = service.timeTable_list(id);
-		
+		System.out.println(table_vo.size());
 		
 		model.addAttribute("vo",vo);
 		model.addAttribute("table_vo", table_vo);
@@ -59,6 +59,7 @@ public class TimeTableController {
 	public String timeTableDetail( Model model, int lecture_num, @RequestParam(defaultValue = "-1") int dataLength) {
 		TimeTableVO vo = service.timeTableDetail(lecture_num);
 		model.addAttribute("vo", vo);
+		System.out.println(lecture_num + "의 상세보기");
 		return "time/timeTableDetail";
 	}// 시간표 상세 보기
 	
@@ -69,11 +70,8 @@ public class TimeTableController {
 		System.out.println(id + "의 수강신청");
 		
 		List<TimeTableVO> vo = service.timeTableRegist(lecture_title);
-		
 		List<TimeTableVO> list = service.sortation_list(sortation);
-		
-		
-		
+				
 		model.addAttribute("vo", vo);
 		model.addAttribute("list", list);
 		return"time/regist";
@@ -86,17 +84,21 @@ public class TimeTableController {
 		model.addAttribute("list", list);
 		
 		return "time/search/list";
-	}// 과목명 검색
+	}// 과목명 검색	
 	
 	@RequestMapping(value = "/insert.tt", produces = "text/html; charset=utf-8")
 	public String insert(EnrolmentVO vo, HttpSession session) {
-		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
+		MemberVO member =(MemberVO) session.getAttribute("loginInfo");
 		vo.setId(member.getId());
 		
-		service.timeTable_insert(vo);
+		service.timeTable_insert(vo); 
 		return "redirect:regist.tt";
 	}// 수강 시간표 등록
 	
+	@RequestMapping("/check")
+	public void check() {
+		
+	}
 	
 	@RequestMapping("/delete.tt")
 	public String delete(HttpSession session, EnrolmentVO enrol_vo) {

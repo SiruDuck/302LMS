@@ -61,6 +61,8 @@ public class TimeTableDAO implements TimeTableService {
 
 	
 
+	
+
 //	@Override
 //	public List<TimeTableVO> lecture_title_lsit(String lecture_title) {
 //		return sql.selectList("time.lecture_title_list", lecture_title);

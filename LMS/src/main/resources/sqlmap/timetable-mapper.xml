@@ -32,20 +32,20 @@
 
 <!-- 내 시간표 보기 -->
 <select id="timeTable_list" resultType="timetable.TimeTableVO">
-	SELECT L.LECTURE_NUM, L.LECTURE_TITLE, L.LECTURE_ROOM, L.LECTURE_TIME, L.LECTURE_DAY, l.semester
-	FROM lectures L INNER JOIN  ENROLMENT E
-	ON l.lecture_num = e.lecture_num
-	WHERE E.ID=#{id} AND l.semester = 2
+	SELECT L.LECTURE_NUM, L.LECTURE_TITLE, L.LECTURE_ROOM, L.LECTURE_time, L.LECTURE_DAY, l.semester
+	FROM lectures L INNER JOIN  SUBJECTSCORE S
+	ON l.lecture_num = s.lecture_num
+	WHERE l.semester = '2' AND S.ID= #{id}
 </select>
 
 <!-- 수강신청 -->
 <insert id="insert">
-	insert into enrolment values (#{id}, #{lecture_num}, '')
+	insert into SUBJECTSCORE values (#{lecture_num}, #{id},'','')
 </insert>
 
 <!-- 수강신청한 강의 삭제 -->
 <delete id="delete">
-	delete from enrolment where id=#{id} and lecture_num = #{lucture_num} 
+	delete from subjectscore where id= #{id} and lecture_num = #{lecture_num} and semesterpoint is null 
 </delete>
 
 <!-- 시간표 수정 -->

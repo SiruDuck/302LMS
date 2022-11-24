@@ -82,8 +82,8 @@ table th{
          	    	<th>강의시간</th>
          	    	<th>학점</th>
          	    	<th>강의유형</th>
-         	    	<th>상세보기</th>
-         	    	<th>강의신청</th>
+         	    	<th>강의정보</th>
+         	    	<th>등록</th>
          	  	</tr>
          	
          	   <c:forEach items="${vo }" var="vo">
@@ -104,7 +104,8 @@ table th{
 
 	       	           <td>
 	                   	<span class=' btn btn-info btn-icon-split'>
-	                   		<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">신청하기</a>
+	                   		<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">강의등록</a>
+	                   		
 	                   	</span>
 	       	           </td>
          	       </tr>
@@ -163,9 +164,7 @@ $('.search_title').keyup(function(){
 	})
 });
 
-$('popup').click(function(){
-	alert('신청');
-});
+
 
 
 
