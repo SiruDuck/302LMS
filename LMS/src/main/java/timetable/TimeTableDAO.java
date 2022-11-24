@@ -33,12 +33,12 @@ public class TimeTableDAO implements TimeTableService {
 
 	@Override
 	public List<TimeTableVO> timeTable_list(String id) {
-		return sql.selectOne("time.timeTable_list", id);
+		return sql.selectList("time.timeTable_list", id);
 	}
 
 	@Override
-	public void timeTable_delete(String id) {
-		sql.update("time.delete", id);
+	public void timeTable_delete(EnrolmentVO vo) {
+		sql.update("time.delete", vo);
 	}
 
 	@Override
