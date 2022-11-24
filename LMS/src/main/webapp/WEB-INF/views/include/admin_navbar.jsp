@@ -49,9 +49,14 @@
             </div>
             
 			 <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="list.lec">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>내 정보</span></a>
+                    <span>강의 관리</span></a>
+            </li>
+			 <li class="nav-item">
+                <a class="nav-link" href="eqlist">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>교재 및 비품 관리</span></a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -59,33 +64,19 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>교직원 관리</span>
+                    <span>인원 및 재무관리</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">관리</h6>
-                        <a class="collapse-item" href="#">장학 관리</a>
-                        <a class="collapse-item" href="cash.ing">급여 관리</a>
                         <a class="collapse-item" href="member.list">인원 관리</a>
+                        <a class="collapse-item" href="cash.ing">재무 관리</a>
                     </div>
                 </div>
             </li>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>강의 및 비품관리</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="list.lec">강의 관리</a>
-                        <a class="collapse-item" href="eqlist">교재 및 비품 관리</a>
-                    </div>
-                </div>
-            </li>
+			
 
 
             <!-- Divider -->
@@ -96,22 +87,10 @@
                 게시판
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>커뮤니티</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">커뮤니티</h6>
-                        <a class="collapse-item" href="list.br">자유 게시판</a>
-                        <a class="collapse-item" href="list.co">수강후기</a>
-                        <div class="collapse-divider"></div>
-
-                    </div>
-                </div>
+                <a class="nav-link" href="list.no">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>자유게시판</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
