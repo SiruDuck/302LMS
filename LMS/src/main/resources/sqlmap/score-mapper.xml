@@ -11,7 +11,7 @@
 		l.teacher_name, l.subjectcredit , s.*
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 		where s.id = #{id}
-		order by l.lecture_year,s.semester) l
+		order by l.lecture_year,l.semester) l
 	</select>
 
 	
@@ -26,7 +26,7 @@
 	<!-- 성적 수정처리 -->
 	<update id="update">
 		update subjectscore 
-		set semester = #{semester}, semesterpoint = #{semesterpoint} 
+		set  semesterpoint = #{semesterpoint} 
 		where lecture_num = #{lecture_num}
 		and id = #{id}
 	</update>
@@ -43,8 +43,8 @@
 
 	<!-- 성적 입력처리 -->
 	<insert id="insert">
-		insert into subjectscore (lecture_num, id, semester, semesterpoint, year) 
-        values (#{lecture_num}, #{id}, #{semester}, #{semesterpoint}, '2022')
+		insert into subjectscore (lecture_num, id, semesterpoint) 
+        values (#{lecture_num}, #{id}, #{semesterpoint})
 	</insert>
 
 	<!--성적입력시 아이디 중복체크 -->
@@ -71,7 +71,7 @@
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 		where l.lecture_year = #{year}
 		and s.id = #{id}
-		order by l.lecture_year,s.semester
+		order by l.lecture_year,l.semester
 	</select>
 	
 	
@@ -97,7 +97,7 @@
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 		where l.lecture_num = #{num}
 		and s.id = #{id}
-		order by l.lecture_year,s.semester
+		order by l.lecture_year,l.semester
 	</select>
 
 	<!-- 학생화면에서 과목명 조회 -->
@@ -147,7 +147,7 @@
 		where l.host = #{id}
 		and m.name like  '%'||#{student}||'%' 
 		and l.lecture_year = #{year}
-		order by l.lecture_year,s.semester, m.id
+		order by l.lecture_year,l.semester, m.id
 	</select>
 	
 	<!-- 리스트 조회 교수 화면(이름)-->
@@ -158,7 +158,7 @@
         left outer join member m on m.id = s.id
 		where l.host = #{id}
 		and m.name like  '%'||#{student}||'%' 
-		order by l.lecture_year,s.semester, m.id
+		order by l.lecture_year,l.semester, m.id
 	</select>
 	
 	<!-- 리스트 조회 교수 화면(년도)-->
@@ -169,7 +169,7 @@
         left outer join member m on m.id = s.id
 		where l.host = #{id}
 		and l.lecture_year = #{year}
-		order by l.lecture_year,s.semester, m.id
+		order by l.lecture_year,l.semester, m.id
 	</select>
 	
 	<!-- 리스트 조회 교수 화면(이름 && 년도)-->
@@ -180,18 +180,18 @@
         left outer join member m on m.id = s.id
 		where l.host = #{id}
 		and m.name like  '%'||#{student}||'%' 
-		and s.year = #{year}
-		order by l.lecture_year,s.semester, m.id
+		and l.year = #{year}
+		order by l.lecture_year,l.semester, m.id
 	</select>
 	
 	<!-- 리스트 조회 교수 화면-->
 	<select id="list_teacher" resultType="score.ScoreVO">
 		select l.lecture_title, l.lecture_year,
-		l.teacher_name, l.subjectcredit , s.*, m.name
+		l.teacher_name, l.subjectcredit , s.*, m.name, l.semester
 		from lectures l inner join subjectscore s on l.lecture_num =s.lecture_num
         left outer join member m on m.id = s.id
 		where l.host = #{id}
-		order by l.lecture_year,s.semester, m.id
+		order by l.lecture_year,l.semester, m.id
 	</select>
 	
 	
@@ -208,11 +208,11 @@
 	
 	<!-- 리스트조회 -->
 	<select id="list" resultType="score.ScoreVO">
-		select l.lecture_title, l.lecture_year,
+		select l.lecture_title, l.lecture_year,l.semester,
 		l.teacher_name, l.subjectcredit , s.*
 		from lectures l left outer join subjectscore s on l.lecture_num =s.lecture_num
 		where s.id = #{id}
-		order by l.lecture_year,s.semester
+		order by l.lecture_year,l.semester
 	</select>
 
 </mapper>
