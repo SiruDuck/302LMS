@@ -6,12 +6,14 @@
 <% Date nowTime = new Date();
 	SimpleDateFormat day = new SimpleDateFormat("YYYY년"); %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<a onclick='scadd()' id="btnopen" class="btn btn-primary btn-icon-split mb-2">
+<a onclick="openadd()" id="btnopen opener" class="btn btn-primary btn-icon-split mb-2">
+
    <span class="icon text-gray-600">
    <i class="fas fa-arrow-right"></i>
    </span>
    <span class="text">장학 등록</span>
-</a>	
+</a>
+
 <table class="table table-bordered mt-1" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -47,9 +49,5 @@
                                      </c:forEach>
                                     </tbody>
                                 </table>    
-    
-<script>
-
-
-</script>   
+  
     

@@ -31,6 +31,21 @@ span.btn{
     margin-bottom: 1rem;
     max-width: 10%;
 }
+
+.show{
+	display: block !important;
+}
+.d-none{
+	display: none !important;
+}
+
+.oo{
+	position: absolute;
+	z-index: 999;
+	top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+}
 </style>
 </head>
 <body>
@@ -40,7 +55,9 @@ span.btn{
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800 mt-2 mb-2"></h1>
 
-                   
+<div id ="menub" class="d-none oo">
+	<%@ include file="scholarship/sc_insert.jsp" %>
+</div>          
 
 <div class="container-fluid">
 
@@ -228,8 +245,6 @@ function choice(e){
 		$('.co4').classList.add('active');
 	}
 }
-
-
 
 
 
