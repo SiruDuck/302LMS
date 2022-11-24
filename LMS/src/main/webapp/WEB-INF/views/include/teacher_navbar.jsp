@@ -55,25 +55,27 @@
                    
             </li>
             
+            
+            <li class="nav-item">
+                <a class="nav-link" href="list.sc">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>성적 관리</span></a>
+            </li>
+            
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>관리페이지</span>
+                    <span>강의 관리</span>
                     
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">관리페이지</h6>
-                        <a class="collapse-item" href="list.sc">성적 관리</a>
+                        <h6 class="collapse-header">강의 관리 페이지</h6>
+                        <a class="collapse-item" href="#">내 강의목록</a>
                         <a class="collapse-item" href="list.lec">강의 관리</a>
-                        <a class="collapse-item" href="#">비품 조회</a>
-                        <a class="collapse-item" href="#">과제 관리</a>
-                        <a class="collapse-item" href="#">학생 정보/성적관리</a>
-
-                        <a class="collapse-item" href="http://localhost/lms/main.ti">시간표 정보</a>
                     </div>
                 </div>
             </li>
@@ -89,22 +91,10 @@
                 게시판
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>커뮤니티</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">커뮤니티</h6>
-                        <a class="collapse-item" href="list.br">자유 게시판</a>
-                        <a class="collapse-item" href="list.co">수강후기</a>
-                        <div class="collapse-divider"></div>
-
-                    </div>
-                </div>
+                <a class="nav-link" href="list.no">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>자유게시판</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
