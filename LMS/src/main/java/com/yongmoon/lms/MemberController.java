@@ -1,15 +1,18 @@
 package com.yongmoon.lms;
 
+import java.lang.System.Logger;
 import java.sql.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import department.DepartmentVO;
@@ -22,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.google.gson.Gson;
 
 import common.CommonUtility;
+import member.MemberDAO;
 import member.MemberServiceImpl;
 import member.MemberVO;
 
@@ -29,9 +33,10 @@ import member.MemberVO;
 public class MemberController {
 	@Autowired private MemberServiceImpl service;
 	@Autowired private EquipmentDAO vo;
+	@Autowired private MemberDAO dao;
 	@Autowired SqlSession sql;
 	@Autowired private CommonUtility common;
-
+	
 	// 학생, 교사, 교직원, 어드민 리스트 출력
 	@RequestMapping("/member.list")
 	public String memberlist(Model model, @RequestParam(defaultValue = "-1") int info_cd) {
@@ -214,8 +219,16 @@ public class MemberController {
 		
 		
 		
-	
+	@RequestMapping(value = "/myinfo")
+	public String myinfo(HttpSession session, Model model) {
 		
+		MemberVO temp_vo = (MemberVO) session.getAttribute("loginInfo");
+		MemberVO vo = dao.viewMember(temp_vo.getId());
+		model.addAttribute("vo", vo);
+		
+		
+		return "member/myinfo";
+	}
 
 	
 	

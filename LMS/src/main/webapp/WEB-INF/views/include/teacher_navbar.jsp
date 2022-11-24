@@ -49,7 +49,7 @@
             </div>
 
 			<li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="myinfo">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>내 정보</span></a>
                    

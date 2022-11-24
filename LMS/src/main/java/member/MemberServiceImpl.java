@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService{
 		return dao.member_list();
 	}
 	
+	
 	//과 조회
 	@Override
 	public List<DepartmentVO> department_list() {
@@ -60,6 +61,11 @@ public class MemberServiceImpl implements MemberService{
 		return dao.member_list(department_id);
 	}
 
+	@Override
+	public MemberVO viewMember(String id) {
+		return dao.viewMember(id);
+	}
+
 	
 	
 	
@@ -72,6 +78,7 @@ public class MemberServiceImpl implements MemberService{
 		return dao.and_login(id);
 	}
 
+	
 	
 	
 
