@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,12 +122,15 @@ th{
 	<!-- container-fluid -->
 			<div style='text-align: center'>
 				<a href="list.lec" class="btn btn-primary">강의 목록</a> 
-				<a href="modify.lec?lecture_num=${vo.lecture_num}" class="btn btn-primary">정보수정</a>
-				<a class="btn btn-primary"
-					onclick="if(confirm('정말 삭제하시겠습니까?')) location='delete.lec?lecture_num=${vo.lecture_num}'">삭제</a>
+				<c:choose>
+					<c:when test="${loginInfo.info_cd eq 3 or loginInfo.info_cd eq 4}">
+						<a href="modify.lec?lecture_num=${vo.lecture_num}" class="btn btn-primary">정보수정</a>
+						<a class="btn btn-primary"
+							onclick="if(confirm('정말 삭제하시겠습니까?')) location='delete.lec?lecture_num=${vo.lecture_num}'">삭제</a>
+					</c:when>
+				</c:choose>
 			</div>
 	
-
-
+				
 </body>
 </html>
