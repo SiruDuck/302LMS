@@ -11,10 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import board.BoardCommentVO;
 import board.BoardServiceImpl;
 import board.BoardVO;
 import common.CommonUtility;
@@ -24,6 +26,37 @@ import notice.NoticeVO;
 public class BoardController {
 	@Autowired private BoardServiceImpl service;
 	@Autowired private CommonUtility common;
+	
+	
+	
+	
+	@RequestMapping("/board/comment/list/{board_id}")
+	public String comment_list(@PathVariable int board_id, Model model) {
+		//해당 방명록글에 대한 댓글목록을 DB에서 조회
+		//댓글목록화면에 데이터를 출력할 수 있도록 Model에 attribute로 담는다
+		model.addAttribute("list", service.board_comment_list(board_id) );
+		model.addAttribute("crlf", "\r\n");
+		model.addAttribute("if", "\r\n");
+		//응답화면연결
+		return "board/comment/comment_list";
+	}
+	
+	
+	
+	
+	
+	@ResponseBody @RequestMapping("/board/comment/insert")
+	public boolean comment_insert(BoardCommentVO vo) {
+		return service.board_comment_insert(vo) == 1 ? true : false;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	@ResponseBody
 	@RequestMapping(value = "/download.br", produces = "text/html; charset=utf-8")
@@ -64,7 +97,7 @@ public class BoardController {
 	
 	@RequestMapping("/info.br")
 	public String info(Model model, int id, HttpSession session) {
-		
+		service.board_read(id);
 		
 		BoardVO vo = service.board_info(id);
 		

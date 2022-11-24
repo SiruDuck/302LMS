@@ -61,22 +61,7 @@
 		</div>
 	</div>
 
-	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
-		<a class='btn btn-secondary btn-icon-split' href='list.br'>목록으로</a>
-		<c:if test='${loginInfo.id eq vo.writer }'>
-			<a class='btn btn-primary btn-icon-split'
-				href='modify.br?id=${vo.id}&${hrefParam}'>정보수정</a>
-			<a class='btn btn-danger btn-icon-split' id='remove'
-				onclick="if(confirm('삭제 할까요?')) location='delete.br?id=${vo.id}'">정보삭제</a>
-		</c:if>
-	</div>
-
-
-
-
-
-
-
+	
 
 
 
@@ -93,8 +78,9 @@
 					cellspacing="0">
 					<thead>
 						<tr>
-							<th style="vertical-align: inherit; width: 11rem">commenter</th>
-							<td colspan="5"><div class='form-control form-control-user'></div></td>
+							<th style="vertical-align: inherit; width: 11rem; text-align: center;">댓글작성</th>
+							<td style="display: flex;"><textarea id='comment' class='form-control form-control-user'></textarea><a href='javascript:regist()' class='btn btn-primary btn-icon-split' id='regist' style="margin-left: 2rem; width: 4rem; align-items: center;">등록</a></td>
+<!-- 							  -->
 						</tr>
 					</thead>
 				</table>
@@ -102,9 +88,30 @@
 		</div>
 	</div>
 
+	<div id = 'comment-list'></div>
+	
+	
+	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
+		<a class='btn btn-secondary btn-icon-split' href='list.br'>목록으로</a>
+		<c:if test='${loginInfo.id eq vo.writer }'>
+			<a class='btn btn-primary btn-icon-split'
+				href='modify.br?id=${vo.id}&${hrefParam}'>정보수정</a>
+			<a class='btn btn-danger btn-icon-split' id='remove'
+				onclick="if(confirm('삭제 할까요?')) location='delete.br?id=${vo.id}'">정보삭제</a>
+		</c:if>
+	</div>
+	
+	
+	
+	
+	
+	
+	
 	
 	<script>
-	
+	$(function(){
+		comment_list();
+	});
 	
 	$('#download').click(function(){
 		$(this).attr('href'
@@ -113,6 +120,80 @@
 	if( isImage( "${vo.filename}" ) ){
 		$('#file-name').after( '<span id="preview"><img src="${vo.filepath}"></span>' );
 	}
+	
+	
+	function regist(){
+		if( ${empty loginInfo} ){
+			alert('댓글을 등록하려면 로그인하세요!');
+		}else if( $('#comment').val()=='' ){
+			alert('댓글을 입력하세요!');
+			$('#comment').focus();
+		}else{
+			$.ajax({
+				url: 'board/comment/insert',
+				data: { board_id:${vo.id}, content:$('#comment').val()
+						, writer:'${loginInfo.name}' },
+				success: function( response ){
+					if( response ){
+						alert('댓글이 등록되었습니다');
+						$('#comment').val('');
+						comment_list();
+					}else{
+						alert('댓글이 등록 실패ㅠㅠ')
+					}
+				},error: function(req, text){
+					alert(text+':'+req.status);
+				}
+			});
+		}
+	}
+
+	
+
+	//댓글목록조회
+	function comment_list(){
+		$.ajax({
+			url: 'board/comment/list/${vo.id}',
+			//data: { board_id:${vo.id} },
+			success: function( response ){
+				$('#comment-list').html( response );
+			},error: function(req, text){
+				alert(text+':'+req.status);
+			}
+		});
+	}
+
+	//목록으로, 수정, 삭제 버튼 클릭시 form 서브밋
+	$('#list, #modify, #remove').click(function(){
+		$('form').attr('action', $(this).attr('id')+".bo" );
+		if( $(this).attr('id')=='remove' ){
+			if( confirm('정말 삭제?') ){
+				$('form').submit();			
+			}
+		}else
+			$('form').submit();
+	});
+
+	//동적으로 만든 이미지태그 클릭시 이미지를 크게 볼수 있도록 처리
+	$(document).on('click', '.preview img', function(){
+		$('#popup, #popup-background').css('display', 'block');
+		$('#popup').append( $(this).clone() );
+	});
+
+	//background 클릭시 팝업사라지게
+	$('#popup-background').click(function(){
+		$('#popup, #popup-background').css('display', 'none');
+		$('#popup').empty();
+	});
+
+	//다운로드 클릭시
+	$('.download').click(function(){
+		$('[name=file]').val( $(this).data('file') );
+		$('form').attr('action', 'download.bo').submit();
+	});
+
+
+
 	
 	
 	</script>

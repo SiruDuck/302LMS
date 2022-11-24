@@ -35,14 +35,40 @@ public class BoardDAO implements BoardService{
 
 	@Override
 	public int board_read(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sql.update("board.read", id);
 	}
 
 
 	@Override
 	public BoardVO board_info(int id) {
 		return sql.selectOne("board.info", id);
+	}
+
+
+	@Override
+	public int board_comment_insert(BoardCommentVO vo) {
+		return sql.insert("board.comment_insert", vo);
+	}
+
+
+	@Override
+	public List<BoardCommentVO> board_comment_list(int board_id) {
+		// TODO Auto-generated method stub
+		return sql.selectList("board.comment_list", board_id);
+	}
+
+
+	@Override
+	public int board_comment_update(BoardCommentVO vo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int board_comment_delete(int id) {
+		// TODO Auto-generated method stub
+		return 0;
 	} 
 	
 	

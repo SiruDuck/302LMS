@@ -34,11 +34,29 @@
 		where id = #{id}
 	</select>
 
-
-
-
-
-
+	<select id="read">
+	update board set readcnt = readcnt + 1 where id = #{id}
+	</select>
+		
+		
+	<select id="comment_insert">
+	insert into board_comment (content, writer, board_id)
+	values ( #{content}, #{writer, jdbcType=VARCHAR}, #{board_id, jdbcType=VARCHAR})
+	</select>
+	
+	
+	<select id="comment_list" resultType="board.BoardCommentVO">
+		select *
+		from board_comment
+		where board_id = #{board_id, jdbcType=VARCHAR}
+		order by id desc
+	</select>
+		
+	
+		
+		
+		
+		
 </mapper>
 
 
