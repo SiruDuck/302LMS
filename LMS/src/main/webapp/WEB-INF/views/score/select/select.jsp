@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    
+    <div style="text-align: center;">※과목을 선택하세요</div>
     <a id="allCk" class="btn-fill" style="margin-right: 1rem; margin-bottom: 1rem;">전체선택</a><a id="allclear" class="btn-fill">전체 선택 취소</a>
 <table class='table'>
 	<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>년도</th><th>학기</th><th>학점</th><th>점수</th><th>성적</th>
