@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
 import lecture.LectureDAO;
+import lecture.LecturePageVO;
 import lecture.LectureServiceImpl;
 import lecture.LectureVO;
 
@@ -25,14 +27,28 @@ public class LectureController {
 	
 	//강의 목록 조회
 	@RequestMapping(value = "/list.lec", produces = "text/html;charset=utf-8")
-	public String lecture_list(Model model, HttpSession session) {
-		Gson gson = new Gson();
+	public String lecture_list(Model model, LecturePageVO page,  HttpSession session) {
 		session.setAttribute("category", "lec");
-		List<LectureVO> list = service.lecture_list();
+		List<LectureVO> list = dao.lecture_list();
 		model.addAttribute("vo", list);
+		model.addAttribute("page", service.lecture_list(page));
 		
 		return "lecture/list";
 	}
+	
+	//교수 내 강의 목록
+	@RequestMapping(value= "/teacher_lec_list.lec", produces = "text/html;charset=utf-8")
+	public String teacher_lec_list(Model model, HttpSession session) {
+		session.setAttribute("category", "lec");
+		List<LectureVO> list = dao.teacher_lec_list();
+		model.addAttribute("vo", list);
+		
+		
+		
+		return "lecture/teacher_lec_list";
+	}
+	
+	
 	
 	//안드 강의목록 조회
 	@ResponseBody @RequestMapping(value = "andlist.lec", produces = "text/html;charset=utf-8")
@@ -52,8 +68,9 @@ public class LectureController {
 	
 	//안드 강의 상세보기
 	@ResponseBody @RequestMapping(value = "anddetail.lec", produces = "text/html;charset=utf-8")
-	public String AndLecture_info(int lecture_num) {
+	public String AndLecture_info(int lecture_num, Model model) {
 		LectureVO vo = service.lecture_info(lecture_num);
+		model.addAttribute("vo",vo);
 		return new Gson().toJson(vo);
 	}
 	

@@ -1,6 +1,7 @@
 package lecture;
 
 import java.sql.Date;
+import java.util.List;
 
 public class LectureVO {
 	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time

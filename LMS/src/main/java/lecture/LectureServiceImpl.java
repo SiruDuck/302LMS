@@ -15,6 +15,8 @@ public class LectureServiceImpl implements LectureService {
 		return dao.lecture_list();
 	}
 
+	
+	
 	@Override
 	public int lecture_insert(LectureVO vo) {
 		
@@ -38,6 +40,21 @@ public class LectureServiceImpl implements LectureService {
 		
 		return dao.lecture_info(lecture_num);
 	}
+
+	@Override
+	public LecturePageVO lecture_list(LecturePageVO page) {
+		
+		return dao.lecture_list(page);
+	}
+
+
+
+	@Override
+	public List<LectureVO> teacher_lec_list() {
+	
+		return dao.teacher_lec_list();
+	}
+	
 
 	
 

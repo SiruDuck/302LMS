@@ -33,6 +33,7 @@ span.btn{
    <span class="icon text-gray-600">
    <i class="fas fa-arrow-right"></i>
    </span>
+   
    <span class="text">인원 등록</span>
  </a>
 					<div class='card mb-4'>
