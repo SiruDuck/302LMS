@@ -11,8 +11,7 @@
 	<select id="info" resultType="notice.NoticeVO">
 		select *
 		from notice
-		where id =
-		#{id}
+		where id = #{id}
 	</select>
 
 	<select id="insert">
