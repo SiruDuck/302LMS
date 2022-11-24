@@ -48,18 +48,30 @@ public class LectureController {
 		
 		return "lecture/teacher_lec_list";
 	}
-	//학생 내 강의 목록
-		@RequestMapping(value= "/student_lec_list.lec", produces = "text/html;charset=utf-8")
-		public String student_lec_list(Model model, HttpSession session, String id) {
-			MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
-			session.setAttribute("category", "student_lec");
-
-			List<LectureVO> list = dao.student_lec_list(vo.getId());
-			model.addAttribute("vo", list);
-			
-			return "lecture/student_lec_list";
-		}
 	
+	//학생 내 강의 목록
+	@RequestMapping(value= "/student_lec_list.lec", produces = "text/html;charset=utf-8")
+	public String student_lec_list(Model model, HttpSession session, String id) {
+		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+		session.setAttribute("category", "student_lec");
+
+		List<LectureVO> list = dao.student_lec_list(vo.getId());
+		model.addAttribute("vo", list);
+		
+		return "lecture/student_lec_list";
+	}
+	
+	//교수-> 수강학생 조회
+	@RequestMapping(value= "/teacher_stu.lec", produces = "text/html;charset=utf-8")
+	public String teacher_stu(Model model, HttpSession session, int lecture_num) {
+		//MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+		List<LectureVO> list = dao.teacher_stu(lecture_num);
+		session.setAttribute("category", "teacher_stu");
+		model.addAttribute("vo", list);
+		
+		
+		return "lecture/teacher_stu";
+	}
 	
 	
 	//안드 강의목록 조회

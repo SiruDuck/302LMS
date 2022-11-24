@@ -5,10 +5,16 @@ import java.sql.Date;
 public class MemberVO {
 	private String id,	pw,	name,	gender, phone,	email,	post,	addr,	grade, state, department_id, department_name, 	info_name, profile;
 	private String birth, start_date, end_date;
-	private int info_cd;
+	private int info_cd, lecture_num;
 	
 	
 	
+	public int getLecture_num() {
+		return lecture_num;
+	}
+	public void setLecture_num(int lecture_num) {
+		this.lecture_num = lecture_num;
+	}
 	public String getId() {
 		return id;
 	}

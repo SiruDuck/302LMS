@@ -118,7 +118,7 @@ th{
 		
 				<div class="add">
 					<c:choose>
-						<c:when test="${loginInfo.info_cd eq 4}">
+						<c:when test="${loginInfo.info_cd eq 3 or loginInfo.info_cd eq 4}">
 							<a href="new.lec" class="btn btn-primary">신규 강의 등록</a> 
 						</c:when>
 					</c:choose>

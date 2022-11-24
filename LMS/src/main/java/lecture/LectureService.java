@@ -12,9 +12,7 @@ public interface LectureService {
 	LectureVO lecture_info(int lecture_num);//강의 상세 정보
 	List<LectureVO> teacher_lec_list(String teacher_name);//교수 개인 강의 목록
 	List<LectureVO> student_lec_list(String id);//학생 수강 강의 목록
-	
-
-
-	
+	List<LectureVO> teacher_stu(int lecture_num);//교수가 본인 과목 수강 학생 조회
+		
 
 }

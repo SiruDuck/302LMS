@@ -78,6 +78,8 @@
 
 
 	</div>
-
+	<div style='text-align: center'>
+				<a href="student_lec_list.lec" class="btn btn-primary">뒤로가기</a>
+			</div>
 </body>
 </html>

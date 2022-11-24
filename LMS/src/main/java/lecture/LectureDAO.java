@@ -61,6 +61,12 @@ public class LectureDAO implements LectureService {
 		return sql.selectList("lecture.student_lec", id);
 	}
 
+	@Override
+	public List<LectureVO> teacher_stu(int lecture_num) {
+		
+		return sql.selectList("lecture.teacher_stu", lecture_num);
+	}
+
 	
 	
 	
