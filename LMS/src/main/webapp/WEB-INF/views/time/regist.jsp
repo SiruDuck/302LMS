@@ -30,68 +30,46 @@ span.btn{
 }
 table th, td{
 	color:#5a5c69;
+	text-align: center;
 }
 table th{
 	font-weight: 700;
 }
 </style>
 <body>
+<!-- <h1 class='h3 mb-2 text-gray-800 font-weight-bold'>수강신청</h1>
+<p class='mb-4 font-weight-bold'>수강신청 기간 : 2023.02.14 ~ 2023.02.28</p> -->
 <form method='post' action="regist.tt">
-<div class='card mb-4'>
+<div class='card mb-4 shadow'>
 	<div class='card-header py-3'>
 		<h6 class='m-0 font-weight-bold text-primary text-lg'>강의 검색</h6>
 	</div>
 	<div class='card-body d-flex'>
-	<div class="dataTables_length search-box" id="dataTable_length">   		
-       			<select name="dataLength" class="custom-select custom-select-sm form-control form-control-sm">
-       				<c:forEach var='i' begin='1' end='4'>
-       					<option value="${5 * i }">${5 * i }개씩 보기</option>
-       				</c:forEach>
-  				</select>   				 
-			 </div>
 		<div class='dataTables_filter search-box'>		<!-- 과목명 검색 -->
 			<input name="lecture_title" id="lecture_title" type="search" class='form-control form-control-sm search_title' placeholder='과목명' >
 				
 		</div>
 		<div class='dataTables_filter search-box'>
 			<select class='custom-select custom-select-sm form-control form-control-sm' name="sortation" onchange="$('form').submit()">
-				<option value='all'>구분 전체보기</option>
-				<c:forEach items="${lectures }" var="vo">				
-					<option value='${vo.sortation }' ${sortation eq vo.sortation ? 'selected' : '' }>${vo.sortation }</option>
-				</c:forEach>
+				<option value='all_sortation'>구분 전체보기</option>
+				<option value='major'>전공필수</option>
+				<option value='sub'>전공선택</option>
+				<option value='liberal_arts'>교양</option>
 			</select>
 		</div>
 		<div class='dataTables_filter search-box'>
 			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>요일 전체보기</option>
-				
+				<option value='all_day'>요일 전체보기</option>				
 			</select>
 		</div>
-		<div class='dataTables_filter'>
-			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all'>시간 전체보기</option>
-				
-			</select>
-		</div>
-		
 	</div>
 </div>
-</form>
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
 	    <h6 class="m-0 font-weight-bold text-primary text-lg">수강 신청</h6>
 	</div>
     <div class="card-body">
         <div class="table-responsive">
-        <!-- <div class="col-sm-12 col-md-6 count-box">      	
-			 <a href="spare.tt" class="btn btn-warning btn-icon-split">
-                 <span class="icon text-white-50">
-                     <i class="fas fa-calendar-alt"></i>
-                 </span>
-                 <span class="text">장바구니</span>
-             </a>
-		 </div> -->
-
 		 <!-- 수강신청리스트 -->
          <div id="dataTable-wrapper">
          	<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -110,24 +88,25 @@ table th{
          	
          	   <c:forEach items="${vo }" var="vo">
          	       <tr>
-         	       	<td>${vo.lecture_num }</td>
-         	           <td>${vo.lecture_title }</td>
-         	           <td>${vo.sortation }</td>
-         	           <td>${vo.teacher_name }</td>
-         	           <td>${vo.lecture_room }</td>
-         	           <td>${vo.lecture_time }교시 (${vo.lecture_day }요일)</td>
-         	           <td>${vo.subjectcredit }</td>
-         	           <td>${vo.state }</td>
-         	           <td>
-         	           	<span  class=' btn btn-primary btn-icon-split'>
-         	           		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>상세보기</a>
-         	           	</span>
-         	           </td>
-         	           <td>
-         		                   	<span  class=' btn btn-info btn-icon-split'>
-         		                   		<a class='text-white'>신청하기</a>
-         		                   	</span>
-         	           </td>
+	       	       	<td>${vo.lecture_num }</td>
+	       	           <td>${vo.lecture_title }</td>
+	       	           <td>${vo.sortation }</td>
+	       	           <td>${vo.teacher_name }</td>
+	       	           <td>${vo.lecture_room }</td>
+	       	           <td>${vo.lecture_day } [${vo.lecture_time }]</td>
+	       	           <td>${vo.subjectcredit }</td>
+	       	           <td>${vo.state }</td>
+	       	           <td>
+	       	           	<span  class=' btn btn-primary btn-icon-split'>
+	       	           		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>상세보기</a>
+	       	           	</span>
+	       	           </td>
+
+	       	           <td>
+	                   	<span class=' btn btn-info btn-icon-split'>
+	                   		<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">신청하기</a>
+	                   	</span>
+	       	           </td>
          	       </tr>
          	   </c:forEach>
          	
@@ -170,7 +149,7 @@ table th{
         </div>
     </div>
 </div>
-
+</form>
 <script>
 
 $('.search_title').keyup(function(){
@@ -184,7 +163,11 @@ $('.search_title').keyup(function(){
 	})
 });
 
-$('[name=dataLength]').val(${vo.dataLength}).prop('selected', true);
+$('popup').click(function(){
+	alert('신청');
+});
+
+
 
 
 </script>

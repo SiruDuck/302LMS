@@ -6,10 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
+
 </head>
+<style>
+.btn_blue {
+	text-align: center;
+}
+</style>
 <body>
-
-
+	<h3>자유 게시판 글쓰기</h3>
+	
 	<form method='post' action='insert.br' enctype='multipart/form-data'>
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
@@ -49,16 +58,42 @@
 				</div>
 			</div>
 		</div>
-	</form>
-	
-	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
-		<a class='btn btn-primary' id='insert' style='margin-right: 1rem;'>저장</a> <a
-			class='btn btn-secondary' onclick='list.br'>취소</a>
+		<input type='hidden' name='writer' value='${loginInfo.id }'>
+		<input type='hidden' name='name' value='${loginInfo.name }'>
+		</form>
+	<div class='btn_blue' style='padding: 2rem;'>
+		<a class='btn btn-primary' id='save'>저장</a> <a
+			class='btn btn-secondary' href='list.br'>취소</a>
 	</div>
-	
-	
-	
-	
-	
+<script>
+
+$('#save').click(function(){
+	if(emptyCheck()) $('form').submit();
+});
+
+
+function emptyCheck(){
+	var ok = true;
+	$('.chk').each(function(){
+		if( $(this).val()=='' ){
+			var item = $(this).attr('placeholder')
+						? $(this).attr('placeholder') : $(this).attr('title');
+			alert(item + ' 입력하세요!');
+			$(this).focus();
+			ok = false;
+			return ok;			
+		}
+	});
+	return ok;
+}
+
+
+</script>	
+
+
 </body>
+
+
+
+
 </html>

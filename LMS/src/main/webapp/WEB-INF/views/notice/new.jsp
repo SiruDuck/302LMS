@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		<input type='hidden' name='writer' value='${loginInfo.id }'>
+		<input type='hidden' name='writer' value='${loginInfo.name }'>
 		</form>
 	<div class='btn_blue' style='padding: 2rem;'>
 		<a class='btn btn-primary' id='save'>저장</a> <a

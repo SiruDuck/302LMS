@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
+<title>자유게시판</title>
 <style>
 
 .search-box{
@@ -18,8 +21,8 @@
 </style>
 </head>
 <body>
-
-		<form method='post' action='list.no'>
+	<h3>자유게시판</h3>
+		<form method='post' action='list.br'>
 		<div class='card mb-4'>
 			<div class='card-header py-3'>
 				<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
@@ -53,27 +56,27 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%"
+				<table class="table table-bordered" id="dataTable" width="70%"
 					cellspacing="0">
 					<thead>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>첨부파일</th>
-							<th>조회수</th>
+						<tr class="bg-gray-100">
+							<th style="text-align: center;">제목</th>
+							<th style="text-align: center;">작성자</th>
+							<th style="text-align: center; width:250px;">작성일자</th>
+							<th style="text-align: center;">첨부</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>61</td>
-							<td>2011/04/25</td>
-							<td>$320,800</td>
-						</tr>
+
+						<c:forEach items='${list}' var='vo'>
+							<tr >
+								<td><a href="info.br?id=${vo.id}">${vo.title }</a></td>
+								<td style="text-align: center;">${vo.name}</td>
+								<td style="text-align: center;">${vo.writedate }</td>
+								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
+						
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>

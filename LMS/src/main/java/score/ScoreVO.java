@@ -3,11 +3,35 @@ package score;
 public class ScoreVO {
 	private String  id, department_id, semester, lecture_title,teacher_name,subjectcredit, year, lecture_year, score_name, name;
 	private int lecture_num, info_cd;
-	private double  semesterpoint;
+	private double  semesterpoint, avg_subject, sum_credit, sum_point, avgerage;
 	
 	
 	
 	
+	public double getSum_credit() {
+		return sum_credit;
+	}
+	public void setSum_credit(double sum_credit) {
+		this.sum_credit = sum_credit;
+	}
+	public double getSum_point() {
+		return sum_point;
+	}
+	public void setSum_point(double sum_point) {
+		this.sum_point = sum_point;
+	}
+	public double getAvgerage() {
+		return avgerage;
+	}
+	public void setAvgerage(double avgerage) {
+		this.avgerage = avgerage;
+	}
+	public double getAvg_subject() {
+		return avg_subject;
+	}
+	public void setAvg_subject(double avg_subject) {
+		this.avg_subject = avg_subject;
+	}
 	public String getName() {
 		return name;
 	}

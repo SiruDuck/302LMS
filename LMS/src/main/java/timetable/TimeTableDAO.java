@@ -28,14 +28,38 @@ public class TimeTableDAO implements TimeTableService {
 
 	@Override
 	public List<TimeTableVO> lecture_title_search(String lecture_title) {
-		// TODO Auto-generated method stub  lecture_title_list
 		return sql.selectList("time.lecture_title_list",  lecture_title);
 	}
 
 	@Override
-	public List<TimeTableVO> my_timeTable_() {
-		return sql.selectOne("time.my_timeTable");
+	public List<TimeTableVO> timeTable_list(String id) {
+		return sql.selectList("time.timeTable_list", id);
 	}
+
+	@Override
+	public void timeTable_delete(EnrolmentVO vo) {
+		sql.update("time.delete", vo);
+	}
+
+	@Override
+	public List<TimeTableVO> sortation_list(String sortation) {
+		return sql.selectList("time.sort_list", sortation);
+	}
+
+	@Override
+	public void timeTable_insert(EnrolmentVO vo) {
+		sql.insert("time.insert", vo);
+	}
+
+	@Override
+	public void timeTable_update(EnrolmentVO vo) {
+		sql.update("time.update", vo);
+		
+	}
+
+	
+
+	
 
 //	@Override
 //	public List<TimeTableVO> lecture_title_lsit(String lecture_title) {
