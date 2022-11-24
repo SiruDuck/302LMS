@@ -71,9 +71,9 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">내 강의관리</h6>
+                        <h6 class="collapse-header" >내 강의관리</h6>
                         <a class="collapse-item" href="list.lec">강의 조회</a>
-                        <a class="collapse-item" href="">내 강의 조회</a>
+                        <a class="collapse-item" href="student_lec_list.lec">내 강의 조회</a>
                         <a class="collapse-item" href="main.tt">시간표 보기</a>
                     </div>
                 </div>
