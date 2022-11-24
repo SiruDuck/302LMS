@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
-    <span id="allCk">전체선택</span>/<span id="allclear">전체선택</span>
+    <a id="allCk" class="btn-fill" style="margin-right: 1rem; margin-bottom: 1rem;">전체선택</a><a id="allclear" class="btn-fill">전체 선택 취소</a>
 <table class='table'>
 	<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>년도</th><th>학기</th><th>학점</th><th>점수</th><th>성적</th>
 	</tr>
@@ -29,11 +29,14 @@ function calc_avg(){
 		if($(this).find("[type=checkbox]").is(':checked')){
     			sum_point += Number($(this).children('.credit').text()) * Number($(this).children('.point').text());
     			sum_credit += Number($(this).children('.credit').text());
-    		var average = sum_credit==0 ? '' : (sum_point / sum_credit).toFixed(2);
+    		var average = sum_credit==0 ? '0' : (sum_point / sum_credit).toFixed(2);
     		$('.selected_avg').text( average );
 		}
+		if (sum_point==0)
+    		$('.selected_avg').text( '0' );
 	});
-	if($(this).find("[type=checkbox]").checked == false)     		$('.selected_avg').text( "0" );
+// 			if(!$(this).hasClass("checked"))
+//     			$('.selected_avg').text( '1' );
 }
 
 $(".average").click(function(){
@@ -56,6 +59,7 @@ $(".average").click(function(){
 	$('#allclear').click(function(){
 			$('input:checkbox').prop('checked',false);
 			$(".average").removeClass("checked");
+			$('.selected_avg').text( "0" );
 			calc_avg();
 	});
 	$(function(){
