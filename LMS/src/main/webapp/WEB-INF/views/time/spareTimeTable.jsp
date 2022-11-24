@@ -89,11 +89,11 @@ table td{
                                     <tbody>
                                         <tr>
                                             <td>1교시</td>
-                                            <td>기초전자실습(B302)</td>
-                                            <td>전자기학(B305)</td>
-                                            <td>디지털공학(B301)</td>
-                                            <td>컴퓨터프로그래밍실습1(B306)</td>
-                                            <td>회로이론1(B201)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>2교시</td>

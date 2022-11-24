@@ -5,7 +5,11 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
+
+<title>공지사항</title>
 <style>
 .search-box {
 	margin: 0 1rem 0 0;
@@ -17,7 +21,7 @@
 </style>
 </head>
 <body>
-
+	<h3>공지사항</h3>
 	<form method='post' action='list.no'>
 		<div class='card mb-4'>
 			<div class='card-header py-3'>
@@ -51,30 +55,33 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%"
+				<table class="table table-bordered" id="dataTable" width="70%"
 					cellspacing="0">
 					<thead>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>작성일자</th>
+						<tr class="bg-gray-100">
+							<th style="text-align: center;">제목</th>
+							<th style="text-align: center;">작성자</th>
+							<th style="text-align: center; width:250px;">작성일자</th>
+							<th style="text-align: center;">첨부</th>
 						</tr>
 					</thead>
 					<tbody>
 
 						<c:forEach items='${list}' var='vo'>
-							<tr>
-								<td>${vo.num }</td>
-								<td>${vo.title }</td>
-								<td>${vo.id }</td>
-								<td>${vo.writedate }</td>
+							<tr >
+								<td><a href="info.no?id=${vo.id}">${vo.title }</a></td>
+								<td style="text-align: center;">${vo.writer}</td>
+								<td style="text-align: center;">${vo.writedate }</td>
+								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
+						
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</div>
 			<div class='info' style="text-align: right; margin-right: 30px;">
-				<c:if test='${loginInfo.info_cd eq 4 }'>
+				<!-- 직원인 경우만 글쓰기 가능 -->
+				<c:if test='${loginInfo.info_cd eq 2 }'>
 					<a href='new.no' class='btn btn-primary'>글쓰기</a>
 				</c:if>
 			</div>
