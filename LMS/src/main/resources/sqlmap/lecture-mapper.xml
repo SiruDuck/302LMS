@@ -3,8 +3,17 @@
 <mapper namespace="lecture">
 
 <select id="list" resultType="lecture.LectureVO">
-	select * from lectures 
+	select * from lectures
 	order by lecture_num
+</select>
+<select id="list2" resultType="lecture.LectureVO">
+	select * from lectures
+	<include refid="search_where"/>
+	order by lecture_num
+</select>
+
+<select id="total" resultType="integer">
+	select count(lecture_num) from lectures <include refid="search_where"/>
 </select>
 
 <select id="info" resultType="lecture.LectureVO">
@@ -63,5 +72,28 @@
 <delete id="delete">
 	delete from lectures where lecture_num = #{lecture_num}
 </delete>
+
+<sql id='search_where'>
+<choose>
+	<when test="search=='s1'"><!-- 전체 -->
+		where sortation  like '%' || #{keyword} || '%'
+		<!-- or    lecture_day like '%' || #{keyword} || '%'
+		or    lecture_time like '%' || #{keyword} || '%' -->
+	</when>
+	<when test="search=='s2'"><!-- 전공필수 -->
+		where sortation   like '%전공필수%'
+	</when>
+	<when test="search=='s3'"><!-- 전공선택 -->
+		where sortation like '%전공선택%'
+	</when>
+	<when test="search=='s4'"><!-- 교양 -->
+		where sortation like '%교양%'
+	</when>
+	
+	
+</choose>
+</sql>
+
+
 
 </mapper>

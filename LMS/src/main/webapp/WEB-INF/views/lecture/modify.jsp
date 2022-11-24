@@ -10,13 +10,14 @@
 <title>강의 정보 수정</title>
 </head>
 <body>
-	<h3>강의 정보 수정</h3>
+
 
 <head>
 <meta charset="UTF-8">
 <title></title>
 </head>
 <style>
+
 span.btn {
 	display: block;
 }
@@ -34,6 +35,37 @@ span.btn {
 	margin-bottom: 1rem;
 	max-width: 10%;
 }
+.container-fluid{
+	width : 1000px;
+	
+}
+tr{
+	width: 70%;
+	text-align: center;
+}
+td{
+	text-align: left;
+}
+label:nth-child(1){
+	margin-left : 10px;
+}
+}
+label:nth-last-child(1){
+	margin-right : 0;
+}
+label{
+	margin-right : 30px;
+}
+td{
+	max-width: 70rem;
+	text-align: left;
+}
+th{
+	text-align:center;
+	background: rgb(248,249,252);
+	width: 10rem;
+}
+
 </style>
 
 <body>
@@ -48,30 +80,30 @@ span.btn {
 		
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">강의 상세 정보</h6>
+				<h6 class="m-0 font-weight-bold text-primary">강의 정보 수정</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
 					<div id='dataTable_wrapper'
 						class='dataTables_wrapper dt-bootstrap4'>
 						
-						<table class="table table-bordered" id="dataTable" width="100%"
+						<table class="table table-bordered text-gray-900" id="dataTable" width="100%"
 							cellspacing="0">
 							
 							<form method='post' action='update.lec'>
 								<thead>
 									<table class='table table-bordered dataTable'>
 										<tr>
-											<th class='w-px160'>강의 번호</th>
-											<td><input type='hidden' name='lecture_num' value="${vo.lecture_num }" readonly="readonly"></td>
+											<th>강의 번호</th>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='lecture_num' value="${vo.lecture_num }" readonly="readonly"></td>
 										</tr>
 										<tr>
 											<th>강의명</th>
-											<td><input type='text' name='lecture_title' value="${vo.lecture_title}"></td>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='lecture_title' value="${vo.lecture_title}"></td>
 										</tr>
 										<tr>
 											<th>교수명</th>
-											<td><input type='text' name='teacher_name' value="${vo.teacher_name}"></td>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='teacher_name' value="${vo.teacher_name}"></td>
 										</tr>
 										<tr>
 											<th>이수 구분</th>
@@ -83,11 +115,11 @@ span.btn {
 										</tr>
 										<tr>
 											<th>학점</th>
-											<td><input type='number' name='subjectcredit' min='1' max='3' value="${vo.subjectcredit}">학점</td>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='number' name='subjectcredit' min='1' max='3' value="${vo.subjectcredit}"></td>
 										</tr>
 										<tr>
 											<th>강의실</th>
-											<td><input type='text' name='lecture_room' value="${vo.lecture_room}"></td>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='lecture_room' value="${vo.lecture_room}"></td>
 										</tr>
 										<tr>
 											<th>수강요일</th>
@@ -102,19 +134,19 @@ span.btn {
 										<tr>
 											<th>교시</th>
 											<td>
-												<label><input type='checkbox' name='lecture_time' value="1교시"${vo.lecture_time eq '1교시' ? 'checked' : '' }>1교시</label>
-												<label><input type='checkbox' name='lecture_time' value="2교시"${vo.lecture_time eq '2교시' ? 'checked' : '' }>2교시</label>
-												<label><input type='checkbox' name='lecture_time' value="3교시"${vo.lecture_time eq '3교시' ? 'checked' : '' }>3교시</label>
-												<label><input type='checkbox' name='lecture_time' value="4교시"${vo.lecture_time eq '4교시' ? 'checked' : '' }>4교시</label>
-												<label><input type='checkbox' name='lecture_time' value="5교시"${vo.lecture_time eq '5교시' ? 'checked' : '' }>5교시</label>
-												<label><input type='checkbox' name='lecture_time' value="6교시"${vo.lecture_time eq '6교시' ? 'checked' : '' }>6교시</label>
-												<label><input type='checkbox' name='lecture_time' value="7교시"${vo.lecture_time eq '7교시' ? 'checked' : '' }>7교시</label>
-												<label><input type='checkbox' name='lecture_time' value="8교시"${vo.lecture_time eq '8교시' ? 'checked' : '' }>8교시</label>
+												<label><input type='checkbox' name='lecture_time' value="1"${vo.lecture_time eq '1' ? 'checked' : '' }>1</label>
+												<label><input type='checkbox' name='lecture_time' value="2"${vo.lecture_time eq '2' ? 'checked' : '' }>2</label>
+												<label><input type='checkbox' name='lecture_time' value="3"${vo.lecture_time eq '3' ? 'checked' : '' }>3</label>
+												<label><input type='checkbox' name='lecture_time' value="4"${vo.lecture_time eq '4' ? 'checked' : '' }>4</label>
+												<label><input type='checkbox' name='lecture_time' value="5"${vo.lecture_time eq '5' ? 'checked' : '' }>5</label>
+												<label><input type='checkbox' name='lecture_time' value="6"${vo.lecture_time eq '6' ? 'checked' : '' }>6</label>
+												<label><input type='checkbox' name='lecture_time' value="7"${vo.lecture_time eq '7' ? 'checked' : '' }>7</label>
+												<label><input type='checkbox' name='lecture_time' value="8"${vo.lecture_time eq '8' ? 'checked' : '' }>8</label>
 											</td>
 										</tr>
 										<tr>
 											<th>수강인원</th>
-											<td><input type='text' name='capacity' value="${vo.capacity}"></td>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='capacity' value="${vo.capacity}"></td>
 										</tr>
 										<tr>
 											<th>중간고사</th>
@@ -132,18 +164,18 @@ span.btn {
 										</tr>
 										<tr>
 											<th>교재명</th>
-											<td><input type='text' name='book' value="${vo.book}"></td>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='book' value="${vo.book}"></td>
 										</tr>
 										<tr>
 											<th>년도</th>
 											<td>
-											<input type='text' class='date' name='lecture_year' value='${vo.lecture_year }'>
+											<input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' class='date' name='lecture_year' value='${vo.lecture_year }'>
 											</td>
 										</tr>
 										<tr>
 											<th>학기</th>
-											<td><label><input type='radio' name='semester' value="1학기"${vo.semester eq '1학기' ? 'checked' : '' }/>1학기</label>
-												<label><input type='radio' name='semester' value="2학기"${vo.semester eq '2학기' ? 'checked' : '' }/>2학기</label>
+											<td><label><input type='radio' name='semester' value="1"${vo.semester eq '1' ? 'checked' : '' }/>1학기</label>
+												<label><input type='radio' name='semester' value="2"${vo.semester eq '2' ? 'checked' : '' }/>2학기</label>
 											</td>
 										</tr>
 									</table>

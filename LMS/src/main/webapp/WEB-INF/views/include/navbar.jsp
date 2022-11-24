@@ -69,6 +69,7 @@
                         <h6 class="collapse-header">마이페이지</h6>
                         <a class="collapse-item" href="info.tt">내 정보</a>
                         
+                        <a class="collapse-item" href="list.sc">성적 조회</a>
                         <a class="collapse-item" href="#">출결 조회</a>
                         <a class="collapse-item" href="#">휴강 신청</a>
                         <a class="collapse-item" href="main.tt">시간표 보기</a>
@@ -86,7 +87,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">수강 신청</h6>
+                        <h6 class="collapse-header">학습 관리</h6>
                         <a class="collapse-item" href="list.lec">강의 조회</a>
                         <a class="collapse-item" href="#">수강 후기 등록</a>
                         <a class="collapse-item" href="spare.tt">장바구니</a>

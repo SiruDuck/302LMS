@@ -40,6 +40,13 @@ public class LectureDAO implements LectureService {
 		return sql.selectOne("lecture.info", lecture_num);
 	}
 
+	@Override
+	public LecturePageVO lecture_list(LecturePageVO page) {
+		page.setTotalList(sql.selectOne("lecture.total", page));
+		page.setList(sql.selectList("lecture.list", page));
+		return page;
+	}
+
 	
 	
 	
