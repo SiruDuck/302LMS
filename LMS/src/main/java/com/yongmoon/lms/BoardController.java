@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,6 +27,26 @@ import notice.NoticeVO;
 public class BoardController {
 	@Autowired private BoardServiceImpl service;
 	@Autowired private CommonUtility common;
+	
+	//방명록 댓글삭제처리 요청
+	@ResponseBody @RequestMapping("/board/comment/delete/{id}")
+		public void comment_delete(@PathVariable int id) {
+		//해당 댓글을 DB에서 삭제
+		service.board_comment_delete(id);
+	}
+		
+		
+		
+	//방명록 댓글변경저장처리 요청
+	@ResponseBody @RequestMapping(value="/board/comment/update"
+									, produces="text/plain; charset=utf-8")
+		public String comment_update(@RequestBody BoardCommentVO vo) {
+		//변경입력한 댓글을 DB에 변경저장한다
+		return service.board_comment_update(vo)==1 ? "성공^^" : "실패ㅠㅠ";
+	}
+	
+	
+	
 	
 	
 	

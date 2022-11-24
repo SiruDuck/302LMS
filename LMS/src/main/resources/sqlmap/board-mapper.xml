@@ -16,10 +16,14 @@
 	</select>
 
 	<select id="insert">
-		insert into board(title, content, writer, filename, filepath, name)
-		values (#{title, jdbcType=VARCHAR}, #{content, jdbcType=VARCHAR},
-		#{writer, jdbcType=VARCHAR}, #{filename, jdbcType=VARCHAR},
-		#{filepath, jdbcType=VARCHAR}, #{name, jdbcType=VARCHAR} )
+		insert into board(title, content, writer, filename,
+		filepath, name)
+		values (#{title, jdbcType=VARCHAR}, #{content,
+		jdbcType=VARCHAR},
+		#{writer, jdbcType=VARCHAR}, #{filename,
+		jdbcType=VARCHAR},
+		#{filepath, jdbcType=VARCHAR}, #{name,
+		jdbcType=VARCHAR} )
 	</select>
 
 
@@ -29,34 +33,45 @@
 
 
 	<select id="update">
-		update board set title = #{title, jdbcType=VARCHAR},content = #{content, jdbcType=VARCHAR},
-		filename = #{filename, jdbcType=VARCHAR}, filepath = #{filepath, jdbcType=VARCHAR}
+		update board set title = #{title,
+		jdbcType=VARCHAR},content = #{content, jdbcType=VARCHAR},
+		filename =
+		#{filename, jdbcType=VARCHAR}, filepath = #{filepath,
+		jdbcType=VARCHAR}
 		where id = #{id}
 	</select>
 
 	<select id="read">
-	update board set readcnt = readcnt + 1 where id = #{id}
+		update board set readcnt = readcnt + 1 where id = #{id}
 	</select>
-		
-		
-	<select id="comment_insert">
-	insert into board_comment (content, writer, board_id)
-	values ( #{content}, #{writer, jdbcType=VARCHAR}, #{board_id, jdbcType=VARCHAR})
-	</select>
-	
-	
+
+
+	<insert id="comment_insert">
+		insert into board_comment (content, writer, board_id)
+		values ( #{content}, #{writer, jdbcType=VARCHAR}, #{board_id,
+		jdbcType=VARCHAR})
+	</insert>
+
+
 	<select id="comment_list" resultType="board.BoardCommentVO">
 		select *
 		from board_comment
 		where board_id = #{board_id, jdbcType=VARCHAR}
 		order by id desc
 	</select>
-		
+
+	<update id="comment_update">
+		update board_comment set content = #{content}
+		where id = #{id}
+	</update>
+
 	
-		
-		
-		
-		
+	<delete id="comment_delete">
+		delete from board_comment where id = #{id}
+	</delete>
+	
+
+
 </mapper>
 
 

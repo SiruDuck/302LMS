@@ -1,19 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/functions' prefix='fn'%>
+<style>
+#comment-list textarea.modify {display: none;}
 
+
+</style>
 <c:forEach items='${list}' var='vo' varStatus='state'>
 <%-- ${state.index eq 0 ? '<hr>' : ''} --%>
 ${state.first ? '<hr>' : ''}
 <div data-id='${vo.id}'>${vo.writer} [ ${vo.writedate} ]
 	<c:if test='${vo.writer eq loginInfo.name}'>
 	<span>
-		<a class='btn-fill-s btn-modify-save'>수정</a>
-		<a class='btn-fill-s btn-delete-cancel'>삭제</a>
+		<a class='btn-fill-s btn-modify-save btn btn-primary btn-icon-split'>수정</a>
+		<a class='btn-fill-s btn-delete-cancel btn btn-danger btn-icon-split'>삭제</a>
 	</span>
 	</c:if>
 	<div class='view'>${fn: replace(  fn: replace(vo.content, lf, '<br>') , crlf, '<br>')}</div>
 	<textarea class='modify'></textarea>
+
+
 </div>
 <hr>
 </c:forEach>
