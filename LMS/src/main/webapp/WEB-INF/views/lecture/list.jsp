@@ -35,6 +35,13 @@ th{
 	text-align:center;
 	background: rgb(248,249,252);
 }
+.add{
+	text-align: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	
+	
+}
 
 </style>
 
@@ -105,16 +112,18 @@ th{
 						<option value='8'>8교시 (17:00~17:50)</option>
 					</select>
 				</div>
-				<div style='margin-left: 650px;'>
+			
+			</div>		
+		</div>
+		
+				<div class="add">
 					<c:choose>
 						<c:when test="${loginInfo.info_cd eq 4}">
-							<a href="new.lec" class="btn btn-primary">강의 등록</a> 
+							<a href="new.lec" class="btn btn-primary">신규 강의 등록</a> 
 						</c:when>
 					</c:choose>
 				</div>
-			</div>
 		
-		</div>
 		<div class="dd">
 			<!-- Page Heading -->
 
@@ -131,8 +140,8 @@ th{
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th>년도</th>
 										<th>강의번호</th>
+										<th>년도</th>
 										<th>학기</th>
 										<th>강의명</th>
 										<th>교수명</th>
@@ -149,8 +158,8 @@ th{
 
 									<c:forEach items="${vo}" var="vo">
 										<tr>
-											<td>${vo.lecture_year}</td>
 											<td>${vo.lecture_num}</td>
+											<td>${vo.lecture_year}</td>
 											<td>${vo.semester}</td>
 											<td>${vo.lecture_title}</td>
 											<td>${vo.teacher_name}</td>

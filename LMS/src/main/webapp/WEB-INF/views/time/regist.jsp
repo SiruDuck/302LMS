@@ -37,8 +37,8 @@ table th{
 }
 </style>
 <body>
-<h1 class='h3 mb-2 text-gray-800 font-weight-bold'>수강신청</h1>
-<p class='mb-4 font-weight-bold'>수강신청 기간 : 2023.02.14 ~ 2023.02.28</p>
+<!-- <h1 class='h3 mb-2 text-gray-800 font-weight-bold'>수강신청</h1>
+<p class='mb-4 font-weight-bold'>수강신청 기간 : 2023.02.14 ~ 2023.02.28</p> -->
 <form method='post' action="regist.tt">
 <div class='card mb-4 shadow'>
 	<div class='card-header py-3'>
@@ -163,9 +163,9 @@ $('.search_title').keyup(function(){
 	})
 });
 
-function popup(){
-	
-}
+$('popup').click(function(){
+	alert('신청');
+});
 
 
 

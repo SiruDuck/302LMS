@@ -170,7 +170,7 @@ span.btn{
                             <div id='dataTable_wrapper' class='dataTables_wrapper dt-bootstrap4'>
                             <!-- 테이블 자리 -->
                             
-                            ${category }
+                           <%--  ${category } --%>
                    
 <c:choose>  
 	<c:when test="${category eq 'salary'}"> 

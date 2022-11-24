@@ -29,7 +29,15 @@ public class TimeTableController {
 	}
 	
 	@RequestMapping("/spare.tt")
-	public String spareTimeTable() {
+	public String spareTimeTable(Model model, HttpSession session, EnrolmentVO enrol_vo) {
+		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
+		String id = member.getId();
+		System.out.println(id + "의 장바구니");
+		List<TimeTableVO> table_vo = dao.timeTable_list(id);
+		
+		model.addAttribute("member", member);
+		model.addAttribute("enrol_vo", enrol_vo);
+		model.addAttribute("table_vo", table_vo);
 		return "time/spareTimeTable";
 	}// 시간표 장바구니 보기
 	
@@ -39,7 +47,6 @@ public class TimeTableController {
 		String id = vo.getId();
 		System.out.println(id + "의 시간표");
 		List<TimeTableVO> table_vo = service.timeTable_list(id);
-						
 		
 		
 		model.addAttribute("vo",vo);
@@ -88,12 +95,21 @@ public class TimeTableController {
 		
 		service.timeTable_insert(vo);
 		return "redirect:regist.tt";
-	}
+	}// 수강 시간표 등록
 	
+	
+	@RequestMapping("/delete.tt")
+	public String delete(HttpSession session, EnrolmentVO enrol_vo) {
+		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
+		service.timeTable_delete(enrol_vo);
+		
+		return "redirect:spareTimeTable.tt?id=" + member.getId();
+	}// 강의 삭제
+
 	@RequestMapping(value = "/list.tt", produces = "text/html; charset=utf-8")
 	public void myList(String id) {
 		System.out.println(id + "의 수강신청 목록");
 		
 	}
-
+	
 }

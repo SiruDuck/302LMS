@@ -11,15 +11,16 @@
 
 </head>
 <body>
-	<h2>성적 조회</h2>
-	<div class="top-menu">
+<!-- 	<h2 class= "font-weight-bold text-primary">성적 조회</h2> -->
+	<div class="card">
 		<div>
 			<!-- if 학년조회하고 다시 페이지를 왔을때는 ==> gradeList 바로 실행  -->
 			<form action="list.sc" method="post">
 				<ul class="list-lectures">
-					<li><select name="lecture_num" id="lectureList"
-						class="w-px200" onchange="$('form').submit()">
-							<option id="all_sub" value="-1">전체 과목</option>
+					<li class='dataTables_filter search-box'>
+					<select class='custom-select custom-select-sm form-control form-control-sm w-px200' 
+					name="lecture_num" id="lectureList"  >  <!-- onchange="$('form').submit()" -->
+							<option class="search_list" id="all_sub" value="-1">전체 과목</option>
 							<c:forEach items="${lectures}" var="vo">
 								<option ${lecture_num eq vo.lecture_num ? 'selected' : '' }
 									value="${vo.lecture_num}">${vo.lecture_title}</option>
@@ -46,7 +47,7 @@
 			<div id = "current_avg"> 현재 페이지 평균 : <span  class="total_avg"></span></div>
 			<div id = "select_avg" style="display: none;"> 선택된 과목 평균 : <span  class="selected_avg"></span></div>
 		</div>
-		<div class='api'>
+		<div class='api mb2'>
 			<a>전체 조회</a> <a>년도별 조회</a> <a>선택 조회</a>
 		</div>
 	</div>
@@ -59,13 +60,15 @@
 	<!--  		</table> -->
 
 
-	<div id="data-list"><strong>데이터 없음</strong></div>
+	<div class="card-body lec-font table-responsive" id="data-list"><strong>데이터 없음</strong></div>
 	<script>
-		//$("#lectureList").change(function(){
+		$("#lectureList").change(function(){
 		//	console.log($(this).val());
 		//	subject_list($(this).val());
-		//})
+			subject_list( );
+		});
 
+		
 		$(function() {
 			$(".api a").eq(0).trigger("click");
 		});
@@ -77,7 +80,8 @@
 				$(".api a").removeClass();
 				$(this).addClass("btn-fill");
 				$(".api a").not($(this)).addClass("btn-empty");
-
+				$("#lectureList option:eq(0)").prop("selected", true);
+				
 				if ($(this).index() == 0)
 					subject_list();
 				else if ($(this).index() == 1)
@@ -86,9 +90,10 @@
 					select_list();
 			}
 		})
-
+		
 		//전체 성적조회
 		function subject_list() {
+			console.log('전체 ' )
 			$("#select_avg").css({
 				'display' : 'none'
 			});
@@ -100,12 +105,11 @@
 			});
 			$("#data-list").empty();
 			
-			
-// 			$("#all_sub").attr("selected","selected");
-// 			$("#lectureList").val("-1");
-
+// 			$("#all_sub").trigger("click");
+// 			$("#lectureList option:eq(0)").prop("selected", true);
 
 			$('#yearList').closest('li').remove();
+/*			
 			var tag = "<table class='table'>"
 					+ "<tr><th>강의명</th><th>강의번호</th>"
 					+ "<th>교수명</th>"
@@ -116,18 +120,31 @@
 					+ "<td class='credit'>${vo.subjectcredit}</td><td class='point'>${vo.semesterpoint}</td><td>${vo.score_name}</td></tr>"
 					+ "</c:forEach>" + "</table>";
 			$("#data-list").append(tag);
-			// 	$("#data-list").append(test);
-			// 	$.ajax({
-			// 		url:"list/subject",
-			// 		data : {lecture_num : num} ,
-			// 		success : function(response){
-			// 			console.log(response);
-			// 			$("#data-list").empty();
-			// 			$("#data-list").append(test);
-			// 		},error : function(req, text){
-			// 			alert(text + ':' + req.status);
-			// 		}
-			// 	});
+// 				$("#data-list").append(test);
+*/
+
+			$.ajax({
+					url:"list/subject",
+					data : {lecture_num : $('#lectureList option:selected').val()} ,
+					success : function(response){
+						$("#data-list").empty();
+						var tag = "<table class='table'>"
+							+ "<tr><th>강의명</th><th>강의번호</th>"
+							+ "<th>교수명</th>"
+							+ "<th>년도</th><th>학기</th><th>학점</th><th>성적</th><th>성적</th></tr>";
+						$(response).each(function(){
+							tag += "<tr class='average'><td>" + this.lecture_title + "</td><td>" + this.lecture_num + "</td>"
+								+ "<td>" + this.teacher_name + "</td><td>" + this.lecture_year + "년</td><td>" + this.semester + "</td>"
+								+ "<td class='credit'>" + this.subjectcredit + "</td><td class='point'>" + this.semesterpoint + "</td><td>" + this.score_name + "</td></tr>"
+						});				
+						tag += "</table>";
+						$("#data-list").append(tag);
+						point_credit_average();
+					},error : function(req, text){
+						alert(text + ':' + req.status);
+					}
+				});
+			
 		}
 
 		// 년도별 성적조회
@@ -185,7 +202,7 @@
 			});
 		}
 
-		$(function(){
+		function point_credit_average(){
 			var sum_credit=0, sum_point=0;
 			$('.average').each(function(){
 				sum_point += Number($(this).children('.credit').text()) * Number($(this).children('.point').text());
@@ -193,7 +210,7 @@
 			})
 			var average = sum_credit==0 ? '' : (sum_point / sum_credit).toFixed(2);
 			$('.total_avg').text( average );
-		});
+		}
 
 	</script>
 

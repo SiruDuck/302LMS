@@ -15,8 +15,6 @@ public class LectureServiceImpl implements LectureService {
 		return dao.lecture_list();
 	}
 
-	
-	
 	@Override
 	public int lecture_insert(LectureVO vo) {
 		
@@ -45,6 +43,18 @@ public class LectureServiceImpl implements LectureService {
 	public LecturePageVO lecture_list(LecturePageVO page) {
 		
 		return dao.lecture_list(page);
+	}
+
+	@Override
+	public List<LectureVO> teacher_lec_list(String teacher_name) {
+	
+		return dao.teacher_lec_list(teacher_name);
+	}
+
+	@Override
+	public List<LectureVO> student_lec_list(String id) {
+		
+		return dao.student_lec_list(id);
 	}
 	
 

@@ -6,11 +6,19 @@
 	select * from lectures
 	order by lecture_num
 </select>
-<select id="list2" resultType="lecture.LectureVO">
+
+<select id="teacher_lec" resultType="lecture.LectureVO">
 	select * from lectures
-	<include refid="search_where"/>
-	order by lecture_num
+	where teacher_name = #{teacher_name}
 </select>
+
+<select id="student_lec" resultType="lecture.LectureVO">
+	select e.id, l.* 
+from lectures l INNER JOIN enrolment e
+on l.lecture_num = e.lecture_num
+where e.id = #{e.id}
+</select>
+
 
 <select id="total" resultType="integer">
 	select count(lecture_num) from lectures <include refid="search_where"/>

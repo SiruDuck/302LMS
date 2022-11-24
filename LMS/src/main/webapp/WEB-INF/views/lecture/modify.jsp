@@ -145,9 +145,14 @@ th{
 											</td>
 										</tr>
 										<tr>
+											<th>수강신청</th>
+											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='enrolment' value="${vo.enrolment}"></td>
+										</tr>
+										<tr>
 											<th>수강인원</th>
 											<td><input class="chk form-control col-sm-6 mb-3 mb-sm-0" type='text' name='capacity' value="${vo.capacity}"></td>
 										</tr>
+									
 										<tr>
 											<th>중간고사</th>
 											<td><input type='date' name='midex' value="${vo.midex}"></td>

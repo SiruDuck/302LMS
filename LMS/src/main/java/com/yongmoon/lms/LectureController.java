@@ -18,6 +18,7 @@ import lecture.LectureDAO;
 import lecture.LecturePageVO;
 import lecture.LectureServiceImpl;
 import lecture.LectureVO;
+import member.MemberVO;
 
 @Controller
 public class LectureController {
@@ -28,7 +29,6 @@ public class LectureController {
 	//강의 목록 조회
 	@RequestMapping(value = "/list.lec", produces = "text/html;charset=utf-8")
 	public String lecture_list(Model model, LecturePageVO page,  HttpSession session) {
-		
 		session.setAttribute("category", "lec");
 		List<LectureVO> list = dao.lecture_list();
 		model.addAttribute("vo", list);
@@ -36,6 +36,31 @@ public class LectureController {
 		
 		return "lecture/list";
 	}
+	
+	//교수 내 강의 목록
+	@RequestMapping(value= "/teacher_lec_list.lec", produces = "text/html;charset=utf-8")
+	public String teacher_lec_list(Model model, HttpSession session, String teacher_name) {
+		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+		session.setAttribute("category", "teacher_lec");
+
+		List<LectureVO> list = dao.teacher_lec_list(vo.getName());
+		model.addAttribute("vo", list);
+		
+		return "lecture/teacher_lec_list";
+	}
+	//학생 내 강의 목록
+		@RequestMapping(value= "/student_lec_list.lec", produces = "text/html;charset=utf-8")
+		public String student_lec_list(Model model, HttpSession session, String id) {
+			MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+			session.setAttribute("category", "student_lec");
+
+			List<LectureVO> list = dao.student_lec_list(vo.getId());
+			model.addAttribute("vo", list);
+			
+			return "lecture/student_lec_list";
+		}
+	
+	
 	
 	//안드 강의목록 조회
 	@ResponseBody @RequestMapping(value = "andlist.lec", produces = "text/html;charset=utf-8")

@@ -55,45 +55,39 @@
                 My Page 
             </div>
 
-
+			<li class="nav-item">
+                <a class="nav-link" href="info.tt">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>내정보</span></a>
+           	</li>
+           		
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>My Page</span>
+                    <span>강의관리</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+
                         <h6 class="collapse-header">마이페이지</h6>
                         <a class="collapse-item" href="myinfo">내 정보</a>
-                        
-                        <a class="collapse-item" href="list.sc">성적 조회</a>
-                        <a class="collapse-item" href="#">출결 조회</a>
-                        <a class="collapse-item" href="#">휴강 신청</a>
+                        <h6 class="collapse-header" >내 강의관리</h6>
+                        <a class="collapse-item" href="list.lec">강의 조회</a>
+                        <a class="collapse-item" href="student_lec_list.lec">내 강의 조회</a>
                         <a class="collapse-item" href="main.tt">시간표 보기</a>
                     </div>
                 </div>
             </li>
-            
-
-			<!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>학습 관리</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">학습 관리</h6>
-                        <a class="collapse-item" href="list.lec">강의 조회</a>
-                        <a class="collapse-item" href="#">수강 후기 등록</a>
-                        <a class="collapse-item" href="spare.tt">장바구니</a>
-                    </div>
-                </div>
-            </li>
+                <a class="nav-link" href="list.sc">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>성적 조회</span></a>
+           	</li>
+
+			
             
             <!-- Nav Item - Tables -->
             <li class="nav-item">
@@ -109,24 +103,12 @@
             <div class="sidebar-heading">
                 게시판
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>커뮤니티</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">커뮤니티</h6>
-                        <a class="collapse-item" href="list.br">자유 게시판</a>
-                        <a class="collapse-item" href="list.co">수강후기</a>
-                        <div class="collapse-divider"></div>
-
-                    </div>
-                </div>
+			<li class="nav-item">
+                <a class="nav-link" href="list.no">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>자유게시판</span></a>
             </li>
+            
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">

@@ -16,7 +16,7 @@
 				<ul class="search">
 					<li>학생명 : <input type="text" id="student_name" /></li>
 					<li><select name="lecture_year" id="lecture_year" class="w-px200" >
-						<option value="-1">전체 년도</option>
+						<option class="search_list" value="-1">전체 년도</option>
 							<c:forEach items="${teacher_years}" var ="vo">
 								<option 
 								 value="${vo.lecture_year}">${vo.lecture_year}</option>
