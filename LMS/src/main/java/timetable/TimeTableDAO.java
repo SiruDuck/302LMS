@@ -1,5 +1,6 @@
 package timetable;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -12,8 +13,8 @@ public class TimeTableDAO implements TimeTableService {
 	@Autowired @Qualifier("ymu") private SqlSession sql;
 	
 	@Override
-	public List<TimeTableVO> timeTableRegist(String lecture_title) {
-		return sql.selectList("time.regist");
+	public List<TimeTableVO> timeTableRegist(HashMap<String, String> temp_map) {
+		return sql.selectList("time.regist",temp_map);
 	}
 
 	@Override

@@ -2,8 +2,8 @@ package common;
 
 public class PageVO {
 	private int totalList;	//총 목록 수 : DB에서 조회
-	private int pageList = 10;	//페이지당 보여질 목록 수 
-	private int blockPage = 10;	//블럭 당 보여질 페이지의 수
+	private int pageList = 20;	//페이지당 보여질 목록 수 
+	private int blockPage = 20;	//블럭 당 보여질 페이지의 수
 	
 	private int totalPage;  //총 페이지수 : 8 페이지 = 30 / 4 = 7 ... 2
 	private int totalBlock; //총 블록수 : 3 블록 = 8 / 3 = 2 ... 2

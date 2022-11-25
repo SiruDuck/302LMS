@@ -46,20 +46,24 @@ table th{
 	</div>
 	<div class='card-body d-flex'>
 		<div class='dataTables_filter search-box'>		<!-- 과목명 검색 -->
-			<input name="lecture_title" id="lecture_title" type="search" class='form-control form-control-sm search_title' placeholder='과목명' >
-				
+			<input name="lecture_title" id="lecture_title" 
+			onkeyup="if(window.event.keyCode==13){$('form').submit()}"
+						type="search" class='form-control form-control-sm search_title' placeholder='과목명'
+			value="${temp_map.lecture_title }" 
+			
+			>
 		</div>
 		<div class='dataTables_filter search-box'>
 			<select class='custom-select custom-select-sm form-control form-control-sm' name="sortation" onchange="$('form').submit()">
-				<option value='all_sortation'>구분 전체보기</option>
-				<option value='major'>전공필수</option>
-				<option value='sub'>전공선택</option>
-				<option value='liberal_arts'>교양</option>
+				<option value=''${temp_map.sortation eq ''? 'selected' : '' }>구분 전체보기</option>
+				<option value='전공필수'${temp_map.sortation eq '전공필수' ? 'selected' : '' }>전공필수</option>
+				<option value='전공선택'${temp_map.sortation eq '전공선택' ? 'selected' : '' }>전공선택</option>
+				<option value='교양'${temp_map.sortation eq '교양' ? 'selected' : '' }>교양</option>
 			</select>
 		</div>
 		<div class='dataTables_filter search-box'>
 			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value='all_day'>요일 전체보기</option>				
+				<option value=''>요일 전체보기</option>				
 			</select>
 		</div>
 	</div>
@@ -98,14 +102,31 @@ table th{
 	       	           <td>${vo.state }</td>
 	       	           <td>
 	       	           	<span  class=' btn btn-primary btn-icon-split'>
-	       	           		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>상세보기</a>
+	       	         
+							 		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>상세보기</a>
+					
+	       	           
 	       	           	</span>
 	       	           </td>
 
 	       	           <td>
-	                   	<span class=' btn btn-info btn-icon-split'>
-	                   		<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">신청하기</a>
-	                   	</span>
+	                 
+	                   	<c:choose>
+							<c:when test="${vo.check_flag eq 0 }">
+							  	<span class='btn btn-info btn-icon-split'>
+								<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">신청하기</a>
+	                   			</span>
+	                   		</c:when>
+							<c:when test="${vo.check_flag eq 1 }">
+								<a class='text-black'>수강 완료</a>
+	                   		</c:when>
+	                   		<c:when test="${vo.check_flag eq 2 }">
+								<a class='text-black'>신청 완료</a>
+	                   		</c:when>
+	                   		<c:when test="${vo.check_flag eq 3 }">
+								<a class='text-black'>정원 초과</a>
+	                   		</c:when>
+						</c:choose>
 	       	           </td>
          	       </tr>
          	   </c:forEach>
@@ -151,17 +172,6 @@ table th{
 </div>
 </form>
 <script>
-
-$('.search_title').keyup(function(){
-	$.ajax({
-		data:{name: $(this).val()},
-		url:"lecture_list",
-		success:function(data){
-			$('.table-bordered').html(data);
-		}
-		
-	})
-});
 
 $('popup').click(function(){
 	alert('신청');

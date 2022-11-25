@@ -1,5 +1,6 @@
 package com.yongmoon.lms;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -63,19 +64,24 @@ public class TimeTableController {
 	}// 시간표 상세 보기
 	
 	@RequestMapping(value = "/regist.tt", produces = "text/html; charset=utf-8")
-	public String regist(String lecture_title, String state ,Model model, HttpSession session, @RequestParam(defaultValue = "all_sortation") String sortation) {
+	public String regist(String lecture_title, String state ,Model model, HttpSession session ,String sortation) {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
 		String id = member.getId();
+		HashMap<String, String> temp_map = new HashMap<String, String>();
+		temp_map.put("id", id);
+		temp_map.put("lecture_title", lecture_title);
+		temp_map.put("sortation", sortation);
 		System.out.println(id + "의 수강신청");
 		
-		List<TimeTableVO> vo = service.timeTableRegist(lecture_title);
+		List<TimeTableVO> vo = service.timeTableRegist(temp_map);
 		
-		List<TimeTableVO> list = service.sortation_list(sortation);
+		//List<TimeTableVO> list = service.sortation_list(sortation);
 		
 		
 		
 		model.addAttribute("vo", vo);
-		model.addAttribute("list", list);
+		model.addAttribute("temp_map", temp_map);
+		//model.addAttribute("list", list);
 		return"time/regist";
 	}// 강의 신청 목록
 	

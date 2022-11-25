@@ -14,20 +14,23 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import board.BoardCommentVO;
+import board.BoardPageVO;
 import board.BoardServiceImpl;
 import board.BoardVO;
 import common.CommonUtility;
+import notice.NoticePageVO;
 import notice.NoticeVO;
 
 @Controller
 public class BoardController {
 	@Autowired private BoardServiceImpl service;
 	@Autowired private CommonUtility common;
-	
+	@Autowired BoardPageVO page;
 	//방명록 댓글삭제처리 요청
 	@ResponseBody @RequestMapping("/board/comment/delete/{id}")
 		public void comment_delete(@PathVariable int id) {
@@ -103,14 +106,21 @@ public class BoardController {
 	
 	
 	@RequestMapping("/list.br")	
-	public String notice(Model model, HttpSession session) {
+	public String notice(Model model, HttpSession session,
+			@RequestParam(defaultValue = "1") int curPage
+			, String search, String keyword) {
 		
 		
 		session.setAttribute("category", "br");
+		session.setAttribute("category", "no");
+		//DB에서 공지글목록을 조회한후 목록화면에 출력
+		page.setCurPage(curPage);
+		page.setSearch(search);
+		page.setKeyword(keyword);
+		model.addAttribute("page", service.board_list(page) );
+		//List<BoardVO> list = service.board_list();
 
-		List<BoardVO> list = service.board_list();
-
-		model.addAttribute("list", list);
+		//model.addAttribute("list", list);
 		
 		return "board/list";
 	}

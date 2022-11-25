@@ -38,6 +38,24 @@
 		class='org.springframework.web.multipart.commons.CommonsMultipartResolver'>
 		<beans:property name="defaultEncoding" value="utf-8"/>
 	</beans:bean>
+	
+	<interceptors>
+         <interceptor>
+         		  <!-- 아래는 컨트롤러의 mapping 부분 -->	
+                  <mapping path="/" /> 
+                  
+                  <mapping path="/board/*" /> 
+                  <mapping path="/member/*"/>
+                  <mapping path="/myinfo"/>
+                  <mapping path="/*.lec"/>
+                  <mapping path="/*.tt"/>
+                  <mapping path="/*.no"/>
+                  <mapping path="/*.br"/>
+                  
+                  <beans:bean class="common.CommonInterceptor" />
+         </interceptor>
+	</interceptors>
+	
 	<context:component-scan base-package="com.yongmoon.lms" />
 	
 </beans:beans>

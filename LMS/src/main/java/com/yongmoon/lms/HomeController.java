@@ -32,9 +32,11 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/index")
-	public String Login() throws Exception {
-
-	
+	public String Login(HttpSession session) throws Exception {
+		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
+		if(vo == null)
+			return "mainlogin";
+		else
 			return "index";
 	}
 	

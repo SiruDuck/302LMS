@@ -4,6 +4,10 @@
 
 <select id="list" resultType="lecture.LectureVO">
 	select * from lectures
+    where LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
+    and SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
+    and LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
+    and LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
 	order by lecture_num
 </select>
 
@@ -94,10 +98,8 @@ where l.lecture_num = #{lecture_num}
 
 <sql id='search_where'>
 <choose>
-	<when test="search=='s1'"><!-- 전체 -->
+	<when test="department_name!='all'"><!-- 전체 -->
 		where sortation  like '%' || #{keyword} || '%'
-		<!-- or    lecture_day like '%' || #{keyword} || '%'
-		or    lecture_time like '%' || #{keyword} || '%' -->
 	</when>
 	<when test="search=='s2'"><!-- 전공필수 -->
 		where sortation   like '%전공필수%'

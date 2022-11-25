@@ -10,9 +10,9 @@ public class NoticeServiceImpl implements NoticeService {
 	@Autowired private NoticeDAO dao;
 
 	@Override
-	public List<NoticeVO> notice_list() {
+	public NoticePageVO notice_list(NoticePageVO page) {
 	
-		return dao.notice_list();
+		return dao.notice_list( page);
 	}
 
 	@Override

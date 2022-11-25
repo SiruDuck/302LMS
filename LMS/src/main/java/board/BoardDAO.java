@@ -12,9 +12,10 @@ public class BoardDAO implements BoardService{
 	@Autowired @Qualifier("ymu") private SqlSession sql;
 
 	@Override
-	public List<BoardVO> board_list() {
-		List<BoardVO> list = sql.selectList("board.list");
-		return list;
+	public BoardPageVO board_list(BoardPageVO page) {
+		page.setTotalList( sql.selectOne("board.totalList", page) );
+		page.setList( sql.selectList("board.list", page) );
+		return page;
 	}
 
 	

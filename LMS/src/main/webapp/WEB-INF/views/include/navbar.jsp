@@ -56,7 +56,7 @@
             </div>
 
 			<li class="nav-item">
-                <a class="nav-link" href="info.tt">
+                <a class="nav-link" href="myinfo">
                     <i class="fas fa-fw fa-table"></i>
                     <span>내정보</span></a>
            	</li>
@@ -104,7 +104,7 @@
                 게시판
             </div>
 			<li class="nav-item">
-                <a class="nav-link" href="list.no">
+                <a class="nav-link" href="list.br">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>자유게시판</span></a>
             </li>

@@ -191,16 +191,21 @@ public class MemberController {
 
 	@ResponseBody @RequestMapping("/andLogin")
 	public String login(String id, String pw){
-		System.out.println("아이디 ?? "+ id );
+		
 		MemberVO vo = service.and_login(id);
 
-System.out.println("로그인 "+ vo.getName());
+		// if( vo!= null ) {
+		// 	if (vo.getPw().equals(pw)) {
+		// 		return new Gson().toJson(vo);
+		// 	} else {
+		// 		return "다시 입력";
+		// 	}
+		// }else {
+
 		if (vo.getPw().equals(pw)) {
-			System.out.println("Success");
 			return new Gson().toJson(vo);
 					
 		} else {
-			System.out.println("Fail");
 			return "다시 입력";
 		}
 	}

@@ -1,9 +1,10 @@
 package timetable;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface TimeTableService {
-	List<TimeTableVO> timeTableRegist(String lecture_title);	// 수강신청목록
+	List<TimeTableVO> timeTableRegist(HashMap<String, String> temp_map);	// 수강신청목록
 	
 	TimeTableVO timeTableDetail(int lecture_num);		// 상세보기
 	

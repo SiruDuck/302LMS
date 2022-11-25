@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
-import lecture.AndLectureDAO;
 import lecture.LectureDAO;
 import lecture.LecturePageVO;
 import lecture.LectureServiceImpl;
@@ -24,18 +23,22 @@ import member.MemberVO;
 
 @Controller
 public class LectureController {
-	@Autowired private AndLectureDAO adao;
+
 	@Autowired private LectureDAO dao;
 	@Autowired private LectureServiceImpl service;
-	@Autowired private SqlSession sql;
 	
 	//강의 목록 조회
 	@RequestMapping(value = "/list.lec", produces = "text/html;charset=utf-8")
-	public String lecture_list(Model model, LecturePageVO page,  HttpSession session) {
+	public String lecture_list(Model model, LecturePageVO page,  HttpSession session
+				,LectureVO vo
+			) {
+
+		
 		session.setAttribute("category", "lec");
-		List<LectureVO> list = dao.lecture_list();
-		model.addAttribute("vo", list);
-		model.addAttribute("page", service.lecture_list(page));
+		List<LectureVO> list = dao.lecture_list(vo);
+		model.addAttribute("list", list);
+		model.addAttribute("search", vo);
+		//model.addAttribute("page", service.lecture_list(page)); 페이징처리하는건지..???2022/11/24:KYM
 		
 		return "lecture/list";
 	}
@@ -80,7 +83,7 @@ public class LectureController {
 	//안드 강의목록 조회
 	@ResponseBody @RequestMapping(value = "andlist.lec", produces = "text/html;charset=utf-8")
 	public String AndLecture_list() {
-		List<LectureVO> list = adao.lecture_list();
+		List<LectureVO> list = service.lecture_list();
 		return new Gson().toJson(list);
 	}
 	
@@ -96,8 +99,7 @@ public class LectureController {
 	//안드 강의 상세보기
 	@ResponseBody @RequestMapping(value = "anddetail.lec", produces = "text/html;charset=utf-8")
 	public String AndLecture_info(int lecture_num, Model model) {
-		LectureVO vo = sql.selectOne("lecture.info");
-		
+		LectureVO vo = service.lecture_info(lecture_num);
 		model.addAttribute("vo",vo);
 		return new Gson().toJson(vo);
 	}

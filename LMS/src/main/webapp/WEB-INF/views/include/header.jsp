@@ -2,6 +2,32 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix='c'%> 
 <head>
+<style type="text/css">
+#recommend {
+	margin-top: 1px;
+	position: absolute;
+	background: white;
+	padding: 0 10px;
+}
+
+.item {
+	height: 1.8em;
+	width: 220px;
+	outline: none;
+}
+
+.item:hover {
+	color: #9baec8;
+}
+.text {
+	font-weight: bold;
+}
+.invisible {
+	display: none;
+}
+
+</style>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,10 +57,15 @@
                    	<!-- <div>
                    		<a href='http://localhost/lms/index'><img src='resources/images/mainlogin/logo_black.png' style='height: 3rem; padding:.5rem;'></a>
                    	</div> -->
-                    <!-- <form
+                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        
+                        
+                        
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="메뉴 검색"
+                             onkeypress="changeKey();"
+                             name="search_text"
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
@@ -42,7 +73,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form> -->
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -225,3 +256,17 @@
                     </ul>
 
                 </nav>
+                
+                <script type="text/javascript">
+
+
+				function changeKey() {
+	                $("span:contains(" +$('[name=search_text]').val() +")").css({background:"red"});
+				}
+
+
+
+
+                </script>
+
+</script>

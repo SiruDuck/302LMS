@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,6 +24,7 @@ import notice.NoticeVO;
 
 @Controller
 public class NoticeController {
+	@Autowired NoticePageVO page;
 	@Autowired
 	private NoticeServiceImpl service;
 	@Autowired
@@ -80,13 +82,22 @@ public class NoticeController {
 	}
 
 	@RequestMapping("/list.no")
-	public String list(Model model, HttpSession session) {
+	public String list(Model model, HttpSession session,
+			@RequestParam(defaultValue = "1") int curPage
+			, String search, String keyword) {
 
 		session.setAttribute("category", "no");
+		//DB에서 공지글목록을 조회한후 목록화면에 출력
+		page.setCurPage(curPage);
+		page.setSearch(search);
+		page.setKeyword(keyword);
+		model.addAttribute("page", service.notice_list(page) );
+		
+		
 
-		List<NoticeVO> list = service.notice_list();
+		//List<NoticeVO> list = service.notice_list();
 
-		model.addAttribute("list", list);
+		//model.addAttribute("list", list);
 
 		return "notice/list";
 	}

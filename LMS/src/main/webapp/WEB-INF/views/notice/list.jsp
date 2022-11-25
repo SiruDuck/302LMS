@@ -23,21 +23,28 @@
 <body>
 	<h3>공지사항</h3>
 	<form method='post' action='list.no'>
+	<input type='hidden' name='curPage' value='1'/>
 		<div class='card mb-4'>
 			<div class='card-header py-3'>
 				<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
 			</div>
 			<div class='card-body d-flex'>
 				<div class='dataTables_filter search-box'>
-					<select
-						class='custom-select custom-select-sm form-control form-control-sm'>
-						<option value='all'>전체</option>
-						<option value='title'>제목</option>
-						<option value='content'>내용</option>
+					<select 
+						class='custom-select custom-select-sm form-control form-control-sm'
+						name="search">
+						
+								
+						<option value='all' ${page.search eq 'all' ? 'selected' : '' }>전체</option>
+						<option value='title' ${page.search eq 'title' ? 'selected' : '' }>제목</option>
+						<option value='content' ${page.search eq 'content' ? 'selected' : '' }>내용</option>
+						<option value='writer' ${page.search eq 'writer' ? 'selected' : '' }>작성자</option>
 					</select>
 				</div>
 				<div class='dataTables_filter search-box'>
-					<input type="search" class='names form-control form-control-sm'>
+					<input type="search" class='names form-control form-control-sm' placeholder="검색어입력" name="keyword"
+						onkeyup="if(window.event.keyCode==13){$('form').submit()}"
+					value="${page.keyword}">
 				</div>
 			</div>
 		</div>
@@ -49,7 +56,7 @@
 
 
 	<!-- DataTales Example -->
-	<div class="card shadow mb-4">
+	<div class=" shadow mb-4">
 		<div class="card-header py-3">
 			<h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
 		</div>
@@ -67,7 +74,7 @@
 					</thead>
 					<tbody>
 
-						<c:forEach items='${list}' var='vo'>
+						<c:forEach items='${page.list}' var='vo'>
 							<tr >
 								<td><a href="info.no?id=${vo.id}">${vo.title }</a></td>
 								<td style="text-align: center;">${vo.writer}</td>
@@ -88,46 +95,52 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-5">
 					<div class="dataTables_info" id="dataTable_info" role="status"
-						aria-live="polite">Showing 1 to 10 of 57 entries</div>
+						aria-live="polite">${page.beginList} ... ${page.endList}   </div>
 				</div>
 				<div class="col-sm-12 col-md-7">
 					<div class="dataTables_paginate paging_simple_numbers"
 						id="dataTable_paginate">
 						<ul class="pagination">
-							<li class="paginate_button page-item previous disabled"
-								id="dataTable_previous"><a href="#"
+							<li class="paginate_button page-item previous  "
+								id="dataTable_previous"><a onclick="go_page(1)"
 								aria-controls="dataTable" data-dt-idx="0" tabindex="0"
-								class="page-link">Previous</a></li>
-							<li class="paginate_button page-item active"><a href="#"
-								aria-controls="dataTable" data-dt-idx="1" tabindex="0"
-								class="page-link">1</a></li>
-							<li class="paginate_button page-item "><a href="#"
-								aria-controls="dataTable" data-dt-idx="2" tabindex="0"
-								class="page-link">2</a></li>
-							<li class="paginate_button page-item "><a href="#"
-								aria-controls="dataTable" data-dt-idx="3" tabindex="0"
-								class="page-link">3</a></li>
-							<li class="paginate_button page-item "><a href="#"
-								aria-controls="dataTable" data-dt-idx="4" tabindex="0"
-								class="page-link">4</a></li>
-							<li class="paginate_button page-item "><a href="#"
-								aria-controls="dataTable" data-dt-idx="5" tabindex="0"
-								class="page-link">5</a></li>
-							<li class="paginate_button page-item "><a href="#"
-								aria-controls="dataTable" data-dt-idx="6" tabindex="0"
-								class="page-link">6</a></li>
+								class="page-link">처음</a></li>
+							
+						<c:forEach var="no" begin="${page.beginPage}" end="${page.endPage}">
+						<c:if test="${no eq page.curPage}"><!-- 현재페이지인 경우 -->
+						<li class="paginate_button page-item active"><a href="#"
+								aria-controls="dataTable" data-dt-idx="${no}" tabindex="0"
+								class="page-link">${no}</a></li>
+						</c:if>
+						 <c:if test="${no ne page.curPage}"><!-- 현재페이지 아닌 경우 -->
+							<li class="paginate_button page-item "><a onclick="go_page(${no})"
+								aria-controls="dataTable" data-dt-idx="${no}" tabindex="0"
+								class="page-link">${no}</a></li>
+						</c:if> 
+						</c:forEach>
+						
+							
+						
 							<li class="paginate_button page-item next" id="dataTable_next"><a
-								href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0"
-								class="page-link">Next</a></li>
+								onclick="go_page(${page.totalPage})" aria-controls="dataTable" data-dt-idx="7" tabindex="0"
+								class="page-link">마지막</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
+		
+		
 		</div>
 	</div>
 
 
-
+<script type="text/javascript">
+function go_page(page){
+	$('[name=curPage]').val( page );
+	$('[name=keyword]').val( '${page.keyword}' );
+	$('form').submit();
+}
+</script>
 
 
 </body>

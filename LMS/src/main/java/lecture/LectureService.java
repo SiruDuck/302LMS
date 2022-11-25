@@ -4,6 +4,7 @@ import java.util.List;
 
 public interface LectureService {
 
+	List<LectureVO> lecture_list(LectureVO vo);//수강 목록 조회
 	List<LectureVO> lecture_list();//수강 목록 조회
 	LecturePageVO lecture_list(LecturePageVO page);
 	int lecture_insert(LectureVO vo);//강의 개설

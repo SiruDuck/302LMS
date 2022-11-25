@@ -8,11 +8,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class LectureServiceImpl implements LectureService {
 	@Autowired private LectureDAO dao;
-	
 	@Override
 	public List<LectureVO> lecture_list() {
 
 		return dao.lecture_list();
+	}
+	@Override
+	public List<LectureVO> lecture_list(LectureVO vo) {
+
+		return dao.lecture_list(vo);
 	}
 
 	@Override

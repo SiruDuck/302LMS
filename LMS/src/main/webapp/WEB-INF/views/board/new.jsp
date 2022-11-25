@@ -45,6 +45,7 @@
 								<th style="vertical-align: inherit">첨부파일</th>
 								<td>
 									<div class='align'>
+						
 										<label> <input type='file' name='file'
 											id='attach-file' style='display: contents;'> <a><i
 												class="font-b fa-solid fa-file-circle-plus"></i></a>

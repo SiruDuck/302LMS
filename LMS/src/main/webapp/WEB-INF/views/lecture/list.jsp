@@ -50,7 +50,7 @@ th{
 
 	<div class="container-fluid">
 		<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">강의 목록</h1>
-		
+		<form action="list.lec" method="post">
 		<div class='card mb-4'>
 			<div class='card-header py-3'>
 				<h6 class='m-0 font-weight-bold text-primary'>강의 검색</h6>
@@ -58,64 +58,73 @@ th{
 			<div class='card-body d-flex'>
 				<div class='dataTables_filter search-box'>
 					<input type="search" class='form-control form-control-sm'
-						placeholder='과목명'>
+						placeholder='과목명'  name="lecture_title" 
+						value="${search.lecture_title }"
+						onkeyup="if(window.event.keyCode==13){$('form').submit()}"
+						>
 				</div>
-				<div class='dataTables_filter search-box'>
-					<select
+				<!-- <div class='dataTables_filter search-box'>
+					<select  name="department_name" 
 						class='custom-select custom-select-sm form-control form-control-sm'>
 						<option value='all'>학과 전체보기</option>
-						<option value='game'>게임개발학과</option>
-						<option value='ai'>인공지능학과</option>
-						<option value='web'>웹학과</option>
-						<option value='db'>DB학과</option>
-						<option value='iot'>Iot학과</option>
-						<option value='app'>앱개발학과</option>
-						<option value='info'>정보보안학과</option>
+						<option value="101">게임개발학과</option>
+						<option value="102">인공지능학과</option>
+						<option value="103">웹디자인학과</option>
+						<option value="104">앱개발학과</option>
+						<option value="105">정보보안학과</option>
+						<option value="106">빅데이터학과</option>
+						<option value="107">소프트웨어학과</option>
+						<option value="108">IOT반도체전자과</option>
 					</select>
-				</div>
-				<form action="list.lec" method="get">
+				</div> -->
+
+
+
+
+
+
+
+
 				<div class='dataTables_filter search-box'>
-					<select name=keyword onchange='$("form").submit()'
+					<select name="sortation" onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
-						<option value='s1'${page.search eq 's1' ? 'selected' : '' }>전체보기</option>
-						<option value='s2'${page.search eq 's2' ? 'selected' : '' }>전공필수</option>
-						<option value='s3'${page.search eq 's3' ? 'selected' : '' }>전공선택</option>
-						<option value='s4'${page.search eq 's4' ? 'selected' : '' }>교양</option>
-						<!-- <option value='optional'>전공 선택</option>
-						<option value='required'>교양 필수</option>
-						<option value='elective'>교양 선택</option> -->
-					</select>
-				</div>
-			</form>
-				<div class='dataTables_filter search-box'>
-					<select name='lecture_day' onchange='$("form").submit()'
-						class='custom-select custom-select-sm form-control form-control-sm'>
-						<option value='all'>요일 전체보기</option>
-						<option value='월'>월</option>
-						<option value='화'>화</option>
-						<option value='수'>수</option>
-						<option value='목'>목</option>
-						<option value='금'>금</option>
-					</select>
-				</div>
-				<div class='dataTables_filter'>
-					<select
-						class='custom-select custom-select-sm form-control form-control-sm'>
-						<option value='all'>시간 전체보기</option>
-						<option value='1'>1교시 (09:00~09:50)</option>
-						<option value='2'>2교시 (10:00~10:50)</option>
-						<option value='3'>3교시 (11:00~11:50)</option>
-						<option value='4'>4교시 (12:00~12:50)</option>
-						<option value='5'>5교시 (14:00~14:50)</option>
-						<option value='6'>6교시 (15:00~15:50)</option>
-						<option value='7'>7교시 (16:00~16:50)</option>
-						<option value='8'>8교시 (17:00~17:50)</option>
+						<option value=''${search.sortation eq '' ? 'selected' : '' }>전체보기</option>
+						<option value='전공필수'${search.sortation eq '전공필수' ? 'selected' : '' }>전공필수</option>
+						<option value='전공선택'${search.sortation eq '전공선택' ? 'selected' : '' }>전공선택</option>
+						<option value='교양'${search.sortation eq '교양' ? 'selected' : '' }>교양</option>
+					
 					</select>
 				</div>
 			
+				<div class='dataTables_filter search-box'>
+					<select name='lecture_day' onchange='$("form").submit()'
+						class='custom-select custom-select-sm form-control form-control-sm'>
+						<option value=''>요일 전체보기</option>
+						<option value='월'${search.lecture_day eq '월' ? 'selected' : '' }>월</option>
+						<option value='화'${search.lecture_day eq '화' ? 'selected' : '' }>화</option>
+						<option value='수'${search.lecture_day eq '수' ? 'selected' : '' }>수</option>
+						<option value='목'${search.lecture_day eq '목' ? 'selected' : '' }>목</option>
+						<option value='금'${search.lecture_day eq '금' ? 'selected' : '' }>금</option>
+					</select>
+				</div>
+				<div class='dataTables_filter'>
+					<select name="lecture_time" onchange='$("form").submit()'
+						class='custom-select custom-select-sm form-control form-control-sm'>
+						<option value=''>시간 전체보기</option>
+						<option value='09:00~09:50'${search.lecture_time eq '09:00~09:50' ? 'selected' : '' }>1교시 (09:00~09:50)</option>
+						<option value='10:00~10:50'${search.lecture_time eq '10:00~10:50' ? 'selected' : '' }>2교시 (10:00~10:50)</option>
+						<option value='11:00~11:50'${search.lecture_time eq '11:00~11:50' ? 'selected' : '' }>3교시 (11:00~11:50)</option>
+						<option value='12:00~12:50'${search.lecture_time eq '12:00~12:50' ? 'selected' : '' }>4교시 (12:00~12:50)</option>
+						<option value='14:00~14:50'${search.lecture_time eq '14:00~14:50' ? 'selected' : '' }>5교시 (14:00~14:50)</option>
+						<option value='15:00~15:50'${search.lecture_time eq '15:00~15:50' ? 'selected' : '' }>6교시 (15:00~15:50)</option>
+						<option value='16:00~16:50'${search.lecture_time eq '16:00~16:50' ? 'selected' : '' }>7교시 (16:00~16:50)</option>
+						<option value='17:00~17:50'${search.lecture_time eq '17:00~17:50' ? 'selected' : '' }>8교시 (17:00~17:50)</option>
+					</select>
+				</div>
+				
 			</div>		
 		</div>
-		
+		</form>
 				<div class="add">
 					<c:choose>
 						<c:when test="${loginInfo.info_cd eq 3 or loginInfo.info_cd eq 4}">
@@ -156,7 +165,7 @@ th{
 								</thead>
 								<tbody>
 
-									<c:forEach items="${vo}" var="vo">
+									<c:forEach items="${list}" var="vo">
 										<tr>
 											<td>${vo.lecture_num}</td>
 											<td>${vo.lecture_year}</td>
