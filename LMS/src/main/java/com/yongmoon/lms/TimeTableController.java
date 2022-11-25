@@ -64,14 +64,14 @@ public class TimeTableController {
 	}// 시간표 상세 보기
 	
 	@RequestMapping(value = "/regist.tt", produces = "text/html; charset=utf-8")
-	public String regist(String lecture_title, String state ,Model model, HttpSession session, @RequestParam(defaultValue = "all_sortation") String sortation) {
+	public String regist(EnrolmentVO enrol_vo, String lecture_title, String state ,Model model, HttpSession session, @RequestParam(defaultValue = "all_sortation") String sortation) {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
 		String id = member.getId();
 		System.out.println(id + "의 수강신청");
 		
 		List<TimeTableVO> vo = service.timeTableRegist(lecture_title);
 		List<TimeTableVO> list = service.sortation_list(sortation);
-				
+		model.addAttribute("enrol_vo", enrol_vo);		
 		model.addAttribute("vo", vo);
 		model.addAttribute("list", list);
 		return"time/regist";
@@ -105,7 +105,7 @@ public class TimeTableController {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
 		service.timeTable_delete(enrol_vo);
 		
-		return "redirect:spareTimeTable.tt?id=" + member.getId();
+		return "redirect:timeTable.tt?id=" + member.getId();
 	}// 강의 삭제
 
 	@RequestMapping(value = "/list.tt", produces = "text/html; charset=utf-8")

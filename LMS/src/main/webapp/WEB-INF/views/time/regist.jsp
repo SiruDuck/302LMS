@@ -101,13 +101,18 @@ table th{
 	       	           		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>상세보기</a>
 	       	           	</span>
 	       	           </td>
-
-	       	           <td>
-	                   	<span class=' btn btn-info btn-icon-split'>
-	                   		<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">강의등록</a>
-	                   		
-	                   	</span>
-	       	           </td>
+	       	           	<td>
+						<c:if test="${enrol_vo.lecture_num and enrol_vo.id }">
+	                   		<span class=' btn btn-info btn-icon-split'>
+	                   			<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }">등록하기</a>	                   			
+	                	   	</span>
+	                	</c:if>   	
+                   		<c:if test="${enrol_vo.lecture_num and enrol_vo.id and semesterpoint }">
+	                   		<span class=' btn btn-danger btn-icon-split'>
+	                   			<a class='text-white insert' href="delete.tt?lecture_num=${vo.lecture_num }">삭제하기</a>	                   			                   			
+	                	   	</span>
+                   		</c:if>
+	       	       		</td>
          	       </tr>
          	   </c:forEach>
          	
@@ -163,7 +168,6 @@ $('.search_title').keyup(function(){
 		
 	})
 });
-
 
 
 
