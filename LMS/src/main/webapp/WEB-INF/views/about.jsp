@@ -87,8 +87,8 @@
                 광주광역시 서구 농성동 경열로3에 위치해 있으며 자세한 지도 정보는 지도의 길찾기를 눌러주세요.
               </p>
               <ul>
-                <li><i class="bi bi-check-circle-fill"></i>버스 몇번 타면 옴ㄴ</li>
-                <li><i class="bi bi-check-circle-fill"></i> 지하철 농성역 내리면 옴</li>
+                <li><i class="bi bi-check-circle-fill"></i>송정19 | 봉선37 | 금호36 | 문흥39 | 송암72 | 1187 | 송암68 | 나주160</li>
+                <li><i class="bi bi-check-circle-fill"></i> 지하철 농성역</li>
               </ul>
             </div>
           </div>
