@@ -4,182 +4,295 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <style>
-span.btn{
-	display:block;
+body{margin-top:20px;
+background-color:#eee;
 }
-.search-box{
-	margin:0 1rem 0 0;
+.project-list-table {
+    border-collapse: separate;
+    border-spacing: 0 12px
 }
-.table-responsive{
-	overflow:hidden;
+
+.project-list-table tr {
+    background-color: #fff
 }
-.count-box{
-	padding: 0;
-    margin-bottom: 1rem;
-    max-width: 10%;
+
+.table-nowrap td, .table-nowrap th {
+    white-space: nowrap;
 }
-.btn a{
-	text-decoration: none;
+.table-borderless>:not(caption)>*>* {
+    border-bottom-width: 0;
 }
-.datepicker-days .datepicker-months{
-	display: none;
+.table>:not(caption)>*>* {
+    padding: 0.75rem 0.75rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
-table th, td{
-	color:#5a5c69;
-	text-align: center;
+
+.avatar-sm {
+    height: 2rem;
+    width: 2rem;
 }
-table th{
-	font-weight: 700;
+.rounded-circle {
+    border-radius: 50%!important;
+}
+.me-2 {
+    margin-right: 0.5rem!important;
+}
+img, svg {
+    vertical-align: middle;
+}
+
+a {
+    color: #3b76e1;
+    text-decoration: none;
+}
+
+.badge-soft-danger {
+    color: #f56e6e !important;
+    background-color: rgba(245,110,110,.1);
+}
+.badge-soft-success {
+    color: #63ad6f !important;
+    background-color: rgba(99,173,111,.1);
+}
+
+.badge-soft-primary {
+    color: #3b76e1 !important;
+    background-color: rgba(59,118,225,.1);
+}
+
+.badge-soft-info {
+    color: #57c9eb !important;
+    background-color: rgba(87,201,235,.1);
+}
+
+.avatar-title {
+    align-items: center;
+    background-color: #3b76e1;
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+.bg-soft-primary {
+    background-color: rgba(59,118,225,.25)!important;
 }
 </style>
 <body>
-<!-- <h1 class='h3 mb-2 text-gray-800 font-weight-bold'>수강신청</h1>
-<p class='mb-4 font-weight-bold'>수강신청 기간 : 2023.02.14 ~ 2023.02.28</p> -->
-<form method='post' action="regist.tt">
-<div class='card mb-4 shadow'>
-	<div class='card-header py-3'>
-		<h6 class='m-0 font-weight-bold text-primary text-lg'>강의 검색</h6>
-	</div>
-	<div class='card-body d-flex'>
-		<div class='dataTables_filter search-box'>		<!-- 과목명 검색 -->
-			<input name="lecture_title" id="lecture_title" 
-			onkeyup="if(window.event.keyCode==13){$('form').submit()}"
-						type="search" class='form-control form-control-sm search_title' placeholder='과목명'
-			value="${temp_map.lecture_title }" 
-			
-			>
-		</div>
-		<div class='dataTables_filter search-box'>
-			<select class='custom-select custom-select-sm form-control form-control-sm' name="sortation" onchange="$('form').submit()">
-				<option value=''${temp_map.sortation eq ''? 'selected' : '' }>구분 전체보기</option>
-				<option value='전공필수'${temp_map.sortation eq '전공필수' ? 'selected' : '' }>전공필수</option>
-				<option value='전공선택'${temp_map.sortation eq '전공선택' ? 'selected' : '' }>전공선택</option>
-				<option value='교양'${temp_map.sortation eq '교양' ? 'selected' : '' }>교양</option>
-			</select>
-		</div>
-		<div class='dataTables_filter search-box'>
-			<select class='custom-select custom-select-sm form-control form-control-sm'>
-				<option value=''>요일 전체보기</option>				
-			</select>
-		</div>
-	</div>
-</div>
-<div class="card shadow mb-4">
-	<div class="card-header py-3">
-	    <h6 class="m-0 font-weight-bold text-primary text-lg">수강 신청</h6>
-	</div>
-    <div class="card-body">
-        <div class="table-responsive">
-		 <!-- 수강신청리스트 -->
-         <div id="dataTable-wrapper">
-         	<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-         	   <tr role="row" class='bg-gray-100'>
-         	    	<th>과목코드</th>
-         	    	<th>과목명</th>
-         	    	<th>구분</th>
-         	    	<th>담당교수</th>
-         	    	<th>강의실</th>
-         	    	<th>강의시간</th>
-         	    	<th>학점</th>
-         	    	<th>강의유형</th>
-         	    	<th>상세보기</th>
-         	    	<th>강의신청</th>
-         	  	</tr>
-         	
-         	   <c:forEach items="${vo }" var="vo">
-         	       <tr>
-	       	       	<td>${vo.lecture_num }</td>
-	       	           <td>${vo.lecture_title }</td>
-	       	           <td>${vo.sortation }</td>
-	       	           <td>${vo.teacher_name }</td>
-	       	           <td>${vo.lecture_room }</td>
-	       	           <td>${vo.lecture_day } [${vo.lecture_time }]</td>
-	       	           <td>${vo.subjectcredit }</td>
-	       	           <td>${vo.state }</td>
-	       	           <td>
-	       	           	<span  class=' btn btn-primary btn-icon-split'>
-	       	         
-							 		<a class='text-white' href='detail.tt?lecture_num=${vo.lecture_num }'>상세보기</a>
-					
-	       	           
-	       	           	</span>
-	       	           </td>
+<h3 style="text-align: initial; color: #6a6a6a" class="m-2 mb-3">수강 신청</h3>
+<div class="container-fluid">
+  
+    <div class="row">
+    	  <div class="col-lg-12">
 
-	       	           <td>
-	                 
-	                   	<c:choose>
-							<c:when test="${vo.check_flag eq 0 }">
-							  	<span class='btn btn-info btn-icon-split'>
-								<a class='text-white insert' href="insert.tt?lecture_num=${vo.lecture_num }" onclick="popup()">신청하기</a>
-	                   			</span>
-	                   		</c:when>
-							<c:when test="${vo.check_flag eq 1 }">
-								<a class='text-black'>수강 완료</a>
-	                   		</c:when>
-	                   		<c:when test="${vo.check_flag eq 2 }">
-								<a class='text-black'>신청 완료</a>
-	                   		</c:when>
-	                   		<c:when test="${vo.check_flag eq 3 }">
-								<a class='text-black'>정원 초과</a>
-	                   		</c:when>
-						</c:choose>
-	       	           </td>
-         	       </tr>
-         	   </c:forEach>
-         	
-         	</table>
-         </div>
-        
-        <!-- 페이지 전환 -->
-		<!-- <div class="row">
-       		<div class="col-sm-12 col-md-7">
-       			<div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-       				<ul class="pagination">
-       					<li class="paginate_button page-item previous disabled" id="dataTable_previous">
-       						<a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-						</li>
-						<li class="paginate_button page-item active">
-							<a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-						</li>
-						<li class="paginate_button page-item ">
-							<a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-						</li>
-						<li class="paginate_button page-item ">
-							<a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-						</li>
-						<li class="paginate_button page-item ">
-							<a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-						</li>
-						<li class="paginate_button page-item ">
-							<a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-						</li>
-						<li class="paginate_button page-item ">
-							<a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a>
-						</li>
-						<li class="paginate_button page-item next" id="dataTable_next">
-							<a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
-						</li>
-					</ul>
+          	  <div class="card">
+                    <div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">강의 목록</h6>
 				</div>
-			</div>
-		</div> -->
+				</div>
+<form action="regist.tt" method="post">
+
+    <div class="row mt-1">
+        <div class="col-xl-3 col-md-6" style="background: #f8f9fc">
+            <div class="card bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-archive text-primary h4 ml-3"></i>
+                    </div>
+                 <div class='dataTables_filter search-box'>
+                  <h5 class="font-size-20 mt-0 pt-1"> 이수구분 </h5>
+					<select name="sortation" onchange='$("form").submit()'
+						class='custom-select custom-select-sm form-control form-control-sm'>
+						<option value=''${search.sortation eq '' ? 'selected' : '' }>전체보기</option>
+						<option value='전공필수'${search.sortation eq '전공필수' ? 'selected' : '' }>전공필수</option>
+						<option value='전공선택'${search.sortation eq '전공선택' ? 'selected' : '' }>전공선택</option>
+						<option value='교양'${search.sortation eq '교양' ? 'selected' : '' }>교양</option>
+					
+					</select>
+				</div>
+                </div>
+            </div>
+        </div>
+       <div class="col-xl-3 col-md-6" style="background: #f8f9fc">
+            <div class="card bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-archive text-primary h4 ml-3"></i>
+                    </div>
+                 <div class='dataTables_filter search-box'>
+                 <h5 class="font-size-20 mt-0 pt-1"> 요일구분 </h5>
+					<select name='lecture_day' onchange='$("form").submit()'
+						class='custom-select custom-select-sm form-control form-control-sm'>
+						<option value=''> 전체보기</option>
+						<option value='월'${search.lecture_day eq '월' ? 'selected' : '' }>월</option>
+						<option value='화'${search.lecture_day eq '화' ? 'selected' : '' }>화</option>
+						<option value='수'${search.lecture_day eq '수' ? 'selected' : '' }>수</option>
+						<option value='목'${search.lecture_day eq '목' ? 'selected' : '' }>목</option>
+						<option value='금'${search.lecture_day eq '금' ? 'selected' : '' }>금</option>
+					</select>
+				</div>
+                </div>
+            </div>
+        </div>
+      
+       <div class="col-xl-3 col-md-6 mt-1" style="background: #f8f9fc">
+            <div class="card bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-archive text-primary h4 ml-3"></i>
+                    </div>
+                 <div class='dataTables_filter search-box'>
+                  <h5 class="font-size-20 mt-0 pt-1"> 강의시간구분 </h5>
+					<select name="lecture_time" onchange='$("form").submit()'
+						class='custom-select custom-select-sm form-control form-control-sm'>
+						<option value=''>시간 전체보기</option>
+						<option value='09:00~09:50'${search.lecture_time eq '09:00~09:50' ? 'selected' : '' }>1교시 (09:00~09:50)</option>
+						<option value='10:00~10:50'${search.lecture_time eq '10:00~10:50' ? 'selected' : '' }>2교시 (10:00~10:50)</option>
+						<option value='11:00~11:50'${search.lecture_time eq '11:00~11:50' ? 'selected' : '' }>3교시 (11:00~11:50)</option>
+						<option value='12:00~12:50'${search.lecture_time eq '12:00~12:50' ? 'selected' : '' }>4교시 (12:00~12:50)</option>
+						<option value='14:00~14:50'${search.lecture_time eq '14:00~14:50' ? 'selected' : '' }>5교시 (14:00~14:50)</option>
+						<option value='15:00~15:50'${search.lecture_time eq '15:00~15:50' ? 'selected' : '' }>6교시 (15:00~15:50)</option>
+						<option value='16:00~16:50'${search.lecture_time eq '16:00~16:50' ? 'selected' : '' }>7교시 (16:00~16:50)</option>
+						<option value='17:00~17:50'${search.lecture_time eq '17:00~17:50' ? 'selected' : '' }>8교시 (17:00~17:50)</option>
+					</select>
+				</div>
+                </div>
+            </div>
+        </div>
+      
+        
+       <div class="col-xl-3 col-md-6" style="background: #f8f9fc">
+            <div class="card">
+                <div class="card-body">
+                        <div class="form-group mb-0">
+                            <label>강의 검색</label>
+                            <div class="input-group mb-0">
+                                <input type="text" class="form-control" name="lecture_title" value="${search.lecture_title }"
+                                 placeholder="강의명을 검색하세요" aria-describedby="project-search-addon" onkeyup="if(window.event.keyCode==13){$('form').submit()}"/>
+                                <div class="input-group-append" >
+                                    <button class="btn btn-primary"  id="project-search-addon"><i class="fa fa-search search-icon font-12"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                  
+                </div>
+            </div>
         </div>
     </div>
+ </form>
+    
+    </div>
+        <div class="col-lg-12">
+            <div class="">
+                <div class="table-responsive">
+                    <table class="table project-list-table table-nowrap align-middle table-borderless">
+                        <thead>
+                            <tr>
+                               
+         	    					<th style="text-align: center;">수강</th>
+                                	<th>담당교수</th>
+         	    					<th>과목명</th>
+         	    					<th>강의명</th>
+         	    					<th>장소/시간</th>
+         	    					<th>신청인원</th>
+         	    					<th>과목학점</th>
+                        	    </tr>
+                        </thead>
+                        <tbody>
+                          <c:forEach items="${vo }" var="vo">
+                            <tr>
+                                
+                                  <td>
+                                    <ul class="list-inline mb-0" style="text-align: center;">
+                                 
+                                 
+                                     <c:choose>
+									<c:when test="${vo.check_flag eq '0' }">
+                              			 
+                                        <li class="list-inline-item">
+                                         <span class="badge bg-primary p-2 blink_cl">
+                                            <a style="cursor: pointer;"  class="text-white" href="insert.tt?lecture_num=${vo.lecture_num}">
+                                            수강 신청
+                                            <i class="fa-sharp fa-solid fa-plus"></i></a>
+                                            </span>
+                                        </li>
+                                     </c:when>
+                                      <c:when test="${vo.check_flag eq '1' }">
+                                        <li class="list-inline-item" >
+                                           <span class="badge bg-success p-2">
+                                            <a style="cursor: pointer;"  class="text-white" >
+                                          수강 완료
+                                         <i class="fa-sharp fa-solid fa-check"></i></a>
+                                            </span>
+                                        
+                                        </li>
+                                      </c:when>
+                                     
+                                     <c:when test="${vo.check_flag eq '2' }">
+                                        <li class="list-inline-item">
+                                           <span class="badge bg-danger p-2">
+                                            <a style="cursor: pointer;"  class="text-white" href="delete.tt?lecture_num=${vo.lecture_num}">
+                                         수강 철회
+                                         <i class="fa-solid fa-xmark"></i></a>
+                                            </span>
+                                        
+                                        
+                                        </li>
+                                      </c:when>
+                                     </c:choose>
+                                        
+                                       
+                                    </ul>
+                                </td>
+                                
+                                <td><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" class="avatar-sm rounded-circle me-2" /><a href="#" class="text-body">${vo.teacher_name}</a></td>
+                                <td>
+									${vo.lecture_title }
+									<c:choose>
+									<c:when test="${vo.sortation eq '전공선택' }">
+                              			  <span class="badge badge-soft-success mb-0"><a href="detail.lec?lecture_num=${vo.lecture_num}">${vo.sortation }</a></span>
+                                	</c:when>
+                                	<c:when test="${vo.sortation eq '전공필수' }">
+                              			  <span class="badge badge-soft-info mb-0"><a href="detail.lec?lecture_num=${vo.lecture_num}">${vo.sortation }</a></span>
+                                	</c:when>
+                                	<c:when test="${vo.sortation eq '교양' }">
+                              			  <span class="badge badge-soft-dark mb-0"><a href="detail.lec?lecture_num=${vo.lecture_num}">${vo.sortation }</a></span>
+                                	</c:when>
+                                	</c:choose>
+                                </td>
+                                
+                                
+                              	<td>${vo.lecture_title}      			 
+                              	 <span class="badge badge-soft-dark mb-0">
+                              		<a href="detail.lec?lecture_num=${vo.lecture_num}">
+                             			상세보기<i style="margin-left: 5px;" class="fa-solid fa-circle-info"></i></a></span>
+                                        </td>
+                              	
+                             
+                              	
+                             	<td>${vo.lecture_room} [${vo.lecture_time}교시]</td>
+                             	
+                             	<td>${vo.check_cnt } /${vo.capacity}</td>
+                             		<td>${vo.subjectcredit}</td>
+                              
+                            </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   
 </div>
-</form>
-<script>
-
-$('popup').click(function(){
-	alert('신청');
-});
-
-
-
-
-</script>
 </body>
 </html>

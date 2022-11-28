@@ -1,5 +1,6 @@
 package com.yongmoon.lms;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -20,20 +21,19 @@ import lecture.LecturePageVO;
 import lecture.LectureServiceImpl;
 import lecture.LectureVO;
 import member.MemberVO;
+import timetable.TimeTableService;
 
 @Controller
 public class LectureController {
 
 	@Autowired private LectureDAO dao;
 	@Autowired private LectureServiceImpl service;
-	
+	@Autowired private TimeTableService service2;
 	//강의 목록 조회
 	@RequestMapping(value = "/list.lec", produces = "text/html;charset=utf-8")
 	public String lecture_list(Model model, LecturePageVO page,  HttpSession session
 				,LectureVO vo
 			) {
-
-		
 		session.setAttribute("category", "lec");
 		List<LectureVO> list = dao.lecture_list(vo);
 		model.addAttribute("list", list);
@@ -62,7 +62,7 @@ public class LectureController {
 		session.setAttribute("category", "student_lec");
 
 		List<LectureVO> list = dao.student_lec_list(vo.getId());
-		model.addAttribute("vo", list);
+		model.addAttribute("list", list);
 		
 		return "lecture/student_lec_list";
 	}
@@ -143,6 +143,17 @@ public class LectureController {
 		return "redirect:list.lec";
 	}
 	
+	
+	@RequestMapping("/delete.lect")
+	public String delete(HttpSession session, String lecture_num) {
+		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("id", member.getId());
+		map.put("lecture_num", lecture_num);
+		service2.timeTable_delete(map);
+		return "redirect:student_lec_list.lec";
+		
+	}// 강의 삭제
 	
 	
 	

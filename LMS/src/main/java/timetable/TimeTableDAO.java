@@ -38,8 +38,8 @@ public class TimeTableDAO implements TimeTableService {
 	}
 
 	@Override
-	public void timeTable_delete(EnrolmentVO vo) {
-		sql.update("time.delete", vo);
+	public void timeTable_delete(HashMap<String, String> map) {
+		sql.update("time.delete", map);
 	}
 
 	@Override
@@ -48,8 +48,8 @@ public class TimeTableDAO implements TimeTableService {
 	}
 
 	@Override
-	public void timeTable_insert(EnrolmentVO vo) {
-		sql.insert("time.insert", vo);
+	public void timeTable_insert(HashMap<String, String> map) {
+		sql.insert("time.insert", map);
 	}
 
 	@Override

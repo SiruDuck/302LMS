@@ -31,12 +31,17 @@ import member.MemberVO;
 
 @Controller
 public class MemberController {
-	@Autowired private MemberServiceImpl service;
-	@Autowired private EquipmentDAO vo;
-	@Autowired private MemberDAO dao;
-	@Autowired SqlSession sql;
-	@Autowired private CommonUtility common;
-	
+	@Autowired
+	private MemberServiceImpl service;
+	@Autowired
+	private EquipmentDAO vo;
+	@Autowired
+	private MemberDAO dao;
+	@Autowired
+	SqlSession sql;
+	@Autowired
+	private CommonUtility common;
+
 	// 학생, 교사, 교직원, 어드민 리스트 출력
 	@RequestMapping("/member.list")
 	public String memberlist(Model model, @RequestParam(defaultValue = "-1") int info_cd) {
@@ -99,9 +104,9 @@ public class MemberController {
 	@ResponseBody
 	@RequestMapping(value = "/join", produces = "text/html; charset=utf-8")
 	public String join(MemberVO vo, MultipartFile file, HttpServletRequest request) {
-		if( ! file.isEmpty() ) {
-			//서버에 첨부파일을 저장한다: 파일업로드
-			vo.setProfile( common.fileUpload("profile", file, request) );
+		if (!file.isEmpty()) {
+			// 서버에 첨부파일을 저장한다: 파일업로드
+			vo.setProfile(common.fileUpload("profile", file, request));
 		}
 
 		StringBuffer msg = new StringBuffer("<script>");
@@ -162,13 +167,13 @@ public class MemberController {
 		vo.eqinsert(eqvo);
 		return "redirect:eqlist";
 	}
-	
-	
-	//비품 수정 요청
+
+	// 비품 수정 요청
 	@RequestMapping("/eqmodify")
-	public String eqmodify(@RequestParam(name="mequipment") String equipment, @RequestParam(name="mequipment_num") String equipment_num
-			, @RequestParam(name="msituation") String situation, String origineq, 
-			 @RequestParam(name="mprice") String price ,Model model ,@RequestParam(name="mbuy_day") String buy_day ) {
+	public String eqmodify(@RequestParam(name = "mequipment") String equipment,
+			@RequestParam(name = "mequipment_num") String equipment_num,
+			@RequestParam(name = "msituation") String situation, String origineq,
+			@RequestParam(name = "mprice") String price, Model model, @RequestParam(name = "mbuy_day") String buy_day) {
 		EquipmentVO eqvo = new EquipmentVO();
 		eqvo.setEquipment(equipment);
 		eqvo.setEquipment_num(Integer.parseInt(equipment_num));
@@ -176,61 +181,77 @@ public class MemberController {
 		eqvo.setBuy_day(Date.valueOf(buy_day));
 		eqvo.setPrice(Integer.parseInt(price));
 		vo.eqmodify(eqvo);
-		
+
 		return "redirect:eqlist";
 	}
-	
-	//비품 삭제
+
+	// 비품 삭제
 	@RequestMapping("/eqdelete")
-	public String eqdelete(@RequestParam(name="mequipment") String equipment) {
+	public String eqdelete(@RequestParam(name = "mequipment") String equipment) {
 		vo.eqdelete(equipment);
 		return "redirect:eqlist";
 	}
 
 	//////////////////////////// 안드로이드///////////////////////////////////////
 
-	@ResponseBody @RequestMapping("/andLogin")
-	public String login(String id, String pw){
-		
+	@ResponseBody
+	@RequestMapping("/andLogin")
+	public String login(String id, String pw) {
+
 		MemberVO vo = service.and_login(id);
 
 		// if( vo!= null ) {
-		// 	if (vo.getPw().equals(pw)) {
-		// 		return new Gson().toJson(vo);
-		// 	} else {
-		// 		return "다시 입력";
-		// 	}
+		// if (vo.getPw().equals(pw)) {
+		// return new Gson().toJson(vo);
+		// } else {
+		// return "다시 입력";
+		// }
 		// }else {
 
 		if (vo.getPw().equals(pw)) {
 			return new Gson().toJson(vo);
-					
+
 		} else {
 			return "다시 입력";
 		}
 	}
-		
-	
+
 	@RequestMapping("/eqmodifyScreen")
-	public String eqmodifyScreen(Model model , String equipment) {
-			
+	public String eqmodifyScreen(Model model, String equipment) {
+
 		return "equipment/equiment_modify";
 	}
-		
-		
-		
+
 	@RequestMapping(value = "/myinfo")
 	public String myinfo(HttpSession session, Model model) {
-		
+
 		MemberVO temp_vo = (MemberVO) session.getAttribute("loginInfo");
 		MemberVO vo = dao.viewMember(temp_vo.getId());
 		model.addAttribute("vo", vo);
+
+		if (temp_vo.getInfo_cd() == 1) {
+
+			return "member/myinfo";
+		} else {
+			return "member/myinfo";
+		}
+	}
+	
+	@RequestMapping(value = "/about")
+	public String about(HttpSession session, Model model) {
+
 		
+			return "about";
 		
-		return "member/myinfo";
 	}
 
 	
-	
+	@RequestMapping(value = "/welcome")
+	public String welcome(HttpSession session, Model model) {
+
+		
+			return "welcome";
+		
+	}
 
 }

@@ -4,6 +4,16 @@ public class NoticeVO {
 	private int  readcnt, id;
 	private String title, content, writer,filename,	filepath;
 	private String writedate;
+	private int no;
+	
+	
+	
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
 	public int getReadcnt() {
 		return readcnt;
 	}

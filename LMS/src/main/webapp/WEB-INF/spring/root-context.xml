@@ -7,7 +7,8 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
-<import resource="classpath:dbconn/common.xml" />
+	<import resource="classpath:dbconn/common.xml" />
 	<context:component-scan
 		base-package="student, lecture, cash, score, time, member, timetable, department, equipment, notice, common, board" />
+
 </beans>

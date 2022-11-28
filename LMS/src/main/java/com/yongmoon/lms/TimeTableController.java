@@ -95,21 +95,25 @@ public class TimeTableController {
 	}// 과목명 검색
 	
 	@RequestMapping(value = "/insert.tt", produces = "text/html; charset=utf-8")
-	public String insert(EnrolmentVO vo, HttpSession session) {
+	public String insert(String lecture_num, HttpSession session) {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
-		vo.setId(member.getId());
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("id", member.getId());
+		map.put("lecture_num", lecture_num);
 		
-		service.timeTable_insert(vo);
+		service.timeTable_insert(map);
 		return "redirect:regist.tt";
 	}// 수강 시간표 등록
 	
 	
 	@RequestMapping("/delete.tt")
-	public String delete(HttpSession session, EnrolmentVO enrol_vo) {
+	public String delete(HttpSession session, String lecture_num) {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
-		service.timeTable_delete(enrol_vo);
-		
-		return "redirect:spareTimeTable.tt?id=" + member.getId();
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("id", member.getId());
+		map.put("lecture_num", lecture_num);
+		service.timeTable_delete(map);
+		return "redirect:regist.tt";
 	}// 강의 삭제
 
 	@RequestMapping(value = "/list.tt", produces = "text/html; charset=utf-8")

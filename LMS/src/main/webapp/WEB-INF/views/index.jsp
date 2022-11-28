@@ -21,10 +21,10 @@
 h6{
 	font-family: 'SEBANG_Gothic_Bold';
 }
+
 .main_img{
 	width:100%;
-	height:470px;
-	background: url("resources/introimg/indeximg.png") no-repeat ;
+	height:800px;
 	margin-bottom: 2rem;
 }
 .slog{
@@ -44,6 +44,7 @@ h6{
 	top: 30rem;
 }
 
+
 .pointer {position:absolute; width:50px; height:50px; border-radius:50px; background:white; transition:all 0.6s ease-out}
 
 .ss{ transition: cubic-bezier(.75,.32,.8,.44)}
@@ -54,14 +55,14 @@ h6{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div id ="wrap" class="main_img " >
-		<div class= "ss">
-			<div class="slog r1"> 가치를 창출하는 대학,</div>
-			<div class="slog r2"> 함께 성장해가는 대학,</div>
-			<div class="slog r3"> 영문대학교 </div>	
-		</div>
-	<span class='pointer'>	
-	</span>
+<div id ="wrap" class="main_img" style="display: block;"  >
+	<video width="100%"  loop="" autoplay="" muted=""
+	style="object-fit:fill;" height="100%;"width="100%" 
+	>
+    <source src="resources/images/mainlogin/test3.mp4" type="video/mp4"
+    
+    >
+</video>
 </div>
 
 <!-- carousel -->

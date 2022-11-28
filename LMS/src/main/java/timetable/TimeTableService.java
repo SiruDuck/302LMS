@@ -16,9 +16,9 @@ public interface TimeTableService {
 	
 	List<TimeTableVO> timeTable_list(String id);		// 시간표 보기 
 	
-	void timeTable_delete(EnrolmentVO vo);	// 시간표 삭제
+	void timeTable_delete(HashMap<String, String> map);	// 시간표 삭제
 	
-	void timeTable_insert(EnrolmentVO vo);	// 수강신청(시간표 등록)
+	void timeTable_insert(HashMap<String, String> map);	// 수강신청(시간표 등록)
 	
 	void timeTable_update(EnrolmentVO vo);	// 시간표 수정
 

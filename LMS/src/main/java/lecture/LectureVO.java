@@ -9,8 +9,22 @@ public class LectureVO {
 	, name, gender, grade, department_name, phone;
 	private int lecture_num;
 	private Date midex, finalex;
+	private int check_flag , check_cnt ;
 	
 	
+	
+	public int getCheck_flag() {
+		return check_flag;
+	}
+	public void setCheck_flag(int check_flag) {
+		this.check_flag = check_flag;
+	}
+	public int getCheck_cnt() {
+		return check_cnt;
+	}
+	public void setCheck_cnt(int check_cnt) {
+		this.check_cnt = check_cnt;
+	}
 	public String getLecture_title() {
 		return lecture_title;
 	}

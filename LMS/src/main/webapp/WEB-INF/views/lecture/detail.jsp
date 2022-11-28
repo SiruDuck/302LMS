@@ -9,128 +9,111 @@
 <title></title>
 </head>
 <style>
-span.btn {
-	display: block;
+body {
+	margin-bottom:10px;
+    background: rgb(99, 39, 120)
 }
 
-.search-box {
-	margin: 0 1rem 0 0;
+.container-fluid{
+margin-bottom:10px;
+
 }
 
-.table-responsive {
-	overflow: hidden;
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
 }
 
-.count-box {
-	padding: 0;
-	margin-bottom: 1rem;
-	max-width: 10%;
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
 }
 
-.lec-table{
-    text-align: -webkit-center;
+.profile-button:hover {
+    background: #682773
 }
 
-.container-fluid {
-	width : 1000px;
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
 }
 
-td{
-	max-width: 80rem;
-	text-align: left;
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
 }
-th{
-	text-align:center;
-	background: rgb(248,249,252);
-	width: 10rem;
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
 }
 </style>
 
 <body>
 
-<div = class="lec-table">
-	<div class="container-fluid" >
-		<h1 class="h3 mb-2 text-gray-900 mt-2 mb-2"></h1>
-	</div>
-	<div class='lec-table'>
-		<!-- Page Heading -->
-
-		<!-- DataTales Example -->
-		<div class="card shadow mb-4 ">
+<div class="card shadow mb-4 ">
 			<div class="card-header py-3">
 				<h6 class="m-0 font-weight-bold text-primary">강의 상세 정보</h6>
 			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<div id='dataTable_wrapper'
-						class='dataTables_wrapper dt-bootstrap4'>
-						<table class="table table-bordered text-gray-900" id="dataTable" width="80%"
-							cellspacing="0">
-							<thead>
-								<tr>
-									<th>강의번호</th><td>${vo.lecture_num}</td>
-									<th>강의실</th><td>${vo.lecture_room}</td>
-								</tr>
-								<tr>
-									<th>교수명</th><td>${vo.teacher_name}</td>
-									<th>강의명</th><td>${vo.lecture_title}</td>
-								</tr>
-							
-								<tr>
-									<th>년도</th><td>${vo.lecture_year}</td>
-									<th>학기</th><td>${vo.semester}</td>
-								</tr>
-								
-								<tr>
-									<th>과목학점</th><td>${vo.subjectcredit}학점</td>
-									<th>교재명</th><td>${vo.book}</td>
-								</tr>
-							
-					
-								<tr>
-									<th>요일</th><td>${vo.lecture_day}</td>
-									<th>교시</th><td>${vo.lecture_time}</td>
-								</tr>
-								<tr>
-									<th>수강신청</th><td>${vo.enrolment}</td>
-									<th>수강인원</th><td>${vo.capacity}</td>
-								</tr>
-							
-								<tr>
-									<th>중간고사</th><td>${vo.midex}</td>
-									<th>기말고사</th><td>${vo.finalex }</td>
-								</tr>
-								
-								<tr>
-									<th>온라인/오프라인</th><td>${vo.state}</td>
-									<th>이수구분</th><td>${vo.sortation}</td>
-								</tr>
-								<tr>
-									<th>접수상태</th><td>${vo.enrolment }</td>
-									<th>비고</th><td></td>
-								</tr>
-								
-							</thead>
+			
+			</div>
+<div class="container-fluid bg-white">
 
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-	<!-- container-fluid -->
-			<div style='text-align: center'>
-				<a href="list.lec" class="btn btn-primary">강의 목록</a> 
-				<c:choose>
-					<c:when test="${loginInfo.info_cd eq 3 or loginInfo.info_cd eq 4}">
-						<a href="modify.lec?lecture_num=${vo.lecture_num}" class="btn btn-primary">정보수정</a>
-						<a class="btn btn-primary"
-							onclick="if(confirm('정말 삭제하시겠습니까?')) location='delete.lec?lecture_num=${vo.lecture_num}'">삭제</a>
-					</c:when>
-				</c:choose>
-			</div>
-	
+    <div class="row">
+    	
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${vo.teacher_name}</span><span class="text-black-50">[${vo.lecture_title}]</span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">강의 기본 정보</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">강의번호</label><p style="color: #000">${vo.lecture_num} </p></div>
+                    <div class="col-md-6"><label class="labels">강의실</label><p style="color: #000">${vo.lecture_room} </p></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">년도</label><p style="color: #000">${vo.lecture_year} </p></div>
+                    <div class="col-md-6"><label class="labels">학기</label><p style="color: #000">${vo.semester} </p></div>
+                    <div class="col-md-12"><label class="labels">과목학점</label><p style="color: #000">${vo.subjectcredit}학점 </p></div>
+                    <div class="col-md-12"><label class="labels">교재명</label><p style="color: #000">${vo.book} </p></div>
+                    <div class="col-md-6"><label class="labels">요일</label><p style="color: #000">${vo.lecture_day} </p></div>
+                    <div class="col-md-6"><label class="labels">교시</label><p style="color: #000">${vo.lecture_time} </p></div>
+                    <div class="col-md-6"><label class="labels">수강신청</label><p style="color: #000">${vo.enrolment} </p></div>
+                    <div class="col-md-6"><label class="labels">수강인원</label><p style="color: #000">${vo.capacity} </p></div>
+                </div>
+              
+                <div class="mt-5 text-center"><a href="list.lec" class="btn btn-primary">강의 목록</a> </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>기타 정보</span></div><br>
+                <div class="col-md-12"><label class="labels">중간고사 </label><p> ${vo.midex}</p></div> <br>
+                <div class="col-md-12"><label class="labels">기말고사 </label><p> ${vo.finalex }</p></div> <br>
+                <div class="col-md-12"><label class="labels">온/오프라인 </label><p> ${vo.state}</p></div> <br>
+                <div class="col-md-12"><label class="labels">이수구분 </label><p> ${vo.sortation}</p></div> <br>
+                <div class="col-md-12"><label class="labels">접수상태 </label><p> ${vo.enrolment} </p></div> <br>
+                <div class="col-md-12"><label class="labels">비고</label><p> - </p></div> <br>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 				
 </body>
 </html>

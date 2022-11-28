@@ -11,12 +11,21 @@
 
 <title>공지사항</title>
 <style>
-.search-box {
-	margin: 0 1rem 0 0;
+body{
+    background:#f3f3f3;
+    margin-top:20px;
+    color: #616f80;
+}
+.card {
+    border: none;
+    margin-bottom: 24px;
+    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
 }
 
-.table-responsive {
-	overflow: hidden;
+.avatar-xs {
+    height: 2.3rem;
+    width: 2.3rem;
 }
 </style>
 </head>
@@ -49,44 +58,43 @@
 			</div>
 		</div>
 	</form>
+    <!-- end row -->
 
-
-
-
-
-
-	<!-- DataTales Example -->
-	<div class=" shadow mb-4">
-		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
-		</div>
-		<div class="card-body">
-			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="70%"
-					cellspacing="0">
-					<thead>
-						<tr class="bg-gray-100">
-							<th style="text-align: center;">제목</th>
-							<th style="text-align: center;">작성자</th>
-							<th style="text-align: center; width:250px;">작성일자</th>
-							<th style="text-align: center;">첨부</th>
-						</tr>
-					</thead>
-					<tbody>
-
-						<c:forEach items='${page.list}' var='vo'>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive project-list">
+                        <table class="table project-table table-centered table-nowrap" style="text-align: left;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성자</th>
+                                    <th scope="col">작성일</th>
+                                    <th scope="col">조회수</th>
+                                    <th scope="col">첨부파일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                           <c:forEach items='${page.list}' var='vo'>
+                                   
 							<tr >
-								<td><a href="info.no?id=${vo.id}">${vo.title }</a></td>
-								<td style="text-align: center;">${vo.writer}</td>
-								<td style="text-align: center;">${vo.writedate }</td>
-								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
+							 <th scope="row" style="text-align: left;">${vo.no}</th>
+								<td style="text-align: left;"><a href="info.no?id=${vo.id}">${vo.title }</a></td>
+								<td style="text-align: left;">${vo.writer}</td>
+								<td style="text-align: left;">${vo.writedate }</td>
+								<td style="text-align: left;">${vo.readcnt }</td>
+								<td style="text-align: left;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
 						
 							</tr>
 						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-			<div class='info' style="text-align: right; margin-right: 30px;">
+
+                             </tbody>
+                        </table>
+                    </div>
+                    
+                    	<div class='info' style="text-align: right; margin-right: 30px;">
 				<!-- 직원인 경우만 글쓰기 가능 -->
 				<c:if test='${loginInfo.info_cd eq 4 }'>
 					<a href='new.no' class='btn btn-primary'>글쓰기</a>
@@ -130,8 +138,19 @@
 			</div>
 		
 		
-		</div>
-	</div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>
+	</form>
+
+
+
+
+
 
 
 <script type="text/javascript">

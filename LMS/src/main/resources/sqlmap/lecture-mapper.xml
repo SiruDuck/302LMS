@@ -17,12 +17,27 @@
 </select>
 
 <select id="student_lec" resultType="lecture.LectureVO">
-SELECT *
-FROM lectures l INNER JOIN subjectscore c
+<![CDATA[   
+  SELECT  l.* , c.* , m.* , 
+ CASE WHEN NVL(C.SEMESTERPOINT,0)   =   0 THEN 0 
+ 	  WHEN NVL(C.SEMESTERPOINT,0)   >   0 THEN 1 
+             WHEN e.cnt  >  0 THEN 2 
+             WHEN e_grp.cnt  > 40 THEN 3 
+             ELSE  0 END CHECK_FLAG , nvl(e_grp.cnt,0) CHECK_CNT  
+FROM subjectscore  c LEFT OUTER JOIN lectures l
 on c.lecture_num = l.lecture_num
-inner JOIN member m
-on m.id  = c.id 
+LEFT OUTER JOIN member m
+on m.id  = c.id
+LEFT OUTER JOIN (SELECT * FROM SUBJECTSCORE s WHERE ID =  #{id} ) s ON l.LECTURE_NUM = s.LECTURE_NUM
+                LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e WHERE ID =#{id} GROUP BY LECTURE_NUM) e ON l.LECTURE_NUM = e.LECTURE_NUM
+                LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e  GROUP BY LECTURE_NUM) e_grp ON l.LECTURE_NUM = e_grp.LECTURE_NUM
+                
 where m.id=#{id}
+]]>
+
+
+
+
 </select>
 
 <select id="teacher_stu" resultType="lecture.LectureVO">
