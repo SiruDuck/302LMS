@@ -45,6 +45,11 @@ public class HomeController {
 		
 		return "introduction/introduction";
 	}
+	
+	@RequestMapping("/teampage")
+	public String teampage() {
+		return "teampage";
+	}
 
 	
 }
