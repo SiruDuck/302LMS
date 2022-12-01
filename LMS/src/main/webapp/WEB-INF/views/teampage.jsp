@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팀원 소개페이지</title>
     <link rel="stylesheet" type="text/css" href="resources/assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
 
          /* webfont */

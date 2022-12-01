@@ -6,10 +6,6 @@
 <table class='table'>
 	<tr><th>강의명</th><th>강의번호</th><th>교수명</th><th>년도</th><th>학기</th><th>학점</th><th>점수</th><th>성적</th>
 	</tr>
-	<c:forEach items='${list}' var='vo'>
-		<tr class='average'><td>${vo.lecture_title}</td><td class = "${vo.lecture_num}">${vo.lecture_num}</td><td>${vo.teacher_name}</td><td>${vo.lecture_year}년</td>
-		<td>${vo.semester}</td><td class='credit'>${vo.subjectcredit}</td><td class='point'>${vo.semesterpoint}</td><td>${vo.score_name}</td><td><input id="list_check"  type="checkbox" disabled/></td></tr>
-	</c:forEach>
 </table>
 <script>
 $('.average').click(function(){

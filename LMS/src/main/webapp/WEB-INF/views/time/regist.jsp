@@ -228,7 +228,7 @@ a {
                                       <c:when test="${vo.check_flag eq '1' }">
                                         <li class="list-inline-item" >
                                            <span class="badge bg-success p-2">
-                                            <a style="cursor: pointer;"  class="text-white" >
+                                            <a  class="text-white" style="text-decoration:none" >
                                           수강 완료
                                          <i class="fa-sharp fa-solid fa-check"></i></a>
                                             </span>

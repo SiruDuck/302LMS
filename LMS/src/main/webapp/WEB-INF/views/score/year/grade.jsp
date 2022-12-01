@@ -67,5 +67,7 @@ $("#yearList").change(function(){
 			$('.total_avg').text( average );
 		})
 	});
+	
+	
 
 </script>
