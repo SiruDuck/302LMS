@@ -117,12 +117,12 @@ body{
 						<c:forEach var="no" begin="${page.beginPage}" end="${page.endPage}">
 						<c:if test="${no eq page.curPage}"><!-- 현재페이지인 경우 -->
 						<li class="paginate_button page-item active"><a href="#"
-								aria-controls="dataTable" data-dt-idx="${no}" tabindex="0"
+								aria-controls="dataTable" data-dt-idx="${no}" 
 								class="page-link">${no}</a></li>
 						</c:if>
 						 <c:if test="${no ne page.curPage}"><!-- 현재페이지 아닌 경우 -->
 							<li class="paginate_button page-item "><a onclick="go_page(${no})"
-								aria-controls="dataTable" data-dt-idx="${no}" tabindex="0"
+								aria-controls="dataTable" data-dt-idx="${no}" 
 								class="page-link">${no}</a></li>
 						</c:if> 
 						</c:forEach>

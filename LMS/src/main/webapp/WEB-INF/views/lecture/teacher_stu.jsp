@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +32,10 @@
 					<div class="table-responsive">
 						<div id='dataTable_wrapper'
 							class='dataTables_wrapper dt-bootstrap4'>
+				
+							  <h6 class="mb-2 font-weight-bold text-dark">			  
+							  총 ${fn:length(vo) } 명 수강중
+							  </h6>
 							<table class="table table-bordered text-gray-800" id="dataTable" width="100%"
 								cellspacing="0">
 								<thead>

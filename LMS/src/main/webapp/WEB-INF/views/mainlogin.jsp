@@ -93,14 +93,7 @@
          
           </blockquote>
           <div class="d-flex mt-5" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://youtu.be/mlxmKRVUjUM" class="glightbox btn-watch-video d-flex align-items-center">
-            <i class="bi bi-play-circle"></i>
-            <span>대학교 홍보 영상</span></a>
-          </div>
-          <div style="margin-top: 2rem" class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="teampage" class=" btn-watch-video d-flex align-items-center">
-            <i class="bi bi-play-circle"></i>
-            <span>팀원 소개 페이지</span></a>
+            <a href="https://youtu.be/mlxmKRVUjUM" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>대학교 홍보 영상</span></a>
           </div>
 
         </div>

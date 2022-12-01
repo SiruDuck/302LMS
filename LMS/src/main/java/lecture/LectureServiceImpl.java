@@ -56,9 +56,9 @@ public class LectureServiceImpl implements LectureService {
 	}
 
 	@Override
-	public List<LectureVO> student_lec_list(String id) {
+	public List<LectureVO> student_lec_list(LectureVO vo) {
 		
-		return dao.student_lec_list(id);
+		return dao.student_lec_list(vo);
 	}
 
 	@Override

@@ -154,14 +154,14 @@ a {
 					<select name="lecture_time" onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
 						<option value=''>시간 전체보기</option>
-						<option value='09:00~09:50'${search.lecture_time eq '09:00~09:50' ? 'selected' : '' }>1교시 (09:00~09:50)</option>
-						<option value='10:00~10:50'${search.lecture_time eq '10:00~10:50' ? 'selected' : '' }>2교시 (10:00~10:50)</option>
-						<option value='11:00~11:50'${search.lecture_time eq '11:00~11:50' ? 'selected' : '' }>3교시 (11:00~11:50)</option>
-						<option value='12:00~12:50'${search.lecture_time eq '12:00~12:50' ? 'selected' : '' }>4교시 (12:00~12:50)</option>
-						<option value='14:00~14:50'${search.lecture_time eq '14:00~14:50' ? 'selected' : '' }>5교시 (14:00~14:50)</option>
-						<option value='15:00~15:50'${search.lecture_time eq '15:00~15:50' ? 'selected' : '' }>6교시 (15:00~15:50)</option>
-						<option value='16:00~16:50'${search.lecture_time eq '16:00~16:50' ? 'selected' : '' }>7교시 (16:00~16:50)</option>
-						<option value='17:00~17:50'${search.lecture_time eq '17:00~17:50' ? 'selected' : '' }>8교시 (17:00~17:50)</option>
+						<option value='1'${search.lecture_time eq '1' ? 'selected' : '' }>1교시 (09:00~09:50)</option>
+						<option value='2'${search.lecture_time eq '2' ? 'selected' : '' }>2교시 (10:00~10:50)</option>
+						<option value='3'${search.lecture_time eq '3' ? 'selected' : '' }>3교시 (11:00~11:50)</option>
+						<option value='4'${search.lecture_time eq '4' ? 'selected' : '' }>4교시 (12:00~12:50)</option>
+						<option value='5'${search.lecture_time eq '5' ? 'selected' : '' }>5교시 (14:00~14:50)</option>
+						<option value='6'${search.lecture_time eq '6' ? 'selected' : '' }>6교시 (15:00~15:50)</option>
+						<option value='7'${search.lecture_time eq '7' ? 'selected' : '' }>7교시 (16:00~16:50)</option>
+						<option value='8'${search.lecture_time eq '8' ? 'selected' : '' }>8교시 (17:00~17:50)</option>
 					</select>
 				</div>
                 </div>
@@ -230,7 +230,7 @@ a {
                                       <c:when test="${vo.check_flag eq '1' }">
                                         <li class="list-inline-item" >
                                            <span class="badge bg-success p-2">
-                                            <a style="cursor: pointer;"  class="text-white" >
+                                            <a style="text-decoration: none;" class="text-white" >
                                           수강 완료
                                          <i class="fa-sharp fa-solid fa-check"></i></a>
                                             </span>

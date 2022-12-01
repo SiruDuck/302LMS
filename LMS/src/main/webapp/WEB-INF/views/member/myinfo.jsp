@@ -70,13 +70,27 @@ h3{
                     
                     </span>
                   </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 class="mb-0"><i class="fa-solid fa-graduation-cap"></i>학년</h6>
-                    <span class="text-secondary">
-                    ${vo.grade}
+                  <c:choose>
+             
+                  <c:when test="${vo.info_cd eq 3 }">
+                 	   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  	 	 <h6 class="mb-0"><i class="fa-solid fa-graduation-cap"></i>직책</h6>
+                   		 <span class="text-secondary">
+                   		 교수
                     
-                    </span>
-                  </li>
+                    		</span>
+                    		  </li>
+                    </c:when>
+                     <c:when test="${vo.info_cd eq 1 }">
+                 	   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  	 	 <h6 class="mb-0"><i class="fa-solid fa-graduation-cap"></i>학년</h6>
+                   		 <span class="text-secondary">
+                   		 ${vo.grade}
+                    
+                    		</span>
+                    		  </li>
+                    </c:when>
+                     </c:choose>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0"><i class="fa-solid fa-graduation-cap"></i>입학 상태</h6>
                     <span class="text-secondary">

@@ -150,175 +150,160 @@ public class ScoreController {
 		return "score/insert";
 	}
 
-	@RequestMapping("/list/select")
-	public String select_score_grade(Model model, HttpSession session){
-		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
-		String id = vo.getId();	
-		List<ScoreVO> list = dao.lookup_list(id);
-		model.addAttribute("list", list);
-		return "score/select/select";
-	}
+	/*
+	 * @RequestMapping("/list_choice.sc") public String select_score_grade(Model
+	 * model, HttpSession session){ MemberVO vo =(MemberVO)
+	 * session.getAttribute("loginInfo"); String id = vo.getId(); List<ScoreVO> list
+	 * = dao.lookup_list(id); model.addAttribute("list", list);
+	 * model.addAttribute("select_grp", "choice"); return "score/list"; }
+	 */
 	
-	//년도별 성적조회
-	@RequestMapping("/list/grade")
-	public String lookup_score_grade(Model model, @RequestParam(defaultValue = "-1") int lecture_num,
-			@RequestParam(defaultValue = "-1") int grade_num, HttpSession session){
-		System.out.println(lecture_num + "과목");//
-		List<ScoreVO>  list;
-		List<ScoreVO>  year_list;
-		
-		//로그인 vo
-		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
-		String id = vo.getId();	
-		
-		List<ScoreVO>  years;	
-		years = dao.lookup_years(id);
-		
-		if(grade_num == -1) {
-			years = dao.lookup_years(id);
-			year_list = dao.lookup_list(id);
-		}else {
-			years = dao.lookup_years(id,grade_num);
-			year_list =  dao.lookup_years(id,grade_num);
-		}
-
-//		System.out.println("years : " + years.size());
-		model.addAttribute("years", years);
-//		System.out.println("grade_num : " + grade_num);
-		List<ScoreVO> lectures = dao.lookup_lectures(id);
-		
-
-		if(lecture_num == -1) {
-			list = dao.lookup_list(id);
-		}else {
-			list = dao.lookup_list(id,lecture_num);
-		}
-		System.out.println("리스트 사이즈 : "+list.size());
-		model.addAttribute("lecture_num", lecture_num);
-		
-		if(year_list.size() != 0 ) {
-			model.addAttribute("list", year_list);
-		}else {
-			model.addAttribute("list", list);
-		}
-		//model.addAttribute("year_list", year_list);
-		model.addAttribute("lectures", lectures);
-		
-		
-		return "score/year/grade";
-	}
+	/*
+	 * //년도별 성적조회
+	 * 
+	 * @RequestMapping("/list_grade.sc") public String lookup_score_grade(Model
+	 * model, @RequestParam(defaultValue = "-1") int lecture_num,
+	 * 
+	 * @RequestParam(defaultValue = "-1") int grade_num, HttpSession session){
+	 * System.out.println(lecture_num + "과목");// List<ScoreVO> list; List<ScoreVO>
+	 * year_list;
+	 * 
+	 * //로그인 vo MemberVO vo =(MemberVO) session.getAttribute("loginInfo"); String id
+	 * = vo.getId();
+	 * 
+	 * List<ScoreVO> years; years = dao.lookup_years(id);
+	 * 
+	 * if(grade_num == -1) { years = dao.lookup_years(id); year_list =
+	 * dao.lookup_list(id); }else { years = dao.lookup_years(id,grade_num);
+	 * year_list = dao.lookup_years(id,grade_num); }
+	 * 
+	 * model.addAttribute("years", years); List<ScoreVO> lectures =
+	 * dao.lookup_lectures(id);
+	 * 
+	 * 
+	 * if(lecture_num == -1) { list = dao.lookup_list(id); }else { list =
+	 * dao.lookup_list(id,lecture_num); }
+	 * System.out.println("리스트 사이즈 : "+list.size());
+	 * model.addAttribute("lecture_num", lecture_num);
+	 * 
+	 * if(year_list.size() != 0 ) { model.addAttribute("list", year_list); }else {
+	 * model.addAttribute("list", list); } model.addAttribute("lectures", lectures);
+	 * model.addAttribute("select_grp", "year");
+	 * 
+	 * return "score/list"; }
+	 */
 	
-	@ResponseBody
-	@RequestMapping(value ="/list/gradedata", produces = "text/html;charset=utf-8")
-	public String gradedata(Model model, @RequestParam(defaultValue = "-1") int lecture_num,
-			@RequestParam(defaultValue = "-1") int grade_num, HttpSession session ){
-		System.out.println(lecture_num + "과목");//
-		List<ScoreVO>  list;
-		List<ScoreVO>  year_list;
-		
-		//로그인 vo
-		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
-		String id = vo.getId();	
-		
-		
-		
-		List<ScoreVO>  years;	
-		years = dao.lookup_years(id);
-		
-		if(grade_num == -1) {
-			years = dao.lookup_years(id);
-			year_list = dao.lookup_list(id);
-		}else {
-			years = dao.lookup_years(id,grade_num);
-			year_list =  dao.lookup_years(id,grade_num);
-		}
-
-		System.out.println("years : " + years.size());
-		model.addAttribute("years", years);
-		System.out.println("grade_num : " + grade_num);
-		List<ScoreVO> lectures = dao.lookup_lectures(id);
-		
-
-		if(lecture_num == -1) {
-			list = dao.lookup_list(id);
-		}else {
-			list = dao.lookup_list(id,lecture_num);
-		}
-		System.out.println("리스트 사이즈 : "+list.size());
-		model.addAttribute("lecture_num", lecture_num);
-		
-		if(year_list.size() != 0 ) {
-			list = year_list;
-		}else {
-			year_list = list;
-		}
-		//model.addAttribute("year_list", year_list);
-		model.addAttribute("lectures", lectures);
-		
-		
-		return new Gson().toJson(list);
-	}
+	/*
+	 * @ResponseBody
+	 * 
+	 * @RequestMapping(value ="/list/gradedata", produces =
+	 * "text/html;charset=utf-8") public String gradedata(Model
+	 * model, @RequestParam(defaultValue = "-1") int lecture_num,
+	 * 
+	 * @RequestParam(defaultValue = "-1") int grade_num, HttpSession session ){
+	 * System.out.println(lecture_num + "과목");// List<ScoreVO> list; List<ScoreVO>
+	 * year_list;
+	 * 
+	 * //로그인 vo MemberVO vo =(MemberVO) session.getAttribute("loginInfo"); String id
+	 * = vo.getId();
+	 * 
+	 * 
+	 * 
+	 * List<ScoreVO> years; years = dao.lookup_years(id);
+	 * 
+	 * if(grade_num == -1) { years = dao.lookup_years(id); year_list =
+	 * dao.lookup_list(id); }else { years = dao.lookup_years(id,grade_num);
+	 * year_list = dao.lookup_years(id,grade_num); }
+	 * 
+	 * System.out.println("years : " + years.size()); model.addAttribute("years",
+	 * years); System.out.println("grade_num : " + grade_num); List<ScoreVO>
+	 * lectures = dao.lookup_lectures(id);
+	 * 
+	 * 
+	 * if(lecture_num == -1) { list = dao.lookup_list(id); }else { list =
+	 * dao.lookup_list(id,lecture_num); }
+	 * System.out.println("리스트 사이즈 : "+list.size());
+	 * model.addAttribute("lecture_num", lecture_num);
+	 * 
+	 * if(year_list.size() != 0 ) { list = year_list; }else { year_list = list; }
+	 * //model.addAttribute("year_list", year_list); model.addAttribute("lectures",
+	 * lectures);
+	 * 
+	 * 
+	 * return new Gson().toJson(list); }
+	 */
 	
-	
-	//과목별 성적조회
-	@ResponseBody @RequestMapping("/list/subject")
-	public Object lookup_score(Model model, @RequestParam(defaultValue = "-1") int lecture_num, HttpSession session ){
-		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
-		String id = vo.getId();	
-		List<ScoreVO>  list;
-		if(lecture_num == -1) {
-			list = dao.lookup_list(id);
-		}else {
-			list = dao.lookup_list(id,lecture_num);
-		}
-		return list;
-	}
 	
 	//과목별 성적조회
 	@RequestMapping("/list.sc")
-	public String lookup_score(Model model, @RequestParam(defaultValue = "-1") int lecture_num 
-			,@RequestParam(defaultValue = "1") int category, HttpSession session, String student){
-		List<ScoreVO>  list;
-		//로그인 vo
+	public String lookup_score(Model model, @RequestParam(defaultValue = "-1") int lecture_num, @RequestParam(defaultValue = "all")  String select_grp,
+			HttpSession session , @RequestParam(defaultValue = "-1") int year , @RequestParam(defaultValue = "-1") int semester ){
 		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
 		String id = vo.getId();	
-		int info_cd = vo.getInfo_cd();
-		List<ScoreVO> lectures = dao.lookup_lectures(id);
-
-
-		
-		System.out.println(lecture_num);
-		if(lecture_num == -1) {
-			list = dao.lookup_list(id);
-		}else {
-			list = dao.lookup_list(id,lecture_num);
-		}
+		List<ScoreVO>  list = dao.lookup_list(id,lecture_num , year , semester);
+		List<ScoreVO> lectures = dao.lookup_lectures(id);//과목..
+		 List<ScoreVO> years = null;
 		
 		
-		if(info_cd == 1) {
-			ScoreVO avg =dao.calc_avg(id);
-			model.addAttribute("avg", avg);
-		}
-		if(info_cd == 3) {
+		if(vo.getInfo_cd() == 3) {
 			list = dao.lookup_list_for_teacher(id);
-			List<ScoreVO> teacher_years = dao.lookup_teacher_years(id);
+			years = dao.lookup_teacher_years(id);
 			List<ScoreVO> avg_teacher_subject = dao.avg_teacher_subject(id);
-			
-			
-			model.addAttribute("teacher_years", teacher_years);
+			model.addAttribute("years", years);
 			model.addAttribute("avg_teacher_subject", avg_teacher_subject);
 			
+		}else {
+			years =dao.lookup_years(id);
+			list = dao.lookup_list(id,lecture_num , year , semester);
 		}
 		
-		System.out.println("리스트 사이즈 : "+list.size());
-		model.addAttribute("lecture_num", lecture_num);
-		model.addAttribute("list", list);
-		model.addAttribute("lectures", lectures);
-		model.addAttribute("category", category);
-		if(info_cd ==1) {
-			return "score/list";
-		}else {
+		model.addAttribute("list",list);
+		model.addAttribute("lectures",lectures);
+		model.addAttribute("lecture_num",lecture_num);
+		model.addAttribute("select_grp", select_grp);
+		model.addAttribute("year", year);
+		model.addAttribute("semester", semester);
+		model.addAttribute("years", years);
+		
+		
+		if(vo.getInfo_cd() == 3){
 			return "score/list_for_th";
+		}else {
+			
 		}
+		return "score/list";
 	}
+	
+	//과목별 성적조회
+	/*
+	 * @RequestMapping("/list.temp") public String lookup_score(Model
+	 * model, @RequestParam(defaultValue = "-1") int lecture_num
+	 * ,@RequestParam(defaultValue = "1") int category, HttpSession session, String
+	 * student){ List<ScoreVO> list; //로그인 vo MemberVO vo =(MemberVO)
+	 * session.getAttribute("loginInfo"); String id = vo.getId(); int info_cd =
+	 * vo.getInfo_cd(); List<ScoreVO> lectures = dao.lookup_lectures(id);
+	 * 
+	 * 
+	 * 
+	 * System.out.println(lecture_num); if(lecture_num == -1) { list =
+	 * dao.lookup_list(id); }else { list = dao.lookup_list(id,lecture_num); }
+	 * 
+	 * 
+	 * if(info_cd == 1) { ScoreVO avg =dao.calc_avg(id); model.addAttribute("avg",
+	 * avg); } if(info_cd == 3) { list = dao.lookup_list_for_teacher(id);
+	 * List<ScoreVO> teacher_years = dao.lookup_teacher_years(id); List<ScoreVO>
+	 * avg_teacher_subject = dao.avg_teacher_subject(id);
+	 * 
+	 * 
+	 * model.addAttribute("teacher_years", teacher_years);
+	 * model.addAttribute("avg_teacher_subject", avg_teacher_subject);
+	 * 
+	 * }
+	 * 
+	 * System.out.println("리스트 사이즈 : "+list.size());
+	 * model.addAttribute("lecture_num", lecture_num); model.addAttribute("list",
+	 * list); model.addAttribute("lectures", lectures);
+	 * model.addAttribute("category", category); if(info_cd ==1) { return
+	 * "score/list"; }else { return "score/list_for_th"; } }
+	 */
 }

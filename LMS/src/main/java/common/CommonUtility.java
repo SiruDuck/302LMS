@@ -46,7 +46,7 @@ public class CommonUtility {
 							, HttpServletResponse response) throws Exception{
 		//http://localhost/smart/upload/notice/2022/10/21/80984d3_kakao_login.zip
 		//D:\\app\\smart\\upload\\notice\\2022\\10\\21\\abc.txt
-		filepath = filepath.replace(
+	filepath = filepath.replace(
 						appURL(request), "d://app/" + request.getContextPath() );
 		
 		//다운로드할 파일객체 생성		

@@ -57,11 +57,13 @@ public class LectureController {
 	
 	//학생 내 강의 목록
 	@RequestMapping(value= "/student_lec_list.lec", produces = "text/html;charset=utf-8")
-	public String student_lec_list(Model model, HttpSession session, String id) {
-		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+	public String student_lec_list(Model model, HttpSession session, String id,
+			LectureVO vo) {
+		MemberVO temp_vo = (MemberVO) session.getAttribute("loginInfo");
+		vo.setId(temp_vo.getId()+"");
 		session.setAttribute("category", "student_lec");
-
-		List<LectureVO> list = dao.student_lec_list(vo.getId());
+		model.addAttribute("search", vo);
+		List<LectureVO> list = dao.student_lec_list(vo);
 		model.addAttribute("list", list);
 		
 		return "lecture/student_lec_list";

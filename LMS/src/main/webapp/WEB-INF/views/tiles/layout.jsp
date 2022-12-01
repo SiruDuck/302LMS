@@ -210,22 +210,19 @@ margin-top:0px;
                 style="width: 60px; background-color: #183691; height: 2px"
                 />
             <p>
-              <a href="https://github.com/kky3469" class="text-white">Kim Gang Yun</a>
+              <a href="#!" class="text-white">Kim Gang Yun</a>
             </p>
             <p>
-              <a href="https://github.com/SiruDuck" class="text-white">Kim Seo In</a>
+              <a href="#!" class="text-white">Kim Seo In</a>
             </p>
             <p>
-              <a href="https://github.com/jinhyeokAn" class="text-white">An Jin Heok</a>
+              <a href="#!" class="text-white">An Jin Heok</a>
             </p>
             <p>
-              <a href="https://github.com/wjddmswls11" class="text-white">Jung Un Jin</a>
+              <a href="#!" class="text-white">Jung Un Jin</a>
             </p>
             <p>
-              <a href="https://github.com/InaeB" class="text-white">Back In Aae</a>
-            </p>
-            <p>
-              <a href="https://github.com/wqq514" class="text-white">Park Su Jin</a>
+              <a href="#!" class="text-white">Back In Aae</a>
             </p>
           </div>
           <!-- Grid column -->

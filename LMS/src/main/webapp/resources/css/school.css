@@ -1,0 +1,29 @@
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+p{
+    font-family: 'GmarketSansMedium';
+    margin-bottom: 5px;
+}
+.mainbox{
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    width: 1320px;
+    height: 300rem;
+}
+.school{
+    padding-top: 5rem;
+    width: 100%;
+}
+.comment{
+    text-align: center;
+    font-size: 2em;
+}
+.mainimg{
+    margin-top: 5rem;
+    text-align: center;
+}
