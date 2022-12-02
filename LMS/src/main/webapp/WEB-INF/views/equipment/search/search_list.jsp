@@ -37,7 +37,7 @@
                           
 <script>
 
-$('.eqname').keyup(function(){
+/* $('.eqname').keyup(function(){
 	$.ajax({
 		data:{name: $(this).val()},
 		url:"eqnamelist",
@@ -47,7 +47,7 @@ $('.eqname').keyup(function(){
 		
 	})
 });
-
+ */
 function equiment_add (){
 	document.getElementById('eqmodify').style.display='none';
 	document.getElementById('eqadd').style.display='block';
@@ -74,7 +74,7 @@ $('.btn-secondary').click(function(){
 	
 }); */
 
-
+/* 
 $('.names').keyup(function(){
 	$.ajax({
 		data:{name: $(this).val()},
@@ -84,6 +84,6 @@ $('.names').keyup(function(){
 		}
 		
 	})
-});
+}); */
 
 </script>                          
