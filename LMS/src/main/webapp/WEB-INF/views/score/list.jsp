@@ -151,8 +151,8 @@ span.btn {
 								cellspacing="0">
 								<thead>
 									<tr>
-										<th>강의명</th>
 										<th>강의번호</th>
+										<th>강의명</th>
 										<th>교수명</th>
 										<th>년도</th>
 										<th>학기</th>
@@ -171,8 +171,8 @@ span.btn {
 									<c:forEach items='${list}' var='vo'>
 
 										<tr class='average'>
-											<td>${vo.lecture_title }</td>
 											<td>${vo.lecture_num }</td>
+											<td>${vo.lecture_title }</td>
 											<td>${vo.teacher_name }</td>
 											<td>${vo.lecture_year }</td>
 											<td>${vo.semester }</td>

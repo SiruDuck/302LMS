@@ -3,12 +3,26 @@
 <mapper namespace="lecture">
 
 <select id="list" resultType="lecture.LectureVO">
-	select * from lectures
-    where LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
-    and SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
-    and LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
-    and LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
-	order by lecture_num
+	select l.* , nvl(e_grp.cnt,0) CHECK_CNT    from lectures l
+	    LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e  GROUP BY LECTURE_NUM) e_grp ON l.LECTURE_NUM = e_grp.LECTURE_NUM
+        WHERE 1=1
+    <if test="sortation !='' or sortation != null ">
+		 AND SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_day !='' or lecture_day != null ">
+		AND LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_time !='' or lecture_time != null ">
+ 		AND LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_title !='' or lecture_title != null ">
+		AND LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
+	</if>
+	        
+   
+  
+	order by l.lecture_num
+	
 </select>
 
 <select id="teacher_lec" resultType="lecture.LectureVO">
@@ -34,6 +48,21 @@ LEFT OUTER JOIN (SELECT * FROM SUBJECTSCORE s WHERE ID =  #{id} ) s ON l.LECTURE
                 
 where m.id=#{id}
 ]]>
+	<if test="sortation !='' or sortation != null ">
+		 AND SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_day !='' or lecture_day != null ">
+		AND LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_time !='' or lecture_time != null ">
+ 		AND LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_title !='' or lecture_title != null ">
+		AND LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
+	</if>
+	        
+
+
 
 
 

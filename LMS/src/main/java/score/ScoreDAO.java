@@ -51,8 +51,13 @@ public class ScoreDAO implements ScoreService{
 	/*------------------------------------ 교수 ---------------------------------------*/
 	
 	@Override
-	public List<ScoreVO> lookup_list_for_teacher(String id) {
-		return sql.selectList("score.list_teacher", id);
+	public List<ScoreVO> lookup_list_for_teacher(String id, int num,int year ,int semester) {
+		HashMap<String, Object> map = new HashMap<String, Object>(); 
+		map.put("id", id);
+		map.put("num", num);
+		map.put("year", year);
+		map.put("semester", semester);
+		return sql.selectList("score.list_teacher", map);
 	}
 	
 	@Override

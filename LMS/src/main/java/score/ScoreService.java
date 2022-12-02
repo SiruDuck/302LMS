@@ -7,7 +7,7 @@ public interface ScoreService {
 
 	//학생
 	//public List<ScoreVO>  lookup_list(HashMap<String, Object> map);					//리스트 조회
-	public List<ScoreVO> lookup_list_for_teacher(String name);		//리스트 조회 교수화면
+	public List<ScoreVO> lookup_list_for_teacher(String id, int num,int year ,int semester);		//리스트 조회 교수화면
 	public List<ScoreVO> lookup_list(String id, int num,int year ,int grade);			//특정 과목리스트 조회
 	public List<ScoreVO> lookup_lectures(String id);				//학생 페이지 과목 조회
 	public List<ScoreVO> lookup_years(String id);					//학생 페이지 년도 조회
