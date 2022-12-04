@@ -36,7 +36,7 @@ where l.semester = '2'
 		AND LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
 	</if>
 	       
-order by l.lecture_numS
+order by l.lecture_num
 
 </select>
 
