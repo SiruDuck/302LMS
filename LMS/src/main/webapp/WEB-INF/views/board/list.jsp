@@ -77,7 +77,7 @@
 						<c:forEach items='${page.list}' var='vo'>
 							<tr>
 								<td><a href="info.br?id=${vo.id}">${vo.title }</a></td>
-								<td style="text-align: center;">${vo.writer}</td>
+								<td style="text-align: center;">${vo.name}</td>
 								<td style="text-align: center;">${vo.writedate }</td>
 								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
 

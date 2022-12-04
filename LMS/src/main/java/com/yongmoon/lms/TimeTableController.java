@@ -64,13 +64,15 @@ public class TimeTableController {
 	}// 시간표 상세 보기
 	
 	@RequestMapping(value = "/regist.tt", produces = "text/html; charset=utf-8")
-	public String regist(String lecture_title, String state ,Model model, HttpSession session ,String sortation) {
+	public String regist(String lecture_title, String state ,Model model, HttpSession session ,String sortation , String lecture_day , String lecture_time) {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
 		String id = member.getId();
 		HashMap<String, String> temp_map = new HashMap<String, String>();
 		temp_map.put("id", id);
 		temp_map.put("lecture_title", lecture_title);
 		temp_map.put("sortation", sortation);
+		temp_map.put("lecture_day", lecture_day);
+		temp_map.put("lecture_time", lecture_time);
 		System.out.println(id + "의 수강신청");
 		
 		List<TimeTableVO> vo = service.timeTableRegist(temp_map);

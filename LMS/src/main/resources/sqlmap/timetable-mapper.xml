@@ -18,10 +18,25 @@ from lectures l LEFT OUTER JOIN (SELECT * FROM SUBJECTSCORE s WHERE ID =  #{id} 
                 
 
 where l.semester = '2' 
-and lecture_title like '%'||#{lecture_title,jdbcType=VARCHAR} ||'%'
-and SORTATION like '%'||#{sortation,jdbcType=VARCHAR}  ||'%'
-order by l.lecture_num
+
+
+
 ]]>
+
+<if test="sortation !='' or sortation != null ">
+		 AND SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_day !='' or lecture_day != null ">
+		AND LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_time !='' or lecture_time != null ">
+ 		AND LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_title !='' or lecture_title != null ">
+		AND LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
+	</if>
+	       
+order by l.lecture_numS
 
 </select>
 
