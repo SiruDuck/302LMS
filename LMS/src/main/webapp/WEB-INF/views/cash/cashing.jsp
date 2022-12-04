@@ -42,8 +42,8 @@ span.btn{
 .oo{
 	position: absolute;
 	z-index: 999;
-	top: 50%;
-  left: 50%;
+	top: 10%;
+  left: 35%;
   margin: -50px 0 0 -50px;
 }
 </style>
