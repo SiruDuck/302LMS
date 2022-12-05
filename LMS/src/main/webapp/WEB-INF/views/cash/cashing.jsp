@@ -95,7 +95,6 @@ span.btn{
 					<div class='card mb-4'>
 					<form id='all_manage' action='cash.ing' method='post'>
 					<input type="hidden" value="${category }" name="category">
-					${category }
 						<div class='card-header py-3'>
 							<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
 						</div>
