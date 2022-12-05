@@ -2,8 +2,10 @@ package notice;
 
 import java.util.List;
 
-import common.PageVO;
+import org.springframework.stereotype.Component;
 
+import common.PageVO;
+@Component
 public class NoticePageVO extends PageVO{
 	private List<NoticeVO> list;
 

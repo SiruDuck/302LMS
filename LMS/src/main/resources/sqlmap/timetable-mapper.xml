@@ -2,9 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="time">
 
-<!-- 수강신청 리스트 조회 -->
+<!-- 수강신청 리스트 조회 2022/11/24:kym-->
 <select id="regist" resultType="timetable.TimeTableVO">
-	select * from lectures where semester = '2' order by lecture_num
+<![CDATA[
+	select  
+	 CASE WHEN S.SEMESTERPOINT   =   0 THEN 0 
+	  WHEN  S.SEMESTERPOINT   >   0 THEN 1 
+     WHEN e.cnt   >   0 THEN 2 
+     WHEN e_grp.cnt  >=   40 THEN 3 
+                
+ELSE  0 END CHECK_FLAG , nvl(e_grp.cnt,0) CHECK_CNT, l.*
+from lectures l LEFT OUTER JOIN (SELECT * FROM SUBJECTSCORE s WHERE ID =  #{id} ) s ON l.LECTURE_NUM = s.LECTURE_NUM
+                LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e WHERE ID = #{id} GROUP BY LECTURE_NUM) e ON l.LECTURE_NUM = e.LECTURE_NUM
+                LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e  GROUP BY LECTURE_NUM) e_grp ON l.LECTURE_NUM = e_grp.LECTURE_NUM
+                
+
+where l.semester = '2'
+
+
+
+]]>
+
+<if test="sortation !='' or sortation != null ">
+		 AND SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_day !='' or lecture_day != null ">
+		AND LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_time !='' or lecture_time != null ">
+ 		AND LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_title !='' or lecture_title != null ">
+		AND LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
+	</if>
+	       
+order by l.lecture_num
+
 </select>
 
 <!-- 상세보기 -->
@@ -40,12 +73,12 @@
 
 <!-- 수강신청 -->
 <insert id="insert">
-	insert into SUBJECTSCORE values (#{lecture_num}, #{id},'','')
+	insert into SUBJECTSCORE values (#{lecture_num},#{id}, null , null)
 </insert>
 
 <!-- 수강신청한 강의 삭제 -->
 <delete id="delete">
-	delete from subjectscore where id= #{id} and lecture_num = #{lecture_num} and semesterpoint is null 
+	delete from SUBJECTSCORE where id=#{id} and lecture_num = #{lecture_num}
 </delete>
 
 <!-- 시간표 수정 -->

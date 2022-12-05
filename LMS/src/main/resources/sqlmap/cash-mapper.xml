@@ -78,8 +78,8 @@ SELECT M.id id, m.name name , m.DEPARTMENT_NAME department_name,m.grade grade, m
             C.price price 
 FROM cash_final C RIGHT OUTER JOIN  MEMBER M 
 ON M.id = C.id
-WHERE m.INFO_NAME='학생' and c.cash_name ='장학금'
-ORDER BY m.id
+where C.cash_name like '__장학금'
+ORDER BY c.payment_day desc
 
 </select>	
 	

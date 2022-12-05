@@ -3,13 +3,79 @@
 <mapper namespace="lecture">
 
 <select id="list" resultType="lecture.LectureVO">
-	select * from lectures
-	order by lecture_num
+	select l.* , nvl(e_grp.cnt,0) CHECK_CNT    from lectures l
+	    LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e  GROUP BY LECTURE_NUM) e_grp ON l.LECTURE_NUM = e_grp.LECTURE_NUM
+        WHERE 1=1
+    <if test="sortation !='' or sortation != null ">
+		 AND SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_day !='' or lecture_day != null ">
+		AND LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_time !='' or lecture_time != null ">
+ 		AND LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_title !='' or lecture_title != null ">
+		AND LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
+	</if>
+	        
+   
+  
+	order by l.lecture_num
+	
 </select>
 
 <select id="teacher_lec" resultType="lecture.LectureVO">
 	select * from lectures
 	where teacher_name = #{teacher_name}
+</select>
+
+<select id="student_lec" resultType="lecture.LectureVO">
+<![CDATA[   
+  SELECT  l.* , c.* , m.* , 
+ CASE WHEN NVL(C.SEMESTERPOINT,0)   =   0 THEN 0 
+ 	  WHEN NVL(C.SEMESTERPOINT,0)   >   0 THEN 1 
+             WHEN e.cnt  >  0 THEN 2 
+             WHEN e_grp.cnt  > 40 THEN 3 
+             ELSE  0 END CHECK_FLAG , nvl(e_grp.cnt,0) CHECK_CNT  
+FROM subjectscore  c LEFT OUTER JOIN lectures l
+on c.lecture_num = l.lecture_num
+LEFT OUTER JOIN member m
+on m.id  = c.id
+LEFT OUTER JOIN (SELECT * FROM SUBJECTSCORE s WHERE ID =  #{id} ) s ON l.LECTURE_NUM = s.LECTURE_NUM
+                LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e WHERE ID =#{id} GROUP BY LECTURE_NUM) e ON l.LECTURE_NUM = e.LECTURE_NUM
+                LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e  GROUP BY LECTURE_NUM) e_grp ON l.LECTURE_NUM = e_grp.LECTURE_NUM
+                
+where m.id=#{id}
+]]>
+	<if test="sortation !='' or sortation != null ">
+		 AND SORTATION like '%'|| nvl(#{sortation,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_day !='' or lecture_day != null ">
+		AND LECTURE_DAY like '%'|| nvl(#{lecture_day,jdbcType=VARCHAR},'')||'%'
+	</if>
+	<if test="lecture_time !='' or lecture_time != null ">
+ 		AND LECTURE_TIME like '%'||nvl( #{lecture_time,jdbcType=VARCHAR},'')||'%'
+	</if>
+		<if test="lecture_title !='' or lecture_title != null ">
+		AND LECTURE_TITLE like '%'|| nvl(#{lecture_title,jdbcType=VARCHAR},'')||'%'
+	</if>
+	        
+
+
+
+
+
+
+</select>
+
+<select id="teacher_stu" resultType="lecture.LectureVO">
+select m.id, m.name, m.gender, m.grade, m.department_name ,m.phone 
+from lectures l inner join subjectscore c
+on c.lecture_num = l.lecture_num
+inner join member m
+on m.id = c.id
+where l.lecture_num = #{lecture_num}
 </select>
 
 
@@ -76,10 +142,8 @@
 
 <sql id='search_where'>
 <choose>
-	<when test="search=='s1'"><!-- 전체 -->
+	<when test="department_name!='all'"><!-- 전체 -->
 		where sortation  like '%' || #{keyword} || '%'
-		<!-- or    lecture_day like '%' || #{keyword} || '%'
-		or    lecture_time like '%' || #{keyword} || '%' -->
 	</when>
 	<when test="search=='s2'"><!-- 전공필수 -->
 		where sortation   like '%전공필수%'

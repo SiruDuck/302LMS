@@ -45,15 +45,15 @@
 						 </label>
 						</td>
 				</tr>
-				<tr>
-					<th>학기</th>
-						<td>
-						<select name="semester" id="semester" style="width: 220px;">
-							<option value="1">1학기</option>					
-							<option value="2">2학기</option>					
-						</select>
-						</td>
-				</tr>
+<!-- 				<tr> -->
+<!-- 					<th>학기</th> -->
+<!-- 						<td> -->
+<!-- 						<select name="semester" id="semester" style="width: 220px;"> -->
+<!-- 							<option value="1">1학기</option>					 -->
+<!-- 							<option value="2">2학기</option>					 -->
+<!-- 						</select> -->
+<!-- 						</td> -->
+<!-- 				</tr> -->
 				<tr>
 					<th>점수 </th>
 					<td><input type="text" id="semesterpoint" name = "semesterpoint"  autocomplete="off"/></td>

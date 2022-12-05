@@ -12,10 +12,10 @@ public class NoticeDAO implements NoticeService{
 	@Autowired @Qualifier("ymu") private SqlSession sql;
 	
 	@Override
-	public List<NoticeVO> notice_list() {
-		
-		 List<NoticeVO>  list = sql.selectList("notice.list");
-		return list;
+	public NoticePageVO notice_list(NoticePageVO page) {
+		page.setTotalList( sql.selectOne("notice.totalList", page) );
+		page.setList( sql.selectList("notice.list", page) );
+		return page;
 	}
 
 	@Override

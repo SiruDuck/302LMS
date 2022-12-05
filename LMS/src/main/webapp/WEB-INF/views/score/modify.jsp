@@ -29,17 +29,17 @@
 						</td>
 						
 				</tr>
-				<tr>
-					<th>학기</th>
-						<td>
-						<select name="semester" id="semester" style="width: 220px;">
-							<option ${vo.semester eq 1 ? 'selected' : '' }
-							 value="1">1학기</option>					
-							<option ${vo.semester eq 2 ? 'selected' : '' }
-							 value="2">2학기</option>					
-						</select>
-						</td>
-				</tr>
+<!-- 				<tr> -->
+<!-- 					<th>학기</th> -->
+<!-- 						<td> -->
+<!-- 						<select name="semester" id="semester" style="width: 220px;"> -->
+<%-- 							<option ${vo.semester eq 1 ? 'selected' : '' } --%>
+<!-- 							 value="1">1학기</option>					 -->
+<%-- 							<option ${vo.semester eq 2 ? 'selected' : '' } --%>
+<!-- 							 value="2">2학기</option>					 -->
+<!-- 						</select> -->
+<!-- 						</td> -->
+<!-- 				</tr> -->
 				<tr>
 					<th>점수 </th>
 					<td><input type="text" id="semesterpoint" name = "semesterpoint"  autocomplete="off" value="${vo.semesterpoint}"/></td>

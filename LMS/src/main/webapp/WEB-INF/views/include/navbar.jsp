@@ -23,7 +23,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style='background-color: #183691'>
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href=''>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href='index'>
                 <div class="sidebar-brand-icon ">
                     <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
                 </div>
@@ -56,7 +56,7 @@
             </div>
 
 			<li class="nav-item">
-                <a class="nav-link" href="info.tt">
+                <a class="nav-link" href="myinfo">
                     <i class="fas fa-fw fa-table"></i>
                     <span>내정보</span></a>
            	</li>
@@ -71,9 +71,12 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">내 강의관리</h6>
+
+                        <h6 class="collapse-header">마이페이지</h6>
+                        <a class="collapse-item" href="myinfo">내 정보</a>
+                        <h6 class="collapse-header" >내 강의관리</h6>
                         <a class="collapse-item" href="list.lec">강의 조회</a>
-                        <a class="collapse-item" href="">내 강의 조회</a>
+                        <a class="collapse-item" href="student_lec_list.lec">내 강의 조회</a>
                         <a class="collapse-item" href="main.tt">시간표 보기</a>
                     </div>
                 </div>
@@ -101,7 +104,7 @@
                 게시판
             </div>
 			<li class="nav-item">
-                <a class="nav-link" href="list.no">
+                <a class="nav-link" href="list.br">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>자유게시판</span></a>
             </li>
@@ -116,7 +119,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://www.jobkorea.co.kr">
                     <i class="fas fa-fw fa-table"></i>
                     <span>취업정보</span></a>
             </li>

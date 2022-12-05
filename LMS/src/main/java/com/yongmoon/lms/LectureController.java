@@ -1,10 +1,12 @@
 package com.yongmoon.lms;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,36 +20,66 @@ import lecture.LectureDAO;
 import lecture.LecturePageVO;
 import lecture.LectureServiceImpl;
 import lecture.LectureVO;
+import member.MemberVO;
+import timetable.TimeTableService;
 
 @Controller
 public class LectureController {
 
 	@Autowired private LectureDAO dao;
 	@Autowired private LectureServiceImpl service;
-	
+	@Autowired private TimeTableService service2;
 	//강의 목록 조회
 	@RequestMapping(value = "/list.lec", produces = "text/html;charset=utf-8")
-	public String lecture_list(Model model, LecturePageVO page,  HttpSession session) {
+	public String lecture_list(Model model, LecturePageVO page,  HttpSession session
+				,LectureVO vo
+			) {
 		session.setAttribute("category", "lec");
-		List<LectureVO> list = dao.lecture_list();
-		model.addAttribute("vo", list);
-		model.addAttribute("page", service.lecture_list(page));
+		List<LectureVO> list = dao.lecture_list(vo);
+		model.addAttribute("list", list);
+		model.addAttribute("search", vo);
+		//model.addAttribute("page", service.lecture_list(page)); 페이징처리하는건지..???2022/11/24:KYM
 		
 		return "lecture/list";
 	}
 	
 	//교수 내 강의 목록
 	@RequestMapping(value= "/teacher_lec_list.lec", produces = "text/html;charset=utf-8")
-	public String teacher_lec_list(Model model, HttpSession session) {
-		session.setAttribute("category", "lec");
-		List<LectureVO> list = dao.teacher_lec_list();
+	public String teacher_lec_list(Model model, HttpSession session, String teacher_name) {
+		MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+		session.setAttribute("category", "teacher_lec");
+
+		List<LectureVO> list = dao.teacher_lec_list(vo.getName());
 		model.addAttribute("vo", list);
-		
-		
 		
 		return "lecture/teacher_lec_list";
 	}
 	
+	//학생 내 강의 목록
+	@RequestMapping(value= "/student_lec_list.lec", produces = "text/html;charset=utf-8")
+	public String student_lec_list(Model model, HttpSession session, String id,
+			LectureVO vo) {
+		MemberVO temp_vo = (MemberVO) session.getAttribute("loginInfo");
+		vo.setId(temp_vo.getId()+"");
+		session.setAttribute("category", "student_lec");
+		model.addAttribute("search", vo);
+		List<LectureVO> list = dao.student_lec_list(vo);
+		model.addAttribute("list", list);
+		
+		return "lecture/student_lec_list";
+	}
+	
+	//교수-> 수강학생 조회
+	@RequestMapping(value= "/teacher_stu.lec", produces = "text/html;charset=utf-8")
+	public String teacher_stu(Model model, HttpSession session, int lecture_num) {
+		//MemberVO vo = (MemberVO) session.getAttribute("loginInfo");
+		List<LectureVO> list = dao.teacher_stu(lecture_num);
+		session.setAttribute("category", "teacher_stu");
+		model.addAttribute("vo", list);
+		
+		
+		return "lecture/teacher_stu";
+	}
 	
 	
 	//안드 강의목록 조회
@@ -113,6 +145,17 @@ public class LectureController {
 		return "redirect:list.lec";
 	}
 	
+	
+	@RequestMapping("/delete.lect")
+	public String delete(HttpSession session, String lecture_num) {
+		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("id", member.getId());
+		map.put("lecture_num", lecture_num);
+		service2.timeTable_delete(map);
+		return "redirect:student_lec_list.lec";
+		
+	}// 강의 삭제
 	
 	
 	

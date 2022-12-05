@@ -4,9 +4,25 @@ package timetable;
 public class TimeTableVO {
 
 	private String lecture_title, syllabus, teacher_name, semester, sortation, lecture_room, lecture_year, lecture_time, enrolment, reception_status, capacity, midex, finalex,
-					subjectcredit, state, book, lecture_day, lecture_class;
-	private int lecture_num;
+					subjectcredit, state, book, lecture_day;
+	private int lecture_num , check_flag , check_cnt;
+
+
 	
+	
+	
+	public int getCheck_flag() {
+		return check_flag;
+	}
+	public void setCheck_flag(int check_flag) {
+		this.check_flag = check_flag;
+	}
+	public int getCheck_cnt() {
+		return check_cnt;
+	}
+	public void setCheck_cnt(int check_cnt) {
+		this.check_cnt = check_cnt;
+	}
 	public String getLecture_title() {
 		return lecture_title;
 	}

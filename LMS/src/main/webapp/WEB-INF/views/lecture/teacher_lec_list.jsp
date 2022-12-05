@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,13 @@
 			</div>
 				
 		</div>
-		
+		<div class="add">
+					<c:choose>
+						<c:when test="${loginInfo.info_cd eq 3}">
+							<a href="list.lec" class="btn btn-primary">전체 강의 목록</a> 
+						</c:when>
+					</c:choose>
+				</div>
 				
 		
 		<div class="dd">
@@ -64,7 +71,7 @@
 											<td>${vo.capacity}</td>
 											<td>${vo.subjectcredit}</td>
 											<td>${vo.state}</td>
-											<td><a href="detail.lec?lecture_num=${vo.lecture_num}"><button id="lec_detail" class="btn-primary">상세보기</button></a></td>
+											<td><a href="teacher_stu.lec?lecture_num=${vo.lecture_num}"><button class="btn-primary">수강인원목록</button></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

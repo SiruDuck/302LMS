@@ -1,5 +1,6 @@
 package com.yongmoon.lms;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -64,16 +65,26 @@ public class TimeTableController {
 	}// 시간표 상세 보기
 	
 	@RequestMapping(value = "/regist.tt", produces = "text/html; charset=utf-8")
-	public String regist(EnrolmentVO enrol_vo, String lecture_title, String state ,Model model, HttpSession session, @RequestParam(defaultValue = "all_sortation") String sortation) {
+	public String regist(String lecture_title, String state ,Model model, HttpSession session ,String sortation , String lecture_day , String lecture_time) {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
 		String id = member.getId();
+		HashMap<String, String> temp_map = new HashMap<String, String>();
+		temp_map.put("id", id);
+		temp_map.put("lecture_title", lecture_title);
+		temp_map.put("sortation", sortation);
+		temp_map.put("lecture_day", lecture_day);
+		temp_map.put("lecture_time", lecture_time);
 		System.out.println(id + "의 수강신청");
-		
+
 		List<TimeTableVO> vo = service.timeTableRegist(lecture_title);
 		List<TimeTableVO> list = service.sortation_list(sortation);
-		model.addAttribute("enrol_vo", enrol_vo);		
+		model.addAttribute("enrol_vo", enrol_vo);	
+		List<TimeTableVO> vo = service.timeTableRegist(temp_map);
+		
+		//List<TimeTableVO> list = service.sortation_list(sortation);
 		model.addAttribute("vo", vo);
-		model.addAttribute("list", list);
+		model.addAttribute("temp_map", temp_map);
+		//model.addAttribute("list", list);
 		return"time/regist";
 	}// 강의 신청 목록
 	
@@ -87,11 +98,13 @@ public class TimeTableController {
 	}// 과목명 검색	
 	
 	@RequestMapping(value = "/insert.tt", produces = "text/html; charset=utf-8")
-	public String insert(EnrolmentVO vo, HttpSession session) {
-		MemberVO member =(MemberVO) session.getAttribute("loginInfo");
-		vo.setId(member.getId());
+	public String insert(String lecture_num, HttpSession session) {
+		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("id", member.getId());
+		map.put("lecture_num", lecture_num);
 		
-		service.timeTable_insert(vo); 
+		service.timeTable_insert(map);
 		return "redirect:regist.tt";
 	}// 수강 시간표 등록
 	
@@ -101,11 +114,13 @@ public class TimeTableController {
 	}
 	
 	@RequestMapping("/delete.tt")
-	public String delete(HttpSession session, EnrolmentVO enrol_vo) {
+	public String delete(HttpSession session, String lecture_num) {
 		MemberVO member = (MemberVO) session.getAttribute("loginInfo");
-		service.timeTable_delete(enrol_vo);
-		
-		return "redirect:timeTable.tt?id=" + member.getId();
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("id", member.getId());
+		map.put("lecture_num", lecture_num);
+		service.timeTable_delete(map);
+		return "redirect:regist.tt";
 	}// 강의 삭제
 
 	@RequestMapping(value = "/list.tt", produces = "text/html; charset=utf-8")

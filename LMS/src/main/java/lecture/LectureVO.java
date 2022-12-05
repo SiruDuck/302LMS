@@ -4,12 +4,27 @@ import java.sql.Date;
 import java.util.List;
 
 public class LectureVO {
-	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time
-	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day, host;
+	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time, id
+	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day, host
+	, name, gender, grade, department_name, phone;
 	private int lecture_num;
 	private Date midex, finalex;
+	private int check_flag , check_cnt ;
 	
 	
+	
+	public int getCheck_flag() {
+		return check_flag;
+	}
+	public void setCheck_flag(int check_flag) {
+		this.check_flag = check_flag;
+	}
+	public int getCheck_cnt() {
+		return check_cnt;
+	}
+	public void setCheck_cnt(int check_cnt) {
+		this.check_cnt = check_cnt;
+	}
 	public String getLecture_title() {
 		return lecture_title;
 	}
@@ -45,6 +60,12 @@ public class LectureVO {
 	}
 	public void setLecture_time(String lecture_time) {
 		this.lecture_time = lecture_time;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getEnrolment() {
 		return enrolment;
@@ -100,6 +121,36 @@ public class LectureVO {
 	public void setHost(String host) {
 		this.host = host;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	public String getDepartment_name() {
+		return department_name;
+	}
+	public void setDepartment_name(String department_name) {
+		this.department_name = department_name;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public int getLecture_num() {
 		return lecture_num;
 	}
@@ -118,6 +169,8 @@ public class LectureVO {
 	public void setFinalex(Date finalex) {
 		this.finalex = finalex;
 	}
+	
+	
 	
 	
 	

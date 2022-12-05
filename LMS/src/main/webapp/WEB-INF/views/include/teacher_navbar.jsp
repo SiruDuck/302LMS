@@ -23,7 +23,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #183691'>
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index">
             	<div class="sidebar-brand-icon ">
                     <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
                 </div>
@@ -49,7 +49,7 @@
             </div>
 
 			<li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="myinfo">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>내 정보</span></a>
                    
@@ -74,7 +74,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">강의 관리 페이지</h6>
-                        <a class="collapse-item" href="#">내 강의목록</a>
+                        <a class="collapse-item" href="teacher_lec_list.lec">내 강의목록</a>
                         <a class="collapse-item" href="list.lec">강의 관리</a>
                     </div>
                 </div>

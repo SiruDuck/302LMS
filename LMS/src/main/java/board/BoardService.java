@@ -7,7 +7,7 @@ import notice.NoticeVO;
 
 public interface BoardService {
 	
-	List<BoardVO> board_list(); 			//공지글 목록 조회
+	BoardPageVO board_list(BoardPageVO page) ;			//공지글 목록 조회
 	BoardVO board_info(int id);				//공지사항 정보 조회
 	int board_insert(BoardVO vo);			//공지사항 신규글저장
 	int board_update(BoardVO vo);			//공지사항 변경저장

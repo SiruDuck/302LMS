@@ -98,14 +98,18 @@
 	</td>
 </tr>
 <tr><th>* 상태</th>
-	<td><input type='text' name='state' class='date form-control col-sm-6 mb-3 mb-sm-0' ></td>
+	<td><label><input type='radio' name='state' value='재학중' checked>재학중</label>
+		<label><input type='radio' name='state' value='근무중'>근무중</label>
+	</td>
 </tr>
+<!-- 학과코드 입력시 학과명도 선택되고 들어갈 수 있게 -->
 <tr><th>학과코드</th>
 	<td><input type='text' name='department_id' class='date form-control col-sm-6 mb-3 mb-sm-0' ></td>
 </tr>
 <tr><th>학과명</th>
 	<td><input type='text' name='department_name' class='date form-control col-sm-6 mb-3 mb-sm-0' ></td>
 </tr>
+<!-- 구분 선택시 구분명도 선택이 될 수 있게 -->
 <tr><th>구분</th>
 	<td><label><input type='radio' name='info_cd' value='1' checked>1</label>
 		<label><input type='radio' name='info_cd' value='2'>2</label>

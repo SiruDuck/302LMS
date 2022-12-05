@@ -44,8 +44,11 @@ public class CashController {
 		return "cash/cashing";
 	}
 	
-	
-	
+	@RequestMapping("/sc.add")
+	public String acadd() {
+		
+		return "cash/scholarship/sc_insert";
+	}
 	
 	
 	

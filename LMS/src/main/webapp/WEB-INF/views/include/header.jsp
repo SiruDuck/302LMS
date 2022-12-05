@@ -2,6 +2,32 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix='c'%> 
 <head>
+<style type="text/css">
+#recommend {
+	margin-top: 1px;
+	position: absolute;
+	background: white;
+	padding: 0 10px;
+}
+
+.item {
+	height: 1.8em;
+	width: 220px;
+	outline: none;
+}
+
+.item:hover {
+	color: #9baec8;
+}
+.text {
+	font-weight: bold;
+}
+.invisible {
+	display: none;
+}
+
+</style>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,10 +57,15 @@
                    	<!-- <div>
                    		<a href='http://localhost/lms/index'><img src='resources/images/mainlogin/logo_black.png' style='height: 3rem; padding:.5rem;'></a>
                    	</div> -->
-                    <!-- <form
+                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        
+                        
+                        
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="메뉴 검색"
+                             onkeypress="changeKey();"
+                             name="search_text"
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
@@ -42,7 +73,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form> -->
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -77,12 +108,12 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">new</span>
+                                <span class="badge badge-danger badge-counter">새소식</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">NEW</h6>
+                                <h6 class="dropdown-header">새로운 소식</h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <!-- <div class="mr-3">
                                         <div class="icon-circle bg-primary">
@@ -90,8 +121,8 @@
                                         </div>
                                     </div> -->
                                     <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                        <div class="small text-gray-500">2022-11-25</div>
+                                        <span class="font-weight-bold">백인애 인성 분석! 선생님께 말놓자고해 충격!</span>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -101,8 +132,8 @@
                                         </div>
                                     </div> -->
                                     <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
+                                        <div class="small text-gray-500">2022-11-05</div>
+                                        김서인 , 이슬빈 퇴실체크 안하고감
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -112,11 +143,11 @@
                                         </div>
                                     </div> -->
                                     <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
+                                        <div class="small text-gray-500">2022-10-22</div>
+                                        이거 쓰는건지 일단 수정은해둠..
                                     </div>
                                 </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="list.br">더보기</a>
                             </div>
                         </li>
 
@@ -204,11 +235,11 @@
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    내정보
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
+                                    환경설정(준비중)
                                 </a>
                                 <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -217,7 +248,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    로그아웃
                                 </a>
                             </div>
                         </li>
@@ -225,3 +256,17 @@
                     </ul>
 
                 </nav>
+                
+                <script type="text/javascript">
+
+
+				function changeKey() {
+	                $("span:contains(" +$('[name=search_text]').val() +")").css({background:"red"});
+				}
+
+
+
+
+                </script>
+
+</script>

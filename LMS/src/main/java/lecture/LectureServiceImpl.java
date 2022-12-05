@@ -8,15 +8,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class LectureServiceImpl implements LectureService {
 	@Autowired private LectureDAO dao;
-	
 	@Override
 	public List<LectureVO> lecture_list() {
 
 		return dao.lecture_list();
 	}
+	@Override
+	public List<LectureVO> lecture_list(LectureVO vo) {
 
-	
-	
+		return dao.lecture_list(vo);
+	}
+
 	@Override
 	public int lecture_insert(LectureVO vo) {
 		
@@ -47,14 +49,24 @@ public class LectureServiceImpl implements LectureService {
 		return dao.lecture_list(page);
 	}
 
-
+	@Override
+	public List<LectureVO> teacher_lec_list(String teacher_name) {
+	
+		return dao.teacher_lec_list(teacher_name);
+	}
 
 	@Override
-	public List<LectureVO> teacher_lec_list() {
-	
-		return dao.teacher_lec_list();
+	public List<LectureVO> student_lec_list(LectureVO vo) {
+		
+		return dao.student_lec_list(vo);
 	}
-	
+
+	@Override
+	public List<LectureVO> teacher_stu(int lecture_num) {
+		
+		return dao.teacher_stu(lecture_num);
+	}
+
 
 	
 

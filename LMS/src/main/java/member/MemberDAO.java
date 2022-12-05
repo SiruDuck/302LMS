@@ -67,7 +67,12 @@ public class MemberDAO implements MemberService{
 	public List<MemberVO> member_list(int info_cd) {
 		return sql.selectList("member.department_list",info_cd);
 	}
-
+	
+	
+	@Override
+	public MemberVO viewMember(String id) {
+		return sql.selectOne("member.viewMember", id);
+	}
 	
 	
 	
@@ -83,6 +88,8 @@ public class MemberDAO implements MemberService{
 		
 		return sql.selectOne("member.andlogin", id);
 	}
+
+	
 
 	
 	

@@ -2,12 +2,39 @@ package score;
 
 public class ScoreVO {
 	private String  id, department_id, semester, lecture_title,teacher_name,subjectcredit, year, lecture_year, score_name, name;
-	private int lecture_num, info_cd;
+	private int lecture_num, info_cd, rank;
 	private double  semesterpoint, avg_subject, sum_credit, sum_point, avgerage;
+	private double tot_avg , my_avg , my_total  ;
 	
 	
 	
 	
+	
+
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	public double getMy_total() {
+		return my_total;
+	}
+	public void setMy_total(double my_total) {
+		this.my_total = my_total;
+	}
+	public double getTot_avg() {
+		return tot_avg;
+	}
+	public void setTot_avg(double tot_avg) {
+		this.tot_avg = tot_avg;
+	}
+	public double getMy_avg() {
+		return my_avg;
+	}
+	public void setMy_avg(double my_avg) {
+		this.my_avg = my_avg;
+	}
 	public double getSum_credit() {
 		return sum_credit;
 	}

@@ -10,8 +10,8 @@ public class BoardServiceImpl implements BoardService{
 	@Autowired private BoardDAO dao;
 
 	@Override
-	public List<BoardVO> board_list() {
-		return dao.board_list();
+	public BoardPageVO board_list(BoardPageVO page){
+		return dao.board_list(page);
 	}
 
 	

@@ -12,10 +12,7 @@ import org.springframework.stereotype.Repository;
 public class ScoreDAO implements ScoreService{
 	@Autowired @Qualifier("ymu") private SqlSession sql;
 
-	@Override
-	public List<ScoreVO> lookup_list(String id) {
-		return sql.selectList("score.list", id);
-	}
+	
 	//학생 페이지 과목 조회
 	@Override
 	public List<ScoreVO> lookup_lectures(String id) {
@@ -26,12 +23,14 @@ public class ScoreDAO implements ScoreService{
 	
 	
 	@Override
-	public List<ScoreVO> lookup_list(String id, int num) {
+	public List<ScoreVO> lookup_list(String id, int num,int year ,int semester) {
 		HashMap<String, Object> map = new HashMap<String, Object>(); 
 		map.put("id", id);
 		map.put("num", num);
+		map.put("year", year);
+		map.put("semester", semester);
 		
-		return sql.selectList("score.lectureOne",map);
+		return sql.selectList("score.list",map);
 	}
 
 	@Override
@@ -52,8 +51,13 @@ public class ScoreDAO implements ScoreService{
 	/*------------------------------------ 교수 ---------------------------------------*/
 	
 	@Override
-	public List<ScoreVO> lookup_list_for_teacher(String id) {
-		return sql.selectList("score.list_teacher", id);
+	public List<ScoreVO> lookup_list_for_teacher(String id, int num,int year ,int semester) {
+		HashMap<String, Object> map = new HashMap<String, Object>(); 
+		map.put("id", id);
+		map.put("num", num);
+		map.put("year", year);
+		map.put("semester", semester);
+		return sql.selectList("score.list_teacher", map);
 	}
 	
 	@Override

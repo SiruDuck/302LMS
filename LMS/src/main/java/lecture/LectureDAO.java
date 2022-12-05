@@ -10,11 +10,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class LectureDAO implements LectureService {
 	@Autowired @Qualifier("ymu") private SqlSession sql;
-	
 	@Override
 	public List<LectureVO> lecture_list() {
 		
 		return sql.selectList("lecture.list");
+	}
+	@Override
+	public List<LectureVO> lecture_list(LectureVO vo) {
+		
+		return sql.selectList("lecture.list",vo);
 	}
 
 	@Override
@@ -48,9 +52,23 @@ public class LectureDAO implements LectureService {
 	}
 
 	@Override
-	public List<LectureVO> teacher_lec_list() {
+	public List<LectureVO> teacher_lec_list(String teacher_name) {
 		
-		return sql.selectList("lecture.teacher_lec");
+		return sql.selectList("lecture.teacher_lec", teacher_name);
+	}
+
+	
+
+	@Override
+	public List<LectureVO> student_lec_list(LectureVO vo) {
+		
+		return sql.selectList("lecture.student_lec", vo);
+	}
+
+	@Override
+	public List<LectureVO> teacher_stu(int lecture_num) {
+		
+		return sql.selectList("lecture.teacher_stu", lecture_num);
 	}
 
 	

@@ -12,6 +12,8 @@
 	<definition name="mainlogin" template="/WEB-INF/views/mainlogin.jsp">
 	
 	</definition>
+	<definition name="about" template="/WEB-INF/views/about.jsp"/>
+	<definition name="welcome" template="/WEB-INF/views/welcome.jsp"/>
 	
 <!-- 		<put-attribute name="container" value="/WEB-INF/views/customer/list.jsp"/> -->
 <!-- 		<put-attribute name="container" value="/WEB-INF/views/customer/detail.jsp"/> -->
