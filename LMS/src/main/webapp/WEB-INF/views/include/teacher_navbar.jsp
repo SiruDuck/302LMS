@@ -75,7 +75,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">강의 관리 페이지</h6>
                         <a class="collapse-item" href="teacher_lec_list.lec">내 강의목록</a>
-                        <a class="collapse-item" href="list.lec">강의 관리</a>
+                        <a class="collapse-item" href="list.lec">전체 강의 목록</a>
                     </div>
                 </div>
             </li>
