@@ -1,5 +1,6 @@
 package member;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public List<MemberVO> member_list() {
-		return dao.member_list();
+	public List<MemberVO> member_list(HashMap<String, String> temp_map) {
+		return dao.member_list(temp_map);
 	}
 	
 	

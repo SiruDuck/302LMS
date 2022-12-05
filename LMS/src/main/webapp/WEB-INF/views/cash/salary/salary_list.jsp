@@ -27,7 +27,7 @@
                                     </thead>                                   
                                     <tbody>
                                      
-                                    <c:forEach items="${salary_list }" var="vo" >
+                                    <c:forEach items="${list }" var="vo" >
                                         <tr>
                                       		<td>${vo.payment_day }</td>
                                             <td >${vo.id }</td>

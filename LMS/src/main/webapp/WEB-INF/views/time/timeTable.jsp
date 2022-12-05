@@ -221,8 +221,6 @@ table tr td{
 		
 	});	
 	
-	
-	
 	</script>
 	
 

@@ -17,7 +17,7 @@ from lectures l LEFT OUTER JOIN (SELECT * FROM SUBJECTSCORE s WHERE ID =  #{id} 
                 LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e  GROUP BY LECTURE_NUM) e_grp ON l.LECTURE_NUM = e_grp.LECTURE_NUM
                 
 
-where l.semester = '2'
+where l.semester = '2' 
 
 
 
@@ -66,9 +66,9 @@ order by l.lecture_num
 <!-- 내 시간표 보기 -->
 <select id="timeTable_list" resultType="timetable.TimeTableVO">
 	SELECT L.LECTURE_NUM, L.LECTURE_TITLE, L.LECTURE_ROOM, L.LECTURE_TIME, L.LECTURE_DAY, l.semester
-	FROM lectures L INNER JOIN  subjectscore E
+	FROM lectures L INNER JOIN  ENROLMENT E
 	ON l.lecture_num = e.lecture_num
-	WHERE E.ID= #{id} AND e.semesterpoint is null
+	WHERE E.ID=#{id} AND l.semester = 2
 </select>
 
 <!-- 수강신청 -->
@@ -78,8 +78,12 @@ order by l.lecture_num
 
 <!-- 수강신청한 강의 삭제 -->
 <delete id="delete">
-	delete from SUBJECTSCORE where id=#{id} and lecture_num = #{lecture_num}
+	delete from SUBJECTSCORE where id=#{id} and lecture_num = #{lecture_num} 
 </delete>
 
+<!-- 시간표 수정 -->
+<update id="update">
+	update
+</update>
 
 </mapper>

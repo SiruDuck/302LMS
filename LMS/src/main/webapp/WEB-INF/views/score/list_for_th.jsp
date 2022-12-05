@@ -59,7 +59,7 @@ span.btn {
 
 			<!-- 필터 -->
 
-			<form action="list.sc" method="post">
+			<form action="list.sc" method="post" name="search_f">
 				<input type="hidden" name="select_grp" value="${select_grp}">
 				<div class="row mt">
 					<div class="col-xl-4 col-md-6" style="background: #f8f9fc">
@@ -70,7 +70,7 @@ span.btn {
 								</div>
 								<div class='dataTables_filter search-box'>
 									<h5 class="font-size-20 mt-0 pt-1">과목구분</h5>
-									<select name="lecture_num" onchange='$("form").submit()'
+									<select name="lecture_num" onchange='$("[name=search_f]").submit()'
 										class='custom-select custom-select-sm form-control form-control-sm'>
 										<option value='-1'>전체보기</option>
 										<c:forEach items="${lectures}" var="vo">
@@ -91,7 +91,7 @@ span.btn {
 								</div>
 								<div class='dataTables_filter search-box'>
 									<h5 class="font-size-20 mt-0 pt-1">년도구분</h5>
-									<select name="year" onchange='$("form").submit()'
+									<select name="year" onchange='$("[name=search_f]").submit()'
 										class='custom-select custom-select-sm form-control form-control-sm'>
 
 										<option value="-1">전체 년도</option>
@@ -114,7 +114,7 @@ span.btn {
 								</div>
 								<div class='dataTables_filter search-box'>
 									<h5 class="font-size-20 mt-0 pt-1">학기구분</h5>
-									<select name="semester" onchange='$("form").submit()'
+									<select name="semester" onchange='$("[name=search_f]").submit()'
 										class='custom-select custom-select-sm form-control form-control-sm'>
 										<option value="-1">전체 학기</option>
 										<option ${semester eq 1 ? 'selected' : '' } value="1">1학기</option>
@@ -233,8 +233,7 @@ span.btn {
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">정말 로그아웃
-							하시겠습니까?</h5>
+						<h5 class="modal-title" id="exampleModalLabel">성적 수정</h5>
 						<button class="close" type="button" data-dismiss="modal"
 							aria-label="Close" onclick="portHide()">
 							<span aria-hidden="true">×</span>

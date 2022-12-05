@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,42 +38,93 @@ span.btn{
    
    <span class="text">인원 등록</span>
  </a>
-					<div class='card mb-4'>
-						<div class='card-header py-3'>
-							<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
-						</div>
-						<div class='card-body d-flex'>
-							
-							
-							<div class='dataTables_filter search-box'>
-								<input type="search" class='ids form-control form-control-sm' placeholder='아이디로 검색'>
-							</div>
-							<div class='dataTables_filter search-box'>
-								<input type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'>
-							</div>
-							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm'>
-									<option value='department_all'> (학과) 전체</option>
-									<c:forEach items="${department_list }" var="department_list">
-									<option value='${department_list }'> ${ department_list.department_name}</option>
-									</c:forEach>
-								</select>
-							</div>
-							
-							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
-									<option value='info_all' value='-1'> (구분) 전체</option>
+					<form action="member.list" method="post">
+				<input type="hidden" name="select_grp" value="${select_grp}">
+			
+					<div class="row mt">
+						<div class="col-xl-3 col-md-6" style="background: #f8f9fc">
+							<div class="card bg-pattern">
+								<div class="card-body">
+									<div class="float-right">
+										<i class="fa fa-archive text-primary h4 ml-3"></i>
+									</div>
+									<div class='dataTables_filter search-box'>
+										<h5 class="font-size-20 mt-0 pt-1">직책 구분</h5>
+										
+										<select name="info_cd" onchange='$("form").submit()'
+											class='custom-select custom-select-sm form-control form-control-sm'>
+												<option  value='-1'>전체 보기</option>
+								
 									<c:forEach items="${info_list }" var="info">
-									<option ${info_cd eq info.info_cd ? 'selected' : ''} 
+									
+									<option ${info.info_cd eq temp_map.info_cd ? 'selected' : ''} 
 									value='${info.info_cd }'> ${info.info_name }</option>
 									</c:forEach>
-								</select>
+
+										</select>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>	
+						<div class="col-xl-3 col-md-6" style="background: #f8f9fc">
+							<div class="card bg-pattern">
+								<div class="card-body">
+									<div class="float-right">
+										<i class="fa fa-archive text-primary h4 ml-3"></i>
+									</div>
+									<div class='dataTables_filter search-box'>
+										<h5 class="font-size-20 mt-0 pt-1">학과 구분</h5>
+										<select name="department" onchange='$("form").submit()'
+											class='custom-select custom-select-sm form-control form-control-sm'>
+
+										<option  value=''> 전체 보기</option>
+									<c:forEach items="${department_list }" var="vo">
+									<option  ${vo.department_name eq temp_map.department ? 'selected' : ''} 
+									value='${vo.department_name}'
+									
 					
-					
-					
+									> ${ vo.department_name}</option>
+									</c:forEach>
+
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xl-3 col-md-6" style="background: #f8f9fc">
+							<div class="card bg-pattern">
+								<div class="card-body">
+									        <label>이름 검색</label>
+                            <div class="input-group mb-0">
+                                <input type="text" class="form-control" name="student_name" value="${temp_map.student_name }"
+                                 placeholder="이름을 검색하세요" aria-describedby="project-search-addon" onkeyup="if(window.event.keyCode==13){$('form').submit()}"/>
+                                <div class="input-group-append" >
+                                    <button class="btn btn-primary"  id="project-search-addon"><i class="fa fa-search search-icon font-12"></i></button>
+                                </div>
+                            </div>
+                        </div>
+								</div>
+							</div>
+				<div class="col-xl-3 col-md-6" style="background: #f8f9fc">
+							<div class="card bg-pattern">
+								<div class="card-body">
+									        <label>학번 검색</label>
+                            <div class="input-group mb-0">
+                                <input type="text" class="form-control" name="id" value="${temp_map.id }"
+                                 placeholder="학번 검색하세요" aria-describedby="project-search-addon" onkeyup="if(window.event.keyCode==13){$('form').submit()}"/>
+                                <div class="input-group-append" >
+                                    <button class="btn btn-primary"  id="project-search-addon"><i class="fa fa-search search-icon font-12"></i></button>
+                                </div>
+                            </div>
+                        </div>
+								</div>
+							</div>
+						
+
+					</div>
+			</form>
+				
 					
 					
 									
@@ -105,7 +158,12 @@ span.btn{
                                       		<td>${vo.id }</td>
                                             <td>${vo.name }</td>
                                             <td>${vo.phone }</td>
-                                            <td>${vo.start_date }</td>
+                                            
+                                 <td>       
+                                 <fmt:parseDate var='dateFmt' pattern="yyyy-MM-dd HH:mm:ss" value="${vo.start_date }"/>
+                                     <fmt:formatDate var="dateTempParse" value="${dateFmt}" pattern="yyyy년 MM월 dd일"/> 
+                                     ${dateTempParse}
+                                     </td>
                                             <td>${vo.department_id }</td> 
                                             <td>${vo.department_name }</td> 
                                             <td>${vo.info_name }</td> 
@@ -126,27 +184,6 @@ span.btn{
 
 
 <script>
-$('.names').keyup(function(){
-	$.ajax({
-		data:{name: $(this).val()},
-		url:"search_name",
-		success:function(data){
-			$('#dataTable_wrapper').html(data);
-		}
-		
-	})
-});
-
-$('.ids').keyup(function(){
-	$.ajax({
-		data:{id: $(this).val()},
-		url:"search_id",
-		success:function(data){
-			$('#dataTable_wrapper').html(data);
-		}
-		
-	})
-});
 
 
 

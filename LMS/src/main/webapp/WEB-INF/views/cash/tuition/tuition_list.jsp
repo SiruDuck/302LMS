@@ -24,17 +24,17 @@
                                     </thead>                                   
                                     <tbody>
                                      
-                                    <c:forEach items="${tuition_list }" var="tuition_list" >
+                                    <c:forEach items="${list }" var="vo" >
                                         <tr>
-                                      		<td>${tuition_list.payment_day }</td>
-                                            <td >${tuition_list.id }</td>
-                                            <td>${tuition_list.name }</td>
-                                            <td>${tuition_list.department_name }</td>
-                                            <td>${tuition_list.grade }</td> 
-                                            <td>${tuition_list.state }</td> 
-                                            <td>${tuition_list.start_date }</td> 
-                                            <td>${tuition_list.end_date }</td> 
-                                            <td>${tuition_list.description }</td> 
+                                      		<td>${vo.payment_day }</td>
+                                            <td >${vo.id }</td>
+                                            <td>${vo.name }</td>
+                                            <td>${vo.department_name }</td>
+                                            <td>${vo.grade }</td> 
+                                            <td>${vo.state }</td> 
+                                            <td>${vo.start_date }</td> 
+                                            <td>${vo.end_date }</td> 
+                                            <td>${vo.description }</td> 
                                             <td style="background-color: rgb(248,249,252)"><fmt:formatNumber value="${vo.price}" pattern="#,###.##"/></td> 
                                         </tr>
                                      </c:forEach>

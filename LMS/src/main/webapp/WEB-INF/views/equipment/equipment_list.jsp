@@ -50,10 +50,7 @@ span.btn{
 						</div>
 						<div class='card-body d-flex'>
 							<div class='dataTables_filter search-box'>
-								<input type="search" 
-								class='eqname names form-control form-control-sm' placeholder='이름으로 검색'
-								onkeypress="test(event)"
-								>
+								<input type="search" class='eqname names form-control form-control-sm' placeholder='이름으로 검색'>
 						</div>
 						</div>
 					</div>	
@@ -116,35 +113,17 @@ span.btn{
 
 <script>
 
-/* var input = $('.eqname');
+$('.eqname').keyup(function(){
+	$.ajax({
+		data:{name: $(this).val()},
+		url:"eqnamelist",
+		success:function(data){
+			$('#dataTable_wrapper').html(data);
+		}
+		
+	})
+});
 
-input.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-    	  $.ajax({
-    			data:{name: $(this).val()},
-    			url:"eqnamelist",
-    			success:function(data){
-    				$('#dataTable_wrapper').html(data);
-    			}
-    			
-    		})
-      }
-    });
- */
- function test(e){
-     const code = e.code;
-     
-     if( e.code == 'Enter'){
-    	  $.ajax({
-  			data:{name: $('.eqname').val()},
-  			url:"eqnamelist",
-  			success:function(data){
-  				$('#dataTable_wrapper').html(data);
-  			}
-  			
-  		})
-     }
-  }
 function equiment_add (){
 	document.getElementById('eqmodify').style.display='none';
 	document.getElementById('eqadd').style.display='block';
@@ -172,7 +151,7 @@ $('.btn-secondary').click(function(){
 }); */
 
 
-/* $('.names').keyup(function(){
+$('.names').keyup(function(){
 	$.ajax({
 		data:{name: $(this).val()},
 		url:"eqnamelist",
@@ -181,7 +160,7 @@ $('.btn-secondary').click(function(){
 		}
 		
 	})
-}); */
+});
 
 </script>
 

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h3>장학 등록</h3>
 	
 	<div class="dd">
 					<!-- Page Heading -->

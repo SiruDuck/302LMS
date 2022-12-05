@@ -32,7 +32,7 @@
                                     </thead>                                   
                                     <tbody>
                                      
-                                    <c:forEach items="${scholarship_list }" var="vo" >
+                                    <c:forEach items="${list }" var="vo" >
                                         <tr>
                                       		<td>${vo.id }</td>
                                             <td >${vo.name }</td>

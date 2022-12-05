@@ -6,6 +6,9 @@
 <!-- 전체 멤버리스트 조회 -->
 <select id='member_list' resultType='member.MemberVO'>
 select * from member
+where 1=1
+
+<include refid="search_temp"/>
 </select>
 
 <!-- 특정 학과 멤버리스트 조회 -->
@@ -126,6 +129,20 @@ select * from member where id = #{id}
 </select>
 
 
+<sql id="search_temp">
+		<if test="info_cd != -1">
+		and info_cd = #{info_cd}
+		</if>
+		<if test="department != ''">
+		and department_name like '%'||#{department}||'%'
+		</if>
+		<if test="student_name != ''">
+		and name like '%'||#{student_name}||'%'
+		</if>
+		<if test=" id != -1  ">
+		and id like '%'||#{id}||'%'
+		</if>
+	</sql>
 
 </mapper>
 
