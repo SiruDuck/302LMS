@@ -131,12 +131,7 @@ public class TimeTableVO {
 	public void setLecture_day(String lecture_day) {
 		this.lecture_day = lecture_day;
 	}
-	public String getLecture_class() {
-		return lecture_class;
-	}
-	public void setLecture_class(String lecture_class) {
-		this.lecture_class = lecture_class;
-	}
+	
 	
 	
 	

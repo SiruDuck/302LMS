@@ -65,10 +65,10 @@ order by l.lecture_num
 
 <!-- 내 시간표 보기 -->
 <select id="timeTable_list" resultType="timetable.TimeTableVO">
-	SELECT L.LECTURE_NUM, L.LECTURE_TITLE, L.LECTURE_ROOM, L.LECTURE_time, L.LECTURE_DAY, l.semester
-	FROM lectures L INNER JOIN  SUBJECTSCORE S
-	ON l.lecture_num = s.lecture_num
-	WHERE l.semester = '2' AND S.ID= #{id}
+	SELECT L.LECTURE_NUM, L.LECTURE_TITLE, L.LECTURE_ROOM, L.LECTURE_TIME, L.LECTURE_DAY, l.semester
+	FROM lectures L INNER JOIN  subjectscore E
+	ON l.lecture_num = e.lecture_num
+	WHERE E.ID= #{id} AND e.semesterpoint is null
 </select>
 
 <!-- 수강신청 -->
@@ -81,9 +81,5 @@ order by l.lecture_num
 	delete from SUBJECTSCORE where id=#{id} and lecture_num = #{lecture_num}
 </delete>
 
-<!-- 시간표 수정 -->
-<update id="update">
-	update
-</update>
 
 </mapper>

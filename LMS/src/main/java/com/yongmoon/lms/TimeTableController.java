@@ -76,9 +76,7 @@ public class TimeTableController {
 		temp_map.put("lecture_time", lecture_time);
 		System.out.println(id + "의 수강신청");
 
-		List<TimeTableVO> vo = service.timeTableRegist(lecture_title);
 		List<TimeTableVO> list = service.sortation_list(sortation);
-		model.addAttribute("enrol_vo", enrol_vo);	
 		List<TimeTableVO> vo = service.timeTableRegist(temp_map);
 		
 		//List<TimeTableVO> list = service.sortation_list(sortation);
