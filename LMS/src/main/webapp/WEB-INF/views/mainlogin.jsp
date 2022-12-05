@@ -71,7 +71,7 @@
   			</div>
 			 <div class="form-group mt-3-mx-sm-3 mb-2" >
    				 <label for="pw">패스워드</label>
-   				 <input type="text" id='pw' name='pw' class="form-control"  placeholder="사용자 아이디">
+   				 <input type="password" id='pw' name='pw' class="form-control"  placeholder="사용자 아이디">
   			</div>
 				 <div class="form-group mt-3">	
 				    <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
