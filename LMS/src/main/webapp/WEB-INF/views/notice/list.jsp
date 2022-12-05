@@ -39,7 +39,6 @@ body{
 </style>
 </head>
 <body>
-	<h3>공지사항</h3>
 	<form method='post' action='list.no'>
 	<input type='hidden' name='curPage' value='1'/>
 		<div class='card mb-4'>

@@ -21,7 +21,6 @@
 </style>
 </head>
 <body>
-	<h3>자유게시판</h3>
 	<form method='post' action='list.br'>
 		<input type='hidden' name='curPage' value='1' />
 		<div class='card mb-4'>

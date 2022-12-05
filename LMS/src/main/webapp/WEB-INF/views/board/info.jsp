@@ -23,7 +23,6 @@
 }
 </style>
 <body>
-	<h3>자유게시판 상세보기</h3>
 
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">

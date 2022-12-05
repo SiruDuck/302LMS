@@ -5,13 +5,15 @@
 	<select id="list" resultType="board.BoardVO">
 		select * from
 		(select rownum no, b.*, (select name from member m
-		where m.id=b.writer) name
+		where
+		m.id=b.writer) name
 		from (select * from board
 		<include refid="search_where" />
 		order by writedate asc
 		) b
 		order by no desc)
-		where no between #{beginList} and #{endList}
+		where no between
+		#{beginList} and #{endList}
 	</select>
 	<select id="totalList" resultType="integer">
 		select count(*) from board
@@ -19,14 +21,15 @@
 	</select>
 
 	<select id="info" resultType="board.BoardVO">
-		select *
-		from board
-		where id = #{id}
+		select b.*, name
+		from board b left outer join member m on b.writer = m.id
+		where b.id = #{id}
 	</select>
 
 	<insert id="insert">
-		insert into board(title, content, writer, filename,filepath)
-		values (#{title, jdbcType=VARCHAR}, 
+		insert into board(title, content, writer,
+		filename,filepath)
+		values (#{title, jdbcType=VARCHAR},
 		#{content,jdbcType=VARCHAR},
 		#{writer, jdbcType=VARCHAR},
 		#{filename,jdbcType=VARCHAR},
@@ -85,7 +88,8 @@
 		</if>
 		<if test=' search=="writer" '>
 			where writer in ( select id from member
-			where name like '%'|| #{keyword} || '%' )
+			where name like
+			'%'|| #{keyword} || '%' )
 		</if>
 		<if test=' search=="all" '>
 			where title like '%'|| #{keyword} || '%'

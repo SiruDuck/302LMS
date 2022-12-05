@@ -223,7 +223,6 @@
 }
 </style>
 <body>
-	<h3>자유 게시판 글쓰기</h3>
 
 	<form method="post" action="insert.br" enctype="multipart/form-data">
 		<div class="card shadow mb-4">
@@ -236,8 +235,8 @@
 						cellspacing="0">
 						<tr>
 							<th style="vertical-align: inherit; width: 11rem">제목</th>
-							<td><input type="text" id='board_subject'
-								name='title' title='제목' class='chk form-control form-control-user' /></td>
+							<td><input type="text" id='board_subject' name='title'
+								title='제목' class='chk form-control form-control-user' /></td>
 						</tr>
 						<tr>
 							<th>작성자</th>
@@ -249,9 +248,10 @@
 									class='chk form-control form-control-user conten' title='내용'></textarea></td>
 						</tr>
 						<tr>
-							<th >파일첨부</th>
-							<td class='left'><label> <input type="file"
-									name="file" id='attach-file' /> <a><i
+							<th style="vertical-align: inherit">파일첨부</th>
+							<td>
+								<label> <input type="file"
+									name="file" id='attach-file' style='display: contents;' /> <a><i
 										class="font-b fa-solid fa-file-circle-plus"></i></a>
 							</label> <span id='file-name'></span> <span id='preview'></span> <span
 								id='delete-file'><i class='fas fa-times'></i></span></td>
@@ -265,8 +265,9 @@
 			type='hidden' name='name' value='${loginInfo.name }'>
 	</form>
 	<div class='btn_blue' style='padding: 2rem;'>
-		<a class='btn btn-primary' id='save'>저장</a> <a
-			class='btn btn-secondary' href='list.br'>취소</a>
+		<a class='btn btn-primary' id='save'
+			style="color: #fff; background-color: #2e59d9; border-color: #2653d4;">저장</a>
+		<a class='btn btn-secondary' href='list.br'>취소</a>
 	</div>
 	<script>
 		$('#save').click(function() {
@@ -276,7 +277,8 @@
 
 		function emptyCheck() {
 			var ok = true;
-			$('.chk').each(function() {
+			$('.chk').each(
+					function() {
 						if ($(this).val() == '') {
 							var item = $(this).attr('placeholder') ? $(this)
 									.attr('placeholder') : $(this)

@@ -15,11 +15,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 </head>
 <body>
-	<h3>공지사항 상세보기</h3>
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">상세보기</h6>
+				<h6 class="m-0 font-weight-bold text-primary">공지사항 상세보기</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -64,7 +63,7 @@
 	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
 		<a class='btn btn-secondary btn-icon-split'
 			href='list.no'>목록으로</a>
-		<c:if test='${loginInfo.info_cd eq 2 }'>
+		<c:if test='${loginInfo.info_cd eq 4 }'>
 			<a class='btn btn-primary btn-icon-split'
 				href='modify.no?id=${vo.id}&${hrefParam}'>정보수정</a>
 			<a class='btn btn-danger btn-icon-split' id='remove' onclick="if(confirm('삭제 할까요?')) location='delete.no?id=${vo.id}'">정보삭제</a>
