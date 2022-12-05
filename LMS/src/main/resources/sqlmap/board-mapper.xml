@@ -8,6 +8,7 @@
 		where m.id=b.writer) name
 		from (select * from board
 		<include refid="search_where" />
+		order by writedate asc
 		) b
 		order by no desc)
 		where no between #{beginList} and #{endList}

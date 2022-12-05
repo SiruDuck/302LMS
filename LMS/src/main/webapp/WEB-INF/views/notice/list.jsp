@@ -16,6 +16,15 @@ body{
     margin-top:20px;
     color: #616f80;
 }
+
+.search-box {
+	margin: 0 1rem 0 0;
+}
+
+.table-responsive {
+	overflow: hidden;
+}
+
 .card {
     border: none;
     margin-bottom: 24px;
@@ -60,27 +69,31 @@ body{
 	</form>
     <!-- end row -->
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
+
+
+
+
+	
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+        	<h6 class="m-0 font-weight-bold text-primary">공지사항</h6>
+        </div>
                 <div class="card-body">
-                    <div class="table-responsive project-list">
-                        <table class="table project-table table-centered table-nowrap" style="text-align: left;">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="70%" cellspacing="0">
                             <thead>
-                                <tr>
-                                    <th scope="col">번호</th>
-                                    <th scope="col">제목</th>
-                                    <th scope="col">작성자</th>
-                                    <th scope="col">작성일</th>
-                                    <th scope="col">조회수</th>
-                                    <th scope="col">첨부파일</th>
+                                <tr class="bg-gray-100">
+                                    <th style="text-align: center;">제목</th>
+                                    <th style="text-align: center;">작성자</th>
+                                    <th style="text-align: center; width: 250px;">작성일</th>
+                                    <th style="text-align: center;">조회수</th>
+                                    <th style="text-align: center;">첨부파일</th>
                                 </tr>
                             </thead>
                             <tbody>
                            <c:forEach items='${page.list}' var='vo'>
                                    
 							<tr >
-							 <th scope="row" style="text-align: left;">${vo.no}</th>
 								<td style="text-align: left;"><a href="info.no?id=${vo.id}">${vo.title }</a></td>
 								<td style="text-align: left;">${vo.writer}</td>
 								<td style="text-align: left;">${vo.writedate }</td>
@@ -141,8 +154,6 @@ body{
                   
                 </div>
             </div>
-        </div>
-    </div>
     <!-- end row -->
 </div>
 	</form>

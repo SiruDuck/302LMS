@@ -95,9 +95,6 @@ public class NoticeController {
 		
 		
 
-		//List<NoticeVO> list = service.notice_list();
-
-		//model.addAttribute("list", list);
 
 		return "notice/list";
 	}

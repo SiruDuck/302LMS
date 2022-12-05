@@ -69,6 +69,7 @@
 							<th style="text-align: center;">제목</th>
 							<th style="text-align: center;">작성자</th>
 							<th style="text-align: center; width: 250px;">작성일자</th>
+							<th style="text-align: center;">조회수</th>
 							<th style="text-align: center;">첨부</th>
 						</tr>
 					</thead>
@@ -79,6 +80,7 @@
 								<td><a href="info.br?id=${vo.id}">${vo.title }</a></td>
 								<td style="text-align: center;">${vo.name}</td>
 								<td style="text-align: center;">${vo.writedate }</td>
+								<td style="text-align: left;">${vo.readcnt }</td>
 								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
 
 							</tr>
