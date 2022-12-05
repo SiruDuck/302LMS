@@ -88,7 +88,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="list.no">
+                <a class="nav-link" href="list.br">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>자유게시판</span></a>
             </li>
