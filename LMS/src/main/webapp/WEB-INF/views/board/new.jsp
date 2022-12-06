@@ -251,10 +251,9 @@
 							<th style="vertical-align: inherit">파일첨부</th>
 							<td>
 								<label> <input type="file"
-									name="file" id='attach-file' style='display: contents;' /> <a><i
-										class="font-b fa-solid fa-file-circle-plus"></i></a>
+									name="file" id='attach-file'  />
 							</label> <span id='file-name'></span> <span id='preview'></span> <span
-								id='delete-file'><i class='fas fa-times'></i></span></td>
+								id='delete-file'></span></td>
 						</tr>
 
 					</table>

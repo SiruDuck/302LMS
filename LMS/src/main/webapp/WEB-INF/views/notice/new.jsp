@@ -249,10 +249,9 @@
 								<td>
 									<div class='align'>
 										<label> <input type='file' name='file'
-											id='attach-file' style='display: contents;'> <a><i
-												class="font-b fa-solid fa-file-circle-plus"></i></a>
+											id='attach-file'>
 										</label> <span id='file-name'></span> <span id='preview'></span> <a
-											id='delete-file'><i class="font-r fa-solid fa-trash-can"></i></a>
+											id='delete-file'></a>
 									</div>
 								</td>
 							</tr>
