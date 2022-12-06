@@ -40,10 +40,11 @@
 							
 							<!-- 장학 정보 (cash name) -->
 							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm'>
-									<option value='department_all'>장학 정보</option>
+								<select name='cash_name' class='custom-select custom-select-sm form-control form-control-sm'>
+									<option value=''>장학 정보</option>
 									<c:forEach items="${sc_list }" var="sc_list">
-									<option value="${sc_list.cash_name }">${sc_list.cash_name}</option>
+									<option 
+									value="${sc_list.cash_name }">${sc_list.cash_name}</option>
 									</c:forEach>
 									
 								</select>
@@ -51,10 +52,11 @@
 							
 							<!-- 장학 유형(description)-->
 							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm'>
-									<option value='info_all'> 장학 유형</option>
+								<select name='description' class='custom-select custom-select-sm form-control form-control-sm'>
+									<option value=''> 장학 유형</option>
 									<c:forEach items="${sc_list2 }" var="sc_list2">
-									<option value="${sc_list2.description }">${sc_list2.description}</option>
+									<option 
+									value="${sc_list2.description }">${sc_list2.description}</option>
 									</c:forEach>
 								</select>
 							</div>
@@ -62,7 +64,7 @@
                             </div>
                         </div>
                         </form>
-                        <button id="submit" style="margin-left: 3rem "  class="btn btn-primary" type="button">
+                        <button id="scsubmit" style="margin-left: 3rem "  class="btn btn-primary" type="button">
    								<i class="fas fa-check-square"></i>
    						</button>
                         
@@ -73,29 +75,27 @@
 
 	<script>
 	
-	$('#submit').click(function(){
+	$('#scsubmit').click(function(){
 		console.log("서브밋버튼");
 		if( $('[name=department_name]').val()==''){
 			alert('학과를 입력하세요!');
-			$('[name=department_name]').focus();
 			return;
 			
 		}else if( $('[name=name]').val()==''){
-			
 			alert('이름을 입력하세요!');
-			$('[name=name]').focus();
 			return;
 			
-		}else if($('[name=equipment_num]').val()){
-			alert('장학정보를 선택하세요!');
-			$('[name=equipment_num]').focus();
+		}else if($('[name=cash_name] option:selected').val()==''){
+			alert('장학 정보를 선택하세요!');
 			return;
-		}else if ( $('[name=price]').val()==''){
+			
+		}else if ( $('[name=description] option:selected').val()==''){
 			alert('장학 유형을 선택하세요!');
+			
 		}else{
 			alert('등록되었습니다.');
-			$("#formId").attr("action","eqinsert");
-			$('#formId').submit();
+			$("#scinsert").attr("action","sc.add");
+			$('#scinsert').submit();
 			
 		}
 	});

@@ -89,13 +89,13 @@ public class CashController {
 	
 	@RequestMapping("/sc.add")
 	public String acadd(String department_name, String name,
-			@RequestParam(name = "sc_list") String cash_name ,
-			@RequestParam(name = "sc_list") String description
+			String cash_name ,
+			 String description
 			) {
 		//departmnet_name(학과) , name(이름), cash_name(교내장학금~교외~), description(장학금세부정보) 가져왔음.
 		Cash_ingVO vo = new Cash_ingVO();
 		String cash_code = service.search_cash_code(description);	//장학정보로 cash code 얻기
-		String id = service.get_id(cash_name);		//캐쉬네임으로 id얻기
+		String id = service.get_id(name);		//캐쉬네임으로 id얻기
 		
 		
 		vo.setCash_code(Integer.parseInt(cash_code));
@@ -107,7 +107,7 @@ public class CashController {
 		
 		service.sc_insert(vo);
 		
-		return "redirect:cash/cashing";
+		return "redirect:cash.ing";
 	}
 	
 	

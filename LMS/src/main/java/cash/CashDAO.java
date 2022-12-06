@@ -67,7 +67,7 @@ public class CashDAO implements CashService{
 
 	@Override
 	public int sc_insert(Cash_ingVO vo) {
-		return sql.update("cash.",vo);
+		return sql.update("cash.insert_sc",vo);
 	}
 
 

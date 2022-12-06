@@ -191,7 +191,7 @@ ORDER BY c.payment_day desc
 			null,
 			null,
 			null,
-			null);
+			null)
    
    </update>
    
