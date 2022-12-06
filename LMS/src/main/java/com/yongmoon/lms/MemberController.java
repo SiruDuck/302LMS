@@ -251,6 +251,7 @@ public class MemberController {
 	} else {
 		return "member/chamyinfo";
 	}
+	}
 	
 	@RequestMapping("/updateinfo")
 	public String update(MemberVO vo1, HttpSession session) {
