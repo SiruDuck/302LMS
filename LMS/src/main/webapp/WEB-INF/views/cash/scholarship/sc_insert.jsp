@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         </form>
-                        <button id="submit" onclick="sc.add" style="margin-left: 3rem"  class="btn btn-primary" type="button">
+                        <button id="submit" style="margin-left: 3rem "  class="btn btn-primary" type="button">
    								<i class="fas fa-check-square"></i>
    						</button>
                         
@@ -72,6 +72,36 @@
 			</div>	
 
 	<script>
+	
+	$('#submit').click(function(){
+		console.log("서브밋버튼");
+		if( $('[name=department_name]').val()==''){
+			alert('학과를 입력하세요!');
+			$('[name=equipment]').focus();
+			return;
+			
+		}else if( $('[name=equipment_num]').val()==''){
+			
+			alert('비품 수량을 입력하세요!');
+			$('[name=equipment_num]').focus();
+			return;
+			
+		}else if(isNaN($('[name=equipment_num]').val())){
+			alert('비품 수량을 정수값으로 입력하세요!');
+			$('[name=equipment_num]').focus();
+			return;
+		}else if ( $('[name=price]').val()==''){
+			alert('가격을 입력해주세요!');
+		}else if (isNaN($('[name=price]').val())){
+			alert('가격을 정수로 입력해주세요!');
+		}else{
+			alert('등록되었습니다.');
+			$("#formId").attr("action","eqinsert");
+			$('#formId').submit();
+			
+		}
+	});
+	
 	
 	const sidePane = document.querySelector("#menub");
 
