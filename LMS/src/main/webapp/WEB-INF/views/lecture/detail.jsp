@@ -96,7 +96,13 @@ margin-bottom:10px;
                     <div class="col-md-6"><label class="labels">수강인원</label><p style="color: #000">${vo.capacity} </p></div>
                 </div>
               
-                <div class="mt-5 text-center"><a href="list.lec" class="btn btn-primary">강의 목록</a> </div>
+                <div style='display:flex; justify-content: center;'>
+                	<div class="mt-5 text-center" style='margin-right:1rem;'><a href="list.lec" class="btn btn-primary">강의 목록</a> </div>
+                	<c:if test="${loginInfo.info_cd eq 3 || loginInfo.info_cd eq 4 }">
+                	<div class="mt-5 text-center"style='margin-right:1rem;'><a href="modify.lec?lecture_num=${vo.lecture_num}" class="btn btn-primary">정보 수정</a> </div>
+                	<div class="mt-5 text-center"><a href="delete.lec?lecture_num=${vo.lecture_num}" class="btn btn-primary">삭제</a> </div>
+                	</c:if>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
