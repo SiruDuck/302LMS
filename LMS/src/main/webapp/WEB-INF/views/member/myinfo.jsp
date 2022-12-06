@@ -146,7 +146,7 @@ h3{
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="#">정보 수정</a>
+                      <a class="btn btn-info " target="__blank" href="chainfo">정보 수정</a>
                     </div>
                   </div>
                 </div>

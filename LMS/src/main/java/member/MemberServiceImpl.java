@@ -79,6 +79,11 @@ public class MemberServiceImpl implements MemberService{
 		return dao.and_login(id);
 	}
 
+	@Override
+	public int member_update(MemberVO vo) {
+		return dao.member_update(vo);
+	}
+
 	
 	
 	

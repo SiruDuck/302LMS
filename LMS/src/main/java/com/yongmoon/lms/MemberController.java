@@ -4,6 +4,8 @@ import java.lang.System.Logger;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -247,9 +249,35 @@ public class MemberController {
 		}
 	}
 	
+	
+	@RequestMapping(value="/chainfo", produces = "text/html;charset=utf-8") 
+	public String update(HttpSession session, Model model) {
+		MemberVO temp_vo = (MemberVO) session.getAttribute("loginInfo");
+		MemberVO vo = dao.viewMember(temp_vo.getId());
+		model.addAttribute("vo", vo);
+		
+		if (temp_vo.getInfo_cd() == 1) {
+		return "member/chamyinfo";
+	} else {
+		return "member/chamyinfo";
+	}
+	}
+	
+	@RequestMapping("/updateinfo")
+	public String update(MemberVO vo1, HttpSession session) {
+		service.member_update(vo1);
+
+		
+		return "redirect:myinfo";
+	}
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/about")
 	public String about(HttpSession session, Model model) {
-
+		
 		
 			return "about";
 		

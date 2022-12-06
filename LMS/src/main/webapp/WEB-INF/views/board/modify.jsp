@@ -17,7 +17,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
 </head>
 <body>
-	<h3>자유 게시판 수정</h3>
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">

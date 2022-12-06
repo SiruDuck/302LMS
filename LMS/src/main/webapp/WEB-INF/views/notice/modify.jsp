@@ -17,11 +17,10 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
 </head>
 <body>
-	<h3>공지사항 수정</h3>
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">공지글 수정</h6>
+				<h6 class="m-0 font-weight-bold text-primary">공지사항 수정</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
