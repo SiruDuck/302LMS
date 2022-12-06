@@ -115,7 +115,7 @@ body{
 			<div class="row">
 				<div class="col-sm-12 col-md-5">
 					<div class="dataTables_info" id="dataTable_info" role="status"
-						aria-live="polite">${page.beginList} ... ${page.endList}   </div>
+						aria-live="polite"><%-- ${page.beginList} ... ${page.endList} --%>   </div>
 				</div>
 				<div class="col-sm-12 col-md-7">
 					<div class="dataTables_paginate paging_simple_numbers"
