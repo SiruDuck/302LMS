@@ -43,6 +43,12 @@ h6{
 	margin-left: 350px !important;
 	top: 30rem;
 }
+.box{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1
+}
 
 
 .pointer {position:absolute; width:50px; height:50px; border-radius:50px; background:white; transition:all 0.6s ease-out}
@@ -123,7 +129,7 @@ h6{
 <div class="row">
     <div class="col-lg-6">
         <!-- Default Card Example -->
-        <div class="card" style='margin-bottom:5rem;'>
+        <div class="card" style='margin-bottom:1rem;'>
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between " style='background-color:#fff; border-left: 1rem solid #dc3545;'>
                 <h6 class="m-0 font-weight-bold text-dark text-lg">공지사항</h6>
@@ -135,7 +141,7 @@ h6{
                 </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body notice" style='border-left: 1rem solid #dc3545;'>
+            <div class="card-body notice box" style='border-left: 1rem solid #dc3545; '>
 <!--                 <div class='mb-3 ml-3'> -->
 <!--                 	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i> -->
 <!--                 	<a href='' class='text-gray-900'>도서관 리모델링 공사</a> -->
@@ -150,44 +156,15 @@ h6{
 <!--                 </div> -->
 	
               <c:forEach items='${notice.list}' var='vo' begin="0" end="2">
-		                <div class='mb-3 ml-3'>
-		<%--                 	 <c:forEach items='${page.list}' var='no' begin="0" end="2"> --%>
+		                <div class='mb-3 ml-3' >
 		                	 	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
-		                		<a href='info.no?id=${vo.id}' class='text-gray-900'>${vo.title}</a>
+		                		<a href='info.no?id=${vo.id}' class='text-gray-900 box' >${vo.title}</a>
 		                </div>
                	</c:forEach>
                
             </div>
         </div>
-        
-        <div class="card mb-4">
-            <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #fd7e14;'>
-                <h6 class="m-0 font-weight-bold text-lg text-dark">자유 게시판</h6>
-                <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    	<i class="fas fa-plus text-dark"></i>
-                        <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
-                    </a>                    
-                </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body notice " style='border-left: 1rem solid #fd7e14'>
-                	<c:forEach items='${board.list}' var='vo' begin="0" end="2">
-		                <div class='mb-3 ml-3'>   
-		                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
-		                	<a href='info.br?id=${vo.id}' class='text-gray-900'>${vo.title}</a><br>
-		                </div>
-                	</c:forEach>
-                
-            </div>
-        </div>
-
-        
-
-    </div>
-
-    <div class="col-lg-6">
+     
 		<div class="card " style='margin-bottom:5rem;'>
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #f6c23e;'>
@@ -213,6 +190,32 @@ h6{
                 	<i class='fas fa-comment-dots text-warning mr-2'></i>
                 	<a href='' class='text-gray-900 font-weight-bold'>학식 맛집이네</a>
                 </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+            <div class="card mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #fd7e14;'>
+                <h6 class="m-0 font-weight-bold text-lg text-dark">자유 게시판</h6>
+                <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    	<i class="fas fa-plus text-dark"></i>
+                        <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
+                    </a>                    
+                </div>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body notice box" style='border-left: 1rem solid #fd7e14'>
+                	<c:forEach items='${board.list}' var='vo' begin="0" end="2">
+		                <div class='mb-3 ml-3'>   
+		                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
+		                	<a href='info.br?id=${vo.id}' class='text-gray-900 box'>${vo.title}</a>
+		                </div>
+                	</c:forEach>
+                
             </div>
         </div>
         
