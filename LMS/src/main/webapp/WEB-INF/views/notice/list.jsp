@@ -25,17 +25,7 @@ body{
 	overflow: hidden;
 }
 
-.card {
-    border: none;
-    margin-bottom: 24px;
-    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
-    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
-}
 
-.avatar-xs {
-    height: 2.3rem;
-    width: 2.3rem;
-}
 </style>
 </head>
 <body>
@@ -97,7 +87,7 @@ body{
 								<td style="text-align: left;">${vo.writer}</td>
 								<td style="text-align: left;">${vo.writedate }</td>
 								<td style="text-align: left;">${vo.readcnt }</td>
-								<td style="text-align: left;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
+								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
 						
 							</tr>
 						</c:forEach>
