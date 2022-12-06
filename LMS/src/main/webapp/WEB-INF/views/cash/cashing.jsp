@@ -43,7 +43,7 @@ span.btn{
 	position: absolute;
 	z-index: 999;
 	top: 10%;
-  left: 35%;
+  left: 37%;
   margin: -50px 0 0 -50px;
 }
 </style>
@@ -94,6 +94,7 @@ span.btn{
 					
 					<div class='card mb-4'>
 					<form id='all_manage' action='cash.ing' method='post'>
+					<input type="hidden" value="${category }" name="category">
 						<div class='card-header py-3'>
 							<h6 class='m-0 font-weight-bold text-primary'>검색</h6>
 						</div>
@@ -101,74 +102,80 @@ span.btn{
 							<!-- 연도 별 검색 -->
 							<div class='dataTables_filter search-box'>
 								<select name='cash_year' class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form#all_manage").submit()'>
-									<option value='-1'> 연도별</option>
-									<option value="2020"> 2020월 </option>
-									<option value="2021"> 2021월 </option>
-									<option value="2022"> 2022월 </option>
+									<option value=''
+									> 연도별</option>
+									<option
+									${temp_map.cash_year eq 2020 ? 'selected' : '' }
+									 value="2020"> 2020월 </option>
+									<option 
+										${temp_map.cash_year eq 2021 ? 'selected' : '' }
+									value="2021"> 2021월 </option>
+									<option 
+										${temp_map.cash_year eq 2022 ? 'selected' : '' }
+									value="2022"> 2022월 </option>
 								</select>
 							</div>
 							
 							<!-- 월별 검색 -->
 							<div class='dataTables_filter search-box'>
 								<select name='cash_month'  class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form#all_manage").submit()'>
-									<option value='-1'> 월별</option>
+									<option value=''> 월별</option>
 									<c:forEach var='mm' begin='1' end='12'>
-									<option value="${mm}"  > ${mm}월 </option>
-<%-- 									<option value="${mm}" ${filter.month eq mm ? 'selected' : ''}> ${mm}월 </option> --%>
+									<option 
+													${mm  eq temp_map.cash_month ? 'selected' : '' }
+									value="0${mm}"  > ${mm}월 </option>
 									</c:forEach>
-<%-- 									<option value="1" ${filter.month eq 1 ? 'selecte' : ''}> 1월 </option> --%>
-<!-- 									<option value="2"> 2월 </option> -->
-<!-- 									<option value="3"> 3월 </option> -->
-<!-- 									<option value="4"> 4월 </option> -->
-<!-- 									<option value="5"> 5월 </option> -->
-<!-- 									<option value="6"> 6월 </option> -->
-<!-- 									<option value="7"> 7월 </option> -->
-<!-- 									<option value="8"> 8월 </option> -->
-<!-- 									<option value="9"> 9월 </option> -->
-<!-- 									<option value="10"> 10월 </option> -->
-<!-- 									<option value="11"> 11월 </option> -->
-<!-- 									<option value="12"> 12월 </option> -->
 								</select>
 							</div>
 							
 							<!-- 아이디로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<input type="search" class='ids form-control form-control-sm' placeholder='아이디로 검색'>
+								<input name="id" type="search" class='ids form-control form-control-sm' placeholder='아이디로 검색'
+								onkeyup="if(window.event.keyCode==13){$('form').submit()}"
+								 value="${temp_map.id }">
 							</div>
 							
 							<!-- 이름으로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<input type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'>
+								<input name="name" type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'
+								onkeyup="if(window.event.keyCode==13){$('form').submit()}"
+								 value="${temp_map.name }">
 							</div>
 							
 							<!-- 직책으로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm'>
-									<option value='department_all'> 직책 검색</option>
-									<c:forEach items="${department_list }" var="department_list">
-									<option value='${department_list }'> ${ department_list.department_name}</option>
+							<select name="info_cd" onchange='$("form").submit()'
+											class='custom-select custom-select-sm form-control form-control-sm'>
+												<option  value=''>전체 보기</option>
+								
+									<c:forEach items="${info_list }" var="info">
+									
+									<option ${info.info_cd eq temp_map.info_cd ? 'selected' : ''} 
+									value='${info.info_cd }'> ${info.info_name }</option>
 									</c:forEach>
-								</select>
+
+										</select>
 							</div>
 							
-							<!-- 수당으로 검색 -->
+							<%--시간없어서 그냥 없앰.. <!-- 수당으로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
-									<option value='info_all' value='-1'> 수당검색</option>
+								<select name="cash_code" class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
+									<option value='' > 수당검색</option>
 									<c:forEach items="${info_list }" var="info">
 									<option ${info_cd eq info.info_cd ? 'selected' : ''} 
 									value='${info.info_cd }'> ${info.info_name }</option>
 									</c:forEach>
 								</select>
-							</div>
+							</div> --%>
 							
 							<!-- 학과로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<select class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
-									<option value='info_all' value='-1'> 학과검색</option>
-									<c:forEach items="${department_list }" var="department_list">
-									<option ${department_list eq department_list.department_id ? 'selected' : ''} 
-									value='${department_list.department_id }'> ${department_list.department_name }</option>
+								<select name="department"class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
+									<option value='' > 학과검색</option>
+									<c:forEach items="${department_list }" var="vo">
+									<option
+									${vo.department_name eq temp_map.department ? 'selected' : ''} 
+									value='${vo.department_name }'> ${vo.department_name }</option>
 									</c:forEach>
 								</select>
 							</div>

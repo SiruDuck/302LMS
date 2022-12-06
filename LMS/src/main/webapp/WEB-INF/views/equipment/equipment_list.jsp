@@ -116,35 +116,34 @@ span.btn{
 
 <script>
 
-/* var input = $('.eqname');
-
 input.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-    	  $.ajax({
-    			data:{name: $(this).val()},
-    			url:"eqnamelist",
-    			success:function(data){
-    				$('#dataTable_wrapper').html(data);
-    			}
-    			
-    		})
-      }
-    });
- */
- function test(e){
-     const code = e.code;
-     
-     if( e.code == 'Enter'){
-    	  $.ajax({
-  			data:{name: $('.eqname').val()},
+    if (event.keyCode === 13) {
+  	  $.ajax({
+  			data:{name: $(this).val()},
   			url:"eqnamelist",
   			success:function(data){
   				$('#dataTable_wrapper').html(data);
   			}
   			
   		})
-     }
-  }
+    }
+  });
+  
+function test(e){
+   const code = e.code;
+   
+   if( e.code == 'Enter'){
+  	  $.ajax({
+			data:{name: $('.eqname').val()},
+			url:"eqnamelist",
+			success:function(data){
+				$('#dataTable_wrapper').html(data);
+			}
+			
+		})
+   }
+}
+
 function equiment_add (){
 	document.getElementById('eqmodify').style.display='none';
 	document.getElementById('eqadd').style.display='block';
@@ -171,17 +170,6 @@ $('.btn-secondary').click(function(){
 	
 }); */
 
-
-/* $('.names').keyup(function(){
-	$.ajax({
-		data:{name: $(this).val()},
-		url:"eqnamelist",
-		success:function(data){
-			$('#dataTable_wrapper').html(data);
-		}
-		
-	})
-}); */
 
 </script>
 

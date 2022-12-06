@@ -182,16 +182,17 @@ span.btn {
 												<c:when test="${vo.semesterpoint gt 0 }">
 												<td class='point'>${vo.semesterpoint }</td>
 												<td>${vo.score_name }</td>
+												<c:if test="${select_grp eq 'choice' }">
+												<td><input type="checkbox" /></td>
+											</c:if>
 												</c:when>
 												<c:otherwise>
-													<td colspan="2"  style="text-align: center;">수강중(평가전)</td>
+													<td colspan="3"  style="text-align: center;">수강중(평가전)</td>
 												</c:otherwise>
 											</c:choose>
 										
 											
-											<c:if test="${select_grp eq 'choice' }">
-												<td><input type="checkbox" /></td>
-											</c:if>
+											
 										</tr>
 									</c:forEach>
 
@@ -283,13 +284,7 @@ function choice(e){
 }
 
 $('.average').click(function(){
-	if($(this).find("[type=checkbox]").is(':checked')){
-		$(this).find("[type=checkbox]").prop('checked',false);
-		$(this).removeClass("checked")
-	}else	{
-		$(this).find("[type=checkbox]").prop('checked',true);
-			$(this).addClass("checked");
-		}
+	
 	calc_avg(0);
 });
 

@@ -38,6 +38,7 @@
 <script>
 
 
+
 function equiment_add (){
 	document.getElementById('eqmodify').style.display='none';
 	document.getElementById('eqadd').style.display='block';
@@ -65,15 +66,5 @@ $('.btn-secondary').click(function(){
 }); */
 
 
-$('.names').keyup(function(){
-	$.ajax({
-		data:{name: $(this).val()},
-		url:"eqnamelist",
-		success:function(data){
-			$('#dataTable_wrapper').html(data);
-		}
-		
-	})
-});
 
 </script>                          

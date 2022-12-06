@@ -7,6 +7,7 @@ public class TimeTableVO {
 					subjectcredit, state, book, lecture_day;
 	private int lecture_num , check_flag , check_cnt;
 
+
 	
 	
 	
@@ -130,6 +131,7 @@ public class TimeTableVO {
 	public void setLecture_day(String lecture_day) {
 		this.lecture_day = lecture_day;
 	}
+	
 	
 	
 	

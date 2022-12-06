@@ -17,7 +17,7 @@ from lectures l LEFT OUTER JOIN (SELECT * FROM SUBJECTSCORE s WHERE ID =  #{id} 
                 LEFT OUTER JOIN (SELECT COUNT(*) cnt ,  LECTURE_NUM FROM SUBJECTSCORE e  GROUP BY LECTURE_NUM) e_grp ON l.LECTURE_NUM = e_grp.LECTURE_NUM
                 
 
-where l.semester = '2'
+where l.semester = '2' 
 
 
 

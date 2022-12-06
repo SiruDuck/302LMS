@@ -24,8 +24,8 @@ public class MemberDAO implements MemberService{
 
 	@Override
 
-	public List<MemberVO> member_list() {
-		return sql.selectList("member.member_list");
+	public List<MemberVO> member_list(HashMap<String, String> temp_map) {
+		return sql.selectList("member.member_list",temp_map);
 	}
 
 	@Override

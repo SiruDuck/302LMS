@@ -2,6 +2,7 @@ package com.yongmoon.lms;
 
 import java.lang.System.Logger;
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.mail.Session;
@@ -33,6 +34,7 @@ import member.MemberVO;
 
 @Controller
 public class MemberController {
+	
 	@Autowired
 	private MemberServiceImpl service;
 	@Autowired
@@ -46,19 +48,27 @@ public class MemberController {
 
 	// 학생, 교사, 교직원, 어드민 리스트 출력
 	@RequestMapping("/member.list")
-	public String memberlist(Model model, @RequestParam(defaultValue = "-1") int info_cd) {
-		List<MemberVO> list = service.member_list(); // 총 멤버 리스트
+	public String memberlist(Model model, @RequestParam(defaultValue = "-1") int info_cd,
+			@RequestParam(defaultValue = "") String  department,
+			@RequestParam(defaultValue = "") String  student_name,
+			@RequestParam(defaultValue = "") String  id
+			
+			) {
+		
+		HashMap<String, String> temp_map = new HashMap<String, String>();
+		temp_map.put("info_cd", info_cd+"");
+		temp_map.put("department", department);
+		temp_map.put("student_name", student_name);
+		temp_map.put("id", id);
+		List<MemberVO> list = service.member_list(temp_map); // 총 멤버 리스트
 		List<DepartmentVO> department_list = service.department_list();
 
-		List<MemberVO> info_list;
-		if (info_cd == -1)
-			info_list = service.info_list();
-		else
-			info_list = service.info_list();
+		List<MemberVO> info_list = service.info_list();
 
 		model.addAttribute("list", list);
 		model.addAttribute("department_list", department_list);
 		model.addAttribute("info_list", info_list);
+		model.addAttribute("temp_map", temp_map);
 		return "member/member_list";
 	}
 
