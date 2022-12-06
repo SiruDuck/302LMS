@@ -77,23 +77,21 @@
 		console.log("서브밋버튼");
 		if( $('[name=department_name]').val()==''){
 			alert('학과를 입력하세요!');
-			$('[name=equipment]').focus();
+			$('[name=department_name]').focus();
 			return;
 			
-		}else if( $('[name=equipment_num]').val()==''){
+		}else if( $('[name=name]').val()==''){
 			
-			alert('비품 수량을 입력하세요!');
-			$('[name=equipment_num]').focus();
+			alert('이름을 입력하세요!');
+			$('[name=name]').focus();
 			return;
 			
-		}else if(isNaN($('[name=equipment_num]').val())){
-			alert('비품 수량을 정수값으로 입력하세요!');
+		}else if($('[name=equipment_num]').val()){
+			alert('장학정보를 선택하세요!');
 			$('[name=equipment_num]').focus();
 			return;
 		}else if ( $('[name=price]').val()==''){
-			alert('가격을 입력해주세요!');
-		}else if (isNaN($('[name=price]').val())){
-			alert('가격을 정수로 입력해주세요!');
+			alert('장학 유형을 선택하세요!');
 		}else{
 			alert('등록되었습니다.');
 			$("#formId").attr("action","eqinsert");
