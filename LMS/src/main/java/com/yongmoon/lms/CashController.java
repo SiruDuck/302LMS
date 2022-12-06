@@ -107,7 +107,8 @@ public class CashController {
 		
 		service.sc_insert(vo);
 		
-		return "redirect:cash.ing";
+		//return "redirect:cash.ing";
+		return "redirect:cash.ing?category=scholarship";
 	}
 	
 	

@@ -30,8 +30,16 @@
 							
 							<!-- 학과입력 -->
 							<div class='dataTables_filter search-box'>
-								<input type="search" name="department_name" class='ids form-control form-control-sm' placeholder='학과 입력'>
+								<select name='department_name' class='custom-select custom-select-sm form-control form-control-sm'>
+									<option value=''>학과</option>
+									<c:forEach items="${department_list }" var="department_list">
+									<option 
+									value="${department_list.department_name }">${department_list.department_name}</option>
+									</c:forEach>
+									
+								</select>
 							</div>
+							
 							
 							<!-- 이름 입력 -->
 							<div class='dataTables_filter search-box'>
@@ -77,7 +85,7 @@
 	
 	$('#scsubmit').click(function(){
 		console.log("서브밋버튼");
-		if( $('[name=department_name]').val()==''){
+		if( $('[name=department_name] option:selected').val()==''){
 			alert('학과를 입력하세요!');
 			return;
 			

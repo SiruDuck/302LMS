@@ -173,6 +173,7 @@ ORDER BY c.payment_day desc
 	from member
 	where name = #{name}
    </select>
+  
    
    <!-- 장학 등록 -->
    <update id="insert_sc">
