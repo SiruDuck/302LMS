@@ -12,6 +12,7 @@
 	<definition name="mainlogin" template="/WEB-INF/views/mainlogin.jsp">
 	
 	</definition>
+	<definition name="teampage" template="/WEB-INF/views/teampage.jsp"/>
 	<definition name="about" template="/WEB-INF/views/about.jsp"/>
 	<definition name="welcome" template="/WEB-INF/views/welcome.jsp"/>
 	
