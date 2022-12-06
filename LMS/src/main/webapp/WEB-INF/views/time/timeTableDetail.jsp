@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <style>
-.table td:nth-child(1) {
+.table td:nth-child(2n-1) {
 	font-weight: 700;
 	width:8rem;
 	text-align: center;
@@ -35,42 +35,36 @@ table td{
 	                     <tr>
 	                         <td>강의코드</td>
 	                         <td>${vo.lecture_num }</td>
-	                     </tr>
-	                     <tr>
 	                         <td>강의명</td>
 	                         <td>${vo.lecture_title }</td>
 	                     </tr>
 	                     <tr>
 	                         <td>구분</td>
 	                         <td>${vo.sortation }</td>
+	                         <td>담당교수</td>
+	                         <td>${vo.teacher_name }</td>
 	                     </tr>
 	                     <tr>
 	                         <td>강의실</td>
 	                         <td>${vo.lecture_room }</td>
-	                     </tr>
-	                     <tr>
-	                         <td>담당교수</td>
-	                         <td>${vo.teacher_name }</td>
-	                     </tr>      
-	                     <tr>
-	                         <td>강의시간</td>
-	                         <td>${vo.lecture_time }교시</td>
-	                     </tr>                
-	                     <tr>
-	                         <td>학점</td>
-	                         <td>${vo.subjectcredit }학점</td>
-	                     </tr>             
-	                     <tr>
 	                         <td>강의유형</td>
 	                         <td>${vo.state }</td>
-	                     </tr>
+	                     </tr>     
+	                     <tr>
+	                         <td>강의시간</td>
+	                         <td>${vo.lecture_class }</td>
+	                         <td>학점</td>
+	                         <td>${vo.subjectcredit }학점</td>
+	                     </tr>        	                      
 	                     <tr>
 	                     	<td>교재명</td>
-	                     	<td>${vo.book }</td>
+	                     	<td colspan='3'>${vo.book }</td>
 	                     </tr>             
 	                     <tr>
 	                     	<td>수강최대인원</td>
 	                     	<td>${vo.capacity }</td>
+	                     	<td>신청 여부</td>
+	                     	<td>${vo.enrolment }</td>
 	                     </tr>             
 	                 </tbody>
 	             </table>
