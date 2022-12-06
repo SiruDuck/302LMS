@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,15 +14,26 @@
 
 <title>Insert title here</title>
 <style>
-	
+	.container-fluid {
+		width: 70%;
+	}
 
 </style>
 </head>
 <body>
-<h3>회원가입</h3>
+       
+<form method='post' action='join' enctype='multipart/form-data'>
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+        	<h6 class="m-0 font-weight-bold text-primary">회원가입</h6>
+        </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                      
 
 <div class='text-right'  style='margin: 10px auto; color: #ff0000'>* 는 필수입력항목입니다</div>
-<form method='post' action='join' enctype='multipart/form-data'>
 <table class="table table-bordered dataTable">
 <tr><th>* 성명</th>
 	<td><input type='text' name='name' class='chk form-control col-sm-6 mb-3 mb-sm-0' autofocus></td>
@@ -48,7 +60,7 @@
 	</td>
 </tr>
 <tr><th>* 성별</th>
-	<td><label><input type='radio' name='gender' value='남' checked>남</label>
+	<td><label><input type='radio' style="margin-right: 1rem" name='gender' value='남' checked>남</label>
 		<label><input type='radio' name='gender' value='여'>여</label>
 	</td>
 </tr>
@@ -57,7 +69,6 @@
 		<div class='align'>
 		<label>
 			<input type='file' name='file' id='attach-file' accept='image/*'>
-			<a><i class="font-b fa-regular fa-address-card"></i></a>
 		</label>
 		<span id='preview'></span>
 		<a id='delete-file'><i class="font-r fa-solid fa-trash-can"></i></a>
@@ -74,16 +85,16 @@
 </tr>
 <tr><th>* 주소</th>
 	<td><a class='btn-fill' id='post'>우편번호찾기</a>
-		<input type='text' name='post' class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' readonly>
+		<input type='text' style="width: 9rem;" name='post' class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' readonly>
 		<input type='text' name='addr' class='form-control col-sm-6 mb-3 mb-sm-0' readonly>
 		<input type='text' name='addr' class='form-control col-sm-6 mb-3 mb-sm-0' >
 	</td>
 </tr>
 <tr><th>학년</th>
-	<td><label><input type='radio' name='grade' value='0학년' checked>0학년</label>
-		<label><input type='radio' name='grade' value='1학년'>1학년</label>
-		<label><input type='radio' name='grade' value='2학년'>2학년</label>
-		<label><input type='radio' name='grade' value='3학년'>3학년</label>
+	<td><label><input type='radio' style="margin-right: .5rem" name='grade' value='0학년' checked>0학년</label>
+		<label><input type='radio' style="margin-right: .5rem" name='grade' value='1학년'>1학년</label>
+		<label><input type='radio' style="margin-right: .5rem" name='grade' value='2학년'>2학년</label>
+		<label><input type='radio' style="margin-right: .5rem" name='grade' value='3학년'>3학년</label>
 		<label><input type='radio' name='grade' value='4학년'>4학년</label>
 	</td>
 </tr>
@@ -98,39 +109,66 @@
 	</td>
 </tr>
 <tr><th>* 상태</th>
-	<td><label><input type='radio' name='state' value='재학중' checked>재학중</label>
+	<td><label><input type='radio' name='state' style="margin-right: .5rem" value='재학중' checked>재학중</label>
 		<label><input type='radio' name='state' value='근무중'>근무중</label>
 	</td>
 </tr>
 <!-- 학과코드 입력시 학과명도 선택되고 들어갈 수 있게 -->
 <tr><th>학과코드</th>
-	<td><input type='text' name='department_id' class='date form-control col-sm-6 mb-3 mb-sm-0' ></td>
-</tr>
-<tr><th>학과명</th>
-	<td><input type='text' name='department_name' class='date form-control col-sm-6 mb-3 mb-sm-0' ></td>
-</tr>
-<!-- 구분 선택시 구분명도 선택이 될 수 있게 -->
-<tr><th>구분</th>
-	<td><label><input type='radio' name='info_cd' value='1' checked>1</label>
-		<label><input type='radio' name='info_cd' value='2'>2</label>
-		<label><input type='radio' name='info_cd' value='3'>3</label>
-		<label><input type='radio' name='info_cd' value='4'>4</label>
+	<td><label><input type='radio' style="margin-right: .5rem" name='department_id' value='101' checked>게임개발학과</label>
+		<label><input type='radio' style="margin-right: .5rem" name='department_id' value='102' >인공지능학과</label>
+		<label><input type='radio' style="margin-right: .5rem" name='department_id' value='103' >웹디자인학과</label>
+		<label><input type='radio' style="margin-right: .5rem" name='department_id' value='104' >웹개발학과</label></br>
+		<label><input type='radio' style="margin-right: .5rem" name='department_id' value='105' >정보보안학과</label>
+		<label><input type='radio' style="margin-right: .5rem" name='department_id' value='106' >빅데이터학과</label>
+		<label><input type='radio' style="margin-right: .5rem" name='department_id' value='107' >소프트웨학과</label>
+		<label><input type='radio' name='department_id' value='108' >IOT 반도체 전자과</label>
+		
 	</td>
 </tr>
-<tr><th>구분명</th>
-	<td><input type='text' name='info_name' class='date form-control col-sm-6 mb-3 mb-sm-0' ></td>
+<!-- <tr><th>학과명</th>
+	<td>
+</tr> -->
+<!-- 구분 선택시 구분명도 선택이 될 수 있게 -->
+<tr><th>구분</th>
+	<td>
+		<label><input type='radio' style="margin-right: .5rem" name='info_cd' value='1' checked>학생</label>
+		<label><input type='radio' style="margin-right: .5rem" name='info_cd' value='2'>직원</label>
+		<label><input type='radio' style="margin-right: .5rem" name='info_cd' value='3'>교수</label>
+	</td>
 </tr>
+<!-- <tr><th>구분명</th> -->
+<!-- 	<td> -->
+<!-- 	</td> -->
+<!-- </tr> -->
 
 </table>
+	<input type='hidden' name='info_name' value = '학생' class='date form-control col-sm-6 mb-3 mb-sm-0' >
+	<input type='hidden' name='department_name' value='게임개발학과' class='date form-control col-sm-6 mb-3 mb-sm-0' >
+	</div>
+	</div>
+	</div>
+	
 </form>
-<div class=''>
-	<a class='btn btn-primary' id='join'>회원가입</a>
+<div class='ce' style='text-align: center; margin: 3rem;'>
+	<a class='btn btn-primary' style="margin-right: .5rem; " id='join'>회원가입</a>
 	<a class='btn btn-secondary' onclick='history.go(-1)'>취소</a>
 </div>
 
 <script src='js/member.js?<%=new java.util.Date()%>'></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+$('[name=department_id]').change(function(){
+	$('[name=department_name]').val($(this).val()==101?'게임개발학과':$(this).val()==102?'인공지능학과':$(this).val()==103?'웹디자인학과':$(this).val()==104?'앱개발학과':$(this).val()==105?'정보보안학과':$(this).val()==105?'정보보안학과':$(this).val()==106?'빅데이터학과':$(this).val()==107?'소프트웨어학과':'IOT반도체전자과');
+	console.log($('[name=department_name]').val())
+})
+
+$('[name=info_cd]').change(function(){
+	$('[name=info_name]').val($(this).val()==1?'학생':$(this).val()==2?'직원':'교수');
+	console.log($('[name=info_name]').val())
+})
+
+
 
 $('#join').click(function(){
 	if( $('[name=name]').val()=='' ){
