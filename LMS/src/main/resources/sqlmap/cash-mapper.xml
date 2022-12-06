@@ -141,6 +141,58 @@ ORDER BY c.payment_day desc
    
    </sql>
    
+   <!-- 장학정보 -->
+   <select id="cashinfo_sc_list" resultType="cash.Cash_infoVO">
+   select DISTINCT cash_name
+	from cash_info
+	where cash_code between 10 and 30
    
+   </select>
+   
+   <!-- 장학유형 -->
+   <select id="cashinfo_sc_list_des" resultType="cash.Cash_infoVO">
+   select DISTINCT DESCRIPTION
+	from cash_info
+	where cash_code between 10 and 40
+   
+   </select>
+   
+   
+   <!-- 장학정보로 캐쉬코드 얻기 -->
+   <select id="get_cash_code" resultType="String">
+   select cash_code
+	from cash_info
+	where description = #{description}
+   </select>
+   
+   
+   
+   <!-- 이름으로 id얻기 -->
+   <select id="get_id" resultType="String">
+   select id
+	from member
+	where name = #{name}
+   </select>
+   
+   <!-- 장학 등록 -->
+   <update id="insert_sc">
+   
+	Insert into CASH_ING (CASH_CODE, ID, CASH_NAME, PRICE, DESCRIPTION, PAYMENT_START_DATE, PAYMENT_END_DATE, PAYMENT_DAY, TAX, PAYMENT_STATUS, TAX_A, TAX_B, TAX_C, TAX_D)
+	values(	#{cash_code} ,
+			#{id},
+			#{cash_name},
+			#{price},
+			#{description},
+			null,
+			null,
+			sysdate,
+			'0.033',
+			null,
+			null,
+			null,
+			null,
+			null)
+   
+   </update>
    
 </mapper>
