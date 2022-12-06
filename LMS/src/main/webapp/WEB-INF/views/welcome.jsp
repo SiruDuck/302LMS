@@ -46,7 +46,7 @@
 
       <a href="index" class="logo d-flex align-items-center">
 
-        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 40px;">
+        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 70px;">
       </a>
 
 
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="web">
-                <div><img class="sizing" src="images/web.png" alt="">
+                <div><img class="sizing" src="resources/images/web.png" alt="">
                     <span class="imgname"><p class="white">웹 개발학과</p></span>
                 </div>
                 <div class="move font_center boxback">

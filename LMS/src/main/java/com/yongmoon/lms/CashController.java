@@ -1,6 +1,7 @@
 package com.yongmoon.lms;
 
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cash.CashServiceImpl;
 import cash.Cash_FilterVO;
 import cash.Cash_finalVO;
+import cash.Cash_infoVO;
+import cash.Cash_ingVO;
 import department.DepartmentVO;
 import member.MemberDAO;
 import member.MemberServiceImpl;
@@ -24,6 +27,8 @@ public class CashController {
 	private MemberServiceImpl mService;
 	@Autowired private CashServiceImpl service;
 	@Autowired private MemberDAO md;
+	
+	
 	@RequestMapping("/cash.ing")
 	public String list(Model model
 			, @RequestParam(defaultValue = "all") String category 
@@ -72,13 +77,38 @@ public class CashController {
 			model.addAttribute("info_list",info_list);
 		//}else if (category.equals("salary")) {
 		//}
+			
+			List<Cash_infoVO> sc_list = service.sc_list();			//장학 정보
+			List<Cash_infoVO> sc_list2 = service.sc_list_des();	//장학세부내용 정보
+			model.addAttribute("sc_list",sc_list);
+			model.addAttribute("sc_list2",sc_list2);
+			
+			
 		return "cash/cashing";
 	}
 	
 	@RequestMapping("/sc.add")
-	public String acadd() {
+	public String acadd(String department_name, String name,
+			String cash_name ,
+			 String description
+			) {
+		//departmnet_name(학과) , name(이름), cash_name(교내장학금~교외~), description(장학금세부정보) 가져왔음.
+		Cash_ingVO vo = new Cash_ingVO();
+		String cash_code = service.search_cash_code(description);	//장학정보로 cash code 얻기
+		String id = service.get_id(name);		//캐쉬네임으로 id얻기
 		
-		return "cash/scholarship/sc_insert";
+		
+		vo.setCash_code(Integer.parseInt(cash_code));
+		vo.setCash_name(cash_name);
+		vo.setId(id);
+		vo.setPrice(300000);
+		vo.setDescription(description);
+		vo.setTax("0.033");
+		
+		service.sc_insert(vo);
+		
+		//return "redirect:cash.ing";
+		return "redirect:cash.ing?category=scholarship";
 	}
 	
 	

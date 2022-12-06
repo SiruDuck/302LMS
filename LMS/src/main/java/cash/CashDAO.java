@@ -45,6 +45,34 @@ public class CashDAO implements CashService{
 		return sql.selectList("cash.admin_scholarship_list",temp_map);
 	}
 
+	@Override
+	public List<Cash_infoVO> sc_list() {
+		return sql.selectList("cash.cashinfo_sc_list");
+	}
+
+	@Override
+	public List<Cash_infoVO> sc_list_des() {
+		return sql.selectList("cash.cashinfo_sc_list_des");
+	}
+
+	@Override
+	public String search_cash_code(String description) {
+		return sql.selectOne("cash.get_cash_code",description);
+	}
+
+	@Override
+	public String get_id(String name) {
+		return sql.selectOne("cash.get_id",name);
+	}
+
+	@Override
+	public int sc_insert(Cash_ingVO vo) {
+		return sql.update("cash.insert_sc",vo);
+	}
+
+
+
+
 	
 	
 

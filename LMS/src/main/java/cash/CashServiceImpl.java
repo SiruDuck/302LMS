@@ -46,6 +46,35 @@ public class CashServiceImpl implements CashService {
 		return dao.cash_scholarship_final_list(temp_map);
 	}
 
+	@Override
+	public List<Cash_infoVO> sc_list() {
+		return dao.sc_list();
+	}
+
+	@Override
+	public List<Cash_infoVO> sc_list_des() {
+		return dao.sc_list_des();
+	}
+
+	@Override
+	public String search_cash_code(String description) {
+		return dao.search_cash_code(description);
+	}
+
+	@Override
+	public String get_id(String name) {
+		return dao.get_id(name);
+	}
+
+	@Override
+	public int sc_insert(Cash_ingVO vo) {
+		return dao.sc_insert(vo);
+	}
+
+	
+
+
+
 	
 	
 }
