@@ -28,6 +28,7 @@ public interface MemberService {
 
 	MemberVO and_login(String id) throws Exception;
 	
+	int member_update(MemberVO vo);
 
 	
 }
