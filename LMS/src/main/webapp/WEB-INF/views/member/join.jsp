@@ -85,8 +85,8 @@
 </tr>
 <tr><th>* 주소</th>
 	<td><a class='btn-fill' id='post'>우편번호찾기</a>
-		<input type='text' style="width: 9rem;" name='post' class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' readonly>
-		<input type='text' name='addr' class='form-control col-sm-6 mb-3 mb-sm-0' readonly>
+		<input type='text' style="margin-top: 1rem; margin-bottom: 1rem; width: 8rem;" name='post' class='w-px60 form-control' readonly>
+		<input type='text' style="margin-bottom: 1rem; width: 23rem;" name='addr' class='form-control' readonly>
 		<input type='text' name='addr' class='form-control col-sm-6 mb-3 mb-sm-0' >
 	</td>
 </tr>
