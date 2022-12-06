@@ -42,7 +42,7 @@
 
       <a href="index" class="logo d-flex align-items-center">
 
-        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 40px;">
+        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 80px;">
       </a>
 
 

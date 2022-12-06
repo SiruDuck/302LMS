@@ -40,7 +40,7 @@
 		
       <a href="index" class="logo d-flex align-items-center">
 
-        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 40px;">
+        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 70px;">
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>

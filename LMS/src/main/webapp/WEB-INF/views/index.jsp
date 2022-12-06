@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@ taglib uri="http://tiles.apache.org/tags-tiles"  prefix="tiles"%>
 <!DOCTYPE html>
 <html>
@@ -111,9 +111,11 @@ h6{
     <!-- Card Body -->
     <div class="card-body"  style='border-left: 1rem solid #5F9DF7;'>
         <div class="text-center">
-            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event1.png"></a>
-            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event2.png"></a>
-            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event3.png"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event1.jpg"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event2.jpg"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event5.jpg"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event4.jpg"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event3.jpg"></a>
         </div>
     </div>
 </div>
@@ -134,25 +136,34 @@ h6{
             </div>
             <!-- Card Body -->
             <div class="card-body notice" style='border-left: 1rem solid #dc3545;'>
-                <div class='mb-3 ml-3'>
-                	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
-                	<a href='' class='text-gray-900'>도서관 리모델링 공사</a>
-                </div>
-                <div class='mb-3 ml-3'>
-                	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
-                	<a href='' class='text-gray-900'>기숙사 리모델링 공사</a>
-                </div>
-                <div class='ml-3'>
-                	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
-                	<a href='' class='text-gray-900'>학생식당 리모델링 공사</a>
-                </div>
+<!--                 <div class='mb-3 ml-3'> -->
+<!--                 	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i> -->
+<!--                 	<a href='' class='text-gray-900'>도서관 리모델링 공사</a> -->
+<!--                 </div> -->
+<!--                 <div class='mb-3 ml-3'> -->
+<!--                 	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i> -->
+<!--                 	<a href='' class='text-gray-900'>기숙사 리모델링 공사</a> -->
+<!--                 </div> -->
+<!--                 <div class='ml-3'> -->
+<!--                 	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i> -->
+<!--                 	<a href='' class='text-gray-900'>학생식당 리모델링 공사</a> -->
+<!--                 </div> -->
+	
+              <c:forEach items='${notice.list}' var='vo' begin="0" end="2">
+		                <div class='mb-3 ml-3'>
+		<%--                 	 <c:forEach items='${page.list}' var='no' begin="0" end="2"> --%>
+		                	 	<i class='fas fa-genderless mr-2' style='color:#dc3545;'></i>
+		                		<a href='info.no?id=${vo.id}' class='text-gray-900'>${vo.title}</a>
+		                </div>
+               	</c:forEach>
+               
             </div>
         </div>
         
         <div class="card mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style='background-color: #fff; border-left: 1rem solid #fd7e14;'>
-                <h6 class="m-0 font-weight-bold text-lg text-dark">질문 게시판</h6>
+                <h6 class="m-0 font-weight-bold text-lg text-dark">자유 게시판</h6>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     	<i class="fas fa-plus text-dark"></i>
@@ -162,18 +173,13 @@ h6{
             </div>
             <!-- Card Body -->
             <div class="card-body notice " style='border-left: 1rem solid #fd7e14'>
-                <div class='mb-3 ml-3'>   
-                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
-                	<a href='' class='text-gray-900'>질문있어요</a>
-                </div>
-                <div class='mb-3 ml-3'>
-                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
-                	<a href='' class='text-gray-900'>질문있어요</a>
-                </div>
-                <div class='ml-3'>
-                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
-                	<a href='' class='text-gray-900'>질문있어요</a>
-                </div>
+                	<c:forEach items='${board.list}' var='vo' begin="0" end="2">
+		                <div class='mb-3 ml-3'>   
+		                	<i class='fas fa-question mr-2' style='color:#fd7e14;'></i>             	
+		                	<a href='info.br?id=${vo.id}' class='text-gray-900'>${vo.title}</a><br>
+		                </div>
+                	</c:forEach>
+                
             </div>
         </div>
 
