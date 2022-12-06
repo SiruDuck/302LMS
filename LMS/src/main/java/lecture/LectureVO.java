@@ -7,12 +7,20 @@ public class LectureVO {
 	private String lecture_title, teacher_name, semester, sortation, lecture_room, lecture_time, id
 	, enrolment, reception_status, capacity, subjectcredit, state, book, lecture_year, lecture_day, host
 	, name, gender, grade, department_name, phone;
-	private int lecture_num;
+	private int lecture_num, info_cd;
 	private Date midex, finalex;
 	private int check_flag , check_cnt ;
 	
 	
 	
+	
+	
+	public int getInfo_cd() {
+		return info_cd;
+	}
+	public void setInfo_cd(int info_cd) {
+		this.info_cd = info_cd;
+	}
 	public int getCheck_flag() {
 		return check_flag;
 	}

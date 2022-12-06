@@ -91,15 +91,17 @@ margin-top:0px;
 }
 </style>
 <body>
-<h3 style="text-align: initial; color: #6a6a6a" class="m-2 mb-3">강의 목록</h3>
+<h3 style="text-align: initial; color: #6a6a6a" class="m-2 mb-3">전체 강의 목록</h3>
+
 <div class="container-fluid">
   
     <div class="row">
     	  <div class="col-lg-12">
 
-          	  <div class="card">
+          	  <div class="card" style='diplay : flex'>
                     <div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">전체 강의 목록</h6>
+					<!-- <h6 class="m-0 font-weight-bold text-primary">전체 강의 목록</h6> -->
+					<div><a href='new.lec' class='btn btn-primary'>강의등록</a></div>
 				</div>
 				</div>
 <form action="list.lec" method="post">
