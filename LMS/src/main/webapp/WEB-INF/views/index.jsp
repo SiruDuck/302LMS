@@ -47,7 +47,8 @@ h6{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    -webkit-line-clamp: 1
+    -webkit-line-clamp: 1;
+    padding-right: 1rem;
 }
 
 
@@ -117,7 +118,7 @@ h6{
     <!-- Card Body -->
     <div class="card-body"  style='border-left: 1rem solid #5F9DF7;'>
         <div class="text-center">
-            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event1.jpg"></a>
+            <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; margin-left:5rem; float:left;" src="resources/images/mainlogin/event1.jpg"></a>
             <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event2.jpg"></a>
             <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event5.jpg"></a>
             <a href=''><img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem; float:left;" src="resources/images/mainlogin/event4.jpg"></a>
