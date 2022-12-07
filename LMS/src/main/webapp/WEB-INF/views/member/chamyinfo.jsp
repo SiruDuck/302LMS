@@ -146,13 +146,13 @@ h3 {
 										<h6 class="mb-0">Address</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<a class='btn-fill' id='post'>우편번호찾기</a> <input type='text'
-											name='post' style="width: 7rem;"
-											class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' value='${vo.post }' readonly>
+										<a class='btn btn-primary btn-icon-split' style="padding: .5rem" id='post'>우편번호찾기</a> <input type='text'
+											name='post' style="width: 7rem; margin-top:.5rem"
+											class='w-px60 form-control ' value='${vo.post }' readonly>
 										<input type='text' name='addr'
-											class='form-control col-sm-6 mb-3 mb-sm-0' value='${vo.addr }' readonly>
-										<input type='text' name='addr'
-											class='form-control col-sm-6 mb-3 mb-sm-0'>
+											class='form-control ' style="margin-top: .5rem; width: 21rem" value='${vo.addr }' readonly>
+										<input type='text' name='addr' style="margin-top: .5rem; width: 21rem;"
+											class='form-control'>
 									</div>
 								</div>
 								<input type="hidden" name="id" value='${vo.id }'>
@@ -160,9 +160,9 @@ h3 {
 							<hr>
 							<div class="row">
 								<div class="col-sm-12"
-									style='padding: 2rem; text-align: center;'>
+									style='text-align: center;'>
 									<a class="btn btn-primary btn-icon-split"
-										style="padding-right: 1rem; padding-left: 1rem; padding-top:.5rem; padding-bottom: .5rem;" id='save' target="__blank">확인</a> <a
+										style="padding-right: 1rem; padding-left: 1rem; padding-top:.5rem; padding-bottom: .5rem; margin-right: .5rem" id='save' target="__blank">확인</a> <a
 										class="btn btn-secondary btn-icon-split "
 										style="padding-right: 1rem; padding-left: 1rem; padding-top:.5rem; padding-bottom: .5rem;" target="__blank" href="myinfo">취소</a>
 								</div>

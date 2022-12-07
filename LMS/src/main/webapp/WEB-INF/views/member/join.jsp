@@ -20,6 +20,20 @@
 .container-fluid {
 	width: 70%;
 }
+
+input[type=radio]{
+	accent-color: #4e73df;
+}
+
+input[type=file]::file-selector-button {
+  width: 7rem;
+  height: 30px;
+  background: #4e73df;
+  color: white;
+  border: 1px solid rgb(78,114,223);
+  border-radius: 5px;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -47,8 +61,8 @@
 							<th>* 아이디</th>
 							<td><input type='text' name='id'
 								class='chk form-control col-sm-6 mb-3 mb-sm-0'> <a
-								class='btn-fill' id='btn-id'>아이디 중복확인</a>
-								<div class='valid'>아이디를 입력하세요(영문소문자,숫자만)</div></td>
+								class='btn btn-primary btn-icon-split' style="padding: .3rem; margin-top: .5rem" id='btn-id'>아이디 중복확인</a>
+								<div class='valid' style="margin-top:.5rem">아이디를 입력하세요(영문소문자,숫자만)</div></td>
 						</tr>
 						<tr>
 							<th>* 비밀번호</th>
@@ -72,15 +86,14 @@
 							<th>* 성별</th>
 							<td><label style="margin-right: 1rem"><input type='radio'
 									style="margin-right: .5rem" name='gender' value='남' checked>남</label>
-								<label><input type='radio' style="margin-right: .5rem" name='gender' value='여'>여</label>
+								<label><input type='radio' style="margin-right: .3rem" name='gender' value='여'>여</label>
 							</td>
 						</tr>
 						<tr>
 							<th>프로필이미지</th>
 							<td>
 								<div class='align'>
-									<label> <input type='file' name='file' id='attach-file'
-										accept='image/*'>
+									<label> <input type='file' name='file' id='attach-file' accept='image/*'>
 									</label> <span id='preview'></span> <a id='delete-file'><i
 										class="font-r fa-solid fa-trash-can"></i></a>
 								</div>
@@ -90,8 +103,7 @@
 							<th>* 생년월일</th>
 							<td><input type='text' name='birth' id='datepicker0'
 								class='date form-control col-sm-6 mb-3 mb-sm-0' readonly>
-								<a id='delete'><i
-									class="font-r fa-regular fa-calendar-xmark"></i></a></td>
+							</td>
 						</tr>
 						<tr>
 							<th>* 전화번호</th>
@@ -100,7 +112,7 @@
 						</tr>
 						<tr>
 							<th>* 주소</th>
-							<td><a class='btn-fill' id='post'>우편번호찾기</a> <input
+							<td><a class='btn btn-primary btn-icon-split' style="padding: .2rem" id='post'>우편번호찾기</a> <input
 								type='text'
 								style="margin-top: 1rem; margin-bottom: 1rem; width: 8rem;"
 								name='post' class='w-px60 form-control' readonly> <input
@@ -125,15 +137,13 @@
 							<th>* 입학일</th>
 							<td><input type="text" name='start_date' id='datepicker1'
 								class='date form-control col-sm-6 mb-3 mb-sm-0' readonly>
-								<a id='delete'><i
-									class="font-r fa-regular fa-calendar-xmark"></i></a></td>
+							</td>
 						</tr>
 						<tr>
 							<th>졸업일</th>
 							<td><input type='text' name='end_date' id='datepicker2'
 								class='date form-control col-sm-6 mb-3 mb-sm-0' readonly>
-								<a id='delete'><i
-									class="font-r fa-regular fa-calendar-xmark"></i></a></td>
+							</td>
 						</tr>
 						<tr>
 							<th>* 상태</th>

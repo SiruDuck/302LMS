@@ -22,6 +22,16 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Jua&family=Sunflower:wght@500&display=swap')
 	;
+
+input[type=file]::file-selector-button {
+  width: 7rem;
+  height: 30px;
+  background: #4e73df;
+  color: white;
+  border: 1px solid rgb(78,114,223);
+  border-radius: 5px;
+  cursor: pointer;
+}	
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
