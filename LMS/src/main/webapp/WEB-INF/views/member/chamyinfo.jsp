@@ -38,9 +38,8 @@ h3 {
 				<div class="col-md-4 mb-4">
 					<div class="card">
 						<div class="card-body">
-							<div class="d-flex flex-column align-items-center text-center">
-								</
-
+							<div class="d-flex flex-column align-items-center text-center"> 
+								
 								<c:choose>
 									<c:when
 										test="${empty vo.profile and vo.gender eq '남'}">
@@ -118,7 +117,7 @@ h3 {
 									</div>
 									<div class="col-sm-9 text-secondary">
 										<input type="text" name='email'
-											class='chk form-control col-sm-6 mb-3 mb-sm-0'>
+											class='chk form-control col-sm-6 mb-3 mb-sm-0' value='${vo.email }'>
 									</div>
 								</div>
 								<hr>
@@ -127,8 +126,8 @@ h3 {
 										<h6 class="mb-0">Phone</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="text" name='phone'
-											class='date form-control col-sm-6 mb-3 mb-sm-0'>
+										<input type="text" name="phone"
+											class='date form-control col-sm-6 mb-3 mb-sm-0' value='${vo.phone }'>
 									</div>
 								</div>
 								<hr>
@@ -137,8 +136,8 @@ h3 {
 										<h6 class="mb-0">Mobile</h6>
 									</div>
 									<div class="col-sm-9 text-secondary">
-										<input type="text" name="mobile"
-											class='date form-control col-sm-6 mb-3 mb-sm-0'>
+										<input type="text" name='mobile'
+											class='date form-control col-sm-6 mb-3 mb-sm-0' value='(062) 362-7797'>
 									</div>
 								</div>
 								<hr>
@@ -149,9 +148,9 @@ h3 {
 									<div class="col-sm-9 text-secondary">
 										<a class='btn-fill' id='post'>우편번호찾기</a> <input type='text'
 											name='post' style="width: 7rem;"
-											class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' readonly>
+											class='w-px60 form-control col-sm-6 mb-3 mb-sm-0' value='${vo.post }' readonly>
 										<input type='text' name='addr'
-											class='form-control col-sm-6 mb-3 mb-sm-0' readonly>
+											class='form-control col-sm-6 mb-3 mb-sm-0' value='${vo.addr }' readonly>
 										<input type='text' name='addr'
 											class='form-control col-sm-6 mb-3 mb-sm-0'>
 									</div>
@@ -163,9 +162,9 @@ h3 {
 								<div class="col-sm-12"
 									style='padding: 2rem; text-align: center;'>
 									<a class="btn btn-primary btn-icon-split"
-										style="padding: .5rem" id='save' target="__blank">확인</a> <a
+										style="padding-right: 1rem; padding-left: 1rem; padding-top:.5rem; padding-bottom: .5rem;" id='save' target="__blank">확인</a> <a
 										class="btn btn-secondary btn-icon-split "
-										style="padding: .5rem" target="__blank" href="myinfo">취소</a>
+										style="padding-right: 1rem; padding-left: 1rem; padding-top:.5rem; padding-bottom: .5rem;" target="__blank" href="myinfo">취소</a>
 								</div>
 							</div>
 						</div>
