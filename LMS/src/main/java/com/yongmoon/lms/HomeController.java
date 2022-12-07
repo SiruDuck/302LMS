@@ -8,26 +8,40 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import board.BoardPageVO;
+import board.BoardServiceImpl;
+import common.CommonUtility;
 import member.MemberVO;
+import notice.NoticeDAO;
+import notice.NoticePageVO;
+import notice.NoticeServiceImpl;
 
 
 @Controller
 public class HomeController {
+	@Autowired private NoticeServiceImpl NoticeService;
+	@Autowired NoticePageVO NoPage;
+	@Autowired private BoardServiceImpl BoardService;
+	@Autowired BoardPageVO BoPage;
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(HttpSession session) {
+	public String home(HttpSession session, Model model) {
 		MemberVO vo =(MemberVO) session.getAttribute("loginInfo");
+		NoPage.setCurPage(1);
+		BoPage.setCurPage(1);
 		
 		if(vo == null)
 			return "mainlogin";
 		else
+			model.addAttribute("notice", NoticeService.notice_list(NoPage) );
+			model.addAttribute("board", BoardService.board_list(BoPage) );
 			return "index";
 	}
 	
@@ -46,5 +60,11 @@ public class HomeController {
 		return "introduction/introduction";
 	}
 
+	@RequestMapping("/team")
+	public String team() {
+		
+		return "teampage";
+	}
+	
 	
 }

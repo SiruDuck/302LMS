@@ -46,7 +46,7 @@
 
       <a href="index" class="logo d-flex align-items-center">
 
-        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 40px;">
+        <img src="resources/images/mainlogin/logo_white.png" style="width: 200px; height: 70px;">
       </a>
 
 
@@ -103,7 +103,7 @@
                     <span class="imgname"><p class="white">게임개발학과</p></span>
                 </div>
                 <div class="move font_center boxback" >
-                    <p>Unity, 언리얼엔진</p>
+                    <p>Unity, UNREAL ENGINE, C#, C++</p>
                 </div>
                 
             </div>
@@ -113,11 +113,11 @@
                     <span class="imgname"><p class="white">인공지능학과</p></span>
                 </div>
                 <div class="move font_center boxback">
-                    <p>python</p>
+                    <p>python, R, TensorFlow, MATLAB</p>
                 </div>
             </div>
             <div class="web">
-                <div><img class="sizing" src="images/web.png" alt="">
+                <div><img class="sizing" src="resources/images/web.png" alt="">
                     <span class="imgname"><p class="white">웹 개발학과</p></span>
                 </div>
                 <div class="move font_center boxback">
@@ -137,7 +137,7 @@
                     <span class="imgname"><p class="white">정보보안학과</p></span>
                 </div>
                 <div class="move font_center boxback">
-                    <p>Linux, 이산수학, Python, Ruby, C, </p>
+                    <p>Linux, Python, Ruby, C, </p>
                 </div>
             </div>
             <div class="big">
@@ -161,7 +161,7 @@
                     <span class="imgname"><p class="white">Iot반도체전자과</p></span>
                 </div>
                     <div class="move font_center boxback">
-                        <p>C, Raspberry Pi, Aduino</p>
+                        <p>C, Raspberry Pi, Arduino, Linux, MATLAB</p>
                     </div>
             </div>
             

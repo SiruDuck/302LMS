@@ -20,7 +20,7 @@
     <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>    
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #183691'>
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #20294d'>
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
@@ -75,7 +75,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">강의 관리 페이지</h6>
                         <a class="collapse-item" href="teacher_lec_list.lec">내 강의목록</a>
-                        <a class="collapse-item" href="list.lec">강의 관리</a>
+                        <a class="collapse-item" href="list.lec">전체 강의 목록</a>
                     </div>
                 </div>
             </li>
