@@ -251,11 +251,12 @@
 							<th style="vertical-align: inherit">파일첨부</th>
 							<td>
 								<label> <input type="file"
-									name="file" id='attach-file'  />
+									name="file" id='attach-file' multiple="multiple" onchange="setDetailImage(event);"/>
 							</label> <span id='file-name'></span> <span id='preview'></span> <span
 								id='delete-file'></span></td>
+							<div id="images_container"></div>	
 						</tr>
-
+							
 					</table>
 				</div>
 			</div>
@@ -290,6 +291,23 @@
 					});
 			return ok;
 		}
+		
+		function setDetailImage(event){
+			for(var image of event.target.files){
+				var reader = new FileReader();
+				
+				reader.onload = function(event){
+					var img = document.createElement("img");
+					img.setAttribute("src", event.target.result);
+					img.setAttribute("class", "col-lg-6");
+					document.querySelector("div#images_container").appendChild(img);
+				};
+				
+				console.log(image);
+				reader.readAsDataURL(image);
+			}
+		}
+		
 	</script>
 
 

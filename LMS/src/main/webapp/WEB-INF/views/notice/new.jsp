@@ -248,7 +248,7 @@
 								<th style="vertical-align: inherit">첨부파일</th>
 								<td>
 									<div class='align'>
-										<label> <input type='file' name='file'
+										<label> <input type='file' name='file' multiple="multiple"
 											id='attach-file'>
 										</label> <span id='file-name'></span> <span id='preview'></span> <a
 											id='delete-file'></a>
