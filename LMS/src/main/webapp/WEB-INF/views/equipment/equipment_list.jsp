@@ -151,17 +151,6 @@ $('.btn-secondary').click(function(){
 }); */
 
 
-$('.names').keyup(function(){
-	$.ajax({
-		data:{name: $(this).val()},
-		url:"eqnamelist",
-		success:function(data){
-			$('#dataTable_wrapper').html(data);
-		}
-		
-	})
-});
-
 </script>
 
 
