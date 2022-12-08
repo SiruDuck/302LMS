@@ -23,7 +23,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style='background-color: #20294d'>
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href=''>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href='http://localhost/lms/'>
                 <div class="sidebar-brand-icon ">
                     <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
                 </div>
@@ -73,7 +73,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
 
                         <h6 class="collapse-header" >내 강의관리</h6>
-                        <a class="collapse-item" href="list.lec">강의 조회</a>
+                        <a class="collapse-item" href="list.lec">전체 강의 조회</a>
                         <a class="collapse-item" href="student_lec_list.lec">내 강의 조회</a>
                         <a class="collapse-item" href="main.tt">시간표 보기</a>
                     </div>
