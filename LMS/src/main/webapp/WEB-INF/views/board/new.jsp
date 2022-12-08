@@ -259,12 +259,12 @@ input[type=file]::file-selector-button {
 						</tr>
 						<tr>
 							<th style="vertical-align: inherit">파일첨부</th>
-							<td>
+							<td style="display: flex;">
 								<label> <input type="file"
 									name="file" id='attach-file' multiple="multiple" onchange="setDetailImage(event);"/>
 							</label> <span id='file-name'></span> <span id='preview'></span> <span
 								id='delete-file'></span></td>
-							<div id="images_container"></div>	
+							
 						</tr>
 							
 					</table>
