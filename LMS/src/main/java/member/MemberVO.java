@@ -4,17 +4,8 @@ import java.sql.Date;
 
 public class MemberVO {
 	private String id,	pw,	name,	gender, phone,	email,	post,	addr,	grade, state, department_id, department_name, 	info_name, profile;
-	private String birth, start_date, end_date;
+	private Date birth, start_date, end_date;
 	private int info_cd, lecture_num;
-	
-	
-	
-	public int getLecture_num() {
-		return lecture_num;
-	}
-	public void setLecture_num(int lecture_num) {
-		this.lecture_num = lecture_num;
-	}
 	public String getId() {
 		return id;
 	}
@@ -93,22 +84,28 @@ public class MemberVO {
 	public void setInfo_name(String info_name) {
 		this.info_name = info_name;
 	}
-	public String getBirth() {
+	public String getProfile() {
+		return profile;
+	}
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+	public Date getBirth() {
 		return birth;
 	}
-	public void setBirth(String birth) {
+	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
-	public String getStart_date() {
+	public Date getStart_date() {
 		return start_date;
 	}
-	public void setStart_date(String start_date) {
+	public void setStart_date(Date start_date) {
 		this.start_date = start_date;
 	}
-	public String getEnd_date() {
+	public Date getEnd_date() {
 		return end_date;
 	}
-	public void setEnd_date(String end_date) {
+	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
 	}
 	public int getInfo_cd() {
@@ -117,13 +114,16 @@ public class MemberVO {
 	public void setInfo_cd(int info_cd) {
 		this.info_cd = info_cd;
 	}
-	public String getProfile() {
-		return profile;
+	public int getLecture_num() {
+		return lecture_num;
 	}
-	public void setProfile(String profile) {
-		this.profile = profile;
+	public void setLecture_num(int lecture_num) {
+		this.lecture_num = lecture_num;
 	}
 	
+	
+	
+
 	
 	
 	
