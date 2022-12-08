@@ -255,12 +255,9 @@ public class MemberController {
 		MemberVO vo = dao.viewMember(temp_vo.getId());
 		model.addAttribute("vo", vo);
 		
-		if (temp_vo.getInfo_cd() == 1) {
-		return "member/chamyinfo";
-	} else {
 		return "member/chamyinfo";
 	}
-	}
+	
 	
 	@RequestMapping("/updateinfo")
 	public String update(MemberVO vo1, HttpSession session) {

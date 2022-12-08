@@ -1,10 +1,11 @@
 package board;
 
+import java.sql.Date;
 
 public class BoardVO {
 	private int id, readcnt;
 	private String title, content, writer,filename,	filepath, name;
-	private String writedate;
+	private Date writedate;
 	
 	public int getId() {
 		return id;
@@ -54,12 +55,14 @@ public class BoardVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getWritedate() {
+	public Date getWritedate() {
 		return writedate;
 	}
-	public void setWritedate(String writedate) {
+	public void setWritedate(Date writedate) {
 		this.writedate = writedate;
 	}
+	
+	
 	
 	
 	
