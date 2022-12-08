@@ -183,7 +183,7 @@ span.btn {
 												<td class='point'>${vo.semesterpoint }</td>
 												<td>${vo.score_name }</td>
 												<c:if test="${select_grp eq 'choice' }">
-												<td><input type="checkbox" /></td>
+												<td><input name="chk" type="checkbox" /></td>
 											</c:if>
 												</c:when>
 												<c:otherwise>
@@ -223,7 +223,7 @@ span.btn {
 											<td colspan="6"
 												style="text-align: right; background: #f6fbff">총 학점</td>
 											<td colspan="2"><a id="total"></a></td>
-											<td colspan="1"><a id="count"></a></td>
+											<td colspan="1" style="width: 120px;"><a id="count"></a></td>
 
 										</tr>
 										<tr>
@@ -301,15 +301,23 @@ function calc_avg(check_count){
     			check_count++;
     		var average = sum_point==0 ? '0' : (sum_point / check_count).toFixed(2);
     		
-    		$('#total').text( sum_point );
+    		console.log(sum_point);
+    		$('#total').text( sum_point.toFixed(2) );
     		$('#avg').text( average );
     		$('#count').text( check_count + '개 선택' );
 			}
 		}
-		if (sum_point==0){
-    		$('.avg').text( '0' );
+		if ( ! $('input:checkbox').is(":checked")){
+    		$('#total').text( '' );
+    		$('#avg').text( '' );
 		$('#count').text( '' );
 		}
+		
+		if( $('input[name=chk]').length == $('input[name=chk]:checked').length) {
+			$("#allCk").prop("checked", true);
+		}else {
+			$("#allCk").prop("checked", false);
+		};
 	});
 }
 

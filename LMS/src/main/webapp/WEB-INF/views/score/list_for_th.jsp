@@ -361,7 +361,7 @@ $('.average').click(function(){
 });
 
 function calc_avg(check_count){
-	var  sum_point=0;
+	var  sum_point= 0 ;
 	$('.table tr').each(function(){
 		
 		if($(this).find("[type=checkbox]").is(':checked')){
@@ -372,7 +372,6 @@ function calc_avg(check_count){
     			sum_point +=  Number($(this).children('.point').text());
     			check_count++;
     		var average = sum_point==0 ? '0' : (sum_point / check_count).toFixed(2);
-    		
     		$('#total').text( sum_point );
     		$('#avg').text( average );
     		$('#count').text( check_count + '개 선택' );
