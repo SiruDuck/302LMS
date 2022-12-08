@@ -25,17 +25,10 @@ body{
 	overflow: hidden;
 }
 
-.card {
-    border: none;
-    margin-bottom: 24px;
-    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
-    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
-}
+table a {color: #111;}
 
-.avatar-xs {
-    height: 2.3rem;
-    width: 2.3rem;
-}
+table a:hover {color: #4e73df;}
+
 </style>
 </head>
 <body>
@@ -97,7 +90,7 @@ body{
 								<td style="text-align: left;">${vo.writer}</td>
 								<td style="text-align: left;">${vo.writedate }</td>
 								<td style="text-align: left;">${vo.readcnt }</td>
-								<td style="text-align: left;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
+								<td style="text-align: center;">${empty vo.filename ? '' : '<i class="font-c fa-solid fa-paperclip"></i>'}</td>
 						
 							</tr>
 						</c:forEach>
@@ -115,7 +108,7 @@ body{
 			<div class="row">
 				<div class="col-sm-12 col-md-5">
 					<div class="dataTables_info" id="dataTable_info" role="status"
-						aria-live="polite">${page.beginList} ... ${page.endList}   </div>
+						aria-live="polite"> </div>
 				</div>
 				<div class="col-sm-12 col-md-7">
 					<div class="dataTables_paginate paging_simple_numbers"

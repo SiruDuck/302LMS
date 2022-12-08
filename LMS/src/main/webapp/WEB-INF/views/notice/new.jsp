@@ -22,6 +22,17 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Jua&family=Sunflower:wght@500&display=swap')
 	;
+
+input[type=file]::file-selector-button {
+  width: 7rem;
+  height: 30px;
+  background: #4e73df;
+  color: white;
+  border: 1px solid rgb(78,114,223);
+  border-radius: 5px;
+  cursor: pointer;
+}	
+	
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -248,11 +259,10 @@
 								<th style="vertical-align: inherit">첨부파일</th>
 								<td>
 									<div class='align'>
-										<label> <input type='file' name='file'
-											id='attach-file' style='display: contents;'> <a><i
-												class="font-b fa-solid fa-file-circle-plus"></i></a>
+										<label> <input type='file' name='file' multiple="multiple"
+											id='attach-file'>
 										</label> <span id='file-name'></span> <span id='preview'></span> <a
-											id='delete-file'><i class="font-r fa-solid fa-trash-can"></i></a>
+											id='delete-file'></a>
 									</div>
 								</td>
 							</tr>

@@ -13,7 +13,8 @@
 
 </head>
 <style>
-
+.tcolor { color: #16171c ;}
+.ecolor { color: #202129;}
 @font-face {
     font-family: 'SEBANG_Gothic_Bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
@@ -27,11 +28,11 @@ h3{
 <body>
 
 
-    <h3 style="text-align: initial; color: #6a6a6a" class="m-2 mb-3">내 정보</h3>
+    <h3 style="text-align: initial; color: #16171c" class="m-2 mb-3">내 정보</h3>
 <div class="card shadow mb-6" style="width:100%;">
 
 		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">My info</h6>
+			<h6 class=" tcolor m-0 font-weight-bold text-primary">My info</h6>
 		</div>
 		<div class="card-body">
           <div class="row gutters-sm">
@@ -55,8 +56,8 @@ h3{
                   
                    
                     <div class="mt-3">
-                      <h4>${vo.name}</h4>
-                      <p class="text-secondary mb-1">${vo.department_name }</p>
+                      <h4 class="tcolor">${vo.name}</h4>
+                      <p class=" tcolor text-secondary mb-1">${vo.department_name }</p>
                     </div>
                   </div>
                 </div>
@@ -64,7 +65,7 @@ h3{
               <div class="card mt-3">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 class="mb-0"><i class="fa-solid fa-venus-mars"></i>성별</h6>
+                    <h6 class="mb-0 tcolor"><i class="fa-solid fa-venus-mars"></i>성별</h6>
                     <span class="text-secondary">
                     ${vo.gender}
                     
@@ -74,7 +75,7 @@ h3{
              
                   <c:when test="${vo.info_cd eq 3 }">
                  	   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  	 	 <h6 class="mb-0"><i class="fa-solid fa-graduation-cap"></i>직책</h6>
+                  	 	 <h6 class="mb-0 tcolor"><i class="fa-solid fa-graduation-cap"></i>직책</h6>
                    		 <span class="text-secondary">
                    		 교수
                     
@@ -83,7 +84,7 @@ h3{
                     </c:when>
                      <c:when test="${vo.info_cd eq 1 }">
                  	   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  	 	 <h6 class="mb-0"><i class="fa-solid fa-graduation-cap"></i>학년</h6>
+                  	 	 <h6 class="mb-0 tcolor"><i class="fa-solid fa-graduation-cap"></i>학년</h6>
                    		 <span class="text-secondary">
                    		 ${vo.grade}
                     
@@ -92,7 +93,7 @@ h3{
                     </c:when>
                      </c:choose>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 class="mb-0"><i class="fa-solid fa-graduation-cap"></i>입학 상태</h6>
+                    <h6 class="mb-0 tcolor"><i class="fa-solid fa-graduation-cap"></i>입학 상태</h6>
                     <span class="text-secondary">
                     ${vo.state}
                     
@@ -110,43 +111,43 @@ h3{
                
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
+                      <h6 class="mb-0 tcolor">Email</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="ecolor col-sm-9 text-secondary">
                       ${vo.email }
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
+                      <h6 class="mb-0 tcolor">Phone</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="ecolor col-sm-9 text-secondary">
                      ${vo.phone }
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
+                      <h6 class="mb-0 tcolor">Mobile</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="ecolor col-sm-9 text-secondary">
                       (062) 362-7797
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
+                      <h6 class="mb-0 tcolor">Address</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="ecolor col-sm-9 text-secondary">
                       ${vo.addr } (${vo.post })
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="chainfo">정보 수정</a>
+                      <a class="btn btn-info "  href="chainfo">정보 수정</a>
                     </div>
                   </div>
                 </div>

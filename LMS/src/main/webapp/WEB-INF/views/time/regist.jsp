@@ -87,6 +87,7 @@ a {
 }
 </style>
 <body>
+
 <h3 style="text-align: initial; color: #6a6a6a" class="m-2 mb-3">수강 신청</h3>
 <div class="container-fluid">
   
@@ -294,5 +295,6 @@ a {
    
    
 </div>
+
 </body>
 </html>

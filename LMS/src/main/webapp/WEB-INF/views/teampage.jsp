@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팀원 소개페이지</title>
-    <link rel="stylesheet" type="text/css" href="resources/assets/css/reset.css">
+    <title>영문대학교 설립자들</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
     <style>
 
          /* webfont */
@@ -44,13 +44,13 @@ body {
     padding-top: 1rem;
     margin-top: 5vh;
     transform: rotate(-2deg);
-    background-color: #ff3796;
+    background-color: #09880f;
 }
 
 .cover2 {
     padding-top: 1rem;
     transform: rotate(2deg);
-    background-color: #5800ff;
+    background-color: #cc1616;
     justify-content: flex-end;
 }
 
@@ -127,8 +127,8 @@ body {
             
         .container{ 
             padding-top: 12rem;
-            height: 5000px;
-            background-color: rgb(62, 57, 109);
+            height: 4000px;
+            background-color: rgb(194, 38, 26);
         }
     
     .img_size{
@@ -140,8 +140,8 @@ body {
         padding-top: 12rem;
         margin: 0 auto;
         background-color: white;
-        width: 100rem;
-        height: 280rem;
+        width: 90%;
+        height: 210rem;
         border-radius: 15rem;
     }
     .footer{
@@ -153,22 +153,23 @@ body {
         font-family: 'PyeongChangPeace-Bold';
     }
     .footer p{
-        color: rgb(127, 125, 245);
+        color: rgb(250, 255, 228);
     }
 
     /* main font */
     .main_font{
+        z-index: 99;
         width: 60rem;
         position: absolute;
         font-family: 'PyeongChangPeace-Bold';
         font-size: 8rem;
-        top: 20%;
+        top: 17%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
     .main_font p{
-        color: rgb(238, 232, 248);
-        text-shadow: 2px 2px 6px rgb(50, 24, 110);
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 6px rgb(0, 81, 255);
     }
     
     .name_font{
@@ -189,28 +190,30 @@ body {
         transform: translateX(0);
         opacity: 1;
     }
+
+
     .anjin{
         top: 70%;
         left: 10%;
     }
     .en{
-        top: 110%;
+        top: 120%;
         right: 10%;
     }
     .gang{
-        top: 150%;
+        top: 170%;
         left: 10%;
     }
     .back{
-        top: 190%;
+        top: 220%;
         right: 10%;
     }
     .si{
-        top: 235%;
+        top: 270%;
         left: 10%;
     }
     .sujin{
-        top: 280%;
+        top: 320%;
         right: 10%;
     }
     /*-----*/
@@ -238,7 +241,7 @@ body {
     .pp{
         position: absolute;
         z-index: 22;
-        top: 30%;
+        top: 35%;
         left: -6rem;
     }
     .pp img{
@@ -247,7 +250,7 @@ body {
     .pp2{
         position: absolute;
         z-index: 22;
-        top: 45%;
+        top: 50%;
         left: 6rem;
     }
     .pp2 img{
@@ -256,21 +259,72 @@ body {
     .pp3{
         position: absolute;
         z-index: 22;
-        top: 25%;
+        top: 37%;
         right: -9rem;
     }
     .pp3 img{
         width: 400px;
     }
     .p1{
+        top: -2rem;
         position: absolute;
         z-index: 21;
     }
     .p2{
+        top: -4rem;
         position: absolute;
-        right: -2rem;
+        right: 0;
         z-index: 21;
     }
+    .p_position{
+        font-family: 'GangwonEduPowerExtraBoldA';
+        font-size: 3rem;
+        position: absolute;
+        top: 12rem;
+        left: 30rem;
+        line-height: 4rem;
+        text-shadow: 2px 2px 6px rgb(120, 139, 179);
+    }
+    .p_position1{
+        font-family: 'GangwonEduPowerExtraBoldA';
+        font-size: 3rem;
+        position: absolute;
+        top: 3rem;
+        left: 30rem;
+        line-height: 4rem;
+        text-shadow: 2px 2px 6px rgb(165, 138, 170);
+    }
+    /* 인애씨꺼 */
+    .p_position2{
+        font-family: 'GangwonEduPowerExtraBoldA';
+        font-size: 3rem;
+        position: absolute;
+        top: 10rem;
+        left: 11rem;
+        line-height: 4rem;
+        text-shadow: 2px 2px 6px rgb(251, 228, 255);
+    }
+    .p_position3{
+        font-family: 'GangwonEduPowerExtraBoldA';
+        font-size: 3rem;
+        position: absolute;
+        top: 9rem;
+        left: 30rem;
+        line-height: 4rem;
+        text-shadow: 2px 2px 6px rgb(170, 145, 138);
+        
+    }
+    .p_position4{
+        font-family: 'GangwonEduPowerExtraBoldA';
+        font-size: 3rem;
+        position: absolute;
+        top: 10rem;
+        left: 11rem;
+        line-height: 4rem;
+        text-shadow: 2px 2px 6px rgb(150, 102, 126);
+    }
+    
+    
     </style>
     
 </head>
@@ -282,26 +336,30 @@ body {
     <span class="p1"><img src="resources/imges/p1.png"/></span>
     <span class="p2"><img src="resources/imges/p2.png"/></span>
     <div class="container">
-        <div class="main_font"><p> 팀원 소개 페이지 </p></div>
+        <div class="main_font"><p> 영문대 설립자들 </p></div>
         
         <div class="img_container">
 
             <div class="position anjin move">
                 <div class="background_left">
+                    <span class="p_position"><p>"요정도 ㅋ?"</p></span>
                     <img class="move img_size" src="resources/imges/an.png"/>
                     <span class="name_font"><p>안진혁</p></span>
+                    
                 </div>
             </div>
 
 
             <div class="position en move">
                 <div class="background_right">
+                    <span class="p_position2"><p>"한울직업전문학교의 마지막 프로젝트를 <br> 우리조와 함께하게 되어 영광이었습니다."</p></span>
                 <img class="move img_size" src="resources/imges/ene.png"/>
                 <span class="name_font"><p>정은진</p></span>
                 </div>
             </div>
             <div class="position gang move">
                 <div class="background_left">
+                    <span class="p_position1"><p>"★★★★★<br>★★★★<br>★★★<br>★★<br>★"</p></span>
                     <img class="move img_size" src="resources/imges/gang.png"/>
                     <span class="name_font"><p>김강윤</p></span>
                 </div>
@@ -309,6 +367,7 @@ body {
 
             <div class="position back move">
                 <div class="background_right">
+                    <span class="p_position2"><p>"인성! 능력! 다 갖춘 우리조 ♥ <br>앞으로도 승승장구하자 알럽"</p></span>
                     <img class="move img_size" src="resources/imges/inaee.png"/>
                     <span class="name_font"><p>백인애</p></span>
                 </div>
@@ -316,12 +375,14 @@ body {
 
             <div class="position si move">
                 <div class="background_left">
+                    <span class="p_position3"><p>"좋은 사람들과 함께 할 수 있는 <br>기회를 얻어서 행복합니다."</p></span>
                     <img class="move img_size" src="resources/imges/si.png"/>
                     <span class="name_font"><p>김서인</p></span>
                 </div>
             </div>
             <div class="position sujin move">
                 <div class="background_right">
+                    <span class="p_position4"><p>"요정도 ㅋ?"</p></span>
                     <img class="move img_size" src="resources/imges/su.png"/>
                     <span class="name_font"><p>박수진</p></span>    
                 </div>
@@ -384,7 +445,7 @@ titleList.forEach(el => observer.observe(el));
         const pTag2 = document.querySelector('.second-parallel')
 
         
-        const textArr1 = '영문대학교 코딩동아리 LMS 영문대학교 코딩동아리 LMS 영문대학교 코딩동아리 LMS '.split(' ')
+        const textArr1 = '영문대학교 코딩동아리 LMS 영문대학교 코딩동아리 LMS'.split(' ')
         const textArr2 = '김강윤, 백인애, 김서인, 박수진, 안진혁, 정은진'.split(' ')
 
         let count1 = 0

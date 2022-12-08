@@ -18,6 +18,10 @@
 .table-responsive {
 	overflow: hidden;
 }
+
+table a {color: #111;}
+
+table a:hover {color: #4e73df;}
 </style>
 </head>
 <body>
@@ -93,7 +97,7 @@
 		<div class="row">
 				<div class="col-sm-12 col-md-5">
 					<div class="dataTables_info" id="dataTable_info" role="status"
-						aria-live="polite">${page.beginList} ... ${page.endList}   </div>
+						aria-live="polite">  </div>
 				</div>
 				<div class="col-sm-12 col-md-7">
 					<div class="dataTables_paginate paging_simple_numbers"

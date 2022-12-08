@@ -17,7 +17,6 @@
                                             <th>학년</th>
                                             <th>상태</th>
                                             <th>입학일</th>
-                                            <th>졸업일</th>
                                             <th>등록금 내역</th>
                                             <th style="background-color: #dde1eb">등록금</th>
                                         </tr>
@@ -33,7 +32,6 @@
                                             <td>${vo.grade }</td> 
                                             <td>${vo.state }</td> 
                                             <td>${vo.start_date }</td> 
-                                            <td>${vo.end_date }</td> 
                                             <td>${vo.description }</td> 
                                             <td style="background-color: rgb(248,249,252)"><fmt:formatNumber value="${vo.price}" pattern="#,###.##"/></td> 
                                         </tr>

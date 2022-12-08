@@ -123,10 +123,9 @@ public class MemberController {
 
 		StringBuffer msg = new StringBuffer("<script>");
 		if (service.member_join(vo) == 1) {
-			msg.append("alert('회원가입을 축하합니다^^'); location='").append(request.getContextPath()).append("'");
-			request.getSession().setAttribute("loginInfo", vo);
+			msg.append("alert('등록되었습니다.^^'); location='").append(request.getContextPath()).append("'");
 		} else {
-			msg.append("alert('회원가입에 실패했습니다ㅠㅠ'); history.go(-1);");
+			msg.append("alert('가입에 실패했습니다ㅠㅠ'); history.go(-1);");
 		}
 		msg.append("</script>");
 
@@ -256,12 +255,9 @@ public class MemberController {
 		MemberVO vo = dao.viewMember(temp_vo.getId());
 		model.addAttribute("vo", vo);
 		
-		if (temp_vo.getInfo_cd() == 1) {
-		return "member/chamyinfo";
-	} else {
 		return "member/chamyinfo";
 	}
-	}
+	
 	
 	@RequestMapping("/updateinfo")
 	public String update(MemberVO vo1, HttpSession session) {

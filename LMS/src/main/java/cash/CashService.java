@@ -31,7 +31,18 @@ public interface CashService {
 	//교수 화면에 목록 출력 
 	//직원 화면에 목록 출력 
 	
+	//info 장학정보 리스트
+	List<Cash_infoVO> sc_list ();
 	
+	//info 장학세부 내용 리스트
+	List<Cash_infoVO> sc_list_des();
 	
+	//장학정보로 cash_code얻기
+	String search_cash_code(String description);
 	
+	//이름으로 id가져오기
+	String get_id(String name);
+	
+	//장학금 insert
+	int sc_insert(Cash_ingVO vo);
 }

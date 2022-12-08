@@ -13,17 +13,17 @@
     <!-- Custom fonts for this template-->
     <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>    
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #183691'>
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #20294d'>
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
             	<div class="sidebar-brand-icon ">
                     <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
                 </div>
@@ -102,7 +102,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://www.jobkorea.co.kr" target="_black">
                     <i class="fas fa-fw fa-table"></i>
                     <span>취업정보</span></a>
             </li>

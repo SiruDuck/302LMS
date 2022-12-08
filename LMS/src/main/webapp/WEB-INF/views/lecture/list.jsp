@@ -91,17 +91,21 @@ margin-top:0px;
 }
 </style>
 <body>
-<h3 style="text-align: initial; color: #6a6a6a" class="m-2 mb-3">강의 목록</h3>
+<h3 style="text-align: initial; color: #6a6a6a" class="m-2 mb-3">전체 강의 목록</h3>
+
 <div class="container-fluid">
   
     <div class="row">
     	  <div class="col-lg-12">
 
-          	  <div class="card">
-                    <div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">전체 강의 목록</h6>
-				</div>
-				</div>
+          	
+                   
+					<!-- <h6 class="m-0 font-weight-bold text-primary">전체 강의 목록</h6> -->
+					<c:if test="${loginInfo.info_cd eq 4}">
+					<div><a href='new.lec' class='btn btn-primary'>강의등록</a></div>
+					</c:if>
+				
+			
 <form action="list.lec" method="post">
 
     <div class="row mt-1">
@@ -208,13 +212,13 @@ margin-top:0px;
          	    					<th>장소/시간</th>
          	    					<th>신청인원</th>
          	    					<th>과목학점</th>
+         	    					<th>강의년도</th>
                         	    </tr>
                         </thead>
                         <tbody>
                           <c:forEach items="${list}" var="vo">
+                        		<c:if test="${vo.lecture_year eq '2022' and vo.semester eq '2'}">
                             <tr>
-                                
-                                
                                 <td><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" class="avatar-sm rounded-circle me-2" /><a href="#" class="text-body">${vo.teacher_name}</a></td>
                                 <td>
 									<a class="position-relative" href="detail.lec?lecture_num=${vo.lecture_num}"> ${vo.lecture_title }
@@ -254,8 +258,10 @@ margin-top:0px;
                              	
                              	<td>${vo.check_cnt } /${vo.capacity}</td>
                              		<td>${vo.subjectcredit}</td>
+                             		<td>${vo.lecture_year}</td>
                               
                             </tr>
+                            </c:if>
                             </c:forEach>
                         </tbody>
                     </table>

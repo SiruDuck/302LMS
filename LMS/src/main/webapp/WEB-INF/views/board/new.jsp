@@ -22,6 +22,16 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Jua&family=Sunflower:wght@500&display=swap')
 	;
+
+input[type=file]::file-selector-button {
+  width: 7rem;
+  height: 30px;
+  background: #4e73df;
+  color: white;
+  border: 1px solid rgb(78,114,223);
+  border-radius: 5px;
+  cursor: pointer;
+}	
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -249,14 +259,14 @@
 						</tr>
 						<tr>
 							<th style="vertical-align: inherit">파일첨부</th>
-							<td>
+							<td style="display: flex;">
 								<label> <input type="file"
-									name="file" id='attach-file' style='display: contents;' /> <a><i
-										class="font-b fa-solid fa-file-circle-plus"></i></a>
+									name="file" id='attach-file' multiple="multiple" onchange="setDetailImage(event);"/>
 							</label> <span id='file-name'></span> <span id='preview'></span> <span
-								id='delete-file'><i class='fas fa-times'></i></span></td>
+								id='delete-file'></span></td>
+							
 						</tr>
-
+							
 					</table>
 				</div>
 			</div>
@@ -291,6 +301,23 @@
 					});
 			return ok;
 		}
+		
+		function setDetailImage(event){
+			for(var image of event.target.files){
+				var reader = new FileReader();
+				
+				reader.onload = function(event){
+					var img = document.createElement("img");
+					img.setAttribute("src", event.target.result);
+					img.setAttribute("class", "col-lg-6");
+					document.querySelector("div#images_container").appendChild(img);
+				};
+				
+				console.log(image);
+				reader.readAsDataURL(image);
+			}
+		}
+		
 	</script>
 
 

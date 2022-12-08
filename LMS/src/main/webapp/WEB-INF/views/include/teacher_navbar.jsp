@@ -20,7 +20,7 @@
     <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>    
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #183691'>
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #20294d'>
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
@@ -106,7 +106,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://www.jobkorea.co.kr" target="_black">
                     <i class="fas fa-fw fa-table"></i>
                     <span>취업정보</span></a>
             </li>

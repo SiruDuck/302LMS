@@ -95,7 +95,11 @@
           <div class="d-flex mt-5" data-aos="fade-up" data-aos-delay="200">
             <a href="https://youtu.be/mlxmKRVUjUM" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>대학교 홍보 영상</span></a>
           </div>
-
+			<div class="d-flex mt-5" data-aos="fade-up" data-aos-delay="200">
+            <a href="team" target="_blank" class=" btn-watch-video d-flex align-items-center">
+            <i class="bi bi-play-circle"></i>
+            <span>대학 설립자 소개</span></a>
+          </div>
         </div>
       </div>
     </div>

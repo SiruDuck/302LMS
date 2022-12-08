@@ -20,10 +20,10 @@
     <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>    
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style='background-color: #183691'>
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style='background-color: #20294d'>
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href=''>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href='http://localhost/lms/'>
                 <div class="sidebar-brand-icon ">
                     <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
                 </div>
@@ -72,10 +72,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <h6 class="collapse-header">마이페이지</h6>
-                        <a class="collapse-item" href="myinfo">내 정보</a>
                         <h6 class="collapse-header" >내 강의관리</h6>
-                        <a class="collapse-item" href="list.lec">강의 조회</a>
+                        <a class="collapse-item" href="list.lec">전체 강의 조회</a>
                         <a class="collapse-item" href="student_lec_list.lec">내 강의 조회</a>
                         <a class="collapse-item" href="main.tt">시간표 보기</a>
                     </div>
@@ -119,7 +117,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="http://www.jobkorea.co.kr">
+                <a class="nav-link" href="http://www.jobkorea.co.kr" target="_black">
                     <i class="fas fa-fw fa-table"></i>
                     <span>취업정보</span></a>
             </li>
