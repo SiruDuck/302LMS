@@ -23,7 +23,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style='background-color: #20294d'>
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href=''>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href='http://localhost/lms/'>
                 <div class="sidebar-brand-icon ">
                     <img src="resources/images/mainlogin/logo_white_eng.png" style='width:4rem'>
                 </div>
