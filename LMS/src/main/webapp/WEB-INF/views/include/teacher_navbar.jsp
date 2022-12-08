@@ -106,7 +106,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://www.jobkorea.co.kr" target="_black">
                     <i class="fas fa-fw fa-table"></i>
                     <span>취업정보</span></a>
             </li>
