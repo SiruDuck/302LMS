@@ -20,7 +20,7 @@
     <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>    
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #20294d'>
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"  style='background-color: #20294d'>
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/lms/">
