@@ -9,11 +9,9 @@
 <title>Insert title here</title>
 <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js'></script>
 <style>
-
-
-
 </style>
 
 </head>
@@ -69,7 +67,15 @@
 		</div>
 	</div>
 
-	
+	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
+		<a class='btn btn-secondary btn-icon-split' href='list.br'>목록으로</a>
+		<c:if test='${loginInfo.id eq vo.writer }'>
+			<a class='btn btn-primary btn-icon-split'
+				href='modify.br?id=${vo.id}&${hrefParam}'>정보수정</a>
+			<a class='btn btn-danger btn-icon-split' id='remove'
+				onclick="if(confirm('삭제 할까요?')) location='delete.br?id=${vo.id}'">정보삭제</a>
+		</c:if>
+	</div>
 
 
 
@@ -86,9 +92,14 @@
 					cellspacing="0">
 					<thead>
 						<tr>
-							<th style="vertical-align: inherit; width: 11rem; text-align: center;">댓글작성</th>
-							<td style="display: flex;"><textarea id='comment' class='form-control form-control-user'></textarea><a href='javascript:regist()' class='btn btn-primary btn-icon-split' id='regist' style="margin-left: 2rem; width: 4rem; align-items: center;">등록</a></td>
-<!-- 							  -->
+							<th
+								style="vertical-align: inherit; width: 11rem; text-align: center;">댓글작성</th>
+							<td style="display: flex;"><textarea id='comment'
+									class='form-control form-control-user'></textarea><a
+								href='javascript:regist()'
+								class='btn btn-primary btn-icon-split' id='regist'
+								style="margin-left: 2rem; width: 4rem; align-items: center;">등록</a></td>
+							<!-- 							  -->
 						</tr>
 					</thead>
 				</table>
@@ -96,26 +107,18 @@
 		</div>
 	</div>
 
-	<div id = 'comment-list'></div>
-	
-	
-	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
-		<a class='btn btn-secondary btn-icon-split' href='list.br'>목록으로</a>
-		<c:if test='${loginInfo.id eq vo.writer }'>
-			<a class='btn btn-primary btn-icon-split'
-				href='modify.br?id=${vo.id}&${hrefParam}'>정보수정</a>
-			<a class='btn btn-danger btn-icon-split' id='remove'
-				onclick="if(confirm('삭제 할까요?')) location='delete.br?id=${vo.id}'">정보삭제</a>
-		</c:if>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
+	<div id='comment-list'></div>
+
+
+
+
+
+
+
+
+
+
+
 	<script>
 	$(function(){
 		comment_list();
