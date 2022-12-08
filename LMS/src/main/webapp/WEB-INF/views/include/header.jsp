@@ -224,7 +224,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <!-- 이름 출력부분 -->
-                                <span class="mr-2  d-lg-inline text-gray-700 font-weight-bold">
+                                <span class="mr-2 d-none d-lg-inline text-gray-700 font-weight-bold">
                                 ${loginInfo.name }님
                                 </span>
                                 <!-- <img class="img-profile rounded-circle"
