@@ -204,10 +204,12 @@ a {
          	    					<th>장소/시간</th>
          	    					<th>신청인원</th>
          	    					<th>과목학점</th>
+         	    					
                         	    </tr>
                         </thead>
                         <tbody>
                           <c:forEach items="${list}" var="vo">
+                          <c:if test="${vo.lecture_year eq '2022' and vo.semester eq '2'}">
                             <tr>
                                 
                                   <td>
@@ -296,6 +298,7 @@ a {
                              		<td>${vo.subjectcredit}</td>
                               
                             </tr>
+                            </c:if>
                             </c:forEach>
                         </tbody>
                     </table>
