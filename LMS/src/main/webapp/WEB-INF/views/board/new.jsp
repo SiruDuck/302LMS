@@ -237,28 +237,28 @@ input[type=file]::file-selector-button {
 	<form method="post" action="insert.br" enctype="multipart/form-data">
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">자유게시판 글쓰기</h6>
+				<h6 class="m-0 font-weight-bold text-primary" style="font-size: 20px; font-weight: 800;">자유게시판 글쓰기</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
 					<table class="table table-bordered" id="dataTable" width="100%"
 						cellspacing="0">
 						<tr>
-							<th style="vertical-align: inherit; width: 11rem">제목</th>
+							<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">제목</th>
 							<td><input type="text" id='board_subject' name='title'
-								title='제목' class='chk form-control form-control-user' /></td>
+								title='제목' class='chk form-control form-control-user' style="font-size: 18px; font-weight: 800;"/></td>
 						</tr>
 						<tr>
-							<th>작성자</th>
-							<td class='left' style='padding-left: 10px;'>${loginInfo.name}</td>
+							<th style=" font-size: 18px; font-weight: 800;">작성자</th>
+							<td class='left' style="vertical-align: inherit; font-size: 18px; font-weight: 800;">${loginInfo.name}</td>
 						</tr>
 						<tr>
-							<th style="vertical-align: baseline;">내용</th>
+							<th style="vertical-align: baseline; width: 11rem; font-size: 18px; font-weight: 800;">내용</th>
 							<td><textarea id="summernote" name='content'
-									class='chk form-control form-control-user conten' title='내용'></textarea></td>
+									class='chk form-control form-control-user conten' title='내용' style="vertical-align: baseline; width: 11rem; font-size: 18px; font-weight: 800;"></textarea></td>
 						</tr>
 						<tr>
-							<th style="vertical-align: inherit">파일첨부</th>
+							<th style="font-size: 18px; font-weight: 800; ">파일첨부</th>
 							<td style="display: flex;">
 								<label> <input type="file"
 									name="file" id='attach-file' multiple="multiple" onchange="setDetailImage(event);"/>
@@ -276,8 +276,8 @@ input[type=file]::file-selector-button {
 	</form>
 	<div class='btn_blue' style='padding: 2rem;'>
 		<a class='btn btn-primary' id='save'
-			style="color: #fff; background-color: #2e59d9; border-color: #2653d4;">저장</a>
-		<a class='btn btn-secondary' href='list.br'>취소</a>
+			style="color: #fff; background-color: #2e59d9; border-color: #2653d4; font-size: 18px; font-weight: 800;">저장</a>
+		<a class='btn btn-secondary' href='list.br' style="font-size: 18px; font-weight: 800;">취소</a>
 	</div>
 	<script>
 		$('#save').click(function() {

@@ -18,7 +18,7 @@
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">공지사항 상세보기</h6>
+				<h6 class="m-0 font-weight-bold text-primary" style="font-size: 20px; font-weight: 800;">공지사항 상세보기</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -26,27 +26,27 @@
 						cellspacing="0">
 						<thead>
 							<tr>
-								<th style="vertical-align: inherit; width: 11rem">제목</th>
-								<td colspan="5"><div class='form-control form-control-user'>${vo.title }</div></td>
+								<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">제목</th>
+								<td colspan="5"><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.title }</div></td>
 							</tr>
 							<tr>
-								<th>작성자</th>
-								<td><div class='form-control form-control-user'>${vo.writer }</div></td>
-								<th style="vertical-align: inherit; width: 11rem">작성일자</th>
-								<td><div class='form-control form-control-user'>${vo.writedate }</div></td>
-								<th style="vertical-align: inherit; width: 11rem">조회수</th>
-								<td><div class='form-control form-control-user'>${vo.readcnt }</div></td>
+								<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">작성자</th>
+								<td><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.writer }</div></td>
+								<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">작성일자</th>
+								<td><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.writedate }</div></td>
+								<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">조회수</th>
+								<td><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.readcnt }</div></td>
 							</tr>
 							<tr>
-								<th style="vertical-align: baseline;">내용</th>
+								<th style="vertical-align: baseline; width: 11rem; font-size: 18px; font-weight: 800;">내용</th>
 								<td colspan='5'><div class='form-control form-control-user'
-										style='height: 27rem'>${vo.content}</div></td>
+										style="font-weight: 600; color: #333333; height: 27rem">${vo.content}</div></td>
 							</tr>
 							<tr>
-								<th>첨부파일</th>
+								<th style="font-size: 18px; font-weight: 800; ">첨부파일</th>
 								<td colspan='5'>
 									 <div class='form-control form-control-user'>
-										<span id='file-name'>${vo.filename}</span>
+										<span id='file-name' style=" font-size: 18px; font-weight: 800;">${vo.filename}</span>
 										<c:if test='${not empty vo.filename }'>
 											<a id='download'><i
 												class="font-b fa-solid fa-file-arrow-down"></i></a>

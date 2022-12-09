@@ -181,15 +181,15 @@ h6{
             <div class="card-body notice" style='border-left: 1rem solid #f6c23e;'>
                 <div class='mb-3 ml-3'>
                 	<i class='fas fa-comment-dots text-warning mr-2'></i>
-                	<a href='' class='text-gray-900 font-weight-bold'>개교기념일 왜 일요일임??</a>
+                	<a href='' class='text-gray-900 '>개교기념일 왜 일요일임??</a>
                 </div>
                 <div class='mb-3 ml-3'>
                 	<i class='fas fa-comment-dots text-warning mr-2'></i>
-                	<a href='' class='text-gray-900 font-weight-bold'>학교근처 맛집 추천받는다</a>
+                	<a href='' class='text-gray-900 '>학교근처 맛집 추천받는다</a>
                 </div>
                 <div class='ml-3'>
                 	<i class='fas fa-comment-dots text-warning mr-2'></i>
-                	<a href='' class='text-gray-900 font-weight-bold'>학식 맛집이네</a>
+                	<a href='' class='text-gray-900 '>학식 맛집이네</a>
                 </div>
             </div>
         </div>

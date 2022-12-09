@@ -9,7 +9,7 @@
 <c:forEach items='${list}' var='vo' varStatus='state'>
 <%-- ${state.index eq 0 ? '<hr>' : ''} --%>
 ${state.first ? '<hr>' : ''}
-<div data-id='${vo.id}'>${vo.writer} [ ${vo.writedate} ]
+<div style="font-size: 16px; font-weight: 800;" data-id='${vo.id}'>${vo.writer} [ ${vo.writedate} ]
 	<c:if test='${vo.writer eq loginInfo.name}'>
 	<span>
 		<a class='btn-fill-s btn-modify-save btn btn-primary btn-icon-split'>수정</a>

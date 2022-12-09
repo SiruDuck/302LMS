@@ -116,13 +116,13 @@ margin-top:0px;
                         <i class="fa fa-archive text-primary h4 ml-3"></i>
                     </div>
                  <div class='dataTables_filter search-box'>
-                  <h5 class="font-size-20 mt-0 pt-1"> 이수구분 </h5>
+                  <h5 class="font-size-20 mt-0 pt-1" style="font-size: 18px; font-weight: 600; color: #333333;"> 이수구분 </h5>
 					<select name="sortation" onchange='$("form").submit()'
-						class='custom-select custom-select-sm form-control form-control-sm'>
-						<option value=''${search.sortation eq '' ? 'selected' : '' }>전체보기</option>
-						<option value='전공필수'${search.sortation eq '전공필수' ? 'selected' : '' }>전공필수</option>
-						<option value='전공선택'${search.sortation eq '전공선택' ? 'selected' : '' }>전공선택</option>
-						<option value='교양'${search.sortation eq '교양' ? 'selected' : '' }>교양</option>
+						class='custom-select custom-select-sm form-control form-control-sm' style="font-size: 15px; font-weight: 600; color: #333333;">
+						<option value=''${search.sortation eq '' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">전체보기</option>
+						<option value='전공필수'${search.sortation eq '전공필수' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">전공필수</option>
+						<option value='전공선택'${search.sortation eq '전공선택' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">전공선택</option>
+						<option value='교양'${search.sortation eq '교양' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">교양</option>
 					
 					</select>
 				</div>
@@ -136,15 +136,15 @@ margin-top:0px;
                         <i class="fa fa-archive text-primary h4 ml-3"></i>
                     </div>
                  <div class='dataTables_filter search-box'>
-                 <h5 class="font-size-20 mt-0 pt-1"> 요일구분 </h5>
+                 <h5 class="font-size-20 mt-0 pt-1" style="font-size: 18px; font-weight: 600; color: #333333;"> 요일구분 </h5>
 					<select name='lecture_day' onchange='$("form").submit()'
-						class='custom-select custom-select-sm form-control form-control-sm'>
-						<option value=''> 전체보기</option>
-						<option value='월'${search.lecture_day eq '월' ? 'selected' : '' }>월</option>
-						<option value='화'${search.lecture_day eq '화' ? 'selected' : '' }>화</option>
-						<option value='수'${search.lecture_day eq '수' ? 'selected' : '' }>수</option>
-						<option value='목'${search.lecture_day eq '목' ? 'selected' : '' }>목</option>
-						<option value='금'${search.lecture_day eq '금' ? 'selected' : '' }>금</option>
+						class='custom-select custom-select-sm form-control form-control-sm' style="font-size: 15px; font-weight: 600; color: #333333;">
+						<option value='' style="font-size: 18px; font-weight: 800; color: black;"> 전체보기</option>
+						<option value='월'${search.lecture_day eq '월' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">월</option>
+						<option value='화'${search.lecture_day eq '화' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">화</option>
+						<option value='수'${search.lecture_day eq '수' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">수</option>
+						<option value='목'${search.lecture_day eq '목' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">목</option>
+						<option value='금'${search.lecture_day eq '금' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">금</option>
 					</select>
 				</div>
                 </div>
@@ -158,18 +158,18 @@ margin-top:0px;
                         <i class="fa fa-archive text-primary h4 ml-3"></i>
                     </div>
                  <div class='dataTables_filter search-box'>
-                  <h5 class="font-size-20 mt-0 pt-1"> 강의시간구분 </h5>
+                  <h5 class="font-size-20 mt-0 pt-1" style="font-size: 18px; font-weight: 600; color: #333333;"> 강의시간구분 </h5>
 					<select name="lecture_time" onchange='$("form").submit()'
-						class='custom-select custom-select-sm form-control form-control-sm'>
+						class='custom-select custom-select-sm form-control form-control-sm' style="font-size: 15px; font-weight: 600; color: #333333;">
 						<option value=''>시간 전체보기</option>
-						<option value='1'${search.lecture_time eq '1' ? 'selected' : '' }>1교시 (09:00~09:50)</option>
-						<option value='2'${search.lecture_time eq '2' ? 'selected' : '' }>2교시 (10:00~10:50)</option>
-						<option value='3'${search.lecture_time eq '3' ? 'selected' : '' }>3교시 (11:00~11:50)</option>
-						<option value='4'${search.lecture_time eq '4' ? 'selected' : '' }>4교시 (12:00~12:50)</option>
-						<option value='5'${search.lecture_time eq '5' ? 'selected' : '' }>5교시 (14:00~14:50)</option>
-						<option value='6'${search.lecture_time eq '6' ? 'selected' : '' }>6교시 (15:00~15:50)</option>
-						<option value='7'${search.lecture_time eq '7' ? 'selected' : '' }>7교시 (16:00~16:50)</option>
-						<option value='8'${search.lecture_time eq '8' ? 'selected' : '' }>8교시 (17:00~17:50)</option>
+						<option value='1'${search.lecture_time eq '1' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">1교시 (09:00~09:50)</option>
+						<option value='2'${search.lecture_time eq '2' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">2교시 (10:00~10:50)</option>
+						<option value='3'${search.lecture_time eq '3' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">3교시 (11:00~11:50)</option>
+						<option value='4'${search.lecture_time eq '4' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">4교시 (12:00~12:50)</option>
+						<option value='5'${search.lecture_time eq '5' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">5교시 (14:00~14:50)</option>
+						<option value='6'${search.lecture_time eq '6' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">6교시 (15:00~15:50)</option>
+						<option value='7'${search.lecture_time eq '7' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">7교시 (16:00~16:50)</option>
+						<option value='8'${search.lecture_time eq '8' ? 'selected' : '' } style="font-size: 15px; font-weight: 600; color: #333333;">8교시 (17:00~17:50)</option>
 					</select>
 				</div>
                 </div>
@@ -181,10 +181,10 @@ margin-top:0px;
             <div class="card">
                 <div class="card-body">
                         <div class="form-group mb-0">
-                            <label>강의 검색</label>
+                            <label style="font-size: 18px; font-weight: 600; color: #333333;">강의 검색</label>
                             <div class="input-group mb-0">
                                 <input type="text" class="form-control" name="lecture_title" value="${search.lecture_title }"
-                                 placeholder="강의명을 검색하세요" aria-describedby="project-search-addon" onkeyup="if(window.event.keyCode==13){$('form').submit()}"/>
+                                 placeholder="강의명을 검색하세요" aria-describedby="project-search-addon" onkeyup="if(window.event.keyCode==13){$('form').submit()}" style="font-size: 15px; font-weight: 600; color: #333333;"/>
                                 <div class="input-group-append" >
                                     <button class="btn btn-primary"  id="project-search-addon"><i class="fa fa-search search-icon font-12"></i></button>
                                 </div>
@@ -206,21 +206,21 @@ margin-top:0px;
                             <tr>
                                
          	    				
-                                	<th>담당교수</th>
-         	    					<th>과목명</th>
-         	    					<th>강의명</th>
-         	    					<th>장소/시간</th>
-         	    					<th>신청인원</th>
-         	    					<th>과목학점</th>
-         	    					<th>강의년도</th>
+                                	<th style="font-size: 18px; font-weight: 600; color: #333333;">담당교수</th>
+         	    					<th style="font-size: 18px; font-weight: 600; color: #333333;">과목명</th>
+         	    					<th style="font-size: 18px; font-weight: 600; color: #333333;">강의명</th>
+         	    					<th style="font-size: 18px; font-weight: 600; color: #333333;">장소/시간</th>
+         	    					<th style="font-size: 18px; font-weight: 600; color: #333333;">신청인원</th>
+         	    					<th style="font-size: 18px; font-weight: 600; color: #333333;">과목학점</th>
+         	    					<th style="font-size: 18px; font-weight: 600; color: #333333;">강의년도</th>
                         	    </tr>
                         </thead>
                         <tbody>
                           <c:forEach items="${list}" var="vo">
                         		<c:if test="${vo.lecture_year eq '2022' and vo.semester eq '2'}">
                             <tr>
-                                <td><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" class="avatar-sm rounded-circle me-2" /><a href="#" class="text-body">${vo.teacher_name}</a></td>
-                                <td>
+                                <td style="font-size: 15px; font-weight: 600; color: #333333;"><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" class="avatar-sm rounded-circle me-2" /><a href="#" class="text-body">${vo.teacher_name}</a></td>
+                                <td style="font-size: 15px; font-weight: 600; color: #333333;">
 									<a class="position-relative" href="detail.lec?lecture_num=${vo.lecture_num}"> ${vo.lecture_title }
 									<c:choose>
 									<c:when test="${vo.sortation eq '전공선택' }">
@@ -246,7 +246,7 @@ margin-top:0px;
                                 </td>
                                 
                                 
-                              	<td>${vo.lecture_title}      			 
+                              	<td style="font-size: 15px; font-weight: 600; color: #333333;">${vo.lecture_title}      			 
                               	 <span class="badge badge-soft-dark mb-0">
                               		<a href="detail.lec?lecture_num=${vo.lecture_num}">
                              			상세보기<i style="margin-left: 5px;" class="fa-solid fa-circle-info"></i></a></span>
@@ -254,11 +254,11 @@ margin-top:0px;
                               	
                              
                               	
-                             	<td>${vo.lecture_room} [${vo.lecture_time}교시]</td>
+                             	<td style="font-size: 15px; font-weight: 600; color: #333333;">${vo.lecture_room} [${vo.lecture_time}교시]</td>
                              	
-                             	<td>${vo.check_cnt } /${vo.capacity}</td>
-                             		<td>${vo.subjectcredit}</td>
-                             		<td>${vo.lecture_year}</td>
+                             	<td style="font-size: 15px; font-weight: 600; color: #333333;">${vo.check_cnt } /${vo.capacity}</td>
+                             		<td style="font-size: 15px; font-weight: 600; color: #333333;">${vo.subjectcredit}</td>
+                             		<td style="font-size: 15px; font-weight: 600; color: #333333;">${vo.lecture_year}</td>
                               
                             </tr>
                             </c:if>
