@@ -202,7 +202,8 @@ a {
                                 	<th>담당교수</th>
          	    					<th>과목명</th>
          	    					<th>강의명</th>
-         	    					<th>장소/시간</th>
+         	    					<th>장소</th>
+         	    					<th>시간</th>
          	    					<th>신청인원</th>
          	    					<th>과목학점</th>
                         	    </tr>
@@ -279,7 +280,8 @@ a {
                               	
                              
                               	
-                             	<td>${vo.lecture_room} [${vo.lecture_time}교시]</td>
+                             	<td>${vo.lecture_room}</td>
+                             	<td>${vo.lecture_day }요일 [${vo.lecture_time}교시]</td>
                              	
                              	<td>${vo.check_cnt } /${vo.capacity}</td>
                              		<td>${vo.subjectcredit}</td>
