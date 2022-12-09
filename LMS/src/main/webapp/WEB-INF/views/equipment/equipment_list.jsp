@@ -22,6 +22,14 @@ span.btn{
     margin-bottom: 1rem;
     max-width: 10%;
 }
+td{
+ color: #333;
+}
+th{
+ font-size:18px;
+ color: #333;
+}
+
 </style>
 
 <body>
@@ -64,7 +72,7 @@ span.btn{
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">비품 관리</h6>
+                            <h6  style="font-size: 20px;"  class="m-0 font-weight-bold text-primary">비품 관리</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

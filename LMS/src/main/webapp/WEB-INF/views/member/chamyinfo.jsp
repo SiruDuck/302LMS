@@ -176,12 +176,12 @@ h3 {
 									<div class="card-body">
 										<h6 class="d-flex align-items-center mb-3">
 											<i class="material-icons text-info mr-2">입학일</i>${vo.start_date }</h6>
-										<small>졸업까지 ${vo.end_date }</small>
+										<%-- <small>졸업까지 ${vo.end_date }</small>
 										<div class="progress mb-3" style="height: 5px">
 											<div class="progress-bar bg-primary" role="progressbar"
 												style="width: 80%" aria-valuenow="80" aria-valuemin="0"
 												aria-valuemax="100"></div>
-										</div>
+										</div> --%>
 
 									</div>
 								</div>

@@ -9,21 +9,11 @@
 </head>
 <body>
 <div class="container-fluid">
-		<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">내 강의 목록</h1>
+		<!-- <h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">내 강의 목록</h1> -->
 		
-		<div class='card mb-4'>
-			<div class='card-header py-3'>
-				<h6 class='m-0 font-weight-bold text-primary'></h6>
-			</div>
 				
 		</div>
-		<div class="add">
-					<c:choose>
-						<c:when test="${loginInfo.info_cd eq 3}">
-							<a href="list.lec" class="btn btn-primary">전체 강의 목록</a> 
-						</c:when>
-					</c:choose>
-				</div>
+		
 				
 		
 		<div class="dd">
@@ -31,8 +21,15 @@
 
 			<!-- DataTales Example -->
 			<div class="card shadow mb-4">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">내 강의 목록</h6>
+				<div class="card-header py-3" style='display: flex;'>
+					<h6 class="m-0 font-weight-bold text-primary" style='font-size: 1.6rem;'>내 강의 목록</h6>
+					<div class="add" style='margin-left: 79rem;'>
+					<c:choose>
+						<c:when test="${loginInfo.info_cd eq 3}">
+							<a href="list.lec" class="btn btn-primary">전체 강의 목록</a> 
+						</c:when>
+					</c:choose>
+				</div>
 				</div>
 				<div class="card-body lec-font">
 					<div class="table-responsive">
@@ -71,7 +68,7 @@
 											<td>${vo.capacity}</td>
 											<td>${vo.subjectcredit}</td>
 											<td>${vo.state}</td>
-											<td><a href="teacher_stu.lec?lecture_num=${vo.lecture_num}"><button class="btn-primary">수강인원목록</button></a></td>
+											<td><a href="teacher_stu.lec?lecture_num=${vo.lecture_num}"><button class="btn btn-primary">수강인원목록</button></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

@@ -16,7 +16,7 @@
 <body>
 	<i class="bi bi-check-square-fill"></i>
 	<div class="card mb-4">
-    <div class="card-header">
+    <div class="card-header" style="color: #333;">
     비품 등록
     <button id="submit" style="margin-left: 3rem"  class="btn btn-primary" type="button">
    					<i class="fas fa-check-square"></i>

@@ -13,6 +13,8 @@
 <title>교직원 월급 관리 페이지</title>
 <style type="text/css">
 
+.bp{color: #333;}
+
 h1{font-weight: bold; margin-bottom: 10rem;}
 th{
 	background: rgb(248,249,252);
@@ -46,6 +48,14 @@ span.btn{
   left: 37%;
   margin: -50px 0 0 -50px;
 }
+th{
+font-size:20px;
+ color: #333;
+}
+td{
+font-size:18px;
+ color: #333;
+}
 </style>
 </head>
 <body>
@@ -77,7 +87,7 @@ span.btn{
 
                     
 					  <li class="nav-item">
-					    <a class="nav-link co1 ${category eq 'all' ? 'active' : ''}" onclick="choice(c1)" aria-current="page" href="cash.ing?category=all">전체 관리</a>
+					    <a class="nav-link co1  ${category eq 'all' ? 'active' : ''}" onclick="choice(c1)" aria-current="page" href="cash.ing?category=all">전체 관리</a>
 					  </li>
 					  <li class="nav-item">
 					    <a class="nav-link co2 ${category eq 'salary' ? 'active' : ''}"  onclick="choice(c2)" href="cash.ing?category=salary">급여 관리</a>
@@ -101,7 +111,7 @@ span.btn{
 						<div class='card-body d-flex'>
 							<!-- 연도 별 검색 -->
 							<div class='dataTables_filter search-box'>
-								<select name='cash_year' class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form#all_manage").submit()'>
+								<select name='cash_year' class='bp custom-select custom-select-sm form-control form-control-sm' onchange='$("form#all_manage").submit()'>
 									<option value=''
 									> 연도별</option>
 									<option
@@ -118,7 +128,7 @@ span.btn{
 							
 							<!-- 월별 검색 -->
 							<div class='dataTables_filter search-box'>
-								<select name='cash_month'  class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form#all_manage").submit()'>
+								<select name='cash_month'  class='bp custom-select custom-select-sm form-control form-control-sm' onchange='$("form#all_manage").submit()'>
 									<option value=''> 월별</option>
 									<c:forEach var='mm' begin='1' end='12'>
 									<option 
@@ -130,22 +140,22 @@ span.btn{
 							
 							<!-- 아이디로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<input name="id" type="search" class='ids form-control form-control-sm' placeholder='아이디로 검색'
+								<input name="id" type="search" class='bp ids form-control form-control-sm' placeholder='아이디로 검색'
 								onkeyup="if(window.event.keyCode==13){$('form').submit()}"
 								 value="${temp_map.id }">
 							</div>
 							
 							<!-- 이름으로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<input name="name" type="search" class='names form-control form-control-sm' placeholder='이름으로 검색'
+								<input name="name" type="search" class='bp names form-control form-control-sm' placeholder='이름으로 검색'
 								onkeyup="if(window.event.keyCode==13){$('form').submit()}"
 								 value="${temp_map.name }">
 							</div>
 							
 							<!-- 직책으로 검색 -->
-							<div class='dataTables_filter search-box'>
+							<div class='dataTables_filter search-box bp'>
 							<select name="info_cd" onchange='$("form").submit()'
-											class='custom-select custom-select-sm form-control form-control-sm'>
+											class='bp custom-select custom-select-sm form-control form-control-sm'>
 												<option  value=''>전체 보기</option>
 								
 									<c:forEach items="${info_list }" var="info">
@@ -170,7 +180,7 @@ span.btn{
 							
 							<!-- 학과로 검색 -->
 							<div class='dataTables_filter search-box'>
-								<select name="department"class='custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
+								<select name="department"class='bp custom-select custom-select-sm form-control form-control-sm' onchange='$("form").submit()'>
 									<option value='' > 학과검색</option>
 									<c:forEach items="${department_list }" var="vo">
 									<option
@@ -191,7 +201,7 @@ span.btn{
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <div id='dataTable_wrapper' class='dataTables_wrapper dt-bootstrap4'>
+                            <div id='dataTable_wrapper' class='bp dataTables_wrapper dt-bootstrap4'>
                             <!-- 테이블 자리 -->
                             
                            <%--  ${category } --%>

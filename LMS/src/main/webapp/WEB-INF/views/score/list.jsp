@@ -135,7 +135,7 @@ span.btn {
 
 
 			<!-- 데이터 테이블 -->
-			<div class="card shadow mb-4">
+			<div class="card shadow mb-4" style="margin-top:1.5rem">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">성적 조회</h6>
 				</div>

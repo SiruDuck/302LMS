@@ -1,10 +1,9 @@
 package member;
 
-import java.sql.Date;
 
 public class MemberVO {
 	private String id,	pw,	name,	gender, phone,	email,	post,	addr,	grade, state, department_id, department_name, 	info_name, profile;
-	private Date birth, start_date, end_date;
+	private String birth, start_date, end_date;
 	private int info_cd, lecture_num;
 	public String getId() {
 		return id;
@@ -90,22 +89,22 @@ public class MemberVO {
 	public void setProfile(String profile) {
 		this.profile = profile;
 	}
-	public Date getBirth() {
+	public String getBirth() {
 		return birth;
 	}
-	public void setBirth(Date birth) {
+	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public Date getStart_date() {
+	public String getStart_date() {
 		return start_date;
 	}
-	public void setStart_date(Date start_date) {
+	public void setStart_date(String start_date) {
 		this.start_date = start_date;
 	}
-	public Date getEnd_date() {
+	public String getEnd_date() {
 		return end_date;
 	}
-	public void setEnd_date(Date end_date) {
+	public void setEnd_date(String end_date) {
 		this.end_date = end_date;
 	}
 	public int getInfo_cd() {

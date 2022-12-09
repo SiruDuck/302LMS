@@ -160,7 +160,7 @@ span.btn{
                                             <td>${vo.phone }</td>
                                             
                                  <td>       
-                                 <fmt:parseDate var='dateFmt' pattern="yyyy-MM-dd HH:mm:ss" value="${vo.start_date }"/>
+                                 <fmt:parseDate var='dateFmt' pattern="yyyy-MM-dd" value="${vo.start_date }"/>
                                      <fmt:formatDate var="dateTempParse" value="${dateFmt}" pattern="yyyy년 MM월 dd일"/> 
                                      ${dateTempParse}
                                      </td>

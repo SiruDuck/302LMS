@@ -7,7 +7,7 @@
 	SimpleDateFormat day = new SimpleDateFormat("YYYY년"); %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 	
-<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<table class="table table-bordered bp" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                         	<th>입금일</th>

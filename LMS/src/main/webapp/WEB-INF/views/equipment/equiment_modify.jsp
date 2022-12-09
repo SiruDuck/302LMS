@@ -30,11 +30,11 @@
     
    		<form id="mformId" method="post" action="eqmodify">
    		<div class="input-group">
-   		     <input id="equipment" name="mequipment" style="margin-right: 3rem;" type="text" class="form-control bg-light border-0 small" placeholder="비품 이름" aria-label="Search" aria-describedby="basic-addon2" readonly="readonly">
-   		     <input id="equipment_num" name="mequipment_num"  type="text" class="form-control bg-light border-0 small" placeholder="비품 수량" aria-label="Search" aria-describedby="basic-addon2" style="margin-right: 3rem;">
-   		     <input id="buy_day" name="mbuy_day"  type="text" class="date form-control bg-light border-0 small" placeholder="구매일" aria-label="Search" aria-describedby="basic-addon2" readonly="readonly" style="margin-right: 3rem;">
+   		     <input id="equipment" name="mequipment" style="margin-right: 3rem; color: #333;" type="text" class="form-control bg-light border-0 small" placeholder="비품 이름" aria-label="Search" aria-describedby="basic-addon2" readonly="readonly">
+   		     <input id="equipment_num" name="mequipment_num"  type="text" class="form-control bg-light border-0 small" placeholder="비품 수량" aria-label="Search" aria-describedby="basic-addon2" style="margin-right: 3rem; color: #333;">
+   		     <input id="buy_day" name="mbuy_day"  type="text" class="date form-control bg-light border-0 small" placeholder="구매일" aria-label="Search" aria-describedby="basic-addon2" readonly="readonly" style="margin-right: 3rem; color: #333;">
    		     <input id="price" name="mprice"  type="text" class="form-control bg-light border-0 small" placeholder="가격" aria-label="Search" aria-describedby="basic-addon2" style="margin-right: 3rem;">
-   		     <input id="situation" name="msituation" type="text" class="form-control bg-light border-0 small" placeholder="기타정보" aria-label="Search" aria-describedby="basic-addon2" style="margin-right: 3rem;">
+   		     <input id="situation" name="msituation" type="text" class="form-control bg-light border-0 small" placeholder="기타정보" aria-label="Search" aria-describedby="basic-addon2" style="margin-right: 3rem; color: #333;">
    		     <div class="input-group-append">
    		     </div>
    		 </div>

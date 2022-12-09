@@ -212,7 +212,7 @@ margin-top:0px;
          	    					<th>장소/시간</th>
          	    					<th>신청인원</th>
          	    					<th>과목학점</th>
-         	    					<th>강의년도</th>
+         	    					<th>요일</th>
                         	    </tr>
                         </thead>
                         <tbody>
@@ -258,7 +258,7 @@ margin-top:0px;
                              	
                              	<td>${vo.check_cnt } /${vo.capacity}</td>
                              		<td>${vo.subjectcredit}</td>
-                             		<td>${vo.lecture_year}</td>
+                             		<td>${vo.lecture_day}</td>
                               
                             </tr>
                             </c:if>

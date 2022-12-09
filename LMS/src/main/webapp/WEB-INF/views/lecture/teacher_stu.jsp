@@ -12,12 +12,7 @@
 <div class="container-fluid">
 		<h1 class="h3 mb-2 text-gray-800 mt-2 mb-2">수강 학생 목록</h1>
 		
-		<div class='card mb-4'>
-			<div class='card-header py-3'>
-				<h6 class='m-0 font-weight-bold text-primary'></h6>
-			</div>
-				
-		</div>
+		
 		
 		
 		<div class="dd">

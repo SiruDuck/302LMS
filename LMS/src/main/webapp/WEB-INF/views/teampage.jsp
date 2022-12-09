@@ -280,8 +280,8 @@ body {
         font-family: 'GangwonEduPowerExtraBoldA';
         font-size: 3rem;
         position: absolute;
-        top: 12rem;
-        left: 30rem;
+        top: 9rem;
+        left: 23rem;
         line-height: 4rem;
         text-shadow: 2px 2px 6px rgb(120, 139, 179);
     }
@@ -289,7 +289,7 @@ body {
         font-family: 'GangwonEduPowerExtraBoldA';
         font-size: 3rem;
         position: absolute;
-        top: 3rem;
+        top: 5rem;
         left: 30rem;
         line-height: 4rem;
         text-shadow: 2px 2px 6px rgb(165, 138, 170);
@@ -309,7 +309,7 @@ body {
         font-size: 3rem;
         position: absolute;
         top: 9rem;
-        left: 30rem;
+        left: 23rem;
         line-height: 4rem;
         text-shadow: 2px 2px 6px rgb(170, 145, 138);
         
@@ -342,7 +342,7 @@ body {
 
             <div class="position anjin move">
                 <div class="background_left">
-                    <span class="p_position"><p>"요정도 ㅋ?"</p></span>
+                    <span class="p_position"><p>"프로젝트 하시느라 모두 고생하셨고 앞으로도 행복하셨으면 좋겠습니다."</p></span>
                     <img class="move img_size" src="resources/imges/an.png"/>
                     <span class="name_font"><p>안진혁</p></span>
                     
@@ -359,7 +359,7 @@ body {
             </div>
             <div class="position gang move">
                 <div class="background_left">
-                    <span class="p_position1"><p>"★★★★★<br>★★★★<br>★★★<br>★★<br>★"</p></span>
+                    <span class="p_position1"><p>"프로젝트하시느라 고생많으셨습니다. <br> 앞으로도 승승장구하고 <br> 즐겁게 살았으면 좋겠습니다"</p></span>
                     <img class="move img_size" src="resources/imges/gang.png"/>
                     <span class="name_font"><p>김강윤</p></span>
                 </div>
@@ -375,14 +375,15 @@ body {
 
             <div class="position si move">
                 <div class="background_left">
-                    <span class="p_position3"><p>"좋은 사람들과 함께 할 수 있는 <br>기회를 얻어서 행복합니다."</p></span>
+                    <span class="p_position3"><p>"여러분들과 프로젝트를 만들고, <br>
+                    반년이라는 시간을 함게해서 재밌었습니다 ~!"</p></span>
                     <img class="move img_size" src="resources/imges/si.png"/>
                     <span class="name_font"><p>김서인</p></span>
                 </div>
             </div>
             <div class="position sujin move">
                 <div class="background_right">
-                    <span class="p_position4"><p>"요정도 ㅋ?"</p></span>
+                    <span class="p_position4"><p>"프로젝트는 끝났지만<br>우리는 이제 시작이라는거~"</p></span>
                     <img class="move img_size" src="resources/imges/su.png"/>
                     <span class="name_font"><p>박수진</p></span>    
                 </div>
