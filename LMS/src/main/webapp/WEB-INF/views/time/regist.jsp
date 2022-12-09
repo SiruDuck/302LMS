@@ -85,6 +85,15 @@ a {
 .bg-soft-primary {
     background-color: rgba(59,118,225,.25)!important;
 }
+th{
+	color:#333;
+}
+td{
+	color:#333;
+}
+.text-name:hover{
+	color:#3b76e1;
+}
 </style>
 <body>
 
@@ -109,7 +118,7 @@ a {
                         <i class="fa fa-archive text-primary h4 ml-3"></i>
                     </div>
                  <div class='dataTables_filter search-box'>
-                  <h5 class="font-size-20 mt-0 pt-1"> 이수구분 </h5>
+                  <h5 class="font-size-20 mt-0 pt-1 text-dark"> 이수구분 </h5>
 					<select name="sortation" onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
 						<option value=''${temp_map.sortation eq '' ? 'selected' : '' }>전체보기</option>
@@ -129,7 +138,7 @@ a {
                         <i class="fa fa-archive text-primary h4 ml-3"></i>
                     </div>
                  <div class='dataTables_filter search-box'>
-                 <h5 class="font-size-20 mt-0 pt-1"> 요일구분 </h5>
+                 <h5 class="font-size-20 mt-0 pt-1 text-dark"> 요일구분 </h5>
 					<select name='lecture_day' onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
 						<option value=''> 전체보기</option>
@@ -151,7 +160,7 @@ a {
                         <i class="fa fa-archive text-primary h4 ml-3"></i>
                     </div>
                  <div class='dataTables_filter search-box'>
-                  <h5 class="font-size-20 mt-0 pt-1"> 강의시간구분 </h5>
+                  <h5 class="font-size-20 mt-0 pt-1 text-dark"> 강의시간구분 </h5>
 					<select name="lecture_time" onchange='$("form").submit()'
 						class='custom-select custom-select-sm form-control form-control-sm'>
 						<option value=''>시간 전체보기</option>
@@ -174,7 +183,7 @@ a {
             <div class="card">
                 <div class="card-body">
                         <div class="form-group mb-0">
-                            <label>강의 검색</label>
+                            <label class="text-dark font-size-20">강의 검색</label>
                             <div class="input-group mb-0">
                                 <input type="text" class="form-control" name="lecture_title" value="${temp_map.lecture_title }"
                                  placeholder="강의명을 검색하세요" aria-describedby="project-search-addon" onkeyup="if(window.event.keyCode==13){$('form').submit()}"/>
@@ -202,7 +211,8 @@ a {
                                 	<th>담당교수</th>
          	    					<th>과목명</th>
          	    					<th>강의명</th>
-         	    					<th>장소/시간</th>
+         	    					<th>장소</th>
+         	    					<th>시간</th>
          	    					<th>신청인원</th>
          	    					<th>과목학점</th>
                         	    </tr>
@@ -254,7 +264,7 @@ a {
                                     </ul>
                                 </td>
                                 
-                                <td><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" class="avatar-sm rounded-circle me-2" /><a href="#" class="text-body">${vo.teacher_name}</a></td>
+                                <td><img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="" class="avatar-sm rounded-circle me-2" /><a href="#" class="text-name text-dark">${vo.teacher_name}</a></td>
                                 <td>
 									${vo.lecture_title }
 									<c:choose>
@@ -279,7 +289,8 @@ a {
                               	
                              
                               	
-                             	<td>${vo.lecture_room} [${vo.lecture_time}교시]</td>
+                             	<td>${vo.lecture_room}</td>
+                             	<td>${vo.lecture_day }요일 [${vo.lecture_time}교시]</td>
                              	
                              	<td>${vo.check_cnt } /${vo.capacity}</td>
                              		<td>${vo.subjectcredit}</td>
