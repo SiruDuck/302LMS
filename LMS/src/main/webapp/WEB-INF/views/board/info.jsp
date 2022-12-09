@@ -25,7 +25,7 @@
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">자유게시판 안내</h6>
+			<h6 class="m-0 font-weight-bold text-primary" style="font-size: 20px; font-weight: 800;">자유게시판 안내</h6>
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
@@ -33,27 +33,27 @@
 					cellspacing="0">
 					<thead>
 						<tr>
-							<th style="vertical-align: inherit; width: 11rem">제목</th>
-							<td colspan="5"><div class='form-control form-control-user'>${vo.title }</div></td>
+							<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;" >제목</th>
+							<td colspan="5"><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.title }</div></td>
 						</tr>
 						<tr>
-							<th>작성자</th>
-							<td><div class='form-control form-control-user'>${vo.name }</div></td>
-							<th style="vertical-align: inherit; width: 11rem">작성일자</th>
-							<td><div class='form-control form-control-user'>${vo.writedate }</div></td>
-							<th style="vertical-align: inherit; width: 11rem">조회수</th>
-							<td><div class='form-control form-control-user'>${vo.readcnt }</div></td>
+							<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">작성자</th>
+							<td><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.name }</div></td>
+							<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">작성일자</th>
+							<td><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.writedate }</div></td>
+							<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">조회수</th>
+							<td><div class='form-control form-control-user' style="font-weight: 600; color: #333333; ">${vo.readcnt }</div></td>
 						</tr>
 						<tr>
-							<th style="vertical-align: baseline;">내용</th>
+							<th style="vertical-align: baseline; width: 11rem; font-size: 18px; font-weight: 800;">내용</th>
 							<td colspan='5'><div class='form-control form-control-user'
-									style='height: 27rem'>${vo.content}</div></td>
+									style="font-weight: 600; color: #333333; height: 27rem">${vo.content}</div></td>
 						</tr>
 						<tr>
-							<th>첨부파일</th>
+							<th style="font-size: 18px; font-weight: 800; ">첨부파일</th>
 							<td colspan='5'>
 								<div class='form-control form-control-user'>
-									<span id='file-name'>${vo.filename}</span>
+									<span id='file-name' style=" font-size: 18px; font-weight: 800;">${vo.filename}</span>
 									<c:if test='${not empty vo.filename }'>
 										<a id='download'><i
 											class="font-b fa-solid fa-file-arrow-down"></i></a>
@@ -68,12 +68,12 @@
 	</div>
 
 	<div class='btn_blue' style='padding: 2rem; text-align: center;'>
-		<a class='btn btn-secondary btn-icon-split' href='list.br'>목록으로</a>
+		<a class='btn btn-secondary btn-icon-split' href='list.br' style="font-size: 18px; font-weight: 800;">목록으로</a>
 		<c:if test='${loginInfo.id eq vo.writer }'>
 			<a class='btn btn-primary btn-icon-split'
-				href='modify.br?id=${vo.id}&${hrefParam}'>정보수정</a>
+				href='modify.br?id=${vo.id}&${hrefParam}' style="font-size: 18px; font-weight: 800;">정보수정</a>
 			<a class='btn btn-danger btn-icon-split' id='remove'
-				onclick="if(confirm('삭제 할까요?')) location='delete.br?id=${vo.id}'">정보삭제</a>
+				onclick="if(confirm('삭제 할까요?')) location='delete.br?id=${vo.id}'" style="font-size: 18px; font-weight: 800;">정보삭제</a>
 		</c:if>
 	</div>
 
@@ -84,7 +84,7 @@
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">댓글</h6>
+			<h6 class="m-0 font-weight-bold text-primary" style="font-size: 20px; font-weight: 800;">댓글</h6>
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
@@ -93,12 +93,12 @@
 					<thead>
 						<tr>
 							<th
-								style="vertical-align: inherit; width: 11rem; text-align: center;">댓글작성</th>
+								style="vertical-align: inherit; width: 11rem; text-align: center; font-size: 20px; font-weight: 800;">댓글작성</th>
 							<td style="display: flex;"><textarea id='comment'
 									class='form-control form-control-user'></textarea><a
 								href='javascript:regist()'
 								class='btn btn-primary btn-icon-split' id='regist'
-								style="margin-left: 2rem; width: 4rem; align-items: center;">등록</a></td>
+								style="margin-left: 2rem; width: 4rem; align-items: center; font-size: 18px">등록</a></td>
 							<!-- 							  -->
 						</tr>
 					</thead>

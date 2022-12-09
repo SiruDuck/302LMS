@@ -237,7 +237,7 @@ input[type=file]::file-selector-button {
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">공지사항 글쓰기</h6>
+				<h6 class="m-0 font-weight-bold text-primary" style="font-size: 20px; font-weight: 800;">공지사항 글쓰기</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -245,18 +245,18 @@ input[type=file]::file-selector-button {
 						cellspacing="0">
 						<thead>
 							<tr>
-								<th style="vertical-align: inherit; width: 11rem">제목</th>
+								<th style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;">제목</th>
 								<td><input type="text" name='title' title='제목'
-									class='form-control form-control-user'></td>
+									class='form-control form-control-user' style="vertical-align: inherit; width: 11rem; font-size: 18px; font-weight: 800;"></td>
 							</tr>
 							<tr>
-								<th style="vertical-align: baseline;">내용</th>
+								<th style="vertical-align: baseline; width: 11rem; font-size: 18px; font-weight: 800;">내용</th>
 								<td><textarea id='summernote' name='content' title="내용"
 										class='form-control form-control-user conten'
-										style='height: 27rem'></textarea></td>
+										style="vertical-align: baseline; width: 11rem; font-size: 18px; font-weight: 800;"></textarea></td>
 							</tr>
 							<tr>
-								<th style="vertical-align: inherit">첨부파일</th>
+								<th style="font-size: 18px; font-weight: 800; ">첨부파일</th>
 								<td>
 									<div class='align'>
 										<label> <input type='file' name='file' multiple="multiple"
@@ -275,8 +275,8 @@ input[type=file]::file-selector-button {
 	</form>
 	<div class='btn_blue' style='padding: 2rem;'>
 		<a class='btn btn-primary' id='save'
-			style="color: #fff; background-color: #2e59d9; border-color: #2653d4;">저장</a>
-		<a class='btn btn-secondary' href='list.no'>취소</a>
+			style="color: #fff; background-color: #2e59d9; border-color: #2653d4; font-size: 18px; font-weight: 800;">저장</a>
+		<a class='btn btn-secondary' href='list.no' style="font-size: 18px; font-weight: 800;">취소</a>
 	</div>
 	<script>
 		$('#save').click(function() {
